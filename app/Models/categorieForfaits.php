@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class categorieForfaits extends Model
 {
     use HasFactory;
-    public function forfaits(){
+    public function forfait(){
         return$this->hasMany(Forfaits::class);
     }
 }

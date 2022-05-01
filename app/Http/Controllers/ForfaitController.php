@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\forfaits;
+use App\Models\forfait;
 use Illuminate\Http\Request;
 
-class ForfaitsController extends Controller
+class ForfaitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ForfaitsController extends Controller
      */
     public function index()
     {
-        $forfaits = Forfaits::all();
+        $forfaits = Forfait::all();
         return view("forfaits.index", ['forfaits'=>$forfaits]);
     }
     
@@ -25,8 +25,8 @@ class ForfaitsController extends Controller
      */
     public function create()
     {
-        $forfait = new Forfaits();
-        return view("forfaits.create", ['forfaits'=>$forfait]);
+        $forfaits = new Forfait();
+        return view("forfaits.create", ['forfaits'=>$forfaits]);
     }
 
     /**
@@ -37,61 +37,61 @@ class ForfaitsController extends Controller
      */
     public function store(Request $request)
     {
-        $forfait = new Forfaits();
+        $forfait = new Forfait();
         $forfait->fill($request->all());
         $forfait->save();
-        return redirect()->route('forfaits.show', $forfait);
+        return redirect()->route('forfaits.index', $forfait);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\forfaits  $forfaits
+     * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
      */
-    public function show(forfaits $forfaits)
+    public function show(forfait $forfait)
     {
-        return view ("forfaits.show", ['forfaits'=>$forfaits]);
+        return view ("forfaits.show", ['forfait'=>$forfait]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\forfaits  $forfaits
+     * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
      */
-    public function edit(forfaits $forfaits)
+    public function edit(forfait $forfait)
     {
-        return view('forfaits.edit', ['forfaits'=>$forfaits]);
+        return view('forfaits.edit', ['forfaits'=>$forfait]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\forfaits  $forfaits
+     * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, forfaits $forfaits)
+    public function update(Request $request, forfait $forfait)
     {
-        $forfaits->fill($request->all());
-        $forfaits->save();
-        return redirect()->route('forfaits.show', $forfaits);
+        $forfait->fill($request->all());
+        $forfait->save();
+        return redirect()->route('forfaits.show', $forfait);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\forfaits  $forfaits
+     * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
      */
-    public function destroy(forfaits $forfaits)
+    public function destroy(forfait $forfait)
     {
         if ($request->has('delete')) {
-            $forfaits->delete();
+            $forfait->delete();
             return redirect()->route('forfaits.index');
         } else {
-            return redirect()->route('forfaits.show', $forfaits);
+            return redirect()->route('forfaits.show', $forfait);
         }
     }
 }

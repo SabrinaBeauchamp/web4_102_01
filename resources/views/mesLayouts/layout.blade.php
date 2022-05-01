@@ -18,6 +18,7 @@
         <div class="main">
             @yield("contenu")
             <div class="button">
+                {{-- if est admin --}}
                 <a href="{{route('forfaits.create')}}">Créer un nouveau forfait</a>
             </div>
         </div>

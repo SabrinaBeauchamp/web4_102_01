@@ -8,10 +8,10 @@
 <h2>Création d'un nouveau forfait</h2>
     <form action="{{route('forfaits.store')}}" method="post">
         @csrf
-        <x-champsInputCase :titre="'prix'" :type="'text'"></x-champsInput>
-        <x-champsInputCase :titre="'nom'" :type="'text'"></x-champsInput>
-        <x-champsCheckBox :titre="'categorie'"></x-champsCheckBox>
-        <x-champsTextArea :titre="'description'" :cols="'30'" :row="'10'"></x-champsTextArea>
+        <x-champ-text name="nom" label="Nom">{{$forfaits->nom}}</x-champs-text>
+        <x-champ-number name="prix" label="Prix">{{$forfaits->prix}}</x-champs-text>
+        <x-champ-text name="categorie" label="Categorie"></x-champ-text>
+        <x-champ-textArea name="description" label="Description">{{$forfaits->description}}</x-champs-text>
         <div>
             <button data-icon="done" type="submit">Créer le forfait</button>
         </div>
