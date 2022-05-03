@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForfaitController;
+use App\Http\Controllers\CategorieForfaitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,18 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
 
     Route::get('/{forfait}/delete', 'delete')->name('delete');
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
+});
+
+Route::group(['prefix'=>'/categories', 'as'=>'.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{categorie}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{categorie}/edit', 'edit')->name('edit');
+    Route::post('/{categorie}/edit', 'update')->name('update');
+
+    Route::get('/{categorie}/delete', 'delete')->name('delete');
+    Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });

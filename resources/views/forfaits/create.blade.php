@@ -10,7 +10,7 @@
         @csrf
         <x-champ-text name="nom" label="Nom">{{$forfaits->nom}}</x-champs-text>
         <x-champ-number name="prix" label="Prix">{{$forfaits->prix}}</x-champs-text>
-        <x-champ-text name="categorie" label="Categorie"></x-champ-text>
+        <x-champ-check :groupes={{$forfaits}}></x-champ-check>
         <x-champ-textArea name="description" label="Description">{{$forfaits->description}}</x-champs-text>
         <div>
             <button data-icon="done" type="submit">Créer le forfait</button>

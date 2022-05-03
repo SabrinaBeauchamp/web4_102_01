@@ -80,12 +80,24 @@ class ForfaitController extends Controller
     }
 
     /**
+     * Show the form for deleting the specified resource.
+     *
+     * @param  \App\Models\Forfait  $element
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Forfait $forfait)
+    {
+        return view('forfaits.delete', ['forfaits'=>$forfait]);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
-    public function destroy(forfait $forfait)
+    public function destroy(Request $request, forfait $forfait)
     {
         if ($request->has('delete')) {
             $forfait->delete();
