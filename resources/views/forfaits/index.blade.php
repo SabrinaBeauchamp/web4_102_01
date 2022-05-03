@@ -10,4 +10,5 @@
         @else
             <p>la liste est vide</p>
     @endif
+    <x-champ-lien href="{{route('forfaits.create')}}" titre="Créer un nouveau forfait"></x-champ-lien>
 @endsection

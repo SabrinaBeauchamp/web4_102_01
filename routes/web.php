@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
+use App\Http\Controllers\EvenementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,4 +47,18 @@ Route::group(['prefix'=>'/categories', 'as'=>'.categories.', 'controller'=>Categ
 
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
+});
+
+Route::group(['prefix'=>'/evenements', 'as'=>'.evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{evenement}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{evenement}/edit', 'edit')->name('edit');
+    Route::post('/{evenement}/edit', 'update')->name('update');
+
+    Route::get('/{evenement}/delete', 'delete')->name('delete');
+    Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
