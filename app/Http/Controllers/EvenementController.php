@@ -51,7 +51,7 @@ class EvenementController extends Controller
      */
     public function show(Evenement $evenement)
     {
-        return view (".evenement.show", ['evenement'=>$evenement]);
+        return view (".evenements.show", ['evenement'=>$evenement]);
     }
 
     /**

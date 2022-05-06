@@ -16,12 +16,12 @@ use App\Http\Controllers\EvenementController;
 |
 */
 
-Route::get('/', function () {
-    return redirect() ->route("forfaits.index");
-    return view('welcome');
+Route::get('/agrotouristique', function () {
+    // return redirect() ->route("index");
+    return view('index');
 });
 
-Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
 
@@ -35,7 +35,7 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/categories', 'as'=>'.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{categorie}', 'show')->name('show');
 
@@ -49,7 +49,7 @@ Route::group(['prefix'=>'/categories', 'as'=>'.categories.', 'controller'=>Categ
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/evenements', 'as'=>'.evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'.evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{evenement}', 'show')->name('show');
 
