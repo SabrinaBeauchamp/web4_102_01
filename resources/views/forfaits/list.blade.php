@@ -1,9 +1,7 @@
 @foreach ($forfaits as $forfait)
-            <div class="forfait">
-                <a href="{{route('forfaits.show', $forfait)}}">{{$forfait->nom}}</a>
-                <div class="choix">
-                    <a href="{{route('forfaits.edit', $forfait)}}">Modifier</a>
-                    <a href="{{route('forfaits.delete', $forfait)}}">Supprimer</a>
-                </div>
-            </div> 
-        @endforeach
+    <div class="forfait">
+        <a href="{{route('forfaits.show', $forfait)}}">{{$forfait->nom}}</a>
+        <x-champ-button href="{{route('forfaits.edit', $forfait)}}" titre="Modifier"></x-champ-button>
+        <x-champ-button href="{{route('forfaits.delete', $forfait)}}" titre="Supprimer"></x-champ-button>
+    </div> 
+@endforeach

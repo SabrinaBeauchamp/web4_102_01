@@ -11,16 +11,13 @@
     <div class="interface">
         <header>
             <a href="{{asset('')}}">
-                <h1 class="titre">Les Forfaits</h1>
+                <h1 class="titre">@yield("titre")</h1>
             </a>
         </header>
         <footer></footer>
         <div class="main">
             @yield("contenu")
-            <div class="button">
-                {{-- if est admin --}}
-                <a href="{{route('forfaits.create')}}">Créer un nouveau forfait</a>
-            </div>
+            
         </div>
     </div>
 </body>
