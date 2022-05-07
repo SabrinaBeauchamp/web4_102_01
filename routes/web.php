@@ -4,6 +4,9 @@ use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\EntrepriseController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForfaitController;
+use App\Http\Controllers\CategorieForfaitController;
+use App\Http\Controllers\EvenementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +18,54 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return redirect()->route("groupes.index");
-    return view('welcome');
+Route::get('/', function() {
+    return redirect('/agrotouristique');
 });
 
-Route::get('/entreprises', [EntrepriseController::class, 'index'])
-    ->name('entreprises.index');
+Route::get('/agrotouristique', function() {
+    return view('index');
+});
+Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{forfait}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{forfait}/edit', 'edit')->name('edit');
+    Route::post('/{forfait}/edit', 'update')->name('update');
+
+    Route::get('/{forfait}/delete', 'delete')->name('delete');
+    Route::post('/{forfait}/delete', 'destroy')->name('destroy');
+});
+
+Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{categorie}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{categorie}/edit', 'edit')->name('edit');
+    Route::post('/{categorie}/edit', 'update')->name('update');
+
+    Route::get('/{categorie}/delete', 'delete')->name('delete');
+    Route::post('/{categorie}/delete', 'destroy')->name('destroy');
+});
+
+Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'.evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{evenement}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{evenement}/edit', 'edit')->name('edit');
+    Route::post('/{evenement}/edit', 'update')->name('update');
+
+    Route::get('/{evenement}/delete', 'delete')->name('delete');
+    Route::post('/{evenement}/delete', 'destroy')->name('destroy');
+});
 
 Route::group(['prefix'=>'/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
