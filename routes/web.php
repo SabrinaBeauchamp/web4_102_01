@@ -67,8 +67,6 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'.evenements.', 'co
     Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
 
-
-
 Route::group(['prefix'=>'/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupe}', 'show')->name('show');
