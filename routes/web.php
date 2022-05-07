@@ -39,7 +39,7 @@ Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'control
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/categoriesForfait', 'as'=>'.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{categorie}', 'show')->name('show');
 
@@ -67,7 +67,7 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'.evenements.', 'co
     Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupe}', 'show')->name('show');
 
@@ -80,7 +80,7 @@ Route::group(['prefix'=>'/groupes', 'as'=>'groupes.', 'controller'=>GroupeContro
     Route::get('/{groupe}/delete', 'delete')->name('delete');
     Route::post('/{groupe}/delete', 'destroy')->name('destroy');
 });
-Route::group(['prefix'=>'/categories', 'as'=>'categories.', 'controller'=>CategorieController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'controller'=>CategorieController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{categorie}', 'show')->name('show');
 
@@ -93,7 +93,7 @@ Route::group(['prefix'=>'/categories', 'as'=>'categories.', 'controller'=>Catego
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
-Route::group(['prefix'=>'/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{entreprise}', 'show')->name('show');
 
