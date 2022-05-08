@@ -10,9 +10,9 @@
         @foreach ($categories as $categorie)
             <div class="categorie">
                 <a href="{{route('.categories.show', $categorie)}}">
-                    <h3>{{$categorie->nom}} ({{$categorie->groupe->nom}})</h3>
+                    <h3>{{$categorie->nom}}</h3>
                 </a>
-                @include('forfaits.list', ['forfaits'=>$categorie->forfaits])
+                
             </div> 
         @endforeach
         @else
