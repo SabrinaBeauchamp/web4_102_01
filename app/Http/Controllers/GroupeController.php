@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategorieForfait;
+use App\Models\Groupe;
 use Illuminate\Http\Request;
 
-class CategorieForfaitController extends Controller
+class GroupeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,8 @@ class CategorieForfaitController extends Controller
      */
     public function index()
     {
+        $groupes = Groupe::all();
+        return view("groupes.index", ['groupes'=>$groupes]);
     }
 
     /**
@@ -23,6 +25,7 @@ class CategorieForfaitController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -33,48 +36,50 @@ class CategorieForfaitController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\categorieForfait  $categorieForfaits
+     * @param  \App\Models\Groupe  $groupe
      * @return \Illuminate\Http\Response
      */
-    public function show(categorieForfait $categorie)
+    public function show(Groupe $groupe)
     {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\categorieForfait  $categorieForfaits
+     * @param  \App\Models\Groupe  $groupe
      * @return \Illuminate\Http\Response
      */
-    public function edit(categorieForfait $categorie)
+    public function edit(Groupe $groupe)
     {
-       
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\categorieForfait  $categorieForfaits
+     * @param  \App\Models\Groupe  $groupe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, categorieForfait $categorie)
+    public function update(Request $request, Groupe $groupe)
     {
-       
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\categorieForfait  $categorieForfaits
+     * @param  \App\Models\Groupe  $groupe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categorieForfait $categorie)
+    public function destroy(Groupe $groupe)
     {
         //
     }

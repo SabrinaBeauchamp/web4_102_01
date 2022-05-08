@@ -1,17 +1,17 @@
 @extends('mesLayouts.layout')
 
 @section('titre')
-    Forfaits - {{$forfaits->nom}}
+    Forfaits - {{$forfait->nom}}
 @endsection
 
 @section('contenu')
-<h2>Forfait {{$forfaits->nom}}</h2>
-    <form action="{{route('forfaits.update', $forfaits)}}" method="post">
+<h2>Forfait {{$forfait->nom}}</h2>
+    <form action="{{route('forfaits.update', $forfait)}}" method="post">
         @csrf
-        <x-champ-text name="nom" label="Nom">{{$forfaits->nom}}</x-champs-text>
-        <x-champ-number name="prix" label="Prix">{{$forfaits->prix}}</x-champs-text>
-        <x-champ-text name="categorie" label="Categorie"></x-champ-text>
-        <x-champ-textArea name="description" label="Description">{{$forfaits->description}}</x-champs-text>
+        <x-champ-text name="nom" label="Nom">{{$forfait->nom}}</x-champs-text>
+        <x-champ-number name="prix" label="Prix">{{$forfait->prix}}</x-champs-text>
+
+        <x-champ-textArea name="description" label="Description">{{$forfait->description}}</x-champs-text>
         
         <div>
             <button data-icon="done" type="submit">Modifier le forfait</button>

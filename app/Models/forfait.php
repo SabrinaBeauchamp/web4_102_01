@@ -9,12 +9,11 @@ class forfait extends Model
 {
     use HasFactory;
     protected $fillable=[
-      "categorie_id",
       "prix",
       "nom",
       "description",
     ];
-    public function categorie(){
-        return $this->belongsTo(categorieForfait::class);
+    public function categories(){
+        return $this->belongsToMany(CategorieForfait::class);
     }
 }

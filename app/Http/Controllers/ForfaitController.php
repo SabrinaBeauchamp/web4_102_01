@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\forfait;
+use App\Models\Groupe;
 use Illuminate\Http\Request;
 
 class ForfaitController extends Controller
@@ -25,8 +26,9 @@ class ForfaitController extends Controller
      */
     public function create()
     {
-        $forfaits = new Forfait();
-        return view("forfaits.create", ['forfaits'=>$forfaits]);
+        $forfait = new Forfait();
+        $groupes = Groupe::all();
+        return view("forfaits.create", ['forfait'=>$forfait, "groupes"=>$groupes]);
     }
 
     /**
@@ -40,7 +42,12 @@ class ForfaitController extends Controller
         $forfait = new Forfait();
         $forfait->fill($request->all());
         $forfait->save();
-        return redirect()->route('forfaits.index', $forfait);
+        $categories = [];
+        if (isset($request->categorie_id)) {
+            $categories = $request->categorie_id;
+        }
+        $forfait->categories()->sync($categories);
+        return redirect()->route("forfaits.index");
     }
 
     /**
@@ -62,7 +69,8 @@ class ForfaitController extends Controller
      */
     public function edit(forfait $forfait)
     {
-        return view('forfaits.edit', ['forfaits'=>$forfait]);
+        $groupes = Groupe::all();
+        return view('forfaits.edit', ['forfait'=>$forfait, "groupes"=>$groupes]);
     }
 
     /**
@@ -76,7 +84,12 @@ class ForfaitController extends Controller
     {
         $forfait->fill($request->all());
         $forfait->save();
-        return redirect()->route('forfaits.show', $forfait);
+        $categories = [];
+        if (isset($request->categorie_id)) {
+            $categories = $request->categorie_id;
+        }
+        $forfait->categories()->sync($categories);
+        return redirect()->route("groupes.index");
     }
 
     /**

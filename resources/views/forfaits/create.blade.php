@@ -8,10 +8,12 @@
 <h2>Création d'un nouveau forfait</h2>
     <form action="{{route('forfaits.store')}}" method="post">
         @csrf
-        <x-champ-text name="nom" label="Nom">{{$forfaits->nom}}</x-champs-text>
-        <x-champ-number name="prix" label="Prix">{{$forfaits->prix}}</x-champs-text>
-        
-        <x-champ-textArea name="description" label="Description">{{$forfaits->description}}</x-champs-text>
+        <x-champ-text name="nom" label="Nom">{{$forfait->nom}}</x-champs-text>
+        <x-champ-number name="prix" label="Prix">{{$forfait->prix}}</x-champs-text>
+        <div>
+            @include('groupes.checks', ['checkeds'=>$forfait->categories->pluck("id")->toArray()])
+        </div>
+        <x-champ-textArea name="description" label="Description">{{$forfait->description}}</x-champs-text>
         <div>
             <button data-icon="done" type="submit">Créer le forfait</button>
         </div>
