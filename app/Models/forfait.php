@@ -14,6 +14,6 @@ class forfait extends Model
       "description",
     ];
     public function categories(){
-        return $this->belongsToMany(CategorieForfait::class);
+        return $this->belongsToMany(Categorie::class);
     }
 }
