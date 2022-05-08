@@ -16,6 +16,10 @@ use App\Http\Controllers\EvenementController;
 |
 */
 
+Route::get('/', function () {
+    return redirect('/agrotouristique');
+    return view('index');
+});
 Route::get('/agrotouristique', function () {
     // return redirect() ->route("index");
     return view('index');
