@@ -19,6 +19,11 @@
             
         </div>
         <footer>
+            <div class="infolettre">
+                <h3>
+                    Ceci est une infolettre
+                </h3>
+            </div>
             <p>hello world</p>
         </footer>
     </div>

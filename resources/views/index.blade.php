@@ -18,67 +18,86 @@
         <h2>Les attractions les plus populaires de la saison</h2>
     </div>
     <div class="container-carrousel">
-        <div class="carrousel">
-            <ul class="liste-carrousel">
-                <li class="item-carrousel" id="activitePopulaire-1">
-                    <h3 class="titre-item-carrousel">Je suis une activité populaire</h3>
-                    <p class="description-item-carrousel">Probablement de la bouffe</p>
-                    <div class="btn-item-carrousel">
-                        <a href="">
-                            Visiter la page
-                        </a>
-                    </div>
-                </li>
-                <li class="item-carrousel" id="activitePopulaire-2">
-                    <h3 class="titre-item-carrousel">Je suis aussi une activité populaire</h3>
-                    <p class="description-item-carrousel">Probablement de la bouffe</p>
-                    <div class="btn-item-carrousel">
-                        <a href="">
-                            Visiter la page
-                        </a>
-                    </div>
-                </li>
-                <li class="item-carrousel" id="activitePopulaire-3">
-                    <h3 class="titre-item-carrousel">Je suis une troisième activité populaire</h3>
-                    <p class="description-item-carrousel">Probablement de la bouffe</p>
-                    <div class="btn-item-carrousel">
-                        <a href="">
-                            Visiter la page
-                        </a>
-                    </div>
-                </li>
-                <li class="item-carrousel" id="activitePopulaire-3">
-                    <h3 class="titre-item-carrousel">Je suis une activité moins populaire</h3>
-                    <p class="description-item-carrousel">Probablement de la bouffe</p>
-                    <div class="btn-item-carrousel">
-                        <a href="">
-                            Visiter la page
-                        </a>
-                    </div>
-                </li>
-                <li class="item-carrousel" id="activitePopulaire-3">
-                    <h3 class="titre-item-carrousel">Je suis la dernière activité populaire</h3>
-                    <p class="description-item-carrousel">Probablement de la bouffe</p>
-                    <div class="btn-item-carrousel">
-                        <a href="">
-                            Visiter la page
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <ul class="liste-carrousel">
+            <li class="item-carrousel" id="activitePopulaire-1">
+                <h3 class="titre-item-carrousel">Je suis une activité populaire</h3>
+                <p class="description-item-carrousel">Probablement de la bouffe</p>
+                <div class="btn-item-carrousel">
+                    <a href="">
+                        Visiter la page
+                    </a>
+                </div>
+            </li>
+            <li class="item-carrousel" id="activitePopulaire-2">
+                <h3 class="titre-item-carrousel">Je suis aussi une activité populaire</h3>
+                <p class="description-item-carrousel">Probablement de la bouffe</p>
+                <div class="btn-item-carrousel">
+                    <a href="">
+                        Visiter la page
+                    </a>
+                </div>
+            </li>
+            <li class="item-carrousel" id="activitePopulaire-3">
+                <h3 class="titre-item-carrousel">Je suis une troisième activité populaire</h3>
+                <p class="description-item-carrousel">Probablement de la bouffe</p>
+                <div class="btn-item-carrousel">
+                    <a href="">
+                        Visiter la page
+                    </a>
+                </div>
+            </li>
+            <li class="item-carrousel" id="activitePopulaire-3">
+                <h3 class="titre-item-carrousel">Je suis une activité moins populaire</h3>
+                <p class="description-item-carrousel">Probablement de la bouffe</p>
+                <div class="btn-item-carrousel">
+                    <a href="">
+                        Visiter la page
+                    </a>
+                </div>
+            </li>
+            <li class="item-carrousel" id="activitePopulaire-3">
+                <h3 class="titre-item-carrousel">Je suis la dernière activité populaire</h3>
+                <p class="description-item-carrousel">Probablement de la bouffe</p>
+                <div class="btn-item-carrousel">
+                    <a href="">
+                        Visiter la page
+                    </a>
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
-<section class="calendrier">
+<section class="calendrierEvenements">
     <div class="container-titre">
         <h2>Calendrier des évènements</h2>
     </div>
-</section>
-
-    <nav>
-        <ul>
-            <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
-            <li><a href="{{route('.evenements.index')}}">Évènements</a></li>
+    <div class="container-calendrier">
+        <ul class="calendrier">
+            <li class="calendrier-item">
+                <p>allo</p>
+            </li>
+            <li class="calendrier-item">
+                <p>allo2</p>
+            </li>
         </ul>
-    </nav>
+    </div>
+</section>
+<section class="propositionsLogements">
+    <div class="container-titre">
+        <h2>Où se loger</h2>
+    </div>
+    <div class="container-logement">
+        <ul class="calendrier">
+            <li class="calendrier-item">
+                <p>allo</p>
+            </li>
+            <li class="calendrier-item">
+                <p>allo2</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    
+</section>
 @endsection
