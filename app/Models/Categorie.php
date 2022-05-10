@@ -15,7 +15,7 @@ class Categorie extends Model
     public function groupe() {
         return $this->belongsTo(Groupe::class);
     }
-    public function forfaits() {
-        return $this->belongsToMany(Forfait::class);
+    public function entreprises() {
+        return $this->belongsToMany(Entreprise::class);
     }
 }

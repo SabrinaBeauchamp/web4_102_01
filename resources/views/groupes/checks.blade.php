@@ -6,14 +6,14 @@
             @foreach($groupe->categories as $categorie)
             <ul>
                 <li>
-                <label>
+                    <label>
                         @if(in_array($categorie->id, $checkeds))
                             <input type="checkbox" name="categorie_id[]" id="categorie_id_{{$categorie->id}}" value="{{$categorie->id}}" checked="checked">
                         @else
                             <input type="checkbox" name="categorie_id[]" id="categorie_id_{{$categorie->id}}" value="{{$categorie->id}}">
                         @endif
                         {{$categorie->nom}}
-                    </label> 
+                    </label>
                 </li>
             </ul>
             @endforeach

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entreprise;
 use App\Models\Categorie;
-use App\Models\Forfait;
 use App\Models\Groupe;
 use Illuminate\Http\Request;
 
@@ -11,13 +11,13 @@ class CategorieController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $categories = Categorie::all();
-        return view("forfaits.categories.index", ["categories"=>$categories]);
+        return view('categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -28,10 +28,10 @@ class CategorieController extends Controller
     public function create()
     {
         $categorie = new Categorie();
-        $forfaits = Forfait::all();
+        $entreprises = Entreprise::all();
         $groupes = Groupe::all();
-        return view("forfaits.categories.create", 
-            ["categorie"=>$categorie, "forfaits"=>$forfaits, "groupes"=>$groupes]);
+        return view("categories.create", 
+        ["categorie"=>$categorie, "entreprises"=>$entreprises, "groupes"=>$groupes]);
     }
 
     /**
@@ -45,9 +45,9 @@ class CategorieController extends Controller
         $categorie = new Categorie();
         $categorie->fill($request->all());
         $categorie->save();
-        $forfait_id = $request->get('forfait_id', []);
-        $categorie->forfaits()->sync($forfait_id);
-        return redirect()->route("forfaits.categories.index");
+        $entreprise_id = $request->get('entreprise_id', []);
+        $categorie->entreprises()->sync($entreprise_id);
+        return redirect()->route("groupes.index");
     }
 
     /**
@@ -56,9 +56,13 @@ class CategorieController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show($id)
     {
-        return view("forfaits.categories.show", ["categorie"=>$categorie]);
+        $categorie = Categorie::find($id);
+        $groupes = Groupe::all();
+        $groupeId = $categorie['groupe_id'];
+        $groupe = $groupes[$groupeId];
+        return view('categories.show', ['categorie' => $categorie], ['groupe' => $groupe]);
     }
 
     /**
@@ -69,12 +73,12 @@ class CategorieController extends Controller
      */
     public function edit(Categorie $categorie)
     {
-        $forfaits = Forfait::all();
+        $entreprises = Entreprise::all();
         $groupes = Groupe::all();
-        return view("forfaits.categories.edit", 
+        return view("categories.edit", 
             [
                 "categorie"=>$categorie, 
-                "forfaits"=>$forfaits, 
+                "entreprises"=>$entreprises, 
                 "groupes"=>$groupes
             ]);
     }
@@ -90,9 +94,14 @@ class CategorieController extends Controller
     {
         $categorie->fill($request->all());
         $categorie->save();
-        $forfait_id = $request->get('forfait_id', []);
-        $categorie->forfaits()->sync($forfait_id);
-        return redirect()->route("forfaits.categories.index");
+        $entreprise_id = $request->get('entreprise_id', []);
+        $categorie->entreprises()->sync($entreprise_id);
+        return redirect()->route("groupes.index");
+    }
+
+    public function delete(Categorie $categorie)
+    {
+        return view('categories.delete',['categorie' => $categorie]);
     }
 
     /**
@@ -103,6 +112,7 @@ class CategorieController extends Controller
      */
     public function destroy(Categorie $categorie)
     {
-        //
+        $categorie->delete();
+        return redirect()->route("groupes.index");
     }
 }
