@@ -1,0 +1,13 @@
+.conteneurForfait {
+    background-color: coral;
+    width: 500px;
+    height: 780px;
+
+    &>.conteneurImgForfait {
+        width: 100%;
+        height: 362px;
+        background-color: cornflowerblue;
+        &>.imgForfait {
+        }
+    }
+}

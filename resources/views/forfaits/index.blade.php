@@ -8,8 +8,17 @@
 <div>
     <div class="conteneurForfait">
         <div class="conteneurImgForfait">
+            <img src="" alt="" class="imgForfait">
+            <h1>Forfait escapade gourmande 1</h1>
+        </div>
+        <div class="conteneurInfoForfait">
+            <h2>Catch phrase!</h2>
+            <p>On aime ça faire pousser des plantes icite.</p>
+            <a href="" class="boutonForfait">Découvrez ce forfait</a>
+        </div>
+        <div class="conteneurImgForfait">
             <img src="" alt="" class="imageForfait">
-            <h1>Forfait escapade gourmande</h1>
+            <h1>Forfait escapade gourmande 2</h1>
         </div>
         <div class="conteneurInfoForfait">
             <h2>Catch phrase!</h2>
