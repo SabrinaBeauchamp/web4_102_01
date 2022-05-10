@@ -13,4 +13,5 @@
             <li><a href="{{route('.evenements.index')}}">Évènements</a></li>
         </ul>
     </nav>
+    <x-champ-pop-up text="Pop-up"></x-champ-pop-up>
 @endsection
