@@ -15,7 +15,7 @@ class EvenementController extends Controller
     public function index()
     {
         $evenements = Evenement::all();
-        return view ('.evenements.index', ['evenements'=>$evenements]);
+        return view ('evenements.index', ['evenements'=>$evenements]);
     }
 
     /**
@@ -26,7 +26,7 @@ class EvenementController extends Controller
     public function create()
     {
         $evenements = new Evenement();
-        return view ('.evenements.create', ['evenements'=>$evenements]);
+        return view ('evenements.create', ['evenements'=>$evenements]);
     }
 
     /**
@@ -40,7 +40,7 @@ class EvenementController extends Controller
         $evenement = new Evenement();
         $evenement->fill($request->all());
         $evenement->save();
-        return redirect()->route('.evenements.index', $evenement);
+        return redirect()->route('evenements.index', $evenement);
     }
 
     /**
@@ -51,7 +51,7 @@ class EvenementController extends Controller
      */
     public function show(Evenement $evenement)
     {
-        return view (".evenements.show", ['evenement'=>$evenement]);
+        return view ("evenements.show", ['evenement'=>$evenement]);
     }
 
     /**
@@ -62,7 +62,7 @@ class EvenementController extends Controller
      */
     public function edit(Evenement $evenement)
     {
-        return view('.evenements.edit', ['evenements'=>$evenement]);
+        return view('evenements.edit', ['evenements'=>$evenement]);
     }
 
     /**
@@ -76,7 +76,7 @@ class EvenementController extends Controller
     {
         $evenement->fill($request->all());
         $evenement->save();
-        return redirect()->route('.evenements.show', $evenement);
+        return redirect()->route('evenements.show', $evenement);
     }
 
     /**
@@ -87,7 +87,7 @@ class EvenementController extends Controller
      */
     public function delete(Evenement $evenement)
     {
-        return view('.evenements.delete', ['evenements'=>$evenement]);
+        return view('evenements.delete', ['evenements'=>$evenement]);
     }
 
     /**
@@ -100,9 +100,9 @@ class EvenementController extends Controller
     {
         if ($request->has('delete')) {
             $evenement->delete();
-            return redirect()->route('.evenements.index');
+            return redirect()->route('evenements.index');
         } else {
-            return redirect()->route('.evenements.show', $evenement);
+            return redirect()->route('evenements.show', $evenement);
         }
     }
 }

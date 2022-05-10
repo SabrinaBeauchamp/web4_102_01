@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategorieForfaitsTable extends Migration
+class CreateCategorieForfaitTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCategorieForfaitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorie_forfaits', function (Blueprint $table) {
+        Schema::create('categorie_forfait', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateCategorieForfaitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorie_forfaits');
+        Schema::dropIfExists('categorie_forfait');
     }
 }
