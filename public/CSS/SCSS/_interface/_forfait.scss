@@ -8,6 +8,19 @@
         height: 362px;
         background-color: cornflowerblue;
         &>.imgForfait {
+
+        }
+    }
+
+    &>.conteneurInfoForfait{
+        &>h2{
+            color: white;
+        }
+        &>a{
+            background-color:crimson;
+            width:480px;
+            height:70px;
+            border-radius: 15px;
         }
     }
 }

@@ -11968,4 +11968,15 @@ fieldset:disabled .btn {
   height: 362px;
   background-color: cornflowerblue;
 }
+
+.conteneurForfait > .conteneurInfoForfait > h2, .conteneurForfait > .conteneurInfoForfait > .h2 {
+  color: white;
+}
+
+.conteneurForfait > .conteneurInfoForfait > a {
+  background-color: crimson;
+  width: 480px;
+  height: 70px;
+  border-radius: 15px;
+}
 /*# sourceMappingURL=style.css.map */
