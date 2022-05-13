@@ -1,3 +1,3 @@
 <div>
-    <button type="{{$type}}">{{$titre}}</button>
+    <button type="{{$type}}" href="{{$href}}">{{$titre}}</button>
 </div>

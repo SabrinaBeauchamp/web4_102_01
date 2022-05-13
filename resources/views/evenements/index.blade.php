@@ -10,5 +10,5 @@ Tout les évènements
         @else
             <p>la liste est vide</p>
     @endif
-    <x-champ-lien href="{{route('.evenements.create')}}" titre="Créer un nouveau évènement"></x-champ-lien>
+    <x-champ-lien href="{{route('evenements.create')}}" titre="Créer un nouveau évènement"></x-champ-lien>
 @endsection

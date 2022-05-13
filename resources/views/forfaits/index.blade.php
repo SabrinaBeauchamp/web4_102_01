@@ -5,10 +5,11 @@
 @endsection
 
 @section('contenu')
-    @if($forfaits->count() > 0)
-            @include('forfaits.list')
-        @else
-            <p>la liste est vide</p>
-    @endif
+    @foreach($forfaits as $forfait)
+    <h2>
+        <x-champ-lien href="{{route('forfaits.show', $forfait)}}" titre="{{$forfait->nom}}"></x-champ-lien>
+        </h2>
+    @endforeach
     <x-champ-lien href="{{route('forfaits.create')}}" titre="Créer un nouveau forfait"></x-champ-lien>
+    <x-champ-lien href="{{route('forfaits.categories.index')}}" titre="Retour dans liste des catégories de forfait"></x-champ-lien>
 @endsection

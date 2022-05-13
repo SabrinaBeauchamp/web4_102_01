@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\forfait;
+use App\Models\CategorieForfait;
 use Illuminate\Http\Request;
+use Image;
 
 class ForfaitController extends Controller
 {
@@ -15,7 +17,8 @@ class ForfaitController extends Controller
     public function index()
     {
         $forfaits = Forfait::all();
-        return view("forfaits.index", ['forfaits'=>$forfaits]);
+        $categories = CategorieForfait::all();
+        return view("forfaits.index", ['forfaits'=>$forfaits,'categories'=>$categories]);
     }
     
     /**
@@ -26,7 +29,8 @@ class ForfaitController extends Controller
     public function create()
     {
         $forfaits = new Forfait();
-        return view("forfaits.create", ['forfaits'=>$forfaits]);
+        $categories = CategorieForfait::all();
+        return view("forfaits.create", ['forfait'=>$forfaits, 'categories'=>$categories]);
     }
 
     /**
@@ -40,6 +44,8 @@ class ForfaitController extends Controller
         $forfait = new Forfait();
         $forfait->fill($request->all());
         $forfait->save();
+        $img = Image::make($request->photo)->resize(300, 200);
+        $img->save(public_path("img/forfaits/$forfait->id.jpg"));
         return redirect()->route('forfaits.index', $forfait);
     }
 
