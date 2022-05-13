@@ -66,9 +66,11 @@ class ForfaitController extends Controller
      * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
      */
-    public function edit(forfait $forfait)
+    public function edit(forfait $forfait, Request $request)
     {
-        return view('forfaits.edit', ['forfaits'=>$forfait]);
+        // $img = Image::make($request->photo)->resize(300, 200);
+        // $img->save(public_path("img/forfaits/$forfait->id.jpg"));
+        return view('forfaits.edit', ['forfait'=>$forfait]);
     }
 
     /**
@@ -93,7 +95,7 @@ class ForfaitController extends Controller
      */
     public function delete(Forfait $forfait)
     {
-        return view('forfaits.delete', ['forfaits'=>$forfait]);
+        return view('forfaits.delete', ['forfait'=>$forfait]);
     }
 
     /**

@@ -12,5 +12,5 @@
         @include("forfaits.list", ['forfaits'=>$categorie->forfaits])
     @endif
     <x-champ-lien href="{{route('forfaits.categories.index')}}" titre="Retour aux catégories de forfait"></x-champ-lien>
-    <x-champ-lien href="{{route('forfaits.categories.create')}}" titre="Créer une nouvelle catégorie de forfait"></x-champ-lien>
+    <x-champ-lien href="{{route('forfaits.create')}}" titre="Créer un forfait"></x-champ-lien>
 @endsection

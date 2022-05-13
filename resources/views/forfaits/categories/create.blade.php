@@ -10,11 +10,9 @@
         @csrf
         <x-champ-text name="nom" label="Nom">{{$categorie->nom}}</x-champs-text>
         
-       <div>
-            <button data-icon="done" type="submit">Créer le forfait</button>
-        </div>
+        <x-champ-button type="'submit'" titre="'Créer la catégorie'"></x-champ-button>
     </form>
     <div class="options">
-        <a data-icon="calendar_view_month" href="{{route('forfaits.index')}}">Retour aux forfaits</a>
+        <x-champ-lien  href="{{route('forfaits.categories.index')}}" titre="'Retour aux categories des forfaits"></x-champ-lien>
     </div>
 @endsection

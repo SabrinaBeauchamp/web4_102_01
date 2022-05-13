@@ -8,13 +8,10 @@
 <h2>Voulez-vous supprimer ce forfait {{$forfaits->nom}}</h2>
     <form action="{{route('.categories.destroy', $categorie)}}" method="post">
         @csrf
-        <div><button type="submit" name="delete">Supprimer la catégorie</button></div>
-        
-        <div>
-            <button data-icon="done" type="submit">Modifier la catégorie</button>
-        </div>
+        <x-champ-button type="submit" titre="'Supprimer la catégorie'"></x-champ-button>
+        <x-champ-button-delete type="submit" titre="'Modifier la catégorie'"></x-champ-button>
     </form>
     <div class="options">
-        <a data-icon="calendar_view_month" href="{{route('forfaits.categories.index')}}">Retour aux catégories</a>
+        <x-champ-lien  href="{{route('forfaits.categories.index')}}" titre="'Retour aux catégories'"></x-champ-lien>
     </div>
 @endsection

@@ -7,15 +7,12 @@
 @section('contenu')
 <h2>{{$forfait->nom}}</h2>
     <form action="{{route('forfaits.store')}}" method="post">
-        @csrf
-        <x-champ-text name="nom" label="Nom">{{$forfait->nom}}</x-champs-text>
-        <x-champ-number name="prix" label="Prix">{{$forfait->prix}}</x-champs-text>
+        @include('forfaits.form')
         <x-champ-text name="categorie" label="Categorie">{{$forfait->categorie->nom}}</x-champ-text>
-        <x-champ-textArea name="description" label="Description">{{$forfait->description}}</x-champs-text>
-        
+        <x-champ-img src="{{asset('img/forfaits/'.$forfait->id.'.jpg')}}" alt="forfait {{$forfait->id}}"></x-champ-img>
     </form>
     <div class="options">
-        <a data-icon="calendar_view_month" href="{{route('forfaits.index')}}">Retour aux forfaits</a>
-        {{-- <a href="{{route('forfaits.edit', $forfait)}}">Modifier le forfait</a> --}}
+        <x-champ-lien href="{{route('forfaits.categories.show', $forfait->categorie )}}" titre="'Retour aux forfaits'"></x-champ-lien>
+        <x-champ-lien href="{{route('forfaits.edit', $forfait)}}" titre="'Modifier le forfait'"></x-champ-lien>
     </div>
 @endsection
