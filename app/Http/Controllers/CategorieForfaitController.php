@@ -54,7 +54,7 @@ class CategorieForfaitController extends Controller
      */
     public function show(categorieForfait $categorie)
     {
-        return view ("forfaits.categories.show", ['categorie'=>$categorie]);
+        return view("forfaits.categories.show", ["categorie"=>$categorie]);
     }
 
     /**

@@ -9,7 +9,6 @@ class Forfait extends Model
 {
     use HasFactory;
     protected $fillable=[
-      "categorie_id",
       "prix",
       "nom",
       "description",

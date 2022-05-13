@@ -4,4 +4,5 @@
         <x-champ-lien href="{{route('forfaits.edit', $forfait)}}" titre="Modifier"></x-champ-lien>
         <x-champ-lien href="{{route('forfaits.delete', $forfait)}}" titre="Supprimer"></x-champ-lien>
     </div> 
+    
 @endforeach
