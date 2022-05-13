@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
 use App\Http\Controllers\EvenementController;
+use App\Http\Controllers\FavorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,38 +57,52 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-
-
-
-
-
-Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/favories', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/{forfait}', 'show')->name('show');
+    Route::get('/{favorie}', 'show')->name('show');
 
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
 
-    Route::get('/{forfait}/edit', 'edit')->name('edit');
-    Route::post('/{forfait}/edit', 'update')->name('update');
+    Route::get('/{favorie}/edit', 'edit')->name('edit');
+    Route::post('/{favorie}/edit', 'update')->name('update');
 
-    Route::get('/{forfait}/delete', 'delete')->name('delete');
-    Route::post('/{forfait}/delete', 'destroy')->name('destroy');
+    Route::get('/{favorie}/delete', 'delete')->name('delete');
+    Route::post('/{favorie}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/{categorie}', 'show')->name('show');
 
-    Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'store')->name('store');
 
-    Route::get('/{categorie}/edit', 'edit')->name('edit');
-    Route::post('/{categorie}/edit', 'update')->name('update');
 
-    Route::get('/{categorie}/delete', 'delete')->name('delete');
-    Route::post('/{categorie}/delete', 'destroy')->name('destroy');
-});
+
+
+// Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
+//     Route::get('/', 'index')->name('index');
+//     Route::get('/{forfait}', 'show')->name('show');
+
+//     Route::get('/create', 'create')->name('create');
+//     Route::post('/create', 'store')->name('store');
+
+//     Route::get('/{forfait}/edit', 'edit')->name('edit');
+//     Route::post('/{forfait}/edit', 'update')->name('update');
+
+//     Route::get('/{forfait}/delete', 'delete')->name('delete');
+//     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
+// });
+
+// Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+//     Route::get('/', 'index')->name('index');
+//     Route::get('/{categorie}', 'show')->name('show');
+
+//     Route::get('/create', 'create')->name('create');
+//     Route::post('/create', 'store')->name('store');
+
+//     Route::get('/{categorie}/edit', 'edit')->name('edit');
+//     Route::post('/{categorie}/edit', 'update')->name('update');
+
+//     Route::get('/{categorie}/delete', 'delete')->name('delete');
+//     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
+// });
 
 Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
