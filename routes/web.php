@@ -57,7 +57,7 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/favories', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/users/favories', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{favorie}', 'show')->name('show');
 

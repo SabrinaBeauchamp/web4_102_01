@@ -15,7 +15,7 @@ class FavorieController extends Controller
     public function index()
     {
         $favories = Favorie::all();
-        return view("favories.index", ['favories'=>$favories]);
+        return view("users.favories.index", ['favories'=>$favories]);
     }
 
     /**
@@ -26,7 +26,7 @@ class FavorieController extends Controller
     public function create()
     {
         $favorie = new Favorie();
-        return view("favories.create", ["favorie"=>$favorie]);
+        return view("users.favories.create", ["favorie"=>$favorie]);
     }
 
     /**
@@ -40,7 +40,7 @@ class FavorieController extends Controller
         $favorie = new Favorie();
         $favorie->fill($request->all());
         $favorie->save();
-        return redirect()->route("favories.index");
+        return redirect()->route("users.favories.index");
     }
 
     /**
@@ -52,7 +52,7 @@ class FavorieController extends Controller
     public function show($id)
     {
         $favorie = Favorie::find($id);
-        return view('favories.show',['favorie' => $favorie]);
+        return view('users.favories.show',['favorie' => $favorie]);
     }
 
     /**
@@ -63,7 +63,8 @@ class FavorieController extends Controller
      */
     public function edit(favorie $favorie)
     {
-        return view("favories.edit", ["favorie"=>$favorie]);
+        $favories = Favorie::all();
+        return view("users.favories.edit", ["favories"=>$favories]);
     }
 
     /**
@@ -77,12 +78,12 @@ class FavorieController extends Controller
     {
         $favorie->fill($request->all());
         $favorie->save();
-        return redirect()->route("favories.index");
+        return redirect()->route("users.favories.index");
     }
 
     public function delete(Favorie $favorie)
     {
-        return view('favories.delete',['favorie' => $favorie]);
+        return view('users.favories.delete',['favorie' => $favorie]);
     }
 
     /**
@@ -94,6 +95,6 @@ class FavorieController extends Controller
     public function destroy(Favorie $favorie)
     {
         $favorie->delete();
-        return redirect()->route("favories.index");
+        return redirect()->route("users.favories.index");
     }
 }
