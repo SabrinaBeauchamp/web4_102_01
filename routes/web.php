@@ -157,3 +157,7 @@ Route::group(['prefix'=>'/entreprises', 'as'=>'entreprises.', 'controller'=>Entr
     Route::get('/{entreprise}/delete', 'delete')->name('delete');
     Route::post('/{entreprise}/delete', 'destroy')->name('destroy');
 });
+
+Auth::routes();
+
+
