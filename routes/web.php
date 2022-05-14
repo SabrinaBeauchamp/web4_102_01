@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\EntrepriseController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
 use App\Http\Controllers\EvenementController;
@@ -105,4 +106,9 @@ Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'c
 
     Route::get('/{entreprise}/delete', 'delete')->name('delete');
     Route::post('/{entreprise}/delete', 'destroy')->name('destroy');
+});
+
+Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'controller'=>AppController::class], function () {
+    Route::get('/', 'recherche')->name('recherche');
+    Route::get('/entreprise', 'entreprise')->name('rechercheEntreprise');
 });
