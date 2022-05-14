@@ -110,5 +110,5 @@ Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'c
 
 Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'controller'=>AppController::class], function () {
     Route::get('/', 'recherche')->name('recherche');
-    Route::get('/entreprise', 'entreprise')->name('rechercheEntreprise');
+    Route::get('/entreprises', 'rechercheEntreprises')->name('rechercheEntreprise');
 });
