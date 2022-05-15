@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <h1>Page d'inscription</h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -40,6 +41,17 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="role_id">Role</label>
+                            <select name="role_id" id="role_id" class="">
+                                <option value="">-- select --</option>
+                                @foreach($roles as $role)
+                                
+                                <option value="{{$role->id}}">{{$role->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -64,7 +76,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    M'inscrire
                                 </button>
                             </div>
                         </div>

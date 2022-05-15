@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <h1>page de connexion</h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -54,8 +55,9 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    connexion
                                 </button>
+                                <a href="{{route('register')}}"> Pas encore inscrit </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
