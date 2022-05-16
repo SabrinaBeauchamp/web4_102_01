@@ -7,10 +7,8 @@
 @section('contenu')
 <nav>
     <ul>
-        <li><a href="">Gestion de compte</a></li>
-        <li><a href="">Gestion de favories</a></li>
-        <li><a href="">Gestion</a></li>
-        <li><a href="">Gestion</a></li>
+        @yield('gestion')
+        
     </ul>
 </nav>
 <div>

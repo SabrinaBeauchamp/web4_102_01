@@ -6,9 +6,7 @@
 
 @section('contenu')
     @foreach($forfaits as $forfait)
-    <h2>
-        <x-champ-lien href="{{route('forfaits.show', $forfait)}}" titre="{{$forfait->nom}}"></x-champ-lien>
-        </h2>
+        <livewire:forfait-favorie :forfait="$forfait"/>
     @endforeach
     @if(Auth::user()->role->name === 'admin')
     <x-champ-lien href="{{route('forfaits.create')}}" titre="Créer un nouveau forfait"></x-champ-lien>

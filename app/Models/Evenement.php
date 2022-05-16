@@ -14,4 +14,7 @@ class Evenement extends Model
     "nom",
     "description",
     ];
+    public function favories() {
+        return $this->hasMany(Favorie::class);
+      }
 }
