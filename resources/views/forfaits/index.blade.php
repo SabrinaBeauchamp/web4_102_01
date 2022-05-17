@@ -18,17 +18,9 @@ Tout les forfaits
                 <a href="" class="boutonForfait">Découvrez ce forfait</a>
             </div>
         </div>
-        <div class="conteneurForfait">
-            <div class="conteneurImgForfait">
-                <img src="" alt="" class="imgForfait">
-                <h1>Forfait découverte</h1>
-            </div>
-            <div class="conteneurInfoForfait">
-                <h2>Catch phrase!</h2>
-                <p>On aime ça faire pousser des plantes icite.</p>
-                <a href="" class="boutonForfait">Découvrez ce forfait</a>
-            </div>
-        </div>
+        @foreach($forfaits as $forfait)
+            {{$forfait['nom']}}
+        @endforeach
     </div>
     <div class="conteneurCirclePage">
         <input type="radio" class="radio1">
