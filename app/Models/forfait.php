@@ -16,4 +16,13 @@ class Forfait extends Model
     public function categorie(){
         return $this->belongsTo(CategorieForfait::class, 'categorie_id');
     }
+    public function favorie() {
+      return $this->hasMany(Favorie::class);
+    }
+    public function estFavorie() {
+      if (auth()->check()) {
+        return auth()->user()->favories->contains('id', $this->id);
+      }
+    }
+    
 }

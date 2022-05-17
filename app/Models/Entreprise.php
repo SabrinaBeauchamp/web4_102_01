@@ -24,4 +24,7 @@ class Entreprise extends Model
     public function categories() {
         return $this->belongsToMany(Categorie::class);
     }
+    public function favories() {
+        return $this->hasMany(Favorie::class);
+    }
 }
