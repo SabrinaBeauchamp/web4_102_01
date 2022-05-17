@@ -6,6 +6,7 @@ use App\Models\forfait;
 use App\Models\CategorieForfait;
 use App\Models\Favorie;
 use Illuminate\Http\Request;
+
 use Image;
 
 class ForfaitController extends Controller

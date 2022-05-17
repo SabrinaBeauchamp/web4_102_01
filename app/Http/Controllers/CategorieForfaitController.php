@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CategorieForfait;
 use App\Models\Entreprise;
+use App\Models\forfait;
 use Illuminate\Http\Request;
 
 class CategorieForfaitController extends Controller
@@ -69,7 +70,7 @@ class CategorieForfaitController extends Controller
         return view("categories.edit",
             [
                 "categorie"=>$categorie, 
-                "forfaits"=>$entreprises, 
+                "forfaits"=>$forfaits, 
             ]);
     }
 

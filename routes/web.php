@@ -10,7 +10,7 @@ use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-
+use App\Models\Entreprise;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,9 @@ Route::get('/agrotouristique', function() {
 //     return view('users.gestionaires.index');
 // });
 
-Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+']], function () {
+
+
+Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{user}', 'show')->name('show');
 
@@ -74,7 +76,7 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/users/favories', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{favorie}', 'show')->name('show');
 

@@ -14,7 +14,9 @@ class FavorieController extends Controller
      */
     public function index()
     {
-        $favories = Favorie::all();
+        // $user = auth()->user();
+        $favories = Favorie::all();;
+        dd($favories);
         return view("users.favories.index", ['favories'=>$favories]);
     }
 

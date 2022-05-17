@@ -49,7 +49,13 @@ class User extends Authenticatable
     public function hasPermission($name) {
         return $this->role->permissions()->where('name', $name)->exists();
     }
-    public function likes() {
-        return $this->belongsToMany(Favorie::class);
+    public function likesEntreprises() {
+        return $this->morphedByMany(Entreprise::class, 'favorie');
+    }
+    public function likesForfaits() {
+        return $this->morphedByMany(Forfait::class, 'favorie');
+    }
+    public function likesEvenements() {
+        return $this->morphedByMany(Evenement::class, 'favorie');
     }
 }

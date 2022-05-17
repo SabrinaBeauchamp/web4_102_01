@@ -27,4 +27,11 @@ class Entreprise extends Model
     public function favories() {
         return $this->hasMany(Favorie::class);
     }
+    public function likes() {
+        return dd("likes");
+    }
+
+
+    ///route: favorie/entreprise/1  ->fait attach
+    ///autre: ".../delete  -> fait detach
 }

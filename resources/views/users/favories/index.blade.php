@@ -1,12 +1,15 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.dashboard')
 
-@section('titre')
-    Tout mes favories
+@section('titre gestion')
+    Tous mes favories
 @endsection
 
-@section('contenu')
-<h3>Entreprises</h3>
-<h3>Évènements</h3>
-<h3>Forfaits</h3>
-<x-champ-lien href="{{route('favories.edit', $favories)}}" titre="Modifier la liste de tes favories"></x-champ-lien>
+@section('contenu gestion')
+    @foreach($favories as $favorie)
+    {{$favorie->favorie_id}}
+
+    @endforeach
+    <h3>Entreprises</h3>
+    <h3>Évènements</h3>
+    <h3>Forfaits</h3>
 @endsection

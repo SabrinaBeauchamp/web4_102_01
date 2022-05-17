@@ -17,6 +17,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
+        // $users[0]->likesEntreprises()->attach(2);
+        // dd($users[0]->likesEntreprises);
         return view('users.gestionaires.index', ['users' => $users]);
     }
 
@@ -55,6 +57,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
+        dd($user->likesEntreprises);
         $roles = Role::all();
         return view('users.gestionaires.show', ['user' => $user]);
     }
@@ -67,8 +70,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $groupes = Groupe::all();
-        return view("users.edit", ["user"=>$user, "groupes"=>$groupes]);
+        return view("users.edit", ["user"=>$user]);
     }
 
     /**
