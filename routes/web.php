@@ -10,7 +10,7 @@ use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
-
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,13 @@ Route::get('/agrotouristique', function() {
 //     return view('users.gestionaires.index');
 // });
 
-Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+']], function () {
+Route::group([
+    'prefix'=>'/dashboard', 
+    'as'=>'users.gestionaires.', 
+    'controller'=>UserController::class, 
+    'where'=>['user'=>'[0-9]+'], 
+    'middleware'=>'auth'], 
+    function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{user}', 'show')->name('show');
 
@@ -135,7 +141,9 @@ Route::group(['prefix'=>'/entreprises', 'as'=>'entreprises.', 'controller'=>Entr
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
 
-    Route::get('/{entreprise}/edit', 'edit')->name('edit');
+    Route::get('/{entreprise}/edit', 'edit')
+        ->name('edit')
+        ->middleware('auth');
     Route::post('/{entreprise}/edit', 'update')->name('update');
 
     Route::get('/{entreprise}/delete', 'delete')->name('delete');
