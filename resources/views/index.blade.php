@@ -41,8 +41,8 @@
                     <i class="btn-ouvrirPanneau" tabindex="0"></i>
                 </div>
             </div>
+            <!-- PANNEAUX -->
             <div class="container-panneau">
-                <!-- PANNEAU -->
                 <div class="panneau isPanneau panneau-close">
                     <h2>Groupes</h2>
                     <ul class="menu1">
@@ -123,47 +123,46 @@
                         </li>
                     </ul>
                 </div>
-                <div class="panneau isPanneau panneau-close">
+                <div class="panneau3 isPanneau panneau-close">
                     <h2>Groupes</h2>
-                    <ul class="menu1">
+                    <ul class="menu3">
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Agriculture
                             </button>
                         </li>
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Groupe
                             </button>
                         </li>
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Groupe
                             </button>
                         </li>
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Groupe
                             </button>
                         </li>
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Groupe
                             </button>
                         </li>
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Groupe
                             </button>
                         </li>
                         <li>
-                            <button class="btn1">
+                            <button class="btn3">
                                 Groupe
                             </button>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </nav>
     </div>
@@ -201,7 +200,53 @@
                 <h2 class="titre2">de la saison</h2>
             </div>
             <div id="container-carrousel">
-
+                <ul class="liste-carrousel">
+                    <li class="item-carrousel">
+                        <div class="activitePopulaire">
+                            <div class="activitePopulaire-container-texte">
+                                <h3>Activité populaire</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                    <li class="item-carrousel">
+                        <div class="activitePopulaire">
+                            <div class="activitePopulaire-container-texte">
+                                <h3>Activité populaire</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                    <li class="item-carrousel">
+                        <div class="activitePopulaire">
+                            <div class="activitePopulaire-container-texte">
+                                <h3>Activité populaire</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                    <li class="item-carrousel">
+                        <div class="activitePopulaire">
+                            <div class="activitePopulaire-container-texte">
+                                <h3>Activité populaire</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                    <li class="item-carrousel">
+                        <div class="activitePopulaire">
+                            <div class="activitePopulaire-container-texte">
+                                <h3>Activité populaire</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
         <section class="calendrierEvenements">
@@ -273,7 +318,6 @@
                 </ul>
             </div>
         </section>
-        
     </main>
     <!-- Footer de la page -->
     <footer>
@@ -286,6 +330,7 @@
         </section>
     </footer>
 </div>
-<script src="felixJs/script.js"></script>
+<script src="felixJs/Menu.js"></script>
+<script src="felixJs/Animations.js"></script>
 </body>
 </html>
