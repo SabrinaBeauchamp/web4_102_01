@@ -16,7 +16,6 @@ class FavorieController extends Controller
     {
         // $user = auth()->user();
         $favories = Favorie::all();;
-        dd($favories);
         return view("users.favories.index", ['favories'=>$favories]);
     }
 
@@ -30,7 +29,7 @@ class FavorieController extends Controller
         $favorie = new Favorie();
         return view("users.favories.create", ["favorie"=>$favorie]);
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -44,7 +43,7 @@ class FavorieController extends Controller
         $favorie->save();
         return redirect()->route("users.favories.index");
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -54,6 +53,8 @@ class FavorieController extends Controller
     public function show($id)
     {
         $favorie = Favorie::find($id);
+        $user = auth()->user();
+        $user->likesEntreprises()->attach($id);
         return view('users.favories.show',['favorie' => $favorie]);
     }
 
@@ -85,6 +86,8 @@ class FavorieController extends Controller
 
     public function delete(Favorie $favorie)
     {
+        $user = auth()->user();
+        $user->likesEntreprises()->detach($favorie->id);
         return view('users.favories.delete',['favorie' => $favorie]);
     }
 
