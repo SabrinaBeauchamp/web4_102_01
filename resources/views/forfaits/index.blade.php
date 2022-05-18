@@ -18,6 +18,9 @@ Tout les forfaits
                 <a href="" class="boutonForfait">Découvrez ce forfait</a>
             </div>
         </div>
+        @foreach($forfaits as $forfait)
+            {{$forfait['nom']}}
+        @endforeach
     </div>
     <div class="conteneurCirclePage">
         <input type="radio" class="radio1">
