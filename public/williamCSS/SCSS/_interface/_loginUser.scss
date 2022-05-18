@@ -1,0 +1,21 @@
+//SCSS du login de l'user
+//----------------------------------------------------------------
+
+div.conteneurLoginUser {
+    background-color: grey;
+    width: 100vw;
+    height: 100vh;
+
+    &>.messageAccueil {
+        text-align: center;
+    }
+
+    .conteneurBoiteLogin {
+        background-color: white;
+        width:835px;
+        height: 634px;
+        margin: 0 auto;
+        box-shadow: 0px 11px 15px 5px rgba(0,0,0,0.41);
+
+    }
+}
