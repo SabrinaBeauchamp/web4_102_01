@@ -78,10 +78,10 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
 
 Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/{favorie}', 'show')->name('show');
+    Route::get('/{favorie}/like', 'like')->name('like');
 
-    Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'store')->name('store');
+    Route::get('{favorie}/create', 'create')->name('create');
+    Route::post('{favorie}/create', 'store')->name('store');
 
     Route::get('/{favorie}/edit', 'edit')->name('edit');
     Route::post('/{favorie}/edit', 'update')->name('update');
@@ -133,6 +133,9 @@ Route::group(['prefix'=>'/categories', 'as'=>'categories.', 'controller'=>Catego
 Route::group(['prefix'=>'/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{entreprise}', 'show')->name('show');
+
+    Route::get('/{entreprise}/like', [FavorieController::class, 'like'])->name('like');
+    Route::get('/{entreprise}/dislike', [FavorieController::class, 'dislike'])->name('dislike');
 
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');

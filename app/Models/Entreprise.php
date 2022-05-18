@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Entreprise extends Model
 {
     use HasFactory;
@@ -27,8 +28,12 @@ class Entreprise extends Model
     public function favories() {
         return $this->hasMany(Favorie::class);
     }
-    public function likes() {
-        return dd("likes");
+    public function users() {
+        return $this->morphToMany(User::class, 'favorie');
+    }
+    public function getIsLikedAttribute() {
+        return !!$this->users()->find(\Auth::user()->id);
+
     }
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Favorie;
 use Illuminate\Http\Request;
+use Auth;
 
 class FavorieController extends Controller
 {
@@ -50,12 +51,12 @@ class FavorieController extends Controller
      * @param  \App\Models\favorie  $favorie
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function like($id)
     {
-        $favorie = Favorie::find($id);
-        $user = auth()->user();
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
         $user->likesEntreprises()->attach($id);
-        return view('users.favories.show',['favorie' => $favorie]);
+        return ["resultat"=>true];
     }
 
     /**
@@ -84,11 +85,11 @@ class FavorieController extends Controller
         return redirect()->route("users.favories.index");
     }
 
-    public function delete(Favorie $favorie)
+    public function dislike($id)
     {
-        $user = auth()->user();
-        $user->likesEntreprises()->detach($favorie->id);
-        return view('users.favories.delete',['favorie' => $favorie]);
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        return ["resultat"=>false];
     }
 
     /**

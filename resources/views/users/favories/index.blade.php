@@ -5,8 +5,8 @@
 @endsection
 
 @section('contenu gestion')
-    @foreach($favories as $favorie)
-    {{$favorie->favorie_id}}
+    @foreach(Auth::user()->likesEntreprises as $entreprise)
+    {{$entreprise->nom}}
 
     @endforeach
     <h3>Entreprises</h3>
