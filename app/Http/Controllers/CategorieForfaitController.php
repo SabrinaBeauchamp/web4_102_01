@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategorieForfait;
-use App\Models\Forfaits;
+use App\Models\Entreprise;
 use Illuminate\Http\Request;
 
 class CategorieForfaitController extends Controller
@@ -27,11 +27,11 @@ class CategorieForfaitController extends Controller
     public function create()
     {
         $categorie = new CategorieForfait();
-        $forfaits = Forfaits::all();
+        $entreprises = Entreprise::all();
         return view ("forfaits.categories.create",
-            ["categorie"=>$categorie, "forfaits"=>$forfaits]);
+        ["categorie"=>$categorie, "entreprises"=>$entreprises]);
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -40,11 +40,9 @@ class CategorieForfaitController extends Controller
      */
     public function store(Request $request)
     {
-        $categorie = new Categorie();
+        $categorie = new CategorieForfait();
         $categorie->fill($request->all());
         $categorie->save();
-        $forfaits_id = $request->get('forfaits_id', []);
-        $categorie->forfaits()->sync($forfaits_id);
         return redirect()->route("forfaits.categories.index");
     }
 
@@ -67,8 +65,8 @@ class CategorieForfaitController extends Controller
      */
     public function edit(categorieForfait $categorie)
     {
-        $forfaits = forfaits::all();
-        return view("forfaits.categories.edit",
+        $forfaits = forfait::all();
+        return view("categories.edit",
             [
                 "categorie"=>$categorie, 
                 "forfaits"=>$entreprises, 
@@ -88,7 +86,7 @@ class CategorieForfaitController extends Controller
         $categorie->save();
         $forfaits_id = $request->get('forfaits_id', []);
         $categorie->forfaits()->sync($forfaits_id);
-        return redirect()->route("forfaits.categories.index");
+        return redirect()->route("categories.index");
     }
 
     /**
