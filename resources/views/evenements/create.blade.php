@@ -9,7 +9,7 @@ Création d'un évènements
     @include('evenements.form')
     <x-champ-date name="date" label="Date de l'évènement"></x-champ-date>
     
-    <x-champ-button type="submit" titre="Créer l'évènement"></x-champ-button>
+    <x-champ-button href="" type="submit" titre="Créer l'évènement"></x-champ-button>
 </form>
     <x-champ-lien href="{{route('forfaits.create')}}" titre="Créer un nouveau forfait"></x-champ-lien>
 @endsection

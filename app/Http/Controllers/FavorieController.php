@@ -9,6 +9,77 @@ use Auth;
 class FavorieController extends Controller
 {
     /**
+     * Ajouter dans les favories.
+     *
+     * @param  $id 
+     * @return \Illuminate\Http\resultat
+     */
+    public function like($id)
+    {
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        $user->likesEntreprises()->attach($id);
+        return ["resultat"=>true];
+    }
+
+    /**
+     * enlever des favories
+     */
+    public function dislike($id)
+    {
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        return ["resultat"=>false];
+    }
+    /**
+     * Ajouter dans les favories.
+     *
+     * @param  $id 
+     * @return \Illuminate\Http\resultat
+     */
+    public function likeF($id)
+    {
+        $user = Auth::user();
+        $user->likesForfaits()->detach($id);
+        $user->likesForfaits()->attach($id);
+        return ["resultat"=>true];
+    }
+
+    /**
+     * enlever des favories
+     */
+    public function dislikeF($id)
+    {
+        $user = Auth::user();
+        $user->likesForfaits()->detach($id);
+        return ["resultat"=>false];
+    }
+    /**
+     * Ajouter dans les favories.
+     *
+     * @param  $id 
+     * @return \Illuminate\Http\resultat
+     */
+    public function likeE($id)
+    {
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        $user->likesEntreprises()->attach($id);
+        return ["resultat"=>true];
+    }
+
+    /**
+     * enlever des favories
+     */
+    public function dislikeE($id)
+    {
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        return ["resultat"=>false];
+    }
+
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -46,20 +117,6 @@ class FavorieController extends Controller
     }
     
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\favorie  $favorie
-     * @return \Illuminate\Http\Response
-     */
-    public function like($id)
-    {
-        $user = Auth::user();
-        $user->likesEntreprises()->detach($id);
-        $user->likesEntreprises()->attach($id);
-        return ["resultat"=>true];
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\favorie  $favorie
@@ -85,12 +142,6 @@ class FavorieController extends Controller
         return redirect()->route("users.favories.index");
     }
 
-    public function dislike($id)
-    {
-        $user = Auth::user();
-        $user->likesEntreprises()->detach($id);
-        return ["resultat"=>false];
-    }
 
     /**
      * Remove the specified resource from storage.

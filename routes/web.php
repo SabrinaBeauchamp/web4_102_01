@@ -66,6 +66,9 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
 
+    Route::get('/{forfait}/like', [FavorieController::class, 'likeF'])->name('like');
+    Route::get('/{forfait}/dislike', [FavorieController::class, 'dislikeF'])->name('dislike');
+
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
 
@@ -93,6 +96,9 @@ Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'
 Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{evenement}', 'show')->name('show');
+
+    Route::get('/{evenement}/like', [FavorieController::class, 'likeE'])->name('like');
+    Route::get('/{evenement}/dislike', [FavorieController::class, 'dislikeE'])->name('dislike');
 
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
