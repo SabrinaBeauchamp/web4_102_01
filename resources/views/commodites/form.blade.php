@@ -13,5 +13,5 @@
 </div>
 <div>
     <label for="groupe_id">Groupe</label>
-    <!-- include("groupeCommodite.select", ['selected'=>$commodite->groupecommodite_id]) -->
+    @include("groupeCommodite.select", ['selected'=>$commodite->groupecommodite_id])
 </div>

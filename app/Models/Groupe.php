@@ -9,7 +9,8 @@ class Groupe extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "nom"
+        "nom",
+        "position"
     ];
     public function categories() {
         return  $this->hasMany(Categorie::class);
