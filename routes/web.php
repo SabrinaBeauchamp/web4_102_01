@@ -8,6 +8,7 @@ use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
 use App\Http\Controllers\EvenementController;
+use App\Http\Controllers\CommoditeCOntroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +109,35 @@ Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'c
     Route::post('/{entreprise}/delete', 'destroy')->name('destroy');
 });
 
+Route::group(['prefix'=>'/agrotouristique/groupeCommodites', 'as'=>'groupeCommodites.', 'controller'=>CommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{groupeCommodite}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{groupeCommodite}/edit', 'edit')->name('edit');
+    Route::post('/{groupeCommodite}/edit', 'update')->name('update');
+
+    Route::get('/{groupeCommodite}/delete', 'delete')->name('delete');
+    Route::post('/{groupeCommodite}/delete', 'destroy')->name('destroy');
+});
+Route::group(['prefix'=>'/agrotouristique/commodites', 'as'=>'commodites.', 'controller'=>CommoditeController::class, 'where'=>['commodite'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{commodite}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{commodite}/edit', 'edit')->name('edit');
+    Route::post('/{commodite}/edit', 'update')->name('update');
+
+    Route::get('/{commodite}/delete', 'delete')->name('delete');
+    Route::post('/{commodite}/delete', 'destroy')->name('destroy');
+});
+
 Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'controller'=>AppController::class], function () {
     Route::get('/', 'recherche')->name('recherche');
     Route::get('/entreprises', 'rechercheEntreprises')->name('rechercheEntreprise');
+    Route::get('/avancee', 'rechercheEntreprises')->name('rechercheAvancee');
 });

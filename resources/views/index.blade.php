@@ -21,6 +21,8 @@
             <li><a href="{{route('groupes.index')}}">Entreprises</a></li>
             <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
             <li><a href="{{route('.evenements.index')}}">Évènements</a></li>
+            <li><a href="{{route('commodites.index')}}">Commodites</a></li>
+            <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
     </nav>
 @endsection
