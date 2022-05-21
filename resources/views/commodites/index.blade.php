@@ -1,4 +1,4 @@
 @foreach($commodites as $commodite)
-    <p>{{$commodite['nom']}}</p>
+    <a href="{{route('commodites.show', ['commodite'=>$commodite])}}">{{$commodite['nom']}}</a> <br>
 @endforeach
 <a href="{{route('commodites.create')}}">Ajouter une commodite</a>

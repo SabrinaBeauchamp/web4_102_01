@@ -27,8 +27,8 @@ class CommoditeController extends Controller
     public function create()
     {
         $commodite = new Commodite();
-        $groupesCommodite = GroupeCommodite::all();
-        return view("commodites.create", ["commodite"=>$commodite, "groupesCommodite"=>$groupesCommodite]);
+        $groupes = GroupeCommodite::all();
+        return view("commodites.create", ["commodite"=>$commodite, "groupes"=>$groupes]);
     }
 
     /**
@@ -42,7 +42,8 @@ class CommoditeController extends Controller
         $commodite = new Commodite();
         $commodite->fill($request->all());
         $commodite->save();
-        return redirect()->route("groupeCommodite.index");
+        $groupes = GroupeCommodite::all();
+        return redirect()->route("commodites.index");
     }
 
     /**
@@ -51,13 +52,12 @@ class CommoditeController extends Controller
      * @param  \App\Models\Commodite  $commodite
      * @return \Illuminate\Http\Response
      */
-    public function show(Commodite $commodite)
+    public function show($id)
     {
-        $entreprise = Entreprise::find($id);
-        //Récupère seulement la première categorie qu'il appartient
-        $categorie_entreprise = CategorieEntreprise::where('entreprise_id', $id)->first();
-        $categorie = Categorie::find($categorie_entreprise->categorie_id);
-        return view('entreprises.show', ['entreprise' => $entreprise], ['categorie' => $categorie]);
+        $commodite = commodite::find($id);
+        $groupeId = $commodite['groupecommodite_id'];
+        $groupe = GroupeCommodite::find($groupeId);
+        return view('commodites.show', ['commodite' => $commodite], ['groupe' => $groupe]);
     }
 
     /**
@@ -68,7 +68,12 @@ class CommoditeController extends Controller
      */
     public function edit(Commodite $commodite)
     {
-        //
+        $groupes = GroupeCommodite::all();
+        return view("commodites.edit", 
+            [
+                "commodite"=>$commodite,  
+                "groupes"=>$groupes
+            ]);
     }
 
     /**
@@ -80,7 +85,14 @@ class CommoditeController extends Controller
      */
     public function update(Request $request, Commodite $commodite)
     {
-        //
+        $commodite->fill($request->all());
+        $commodite->save();
+        return redirect()->route("commodites.index");
+    }
+
+    public function delete(Commodite $commodite)
+    {
+        return view('commodites.delete',['commodite' => $commodite]);
     }
 
     /**
@@ -91,6 +103,7 @@ class CommoditeController extends Controller
      */
     public function destroy(Commodite $commodite)
     {
-        //
+        $commodite->delete();
+        return redirect()->route("commodites.index");
     }
 }

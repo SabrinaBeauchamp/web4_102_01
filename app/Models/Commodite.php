@@ -14,4 +14,7 @@ class Commodite extends Model
         "description",
         "logo_svg"
     ];
+    public function groupeCommodite() {
+        return $this->belongsTo(GroupeCommodite::class);
+    }
 }
