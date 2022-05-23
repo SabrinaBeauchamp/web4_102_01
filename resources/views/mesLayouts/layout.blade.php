@@ -14,6 +14,7 @@
                 <h1 class="titre">@yield("titre")</h1>
             </a>
         </header>
+        @include('groupes.menu')
         <footer></footer>
         <div class="main">
             @yield("contenu")

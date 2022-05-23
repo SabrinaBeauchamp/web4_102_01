@@ -41,29 +41,32 @@ class AppController extends Controller
     //Recherche avancée
     public function rechercheEntreprises(Request $request)
     {
-        $groupeAppartenance = Groupe::find($request->groupe);
-        $categoriesDuGroupe = Categorie::where("groupe_id", "LIKE", "%$groupeAppartenance->id%")
-            ->select('id', 'nom')->get();
-        $entreprisesDuGroupe = collect();
-        //Pour chaque categorie dans le groupe
-        foreach($categoriesDuGroupe as $categorie)
-        {
-            $entreprisesId = CategorieEntreprise::where("categorie_id", "LIKE", "%$categorie->id%")
-                ->select('entreprise_id')->get();
-            //Pour chaque entreprise dans la categorie
-            foreach($entreprisesId as $entrepriseId)
-            {
-                $entreprise = Entreprise::find($entrepriseId->entreprise_id);
-                $entreprisesDuGroupe = $entreprisesDuGroupe->merge($entreprise);
-            }
-        }
-        
-        $groupes = Groupe::all();
+        $groupes = $request->groupes;
+        var_dump($groupes);
+
+        // $groupeAppartenance = Groupe::find($request->groupe);
+        // $categoriesDuGroupe = Categorie::whereIn("groupe_id", $groupes)
+        //     ->select('id', 'nom')
+        //     ->get()
+        //     ->pluck('id')
+        //     ->toArray();
+
+        // $entreprises = Entreprise::whereHas("categories", function($q) use($categoriesDuGroupe){ 
+        //     $q->whereIn("categories.id", $categoriesDuGroupe);
+        // })->get();
+        $entreprises = Entreprise::whereHas("categories", function($q) use($groupes){ 
+            $q->whereIn("groupe_id", $groupes);
+        })
+        ->where("nom", "LIKE", "%$request->q%")
+        ->orWhere("description", "LIKE", "%$request->q%")
+        ->get();
+        //dd($entreprises);
+
 
         $entreprises = Entreprise::where("nom", "LIKE", "%$request->q%")
         //->orWhere me permet de récupéré à partir d'une autre columne
             ->select('id', 'nom', "entreprises as model")
             ->orderBy('nom')->get();
-        return view("rechercheAvancee", ['resultats'=>$entreprises], ['groupes'=>$groupes]);
+        return view("rechercheAvancee", ['resultats'=>$entreprises]);
     }
 }

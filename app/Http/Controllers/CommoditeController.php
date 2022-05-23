@@ -85,6 +85,7 @@ class CommoditeController extends Controller
      */
     public function update(Request $request, Commodite $commodite)
     {
+
         $commodite->fill($request->all());
         $commodite->save();
         return redirect()->route("commodites.index");

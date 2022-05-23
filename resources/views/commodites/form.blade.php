@@ -12,6 +12,6 @@
     <span><input type="text" name="logo_svg" id="logo_svg" value="{{$commodite->logo_svg}}"></span>
 </div>
 <div>
-    <label for="groupe_id">Groupe</label>
+    <label for="groupecommodite_id">Groupe</label>
     @include("groupeCommodite.select", ['selected'=>$commodite->groupecommodite_id])
 </div>

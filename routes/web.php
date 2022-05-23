@@ -27,6 +27,9 @@ Route::get('/', function() {
 Route::get('/agrotouristique', function() {
     return view('index');
 });
+Route::get('/menu', function() {
+    return view('groupes.menu');
+});
 Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');

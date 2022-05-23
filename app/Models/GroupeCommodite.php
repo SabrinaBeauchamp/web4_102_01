@@ -9,4 +9,11 @@ class GroupeCommodite extends Model
 {
     use HasFactory;
     protected $table = "groupescommodites";
+    protected $fillable = [
+        "nom"
+    ];
+
+    public function commodite() {
+        return  $this->hasMany(Commodite::class);
+    }
 }

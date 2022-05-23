@@ -1,4 +1,4 @@
-<select name="groupe" id="groupe">
+<select name="groupecommodite_id" id="groupecommodite_id">
     @foreach($groupes as $groupe)
         @if(isset($selected) && $groupe->id === $selected)
             <option value="{{$groupe->id}}" selected="selected">{{$groupe->nom}}</option>

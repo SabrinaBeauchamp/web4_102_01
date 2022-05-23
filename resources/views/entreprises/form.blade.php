@@ -36,5 +36,5 @@
     <span><input type="text" name="description" id="description" value="{{$entreprise->description}}"></span>
 </div>
 <div>
-    @include('groupes.checks', ['checkeds'=>$entreprise->categories->pluck("id")->toArray()])
+    @include('categories.checks', ['checkeds'=>$entreprise->categories->pluck("id")->toArray()])
 </div>
