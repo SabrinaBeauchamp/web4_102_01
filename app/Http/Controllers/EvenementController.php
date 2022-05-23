@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evenement;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class EvenementController extends Controller
@@ -26,7 +27,8 @@ class EvenementController extends Controller
     public function create()
     {
         $evenements = new Evenement();
-        return view ('evenements.create', ['evenements'=>$evenements]);
+        $villes = Ville::all();
+        return view ('evenements.create', ['evenement'=>$evenements, 'villes'=>$villes]);
     }
 
     /**
@@ -51,7 +53,8 @@ class EvenementController extends Controller
      */
     public function show(Evenement $evenement)
     {
-        return view ("evenements.show", ['evenement'=>$evenement]);
+        $villes = Ville::all();
+        return view ("evenements.show", ['evenement'=>$evenement, 'villes'=>$villes]);
     }
 
     /**
@@ -62,7 +65,8 @@ class EvenementController extends Controller
      */
     public function edit(Evenement $evenement)
     {
-        return view('evenements.edit', ['evenements'=>$evenement]);
+        $villes = Ville::all();
+        return view ("evenements.edit", ['evenement'=>$evenement, 'villes'=>$villes]);
     }
 
     /**
@@ -76,6 +80,7 @@ class EvenementController extends Controller
     {
         $evenement->fill($request->all());
         $evenement->save();
+        
         return redirect()->route('evenements.show', $evenement);
     }
 

@@ -10,7 +10,7 @@
     @if(Auth::user()->role->name === 'admin')
         <li><a href="">Gestion de membre</a></li>
         <li><a href="">Gestion d'activités populaire'</a></li>
-        <li><a href="">Gestion des évènements</a></li>
+        <li><a href="{{route('evenements.index')}}">Gestion des évènements</a></li>
     @else
         <li><a href="">Gestion de compte</a></li>
         <li><a href="{{route('favories.index')}}">Gestion de favories</a></li>

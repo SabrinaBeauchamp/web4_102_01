@@ -11,10 +11,15 @@ class Evenement extends Model
     protected $fillable=[
     "id",
     "date",
+    "prix",
+    "ville_id",
     "nom",
     "description",
     ];
     public function favories() {
-        return $this->hasMany(Favorie::class);
-      }
+      return $this->hasMany(Favorie::class);
+    }
+    public function ville() {
+      return $this->belongsTo(Ville::class, 'ville_id');
+    }
 }
