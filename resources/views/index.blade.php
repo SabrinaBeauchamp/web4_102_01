@@ -6,8 +6,19 @@
 
 @section('contenu')
 <h2>Agrotouristique</h2>
+    <p>Cherche dans tout</p>
+    <form action="{{route('recherche.recherche')}}" method="get">
+        <input type="text" name="q" id="q">
+        <button>Rechercher</button>
+    </form>
+    <p>Cherche seulement les entreprises</p>
+    <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
+        <input type="text" name="q" id="q">
+        <button>Rechercher</button>
+    </form>
     <nav>
         <ul>
+            <li><a href="{{route('groupes.index')}}">Entreprises</a></li>
             <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
             <li><a href="{{route('forfaits.categories.index')}}">Catégories</a></li>
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
@@ -27,6 +38,8 @@
                     <a href="{{route('login')}}">Me connecter</a>
                 </li>
             @endif
+            <li><a href="{{route('commodites.index')}}">Commodites</a></li>
+            <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
     </nav>
     

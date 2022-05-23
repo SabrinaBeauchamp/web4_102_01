@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\EntrepriseController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
 use App\Http\Controllers\EvenementController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Models\Entreprise;
+use App\Http\Controllers\CommoditeCOntroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,7 +112,7 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'con
     Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupe}', 'show')->name('show');
 
@@ -123,7 +125,7 @@ Route::group(['prefix'=>'/groupes', 'as'=>'groupes.', 'controller'=>GroupeContro
     Route::get('/{groupe}/delete', 'delete')->name('delete');
     Route::post('/{groupe}/delete', 'destroy')->name('destroy');
 });
-Route::group(['prefix'=>'/categories', 'as'=>'categories.', 'controller'=>CategorieController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'controller'=>CategorieController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{categorie}', 'show')->name('show');
 
@@ -136,7 +138,7 @@ Route::group(['prefix'=>'/categories', 'as'=>'categories.', 'controller'=>Catego
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
-Route::group(['prefix'=>'/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{entreprise}', 'show')->name('show');
 
@@ -168,3 +170,36 @@ Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordCon
 Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+
+Route::group(['prefix'=>'/agrotouristique/groupeCommodites', 'as'=>'groupeCommodites.', 'controller'=>CommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{groupeCommodite}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{groupeCommodite}/edit', 'edit')->name('edit');
+    Route::post('/{groupeCommodite}/edit', 'update')->name('update');
+
+    Route::get('/{groupeCommodite}/delete', 'delete')->name('delete');
+    Route::post('/{groupeCommodite}/delete', 'destroy')->name('destroy');
+});
+Route::group(['prefix'=>'/agrotouristique/commodites', 'as'=>'commodites.', 'controller'=>CommoditeController::class, 'where'=>['commodite'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{commodite}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{commodite}/edit', 'edit')->name('edit');
+    Route::post('/{commodite}/edit', 'update')->name('update');
+
+    Route::get('/{commodite}/delete', 'delete')->name('delete');
+    Route::post('/{commodite}/delete', 'destroy')->name('destroy');
+});
+
+Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'controller'=>AppController::class], function () {
+    Route::get('/', 'recherche')->name('recherche');
+    Route::get('/entreprises', 'rechercheEntreprises')->name('rechercheEntreprise');
+    Route::get('/avancee', 'rechercheEntreprises')->name('rechercheAvancee');
+});

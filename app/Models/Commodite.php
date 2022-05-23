@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Groupe extends Model
+class Commodite extends Model
 {
     use HasFactory;
     protected $fillable = [
         "nom",
-        "position"
+        "groupecommodite_id",
+        "description",
+        "logo_svg"
     ];
-    public function categories() {
-        return  $this->hasMany(Categorie::class);
+    public function groupeCommodite() {
+        return $this->belongsTo(GroupeCommodite::class);
     }
 }
