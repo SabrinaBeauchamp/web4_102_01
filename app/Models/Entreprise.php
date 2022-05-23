@@ -33,7 +33,6 @@ class Entreprise extends Model
     }
     public function getIsLikedAttribute() {
         return !!$this->users()->find(\Auth::user()->id);
-
     }
 
 

@@ -63,8 +63,8 @@ class FavorieController extends Controller
     public function likeE($id)
     {
         $user = Auth::user();
-        $user->likesEntreprises()->detach($id);
-        $user->likesEntreprises()->attach($id);
+        $user->likesEvenements()->detach($id);
+        $user->likesEvenements()->attach($id);
         return ["resultat"=>true];
     }
 
@@ -74,7 +74,7 @@ class FavorieController extends Controller
     public function dislikeE($id)
     {
         $user = Auth::user();
-        $user->likesEntreprises()->detach($id);
+        $user->likesEvenements()->detach($id);
         return ["resultat"=>false];
     }
 

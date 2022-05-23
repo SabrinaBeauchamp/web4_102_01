@@ -24,5 +24,11 @@ class Forfait extends Model
         return auth()->user()->favories->contains('id', $this->id);
       }
     }
+    public function users() {
+      return $this->morphToMany(User::class, 'favorie');
+    }
+    public function getIsLikedAttribute() {
+      return !!$this->users()->find(\Auth::user()->id);
+    }
     
 }

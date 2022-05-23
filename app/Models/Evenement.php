@@ -22,4 +22,10 @@ class Evenement extends Model
     public function ville() {
       return $this->belongsTo(Ville::class, 'ville_id');
     }
+    public function users() {
+      return $this->morphToMany(User::class, 'favorie');
+    }
+    public function getIsLikedAttribute() {
+      return !!$this->users()->find(\Auth::user()->id);
+    }
 }
