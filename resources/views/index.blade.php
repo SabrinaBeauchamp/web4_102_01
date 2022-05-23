@@ -18,11 +18,11 @@
     </form>
     <nav>
         <ul>
-            <li><a href="{{route('groupes.index')}}">Entreprises</a></li>
+            <li><a href="{{route('groupes.index')}}">Groupe</a></li>
             <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
             <li><a href="{{route('forfaits.categories.index')}}">Catégories</a></li>
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
-            <li><a href="{{route('entreprises.index')}}">entreprises</a></li>
+            <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
             <li><a href="{{route('favories.index')}}">Favories</a></li>
         </ul>
         <ul>
