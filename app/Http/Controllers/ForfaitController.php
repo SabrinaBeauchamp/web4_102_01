@@ -61,7 +61,6 @@ class ForfaitController extends Controller
      */
     public function show(forfait $forfait)
     {
-        dd($forfait->categorie);
         return view ("forfaits.show", ['forfait'=>$forfait]);
     }
 
@@ -105,6 +104,7 @@ class ForfaitController extends Controller
      */
     public function delete(Forfait $forfait)
     {
+        $img
         return view('forfaits.delete', ['forfait'=>$forfait]);
     }
 

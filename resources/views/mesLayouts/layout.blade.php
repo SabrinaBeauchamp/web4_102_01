@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="{{asset('')}}"> -->
     <script src="{{asset('js/Favori.js')}}"></script>
+    <script src="{{asset('js/Populaire.js')}}"></script>
     <title>@yield("titre") - Les Forfaits</title>
 </head>
 <body>

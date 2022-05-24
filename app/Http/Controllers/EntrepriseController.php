@@ -9,6 +9,8 @@ use App\Models\Groupe;
 use App\Models\Ville;
 use Illuminate\Http\Request;
 
+use Image;
+
 class EntrepriseController extends Controller
 {
     /**
@@ -20,6 +22,12 @@ class EntrepriseController extends Controller
     {
         $entreprises = Entreprise::all();
         return view('entreprises.index', ['entreprises' => $entreprises]);
+    }
+
+    public function togglePopulaire(Entreprise $entreprise) {
+        $entreprise->populaire = !$entreprise->populaire;
+        $entreprise->save();
+        return ['resultat'=>$entreprise->populaire];
     }
 
     /**
@@ -51,6 +59,16 @@ class EntrepriseController extends Controller
             $categories = $request->categorie_id;
         }
         $entreprise->categories()->sync($categories);
+        dd($request);
+        if($request->file('logo')->isValid()) {
+            $logo = Image::make($request->logo)->resize(300, 200);
+            $logo->save(public_path("img/entreprises/logo/$entreprise->id.jpg"));
+        }
+        if($request->file('photo')->isValid()) {
+            $photo = Image::make($request->photo)->resize(300, 200);
+            $photo->save(public_path("img/entreprises/$entreprise->id.jpg"));
+        }
+        
         return redirect()->route("groupes.index");
     }
 
@@ -114,6 +132,9 @@ class EntrepriseController extends Controller
      */
     public function destroy(Entreprise $entreprise)
     {
+
+        @unlink($entreprise->urlLogo);
+        @unlink($entreprise->urlPhoto);
         $entreprise->delete();
         return redirect()->route("groupes.index");
     }
