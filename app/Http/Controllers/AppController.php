@@ -42,31 +42,27 @@ class AppController extends Controller
     public function rechercheEntreprises(Request $request)
     {
         $groupes = $request->groupes;
-        var_dump($groupes);
 
-        // $groupeAppartenance = Groupe::find($request->groupe);
-        // $categoriesDuGroupe = Categorie::whereIn("groupe_id", $groupes)
-        //     ->select('id', 'nom')
-        //     ->get()
-        //     ->pluck('id')
-        //     ->toArray();
-
-        // $entreprises = Entreprise::whereHas("categories", function($q) use($categoriesDuGroupe){ 
-        //     $q->whereIn("categories.id", $categoriesDuGroupe);
-        // })->get();
-        $entreprises = Entreprise::whereHas("categories", function($q) use($groupes){ 
-            $q->whereIn("groupe_id", $groupes);
-        })
-        ->where("nom", "LIKE", "%$request->q%")
-        ->orWhere("description", "LIKE", "%$request->q%")
-        ->get();
-        //dd($entreprises);
-
-
-        $entreprises = Entreprise::where("nom", "LIKE", "%$request->q%")
-        //->orWhere me permet de récupéré à partir d'une autre columne
-            ->select('id', 'nom', "entreprises as model")
-            ->orderBy('nom')->get();
+        $query = Entreprise::select('id', 'nom', "entreprises as model")
+            ->where(function($query) use($request){
+                $query->orWhere("nom", "LIKE", "%$request->q%");
+                $query->orWhere("description", "LIKE", "%$request->q%");
+            })
+            ->orderBy('nom');
+            
+        if($groupes !== null && count($groupes) > 0)
+        {
+            $query->whereHas("categories", function($q) use($groupes){ 
+                $q->whereIn("groupe_id", $groupes);
+            });
+        }
+        $entreprises = $query->get();
+        
+        if($request->q === null || $groupes === null)
+        {
+            $entreprises = array();
+        }
+            
         return view("rechercheAvancee", ['resultats'=>$entreprises]);
     }
 }

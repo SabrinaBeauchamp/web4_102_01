@@ -14,8 +14,8 @@ class GroupeCommoditeController extends Controller
      */
     public function index()
     {
-        $groupeCommodite = GroupeCommodite::all();
-        return view("groupeCommodite.index", ['groupeCommodite'=>$groupeCommodite]);
+        $groupesCommodite = GroupeCommodite::all();
+        return view("groupeCommodite.index", ['groupesCommodite'=>$groupesCommodite]);
     }
 
     /**
