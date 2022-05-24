@@ -1,0 +1,89 @@
+//--------------------
+// Menu
+//--------------------
+section.rechercheFiltree{
+    form{
+        @include setFlex(column, space-around, flex-start);
+        row-gap: 2vw;
+        padding: 5vw;
+        background-color: var(--light);
+        input.barreRecherche{
+            width: 40vw;
+            border-radius: 1vw;
+            height: 2vw;
+            padding: 0.2vw;
+        }
+        .filtresEtResultats{
+            @include setFlex(row, space-between, center);
+            width: 40vw;
+            // border-radius: 1vw;
+            // background-color: var(--lightest);
+            fieldset{
+                @include setFlex(column, center, center);
+                flex-wrap: wrap;
+                width: 10vw;
+                padding: 0.8vw 0;
+                border-radius: 1vw;
+                background-color: var(--dark);
+                .container{
+                    position: relative;
+                    width: 80%;
+                    margin: 0.2vw;
+                    padding: 0.3vw;
+                    border-radius: 1vw;
+                    text-align: center;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    background-color: var(--light);
+                    input {
+                        position: relative;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                        &:checked ~ .checkmark {
+                            background-color: var(--darker);
+                            &:after {
+                                display: block;
+                            }
+                        }
+                    }
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1vw;
+                        background-color: var(--lightest);
+                        opacity: 0.3;
+                        transition-duration: 500ms;
+                        
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                          }
+                    }
+                    &:hover input ~ .checkmark {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .resultats{
+                @include setFlex(row, center, center);
+                flex-wrap: wrap;
+                width: 25vw;
+                // background-color: var(--lighter);
+                p{
+                    margin: 0.2vw;
+                    padding: 0.3vw;
+                    border-radius: 1vw;
+                    background-color: var(--light);
+                }
+            }
+        }
+    }
+}
