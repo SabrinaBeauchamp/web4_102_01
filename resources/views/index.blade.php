@@ -48,44 +48,16 @@
                 <div class="panneau isPanneau panneau-close">
                     <h2>Groupes</h2>
                     <ul class="menu1">
-                        <li>
-                            <button class="btn1">
-                                Agriculture
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
+                        @foreach($groupes as $groupe)
+                            <li>
+                                <button class="btn1">
+                                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
+                                </button>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="panneau2 isPanneau panneau-close">
+                <!-- <div class="panneau2 isPanneau panneau-close">
                     <h2>Groupes</h2>
                     <ul class="menu2">
                         <li>
@@ -164,7 +136,7 @@
                             </button>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </nav>
     </div>
