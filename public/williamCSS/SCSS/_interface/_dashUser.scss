@@ -1,0 +1,78 @@
+//Mixins Temporaire-----------------------------------------------
+//----------------------------------------------------------------
+
+@mixin setFlex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//---------------------------------------------------------------
+//Typos
+//----------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+
+//---------------------------------------------------------------
+//Dashboard User 
+//---------------------------------------------------------------
+
+.conteneurDashboard {
+    width: 100vw;
+    height: 100vh;
+
+    .conteneurSidebar {
+        width: 435px;
+        height: 100%;
+        background-color: #FF6868;
+
+        &>.conteneurSidebarTop {
+            background-color: gainsboro;
+            padding: 24px 0px 24px 24px;
+
+            &>.dashboardLink {
+                color: black;
+            }
+        }
+
+        &>.conteneurSidebarFavoris {}
+
+        &>.conteneurSideBarSousFavoris {
+            display: none;
+            overflow: hidden;
+
+            .sousFav {
+                padding: 24px 0px 24px 24px;
+            }
+        }
+    }
+
+    a {
+        font-family: 'Roboto';
+        font-size: 32px;
+        color: white;
+        text-decoration: none;
+    }
+
+    i {
+        font-size: 32px;
+
+        &:hover {
+            transform: scale(1.1);
+            transition-duration: 200ms;
+        }
+    }
+}
+
+.conteneurSidebarAll {
+    background-color: #FF6868;
+    border-top: 2px solid white;
+    padding: 24px 0px 24px 24px;
+
+
+    &:hover {
+        background-color: #ff9f9f;
+    }
+}

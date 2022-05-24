@@ -11,6 +11,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11413,7 +11415,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurUsernamePassword > .co
   justify-content: center;
   align-items: center;
   width: 734px;
-  height: 75px;
+  height: 65px;
   border: solid 2px #1D1D1D;
   border-radius: 137px;
   margin-bottom: 15px;
@@ -11440,7 +11442,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurUsernamePassword > .co
   justify-content: center;
   align-items: center;
   width: 734px;
-  height: 75px;
+  height: 65px;
   border: solid 2px #1D1D1D;
   border-radius: 137px;
   margin-bottom: 15px;
@@ -11560,6 +11562,9 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurRole {
   margin-top: 30px;
 }
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurRole .select {
+  color: #1D1D1D;
+}
 .conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurPassword {
   margin-top: 30px;
 }
@@ -11625,4 +11630,50 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   border: solid 2px #1D1D1D;
   border-radius: 137px;
   margin-bottom: 15px;
+}
+
+.conteneurDashboard {
+  width: 100vw;
+  height: 100vh;
+}
+.conteneurDashboard .conteneurSidebar {
+  width: 435px;
+  height: 100%;
+  background-color: #FF6868;
+}
+.conteneurDashboard .conteneurSidebar > .conteneurSidebarTop {
+  background-color: gainsboro;
+  padding: 24px 0px 24px 24px;
+}
+.conteneurDashboard .conteneurSidebar > .conteneurSidebarTop > .dashboardLink {
+  color: black;
+}
+.conteneurDashboard .conteneurSidebar > .conteneurSideBarSousFavoris {
+  display: none;
+  overflow: hidden;
+}
+.conteneurDashboard .conteneurSidebar > .conteneurSideBarSousFavoris .sousFav {
+  padding: 24px 0px 24px 24px;
+}
+.conteneurDashboard a {
+  font-family: "Roboto";
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+}
+.conteneurDashboard i {
+  font-size: 32px;
+}
+.conteneurDashboard i:hover {
+  transform: scale(1.1);
+  transition-duration: 200ms;
+}
+
+.conteneurSidebarAll {
+  background-color: #FF6868;
+  border-top: 2px solid white;
+  padding: 24px 0px 24px 24px;
+}
+.conteneurSidebarAll:hover {
+  background-color: #ff9f9f;
 }/*# sourceMappingURL=style.css.map */
