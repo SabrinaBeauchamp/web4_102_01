@@ -6,16 +6,12 @@
 
 @section('contenu')
 <h2>{{$evenement->nom}}</h2>
-    <form action="{{route('.evenements.store')}}" method="post">
-        @csrf
-        <x-champ-text name="nom" label="Nom">{{$evenement->nom}}</x-champs-text>
-        <x-champ-number name="prix" label="Prix">{{$evenement->prix}}</x-champs-text>
-        <x-champ-text name="categorie" label="Categorie"></x-champ-text>
-        <x-champ-textArea name="description" label="Description">{{$evenement->description}}</x-champs-text>
-        
+    <form action="{{route('evenements.store')}}" method="post">
+        @include('evenements.form')
+        <x-champ-text name="ville" label="Ville">{{$evenement->ville->nom}}</x-champ-text>
     </form>
     <div class="options">
-        <a data-icon="calendar_view_month" href="{{route('.evenements.index')}}">Retour aux evenements</a>
-        {{-- <a href="{{route('.evenements.edit', $evenement)}}">Modifier le evenement</a> --}}
+        <x-champ-lien href="{{route('evenements.edit', $evenement)}}" titre="Modifier"></x-champ-lien>
+        <x-champ-lien href="{{route('evenements.index')}}" titre="Retour à la liste des évènements"></x-champ-lien>
     </div>
 @endsection

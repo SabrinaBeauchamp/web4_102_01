@@ -6,15 +6,12 @@
 
 @section('contenu')
 <h2>Création d'un nouveau forfait</h2>
-    <form action="{{route('forfaits.store')}}" method="post">
-        @csrf
-        <x-champ-text name="nom" label="Nom">{{$forfaits->nom}}</x-champs-text>
-        <x-champ-number name="prix" label="Prix">{{$forfaits->prix}}</x-champs-text>
-        
-        <x-champ-textArea name="description" label="Description">{{$forfaits->description}}</x-champs-text>
-        <div>
-            <button data-icon="done" type="submit">Créer le forfait</button>
-        </div>
+    <form action="{{route('forfaits.store')}}" method="post" enctype="multipart/form-data">
+        @include('forfaits.form')
+        @include('forfaits.categories.radios', ['checked'=>$forfait->categorie_id])
+        <x-champ-file name="photo" label="photo"></x-champs-text>
+
+        <x-champ-button type="'submit'" titre="'Créer le forfait'"></x-champ-button>
     </form>
     <div class="options">
         <a data-icon="calendar_view_month" href="{{route('forfaits.index')}}">Retour aux forfaits</a>

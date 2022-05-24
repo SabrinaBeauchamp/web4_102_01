@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\forfait;
+use App\Models\CategorieForfait;
+use App\Models\Favorie;
 use Illuminate\Http\Request;
+
+use Image;
 
 class ForfaitController extends Controller
 {
@@ -15,7 +19,10 @@ class ForfaitController extends Controller
     public function index()
     {
         $forfaits = Forfait::all();
-        return view("forfaits.index", ['forfaits'=>$forfaits]);
+        
+        $categories = CategorieForfait::all();
+        $favories = Favorie::all();
+        return view("forfaits.index", ['forfaits'=>$forfaits,'categories'=>$categories, 'favories'=>$favories]);
     }
     
     /**
@@ -26,7 +33,8 @@ class ForfaitController extends Controller
     public function create()
     {
         $forfaits = new Forfait();
-        return view("forfaits.create", ['forfaits'=>$forfaits]);
+        $categories = CategorieForfait::all();
+        return view("forfaits.create", ['forfait'=>$forfaits, 'categories'=>$categories]);
     }
 
     /**
@@ -40,6 +48,8 @@ class ForfaitController extends Controller
         $forfait = new Forfait();
         $forfait->fill($request->all());
         $forfait->save();
+        $img = Image::make($request->photo)->resize(300, 200);
+        $img->save(public_path("img/forfaits/$forfait->id.jpg"));
         return redirect()->route('forfaits.index', $forfait);
     }
 
@@ -51,6 +61,7 @@ class ForfaitController extends Controller
      */
     public function show(forfait $forfait)
     {
+        dd($forfait->categorie);
         return view ("forfaits.show", ['forfait'=>$forfait]);
     }
 
@@ -60,9 +71,11 @@ class ForfaitController extends Controller
      * @param  \App\Models\forfait  $forfaits
      * @return \Illuminate\Http\Response
      */
-    public function edit(forfait $forfait)
+    public function edit(forfait $forfait, Request $request)
     {
-        return view('forfaits.edit', ['forfaits'=>$forfait]);
+        // $img = Image::make($request->photo)->resize(300, 200);
+        // $img->save(public_path("img/forfaits/$forfait->id.jpg"));
+        return view('forfaits.edit', ['forfait'=>$forfait]);
     }
 
     /**
@@ -76,7 +89,12 @@ class ForfaitController extends Controller
     {
         $forfait->fill($request->all());
         $forfait->save();
-        return redirect()->route('forfaits.show', $forfait);
+        $categories = [];
+        if (isset($request->categorie_id)) {
+            $categories = $request->categorie_id;
+        }
+        $forfait->categories()->sync($categories);
+        return redirect()->route("forfaits.categories.index");
     }
 
     /**
@@ -87,7 +105,7 @@ class ForfaitController extends Controller
      */
     public function delete(Forfait $forfait)
     {
-        return view('forfaits.delete', ['forfaits'=>$forfait]);
+        return view('forfaits.delete', ['forfait'=>$forfait]);
     }
 
     /**

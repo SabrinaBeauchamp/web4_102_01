@@ -6,15 +6,11 @@
 
 @section('contenu')
 <h2>Voulez-vous supprimer ce forfait {{$evenements->nom}}</h2>
-    <form action="{{route('.evenements.destroy', $evenements)}}" method="post">
+    <form action="{{route('evenements.destroy', $evenements)}}" method="post">
         @csrf
-        <div><button type="submit" name="delete">Supprimer le forfait</button></div>
-        
-        <div>
-            <button data-icon="done" type="submit">Modifier le forfait</button>
-        </div>
+        <x-champ-button-delete type="submit" titre="Suprimer l'évènement"></x-champ-button>
     </form>
     <div class="options">
-        <a data-icon="calendar_view_month" href="{{route('.evenements.index')}}">Retour aux forfaits</a>
+        <x-champ-lien href="{{route('evenements.index')}}" titre="Retour aux évènements"></x-champ-lien>
     </div>
 @endsection

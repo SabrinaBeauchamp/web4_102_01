@@ -5,10 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class categorieForfait extends Model
+class CategorieForfait extends Model
 {
     use HasFactory;
-    public function forfait(){
-        return$this->hasMany(Forfaits::class);
+    protected $fillable=[
+        "nom",
+      ];
+    public function forfaits(){
+        return $this->hasMany(Forfait::class, 'categorie_id');
+    }
+    public function entreprises() {
+        return $this->belongsTo(Entreprise::class);
     }
 }
