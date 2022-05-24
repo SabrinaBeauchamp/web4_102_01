@@ -1,0 +1,94 @@
+//mixins
+
+@mixin setFlex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin debug {
+    border: 1px red solid;
+}
+
+@mixin breakpoint-min($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-max($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin resetBox {
+    padding: 0;
+    margin: 0;
+}
+
+//fonts 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.conteneurRegisterPage {
+    width: 100vw;
+    height: 100vh;
+    @include setFlex(column, center, center);
+
+    &>.messageAccueilCreate {
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: bold;
+        font-size: 58px;
+        margin-bottom: 50px;
+    }
+
+    &>.conteneurBoiteCreate {
+        background-color: white;
+        width: 835px;
+        height: 922px;
+        margin: 0 auto;
+        border: solid 1px #cfcfcf;
+        box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+
+        &>.conteneurCreateTout {
+            @include setFlex(column, center, center);
+
+            .conteneurNom {
+                margin-top: 40px;
+
+                &>.conteneurInput {
+                    @include setFlex(row, center, center);
+                    width: 734px;
+                    height: 55px;
+                    border: solid 2px #1D1D1D;
+                    border-radius: 137px;
+                    margin-bottom: 15px;
+
+                    &>.name{
+                        width: 90%;
+                        font-size: 20px;
+                        padding: 5px;
+                        padding-left: 60px;
+                        outline: none;
+                        border: none;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+    .labelCreate{
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .iconRegister {
+        padding: 10px;
+        min-width: 50px;
+        text-align: center;
+        font-size: 24px;
+    }
+}
