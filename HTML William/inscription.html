@@ -26,32 +26,31 @@
                     <div class="conteneurEmail">
                         <label for="name" class="labelCreate">Email</label>
                         <div class="conteneurInput">
-                            <i class="fa fa-user iconRegister"></i>
+                            <i class="fa-solid fa-at iconRegister"></i>
                             <input type="text" placeholder="username@email.com" class="email" />
                         </div>
                     </div>
                     <div class="conteneurRole">
-                        <label for="role" class="labelCreate">Role
-                            <select name="role_id" id="role_id" class="">
-                                <option value="">-- select --</option>
-                                @foreach($roles as $role)
+                        <label for="role" class="labelCreate">Role</label>
+                        <select name="role_id" id="role_id" class="select">
+                            <option value="">-- select --</option>
+                            @foreach($roles as $role)
 
-                                <option value="{{$role->id}}">{{$role->name}}</option>
-                                @endforeach
-                            </select>
-                        </label>
+                            <option value="{{$role->id}}">{{$role->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="conteneurPassword">
                         <label for="password" class="labelCreate">Mot de passe</label>
                         <div class="conteneurInput">
-                            <i class="fa fa-user iconRegister"></i>
+                            <i class="fa-solid fa-lock iconRegister"></i>
                             <input type="text" placeholder="tacos123" class="password" />
                         </div>
                     </div>
                     <div class="conteneurPasswordConfirm">
                         <label for="passwordConfirm" class="labelCreate">Confirmer le mot de passe</label>
                         <div class="conteneurInput">
-                            <i class="fa fa-user iconRegister"></i>
+                            <i class="fa-solid fa-arrow-rotate-right iconRegister"></i>
                             <input type="text" placeholder="..." class="passwordConfirm" />
                         </div>
                     </div>

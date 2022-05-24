@@ -11522,7 +11522,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .conteneurRegisterPage > .conteneurBoiteCreate {
   background-color: white;
   width: 835px;
-  height: 922px;
+  height: 750px;
   margin: 0 auto;
   border: solid 1px #cfcfcf;
   box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
@@ -11536,17 +11536,6 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurNom {
   margin-top: 40px;
 }
-.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurNom > .conteneurInput {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 734px;
-  height: 55px;
-  border: solid 2px #1D1D1D;
-  border-radius: 137px;
-  margin-bottom: 15px;
-}
 .conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurNom > .conteneurInput > .name {
   width: 90%;
   font-size: 20px;
@@ -11555,6 +11544,66 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   outline: none;
   border: none;
   overflow: hidden;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurEmail {
+  margin-top: 30px;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurEmail .email {
+  width: 90%;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 60px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurRole {
+  margin-top: 30px;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurPassword {
+  margin-top: 30px;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurPassword .password {
+  width: 90%;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 60px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurPasswordConfirm {
+  margin-top: 30px;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurPasswordConfirm .passwordConfirm {
+  width: 90%;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 60px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurBoutonRegister {
+  text-align: center;
+  margin-top: 80px;
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurBoutonRegister > button {
+  width: 510px;
+  height: 66px;
+  border: none;
+  background-color: #FF6868;
+  border-radius: 33px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+}
+.conteneurRegisterPage > .conteneurBoiteCreate > .conteneurCreateTout .conteneurBoutonRegister > button:hover {
+  color: #fdc6c6;
+  background-color: #f87c7c;
+  transform: scale(1.05);
+  box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
 }
 .conteneurRegisterPage .labelCreate {
   font-weight: bold;
@@ -11565,4 +11614,15 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   min-width: 50px;
   text-align: center;
   font-size: 24px;
+}
+.conteneurRegisterPage .conteneurInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 734px;
+  height: 55px;
+  border: solid 2px #1D1D1D;
+  border-radius: 137px;
+  margin-bottom: 15px;
 }/*# sourceMappingURL=style.css.map */

@@ -48,7 +48,7 @@
     &>.conteneurBoiteCreate {
         background-color: white;
         width: 835px;
-        height: 922px;
+        height: 750px;
         margin: 0 auto;
         border: solid 1px #cfcfcf;
         box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
@@ -60,14 +60,9 @@
                 margin-top: 40px;
 
                 &>.conteneurInput {
-                    @include setFlex(row, center, center);
-                    width: 734px;
-                    height: 55px;
-                    border: solid 2px #1D1D1D;
-                    border-radius: 137px;
-                    margin-bottom: 15px;
+                    //empty
 
-                    &>.name{
+                    &>.name {
                         width: 90%;
                         font-size: 20px;
                         padding: 5px;
@@ -78,9 +73,82 @@
                     }
                 }
             }
+
+            .conteneurEmail {
+                margin-top: 30px;
+                .email {
+                    width: 90%;
+                    font-size: 20px;
+                    padding: 5px;
+                    padding-left: 60px;
+                    outline: none;
+                    border: none;
+                    overflow: hidden;
+                }
+            }
+
+            .conteneurRole {
+                margin-top: 30px;
+                .select {
+                
+                }
+            }
+
+            .conteneurPassword {
+                margin-top: 30px;
+                .password {
+                    width: 90%;
+                    font-size: 20px;
+                    padding: 5px;
+                    padding-left: 60px;
+                    outline: none;
+                    border: none;
+                    overflow: hidden;
+                }
+            }
+
+            .conteneurPasswordConfirm {
+                margin-top: 30px;
+                .passwordConfirm {
+                    width: 90%;
+                    font-size: 20px;
+                    padding: 5px;
+                    padding-left: 60px;
+                    outline: none;
+                    border: none;
+                    overflow: hidden;
+                }
+            }
+
+            .conteneurBoutonRegister {
+                text-align: center;
+                margin-top: 80px;
+
+                &>button {
+                    width: 510px;
+                    height: 66px;
+                    border: none;
+                    background-color: #FF6868;
+                    border-radius: 33px;
+                    color: white;
+                    font-size: 24px;
+                    font-weight: bold;
+                    transition: box-shadow 400ms cubic-bezier(.2, 0, .7, 1), transform 200ms cubic-bezier(.2, 0, .7, 1);
+
+                    &:hover {
+                        color: #fdc6c6;
+                        background-color: #f87c7c;
+                        transform: scale(1.05);
+                        box-shadow: 0 0 1px 10px rgba(#ff8f8f, 0.4),
+                            0 0 1px 15px rgba(#ff8f8f, 0.1),
+                            0 0 1px 20px rgba(#ff8f8f, 0.1);
+                    }
+                }
+            }
         }
     }
-    .labelCreate{
+
+    .labelCreate {
         font-weight: bold;
         font-size: 24px;
     }
@@ -90,5 +158,14 @@
         min-width: 50px;
         text-align: center;
         font-size: 24px;
+    }
+
+    .conteneurInput {
+        @include setFlex(row, center, center);
+        width: 734px;
+        height: 55px;
+        border: solid 2px #1D1D1D;
+        border-radius: 137px;
+        margin-bottom: 15px;
     }
 }
