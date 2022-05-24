@@ -25,7 +25,7 @@ class GroupeCommoditeController extends Controller
      */
     public function create()
     {
-        //
+        //$groupe
     }
 
     /**
