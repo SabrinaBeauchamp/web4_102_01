@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\App;
 use App\Models\Entreprise;
+use App\Models\CategorieEntreprise;
 use App\Models\Categorie;
 use App\Models\Groupe;
 use App\Models\Forfait;
@@ -37,12 +38,31 @@ class AppController extends Controller
     }
 
     //Recherche de seulement les entreprises
+    //Recherche avancée
     public function rechercheEntreprises(Request $request)
     {
-        $entreprises = Entreprise::where("nom", "LIKE", "%$request->q%")
-        //->orWhere me permet de récupéré à partir d'une autre columne
-            ->select('id', 'nom', "entreprises as model")
-            ->orderBy('nom')->get();
-        return view("recherche", ['resultats'=>$entreprises]);
+        $groupes = $request->groupes;
+
+        $query = Entreprise::select('id', 'nom', "entreprises as model")
+            ->where(function($query) use($request){
+                $query->orWhere("nom", "LIKE", "%$request->q%");
+                $query->orWhere("description", "LIKE", "%$request->q%");
+            })
+            ->orderBy('nom');
+            
+        if($groupes !== null && count($groupes) > 0)
+        {
+            $query->whereHas("categories", function($q) use($groupes){ 
+                $q->whereIn("groupe_id", $groupes);
+            });
+        }
+        $entreprises = $query->get();
+        
+        if($request->q === null || $groupes === null)
+        {
+            $entreprises = array();
+        }
+            
+        return view("rechercheAvancee", ['resultats'=>$entreprises]);
     }
 }

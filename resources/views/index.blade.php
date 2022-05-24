@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+=======
+
+<!-- <h2>Agrotouristique</h2>
+    <p>Cherche dans tout</p>
+    <form action="{{route('recherche.recherche')}}" method="get">
+        <input type="text" name="q" id="q">
+        <button>Rechercher</button>
+    </form>
+    <p>Cherche seulement les entreprises</p>
+    <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
+        <input type="text" name="q" id="q">
+        <button>Rechercher</button>
+    </form>
+    <nav>
+        <ul>
+            <li><a href="{{route('groupes.index')}}">Entreprises</a></li>
+            <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
+            <li><a href="{{route('.evenements.index')}}">Évènements</a></li>
+            <li><a href="{{route('commodites.index')}}">Commodites</a></li>
+            <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
+        </ul>
+        <p>poyo</p>
+    </nav> -->
+>>>>>>> origin/mathis
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,44 +51,16 @@
                 <div class="panneau isPanneau panneau-close">
                     <h2>Groupes</h2>
                     <ul class="menu1">
-                        <li>
-                            <button class="btn1">
-                                Agriculture
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn1">
-                                Groupe
-                            </button>
-                        </li>
+                        @foreach($groupes as $groupe)
+                            <li>
+                                <button class="btn1">
+                                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
+                                </button>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
-                <div class="panneau2 isPanneau panneau-close">
+                <!-- <div class="panneau2 isPanneau panneau-close">
                     <h2>Groupes</h2>
                     <ul class="menu2">
                         <li>
@@ -142,7 +139,7 @@
                             </button>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </nav>
     </div>

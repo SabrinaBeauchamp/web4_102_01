@@ -29,8 +29,7 @@ class EntrepriseController extends Controller
     public function create()
     {
         $entreprise = new Entreprise();
-        $groupes = Groupe::all();
-        return view("entreprises.create", ["entreprise"=>$entreprise, "groupes"=>$groupes]);
+        return view("entreprises.create", ["entreprise"=>$entreprise]);
     }
 
     /**
@@ -64,7 +63,14 @@ class EntrepriseController extends Controller
         //Récupère seulement la première categorie qu'il appartient
         $categorie_entreprise = CategorieEntreprise::where('entreprise_id', $id)->first();
         $categorie = Categorie::find($categorie_entreprise->categorie_id);
-        return view('entreprises.show', ['entreprise' => $entreprise], ['categorie' => $categorie]);
+        //Récupère seulement le premier groupe auquel il appartient
+        $categorie = Categorie::find($id);
+        $groupes = Groupe::all();
+        $groupeId = $categorie['groupe_id'];
+        $groupe = Groupe::find($groupeId);
+        
+        return view('entreprises.show', ['entreprise' => $entreprise, 'categorie' => $categorie, 'groupeSelectionner' => $groupe]);
+        // return view('categories.show', ['categorie' => $categorie], ['groupeSelectionner' => $groupe]);
     }
 
     /**
@@ -75,8 +81,7 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
-        $groupes = Groupe::all();
-        return view("entreprises.edit", ["entreprise"=>$entreprise, "groupes"=>$groupes]);
+        return view("entreprises.edit", ["entreprise"=>$entreprise]);
     }
 
     /**

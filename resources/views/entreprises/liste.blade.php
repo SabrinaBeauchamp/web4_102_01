@@ -1,9 +1,9 @@
 @foreach($entreprises as $entreprise)
-<ul>
     <li>
-        <a href="{{route('entreprises.show', $entreprise)}}">
-            {{$entreprise->nom}}
-        </a>
+        <button class="btn3">
+            <a href="{{route('entreprises.show', $entreprise)}}">
+                {{$entreprise->nom}}
+            </a>
+        </button>
     </li>
-</ul>
 @endforeach

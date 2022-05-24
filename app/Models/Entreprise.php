@@ -9,17 +9,17 @@ class Entreprise extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "sousCategorie_id",
-        "categorieRegion",
-        "commodites_id",
-        "id",
         "nom",
-        "description",
-        "image_url",
-        "ouverture",
-        "fermeture",
         "adresse",
-        "telephone"
+        "ville",
+        "codepostal",
+        "telephone",
+        "url_photo",
+        "url_logo",
+        "url_site",
+        "description",
+        "created_at",
+        "updated_at"
     ];
     public function categories() {
         return $this->belongsToMany(Categorie::class);

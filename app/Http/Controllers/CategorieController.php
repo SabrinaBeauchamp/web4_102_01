@@ -61,8 +61,8 @@ class CategorieController extends Controller
         $categorie = Categorie::find($id);
         $groupes = Groupe::all();
         $groupeId = $categorie['groupe_id'];
-        $groupe = $groupes[$groupeId];
-        return view('categories.show', ['categorie' => $categorie], ['groupe' => $groupe]);
+        $groupe = Groupe::find($groupeId);
+        return view('categories.show', ['categorie' => $categorie], ['groupeSelectionner' => $groupe]);
     }
 
     /**
