@@ -6,6 +6,7 @@ use App\Models\Entreprise;
 use App\Models\CategorieEntreprise;
 use App\Models\Categorie;
 use App\Models\Groupe;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class EntrepriseController extends Controller
@@ -29,7 +30,9 @@ class EntrepriseController extends Controller
     public function create()
     {
         $entreprise = new Entreprise();
-        return view("entreprises.create", ["entreprise"=>$entreprise]);
+        $categories = Categorie::all();
+        $villes = Ville::all();
+        return view("entreprises.create", ["entreprise"=>$entreprise, "categories"=>$categories, "villes"=>$villes]);
     }
 
     /**
@@ -74,7 +77,9 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
-        return view("entreprises.edit", ["entreprise"=>$entreprise]);
+        $categories = Categorie::all();
+        $villes = Ville::all();
+        return view("entreprises.edit", ["entreprise"=>$entreprise, "categories"=>$categories, "villes"=>$villes]);
     }
 
     /**

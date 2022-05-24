@@ -12,7 +12,7 @@ class Entreprise extends Model
     protected $fillable = [
         "nom",
         "adresse",
-        "ville",
+        "ville_id",
         "codepostal",
         "telephone",
         "url_photo",
@@ -25,6 +25,9 @@ class Entreprise extends Model
     public function categories() {
         return $this->belongsToMany(Categorie::class);
     }
+    public function ville() {
+        return $this->belongsTo(Ville::class, 'ville_id');
+      }
     public function favories() {
         return $this->hasMany(Favorie::class);
     }
