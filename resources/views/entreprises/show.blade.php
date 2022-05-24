@@ -36,13 +36,13 @@
                         </ul>
                     </div>
                     <div class="panneau2 isPanneau panneau-open">
-                        <h2>Groupes</h2>
+                        <h2>Catégories</h2>
                         <ul class="menu2"> 
                             @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
                         </ul>
                     </div>
                 <div class="panneau3 isPanneau panneau-open">
-                    <h2>Groupes</h2>
+                    <h2>Entreprises</h2>
                     <ul class="menu3">
                         @include("entreprises.liste", ['entreprises'=>$categorie->entreprises])
                     </ul>

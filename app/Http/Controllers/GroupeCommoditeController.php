@@ -25,7 +25,10 @@ class GroupeCommoditeController extends Controller
      */
     public function create()
     {
-        //$groupe
+        $categorie = new GroupeCommodite();
+        $commodites = Commodite::all();
+        return view("groupeCommodite.create", 
+        ["categorie"=>$categorie, "entreprises"=>$entreprises]);
     }
 
     /**

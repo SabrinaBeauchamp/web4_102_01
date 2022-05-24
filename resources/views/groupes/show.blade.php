@@ -40,7 +40,7 @@
                         </ul>
                     </div>
                     <div class="panneau2 isPanneau panneau-open">
-                        <h2>Groupes</h2>
+                        <h2>Categorie</h2>
                         <ul class="menu2"> 
                             @include("categories.liste", ['categories'=>$groupeSelection->categories])
                         </ul>
