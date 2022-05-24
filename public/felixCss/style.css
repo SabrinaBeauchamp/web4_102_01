@@ -11546,7 +11546,7 @@ section.rechercheFiltree form .filtresEtResultats fieldset {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 10vw;
+  width: 15vw;
   padding: 0.8vw 0;
   border: 0.2vw solid var(--dark);
   border-radius: 1vw;
@@ -11563,11 +11563,14 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container {
   user-select: none;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container input {
-  position: relative;
+  position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container input:checked ~ .checkmark {
   background-color: var(--darkest);
