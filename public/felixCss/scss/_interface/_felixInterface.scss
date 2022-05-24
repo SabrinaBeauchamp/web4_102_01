@@ -53,7 +53,7 @@ section
         }
         .titre2{
             position: absolute;
-            left: 60vw;
+            left: 40vw;
             top: 11vw;
         }
         .titre-accent{
@@ -67,16 +67,16 @@ section
         padding: 10vw 10vw;
         .container-titre{
             h2{
-                font-size: 3vw;
+                font-size: 2vw;
             }
             .titre2{
                 position: absolute;
-                left: 40vw;
-                top: 8vw;
+                left: 20vw;
+                top: 5vw;
             }
             .titre-accent{
-                transform: translate(3vw, -4vw);
-                font-size: 10vw;
+                transform: translate(3vw, -3vw);
+                font-size: 7vw;
             }
         }
     }
@@ -115,11 +115,11 @@ section
             .container-img-introduction{
                 position: relative;
                 height: auto;
-                width: 18vw;
+                width: 15vw;
                 opacity: 1;
                 img{
                     display: block;
-                    width: 10vw;
+                    width: 8vw;
                     &:nth-of-type(2){
                         align-self: flex-end;       
                     }
@@ -127,7 +127,7 @@ section
             }
             p{
                 width: 50vw;
-                font-size: 2vw;
+                font-size: 1.5vw;
             }
         }
     }
@@ -182,7 +182,7 @@ section
         /* Handle */
         &::-webkit-scrollbar-thumb {
             background: var(--dark);
-            border-radius: 1vw;
+            border-radius: 100vw;
         }
         /* Handle on hover */
         &::-webkit-scrollbar-thumb:hover {
@@ -231,7 +231,7 @@ section
                     left: 0;
                     width: 0;
                     height: 0;
-                    border-radius: 1vw;
+                    border-radius: 100vw;
                     transition-duration: 500ms;
                 }
                 &:hover{
@@ -271,6 +271,73 @@ section
 .propositionsLogements
 {
     background-color: var(--light);
+    .liste
+    {
+        @include setFlex(column, center, center);
+        position: relative;
+        row-gap: 5vw;
+        padding: 0 0 5vw;
+        list-style-type: none;
+        li:nth-of-type(2){
+            transform: translateY(5vw);
+        }
+        .propositionLogement{
+            position: relative;
+            background-color: gray;
+            width: 70vw;
+
+            .propositionLogement-container-texte{
+                position: absolute;
+                color: white;
+                transform: translate(6vw, 10vw);
+                h3{
+                    font-size: 10vw; 
+                }
+                p{
+                    font-size: 4vw;
+                }
+            }
+        }
+        @include breakpoint-min(900){
+            @include setFlex(row, start, flex-start);
+            overflow-x: scroll;
+            overflow-y: hidden;
+            row-gap: 5vw;
+            column-gap: 5vw;
+            /* width */
+            &::-webkit-scrollbar {
+                width: 2vw;
+            }
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: var(--light);
+            }
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: var(--dark);
+                border-radius: 100vw;
+            }
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: var(--darker);
+            }
+            .propositionLogement{
+                width: 20vw;
+                .propositionLogement-container-texte{
+                    position: absolute;
+                    width: 18vw;
+                    color: white;
+                    transform: translate(6vw, 10vw);
+                    h3{
+                        font-size: 2vw;
+                    }
+                    p{
+                        font-size: 0.8vw;
+                    }
+                }
+            }
+        }
+    }
 }
 
 //--------------------
@@ -284,7 +351,15 @@ footer{
 // Infolettre
 //--------------------
 .infolettre{
-    background-color: var(--light);
+    button{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 1vw;
+        margin: 0.2vw;
+        padding: 1.3vw;
+        border: 0.1vw solid var(--dark);
+        border-radius: 100vw;
+        background-color: var(--lightest);
+    }
 }
 
 //--------------------

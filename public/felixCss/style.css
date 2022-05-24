@@ -11330,12 +11330,12 @@ img {
 }
 
 :root {
-  --lightest: #eeeeee;
-  --lighter: #cccccc;
-  --light: #aaaaaa;
-  --dark: #666666;
-  --darker: #444444;
-  --darkest: #222222;
+  --lightest: #bbff00;
+  --lighter: #0c471e;
+  --light: #ff7edf;
+  --dark: #281855;
+  --darker: #b91934;
+  --darkest: #cbd0ff;
 }
 
 #container-menu {
@@ -11521,7 +11521,7 @@ section.rechercheFiltree form {
 }
 section.rechercheFiltree form input.barreRecherche {
   width: 40vw;
-  border-radius: 1vw;
+  border-radius: 100vw;
   height: 2vw;
   padding: 0.2vw 1vw;
 }
@@ -11529,7 +11529,7 @@ section.rechercheFiltree form button {
   margin: 0.2vw;
   padding: 0.3vw;
   border: 0.1vw solid var(--dark);
-  border-radius: 1vw;
+  border-radius: 100vw;
 }
 section.rechercheFiltree form .filtresEtResultats {
   display: flex;
@@ -11549,7 +11549,7 @@ section.rechercheFiltree form .filtresEtResultats fieldset {
   width: 10vw;
   padding: 0.8vw 0;
   border: 0.2vw solid var(--dark);
-  border-radius: 1vw;
+  border-radius: 100vw;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container {
   position: relative;
@@ -11583,7 +11583,7 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark
   height: 100%;
   opacity: 0.3;
   border: 0.1vw solid var(--dark);
-  border-radius: 1vw;
+  border-radius: 100vw;
   background-color: var(--lighter);
   transition-duration: 500ms;
 }
@@ -11607,7 +11607,7 @@ section.rechercheFiltree form .filtresEtResultats .resultats p {
   margin: 0.2vw;
   padding: 0.3vw;
   border: 0.1vw solid var(--dark);
-  border-radius: 1vw;
+  border-radius: 100vw;
   background-color: var(--lightest);
 }
 
@@ -11670,7 +11670,7 @@ section .container-titre h2, section .container-titre .h2 {
 }
 section .container-titre .titre2 {
   position: absolute;
-  left: 60vw;
+  left: 40vw;
   top: 11vw;
 }
 section .container-titre .titre-accent {
@@ -11684,16 +11684,16 @@ section .container-titre .titre-accent {
     padding: 10vw 10vw;
   }
   section .container-titre h2, section .container-titre .h2 {
-    font-size: 3vw;
+    font-size: 2vw;
   }
   section .container-titre .titre2 {
     position: absolute;
-    left: 40vw;
-    top: 8vw;
+    left: 20vw;
+    top: 5vw;
   }
   section .container-titre .titre-accent {
-    transform: translate(3vw, -4vw);
-    font-size: 10vw;
+    transform: translate(3vw, -3vw);
+    font-size: 7vw;
   }
 }
 
@@ -11734,19 +11734,19 @@ section .container-titre .titre-accent {
   .introduction .container-introduction .container-img-introduction {
     position: relative;
     height: auto;
-    width: 18vw;
+    width: 15vw;
     opacity: 1;
   }
   .introduction .container-introduction .container-img-introduction img {
     display: block;
-    width: 10vw;
+    width: 8vw;
   }
   .introduction .container-introduction .container-img-introduction img:nth-of-type(2) {
     align-self: flex-end;
   }
   .introduction .container-introduction p {
     width: 50vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 }
 
@@ -11804,7 +11804,7 @@ section .container-titre .titre-accent {
   }
   .liste-carrousel::-webkit-scrollbar-thumb {
     background: var(--dark);
-    border-radius: 1vw;
+    border-radius: 100vw;
   }
   .liste-carrousel::-webkit-scrollbar-thumb:hover {
     background: var(--darker);
@@ -11854,7 +11854,7 @@ section .container-titre .titre-accent {
   left: 0;
   width: 0;
   height: 0;
-  border-radius: 1vw;
+  border-radius: 100vw;
   transition-duration: 500ms;
 }
 .calendrierEvenements .container-calendrier .calendrier-grid .calendrier-item:hover {
@@ -11889,13 +11889,93 @@ section .container-titre .titre-accent {
 .propositionsLogements {
   background-color: var(--light);
 }
+.propositionsLogements .liste {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  row-gap: 5vw;
+  padding: 0 0 5vw;
+  list-style-type: none;
+}
+.propositionsLogements .liste li:nth-of-type(2) {
+  transform: translateY(5vw);
+}
+.propositionsLogements .liste .propositionLogement {
+  position: relative;
+  background-color: gray;
+  width: 70vw;
+}
+.propositionsLogements .liste .propositionLogement .propositionLogement-container-texte {
+  position: absolute;
+  color: white;
+  transform: translate(6vw, 10vw);
+}
+.propositionsLogements .liste .propositionLogement .propositionLogement-container-texte h3, .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte .h3 {
+  font-size: 10vw;
+}
+.propositionsLogements .liste .propositionLogement .propositionLogement-container-texte p {
+  font-size: 4vw;
+}
+@media (min-width: 900px) {
+  .propositionsLogements .liste {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    row-gap: 5vw;
+    -moz-column-gap: 5vw;
+         column-gap: 5vw;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .propositionsLogements .liste::-webkit-scrollbar {
+    width: 2vw;
+  }
+  .propositionsLogements .liste::-webkit-scrollbar-track {
+    background: var(--light);
+  }
+  .propositionsLogements .liste::-webkit-scrollbar-thumb {
+    background: var(--dark);
+    border-radius: 100vw;
+  }
+  .propositionsLogements .liste::-webkit-scrollbar-thumb:hover {
+    background: var(--darker);
+  }
+  .propositionsLogements .liste .propositionLogement {
+    width: 20vw;
+  }
+  .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte {
+    position: absolute;
+    width: 18vw;
+    color: white;
+    transform: translate(6vw, 10vw);
+  }
+  .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte h3, .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte .h3 {
+    font-size: 2vw;
+  }
+  .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte p {
+    font-size: 0.8vw;
+  }
+}
 
 footer {
   background-color: var(--lighter);
 }
 
-.infolettre {
-  background-color: var(--light);
+.infolettre button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 1vw;
+  margin: 0.2vw;
+  padding: 1.3vw;
+  border: 0.1vw solid var(--dark);
+  border-radius: 100vw;
+  background-color: var(--lightest);
 }
 
 .partenaires {

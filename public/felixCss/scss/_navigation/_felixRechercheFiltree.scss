@@ -9,7 +9,7 @@ section.rechercheFiltree{
         border: 0.2vw solid var(--dark);
         input.barreRecherche{
             width: 40vw;
-            border-radius: 1vw;
+            border-radius: 100vw;
             height: 2vw;
             padding: 0.2vw 1vw;
         }
@@ -17,7 +17,7 @@ section.rechercheFiltree{
             margin: 0.2vw;
             padding: 0.3vw;
             border: 0.1vw solid var(--dark);
-            border-radius: 1vw;
+            border-radius: 100vw;
         }
         .filtresEtResultats{
             @include setFlex(row, space-between, flex-start);
@@ -29,7 +29,7 @@ section.rechercheFiltree{
                 width: 10vw;
                 padding: 0.8vw 0;
                 border: 0.2vw solid var(--dark);
-                border-radius: 1vw;
+                border-radius: 100vw;
                 .container{
                     position: relative;
                     width: 80%;
@@ -61,7 +61,7 @@ section.rechercheFiltree{
                         height: 100%;
                         opacity: 0.3;
                         border: 0.1vw solid var(--dark);
-                        border-radius: 1vw;
+                        border-radius: 100vw;
                         background-color: var(--lighter);
                         transition-duration: 500ms;
                         &:after {
@@ -83,7 +83,7 @@ section.rechercheFiltree{
                     margin: 0.2vw;
                     padding: 0.3vw;
                     border: 0.1vw solid var(--dark);
-                    border-radius: 1vw;
+                    border-radius: 100vw;
                     background-color: var(--lightest);
                 }
             }

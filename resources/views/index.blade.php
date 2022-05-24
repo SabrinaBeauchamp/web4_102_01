@@ -1,23 +1,3 @@
-
-<!-- <h2>Agrotouristique</h2>
-    <p>Cherche dans tout</p>
-    <form action="{{route('recherche.recherche')}}" method="get">
-        <input type="text" name="q" id="q">
-        <button>Rechercher</button>
-    </form>
-    <p>Cherche seulement les entreprises</p>
-    <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-        <input type="text" name="q" id="q">
-        <button>Rechercher</button>
-    </form>
-    <nav>
-        <ul>
-            <li><a href="{{route('groupes.index')}}">Entreprises</a></li>
-            <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
-            <li><a href="{{route('.evenements.index')}}">Évènements</a></li>
-        </ul>
-        <p>poyo</p>
-    </nav> -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -307,13 +287,34 @@
                 <h2 class="titre-accent">LOGER</h2>
                 <h2 class="titre2"></h2>
             </div>
-            <div class="container-logement">
-                <ul class="calendrier">
-                    <li class="calendrier-item">
-                        <p>allo</p>
+            <div id="container">
+                <ul class="liste">
+                    <li class="item">
+                        <div class="propositionLogement">
+                            <div class="propositionLogement-container-texte">
+                                <h3>Option de logement</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
                     </li>
-                    <li class="calendrier-item">
-                        <p>allo2</p>
+                    <li class="item">
+                        <div class="propositionLogement">
+                            <div class="propositionLogement-container-texte">
+                                <h3>Option de logement</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="propositionLogement">
+                            <div class="propositionLogement-container-texte">
+                                <h3>Option de logement</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -323,7 +324,12 @@
     <footer>
         <h2>Ceci est un footer</h2>
         <section class="infolettre">
-            <h2>Ceci est une infolettre</h2>
+            <div class="container-titre detectAnim">
+                <h2 class="titre1">Restez</h2>
+                <h2 class="titre-accent">À JOUR</h2>
+                <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
+            </div>
+            <button>Créer mon compte</button>
         </section>
         <section class="partenaires">
             <h2>Voici nos partenaires</h2>
