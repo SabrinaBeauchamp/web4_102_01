@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-=======
-
-<!-- <h2>Agrotouristique</h2>
-    <p>Cherche dans tout</p>
-    <form action="{{route('recherche.recherche')}}" method="get">
-        <input type="text" name="q" id="q">
-        <button>Rechercher</button>
-    </form>
-    <p>Cherche seulement les entreprises</p>
-    <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-        <input type="text" name="q" id="q">
-        <button>Rechercher</button>
-    </form>
-    <nav>
-        <ul>
-            <li><a href="{{route('groupes.index')}}">Entreprises</a></li>
-            <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
-            <li><a href="{{route('.evenements.index')}}">Évènements</a></li>
-            <li><a href="{{route('commodites.index')}}">Commodites</a></li>
-            <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
-        </ul>
-        <p>poyo</p>
-    </nav> -->
->>>>>>> origin/mathis
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -60,86 +35,6 @@
                         @endforeach
                     </ul>
                 </div>
-                <!-- <div class="panneau2 isPanneau panneau-close">
-                    <h2>Groupes</h2>
-                    <ul class="menu2">
-                        <li>
-                            <button class="btn2">
-                                Agriculture
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="panneau3 isPanneau panneau-close">
-                    <h2>Groupes</h2>
-                    <ul class="menu3">
-                        <li>
-                            <button class="btn3">
-                                Agriculture
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                    </ul>
-                </div> -->
             </div>
         </nav>
     </div>
@@ -184,7 +79,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -193,7 +88,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -202,7 +97,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -211,7 +106,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -220,7 +115,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                 </ul>
@@ -292,7 +187,7 @@
                                 <h3>Option de logement</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item">
@@ -301,7 +196,7 @@
                                 <h3>Option de logement</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item">
@@ -310,7 +205,7 @@
                                 <h3>Option de logement</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                 </ul>
@@ -333,7 +228,7 @@
         </section>
     </footer>
 </div>
-<script src="felixJs/Menu.js"></script>
-<script src="felixJs/Animations.js"></script>
+<script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
+<script src="{{ URL::asset('felixJs/Animations.js') }}"></script>
 </body>
 </html>

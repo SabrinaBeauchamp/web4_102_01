@@ -42,11 +42,12 @@ class Menu {
         panneau2 = document.querySelector(".panneau2");
         panneau3 = document.querySelector(".panneau3");
         if (panneau.classList.contains('isPanneau')) {
-
+            
             btn_panneau.addEventListener("mousedown", e => {
                 this.togglePanneau(panneau);
-                this.closePanneau(panneau2);
-                this.closePanneau(panneau3);
+                this.togglePanneau(panneau2);
+                this.togglePanneau(panneau3);
+   
                 e.preventDefault();
             });
             for (let i = 0; i < btn1.length; i++) {

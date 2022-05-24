@@ -52,7 +52,7 @@
     </div>
     <!-- Header -->
     <header id="mainHeader">
-        <h1>hello</h1>
+        <h1>{{$entreprise->nom}}</h1>
     </header>
     <!-- Fil d'Ariane -->
     <div class="fil-ariane">
@@ -91,7 +91,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -100,7 +100,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -109,7 +109,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -118,7 +118,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -127,7 +127,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                 </ul>
@@ -214,7 +214,7 @@
         </section>
     </footer>
 </div>
-<script src="felixJs/Menu.js"></script>
-<script src="felixJs/Animations.js"></script>
+<script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
+<script src="{{ URL::asset('felixJs/Animations.js') }}"></script>
 </body>
 </html>
