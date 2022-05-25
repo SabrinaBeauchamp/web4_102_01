@@ -36,5 +36,10 @@
     <span><input type="text" name="description" id="description" value="{{$entreprise->description}}"></span>
 </div>
 <div>
+    <h3>Catégories</h3>
     @include('categories.checks', ['checkeds'=>$entreprise->categories->pluck("id")->toArray()])
+</div>
+<div>
+    <h3>Commodites</h3>
+    @include('commodites.checks', ['checkeds'=>$commoditesDeEntreprise])
 </div>
