@@ -8,7 +8,8 @@ use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
 use App\Http\Controllers\EvenementController;
-use App\Http\Controllers\CommoditeCOntroller;
+use App\Http\Controllers\CommoditeController;
+use App\Http\Controllers\GroupeCommoditeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,7 +113,7 @@ Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'c
     Route::post('/{entreprise}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/agrotouristique/groupeCommodites', 'as'=>'groupeCommodites.', 'controller'=>CommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/groupesCommodite', 'as'=>'groupesCommodite.', 'controller'=>GroupeCommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupeCommodite}', 'show')->name('show');
 

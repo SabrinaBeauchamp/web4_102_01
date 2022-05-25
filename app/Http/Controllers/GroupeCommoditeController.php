@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GroupeCommodite;
+use App\Models\Commodite;
 use Illuminate\Http\Request;
 
 class GroupeCommoditeController extends Controller
@@ -25,10 +26,8 @@ class GroupeCommoditeController extends Controller
      */
     public function create()
     {
-        $categorie = new GroupeCommodite();
-        $commodites = Commodite::all();
-        return view("groupeCommodite.create", 
-        ["categorie"=>$categorie, "entreprises"=>$entreprises]);
+        $groupeCommodite = new GroupeCommodite();
+        return view("groupeCommodite.create", ["groupeCommodite"=>$groupeCommodite]);
     }
 
     /**
@@ -39,7 +38,10 @@ class GroupeCommoditeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $groupeCommodite = new GroupeCommodite();
+        $groupeCommodite->fill($request->all());
+        $groupeCommodite->save();
+        return redirect()->route("groupesCommodite.index");
     }
 
     /**
@@ -48,9 +50,14 @@ class GroupeCommoditeController extends Controller
      * @param  \App\Models\GroupeCommodite  $groupeCommodite
      * @return \Illuminate\Http\Response
      */
-    public function show(GroupeCommodite $groupeCommodite)
+    public function show($id)
     {
-        //
+        $groupeCommodite = GroupeCommodite::find($id);
+        $commodites = Commodite::where("groupecommodite_id", "LIKE", "%$id%")
+        ->select('id', 'nom')
+        ->orderBy('nom')
+        ->get();
+        return view('groupeCommodite.show', ['groupeCommodite' => $groupeCommodite, 'commodites' => $commodites]);
     }
 
     /**
@@ -61,7 +68,7 @@ class GroupeCommoditeController extends Controller
      */
     public function edit(GroupeCommodite $groupeCommodite)
     {
-        //
+        return view("groupeCommodite.edit", ["groupeCommodite"=>$groupeCommodite]);
     }
 
     /**
@@ -73,7 +80,14 @@ class GroupeCommoditeController extends Controller
      */
     public function update(Request $request, GroupeCommodite $groupeCommodite)
     {
-        //
+        $groupeCommodite->fill($request->all());
+        $groupeCommodite->save();
+        return redirect()->route("groupesCommodite.index");
+    }
+
+    public function delete(GroupeCommodite $groupeCommodite)
+    {
+        return view('groupeCommodite.delete',['groupeCommodite' => $groupeCommodite]);
     }
 
     /**
@@ -84,6 +98,7 @@ class GroupeCommoditeController extends Controller
      */
     public function destroy(GroupeCommodite $groupeCommodite)
     {
-        //
+        $groupeCommodite->delete();
+        return redirect()->route("groupesCommodite.index");
     }
 }
