@@ -24,40 +24,87 @@
     height: 100vh;
 
     .conteneurSidebar {
-        width: 435px;
+        width: 370px;
         height: 100%;
         background-color: #FF6868;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 
         &>.conteneurSidebarTop {
-            background-color: gainsboro;
-            padding: 24px 0px 24px 24px;
+            background-color: #db4c4c;
+            padding: 24px 0px 24px 32px;
+            font-weight: 600;
 
             &>.dashboardLink {
-                color: black;
+                color: white;
+                font-family: 'Roboto', sans-serif;
             }
         }
 
-        &>.conteneurSidebarFavoris {}
+        &>.conteneurSidebarFavoris {
+            &>a {
+                pointer-events: none;
+            }
+
+            &>i {
+
+                transition-duration: 200ms;
+
+            }
+        }
 
         &>.conteneurSideBarSousFavoris {
-            display: none;
+            //display: none;
             overflow: hidden;
+            transition-duration: 200ms;
+            height: 0%;
 
             .sousFav {
-                padding: 24px 0px 24px 24px;
+                padding: 24px 0px 24px 32px;
+
+
             }
+        }
+
+        &>.conteneurSidebarSetting {
+            border-bottom: 2px solid white;
+        }
+
+        &>.conteneurSidebarDisconnect {
+            margin-top: auto;
         }
     }
 
     a {
         font-family: 'Roboto';
-        font-size: 32px;
+        font-size: 24px;
         color: white;
         text-decoration: none;
+        margin-left: 16px;
+        transition-duration: 200ms;
+        display: inline-block;
+        text-align: left;
+        left: 50px;
+        
+       
     }
+    a::after {
+        content: '';
+        width: 0px;
+        height: 2px;
+        display: block;
+        background: white;
+        transition: 300ms;
+        
+      }
+      a:hover::after {
+        width: 100%;
+      }
 
     i {
-        font-size: 32px;
+        font-size: 24px;
+        color: white;
 
         &:hover {
             transform: scale(1.1);
@@ -69,7 +116,8 @@
 .conteneurSidebarAll {
     background-color: #FF6868;
     border-top: 2px solid white;
-    padding: 24px 0px 24px 24px;
+    padding: 24px 0px 24px 32px;
+    transition-duration: 200ms;
 
 
     &:hover {
