@@ -12,6 +12,7 @@ use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Models\Entreprise;
+use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
 
 /*
@@ -28,13 +29,9 @@ Route::get('/', function() {
     return redirect('/agrotouristique');
 });
 Route::get('/agrotouristique', function() {
-    return view('index');
-});
-// Route::get('/dashboard', function() {
-//     return view('users.gestionaires.index');
-// });
-
-
+    $favories = Favorie::all();
+    return view('index',['favories'=>$favories]);
+})->name('acceuil');
 
 Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
     Route::get('/', 'index')->name('index');
@@ -140,10 +137,12 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
+
 Route::get('/dashboard/populaire', function() {
     $entreprises = Entreprise::all();
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
+
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{entreprise}', 'show')->name('show');

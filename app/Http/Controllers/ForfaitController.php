@@ -104,7 +104,6 @@ class ForfaitController extends Controller
      */
     public function delete(Forfait $forfait)
     {
-        $img
         return view('forfaits.delete', ['forfait'=>$forfait]);
     }
 

@@ -8,11 +8,11 @@
 <nav>
     <ul>
     @if(Auth::user()->role->name === 'admin')
-        <li><a href="">Gestion de membre</a></li>
+        <li><a href="{{route('entreprises.')}}">Gestion de membre</a></li>
         <li><a href="{{route('populaire')}}">Gestion d'activités populaire</a></li>
         <li><a href="{{route('evenements.index')}}">Gestion des évènements</a></li>
     @else
-        <li><a href="">Gestion de compte</a></li>
+        <li><a href="{{route('users.gestionaires.edit', Auth::user())}}">Gestion de compte</a></li>
         <li><a href="{{route('favories.index')}}">Gestion de favories</a></li>
         <li><a href="">Gestion des informations de paiment</a></li>
     @endif
