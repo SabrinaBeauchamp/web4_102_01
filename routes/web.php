@@ -12,6 +12,7 @@ use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Models\Entreprise;
+use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
 
 /*
@@ -28,13 +29,9 @@ Route::get('/', function() {
     return redirect('/agrotouristique');
 });
 Route::get('/agrotouristique', function() {
-    return view('index');
-});
-// Route::get('/dashboard', function() {
-//     return view('users.gestionaires.index');
-// });
-
-
+    $favories = Favorie::all();
+    return view('index',['favories'=>$favories]);
+})->name('acceuil');
 
 Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
     Route::get('/', 'index')->name('index');
@@ -49,16 +46,17 @@ Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=
     Route::get('/{user}/delete', 'delete')->name('delete');
     Route::post('/{user}/delete', 'destroy')->name('destroy');
 });
-Route::group(['prefix'=>'/forfaits/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+
+Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{categorie}', 'show')->name('show');
-
+    
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
-
+    
     Route::get('/{categorie}/edit', 'edit')->name('edit');
     Route::post('/{categorie}/edit', 'update')->name('update');
-
+    
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
@@ -67,7 +65,8 @@ Route::group(['prefix'=>'/forfaits/categories', 'as'=>'forfaits.categories.', 'c
 Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
-
+    
+    
     Route::get('/{forfait}/like', [FavorieController::class, 'likeF'])->name('like');
     Route::get('/{forfait}/dislike', [FavorieController::class, 'dislikeF'])->name('dislike');
 
@@ -138,9 +137,17 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
+
+Route::get('/dashboard/populaire', function() {
+    $entreprises = Entreprise::all();
+    return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
+})->name('populaire');
+
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{entreprise}', 'show')->name('show');
+
+    Route::get('/{entreprise}/togglePopulaire', 'togglePopulaire')->name('togglePopulaire');
 
     Route::get('/{entreprise}/like', [FavorieController::class, 'like'])->name('like');
     Route::get('/{entreprise}/dislike', [FavorieController::class, 'dislike'])->name('dislike');

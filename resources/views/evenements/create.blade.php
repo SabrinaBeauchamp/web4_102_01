@@ -1,10 +1,10 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.dashboard')
 
-@section('titre')
-Création d'un évènements
+@section('titre gestion')
+    Tous mes favories
 @endsection
 
-@section('contenu')
+@section('contenu gestion')
 <form action="{{route('evenements.store')}}" method="post">
     @include('evenements.form')
     <x-champ-date name="date" label="Date de l'évènement"></x-champ-date>

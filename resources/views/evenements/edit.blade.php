@@ -1,10 +1,10 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.dashboard')
 
-@section('titre')
-Évènements - {{$evenement->nom}}
+@section('titre gestion')
+    Tous mes favories
 @endsection
 
-@section('contenu')
+@section('contenu gestion')
 <h2>Évènement {{$evenement->nom}}</h2>
     <form action="{{route('evenements.update', $evenement)}}" method="post">
         @include('evenements.form')

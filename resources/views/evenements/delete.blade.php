@@ -1,10 +1,10 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.dashboard')
 
-@section('titre')
-    Évènements - {{$evenements->nom}}
+@section('titre gestion')
+    Tous mes favories
 @endsection
 
-@section('contenu')
+@section('contenu gestion')
 <h2>Voulez-vous supprimer ce forfait {{$evenements->nom}}</h2>
     <form action="{{route('evenements.destroy', $evenements)}}" method="post">
         @csrf

@@ -45,7 +45,7 @@ class UserController extends Controller
         $user = new User();
         $user->fill($request->all());
         $user->save();
-        return redirect()->route("groupes.index");
+        return redirect()->route("users.gestionaires.index");
     }
 
     /**
@@ -84,7 +84,7 @@ class UserController extends Controller
     {
         $user->fill($request->all());
         $user->save();
-        return redirect()->route("groupes.index");
+        return redirect()->route("users.gestionaires.index");
     }
 
     public function delete(User $user)
@@ -101,6 +101,6 @@ class UserController extends Controller
     public function destroy(user $user)
     {
         $user->delete();
-        return redirect()->route("groupes.index");
+        return redirect()->route("acceuil");
     }
 }

@@ -8,8 +8,7 @@
     <span><input type="text" name="adresse" id="adresse" value="{{$entreprise->adresse}}"></span>
 </div>
 <div>
-    <label for="ville">Ville</label>
-    <span><input type="text" name="ville" id="ville" value="{{$entreprise->ville}}"></span>
+
 </div>
 <div>
     <label for="codepostal">codepostal</label>

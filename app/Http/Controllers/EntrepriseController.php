@@ -6,7 +6,10 @@ use App\Models\Entreprise;
 use App\Models\CategorieEntreprise;
 use App\Models\Categorie;
 use App\Models\Groupe;
+use App\Models\Ville;
 use Illuminate\Http\Request;
+
+use Image;
 
 class EntrepriseController extends Controller
 {
@@ -21,6 +24,12 @@ class EntrepriseController extends Controller
         return view('entreprises.index', ['entreprises' => $entreprises]);
     }
 
+    public function togglePopulaire(Entreprise $entreprise) {
+        $entreprise->populaire = !$entreprise->populaire;
+        $entreprise->save();
+        return ['resultat'=>$entreprise->populaire];
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +38,9 @@ class EntrepriseController extends Controller
     public function create()
     {
         $entreprise = new Entreprise();
-        return view("entreprises.create", ["entreprise"=>$entreprise]);
+        $categories = Categorie::all();
+        $villes = Ville::all();
+        return view("entreprises.create", ["entreprise"=>$entreprise, "categories"=>$categories, "villes"=>$villes]);
     }
 
     /**
@@ -48,6 +59,16 @@ class EntrepriseController extends Controller
             $categories = $request->categorie_id;
         }
         $entreprise->categories()->sync($categories);
+        dd($request);
+        if($request->file('logo')->isValid()) {
+            $logo = Image::make($request->logo)->resize(300, 200);
+            $logo->save(public_path("img/entreprises/logo/$entreprise->id.jpg"));
+        }
+        if($request->file('photo')->isValid()) {
+            $photo = Image::make($request->photo)->resize(300, 200);
+            $photo->save(public_path("img/entreprises/$entreprise->id.jpg"));
+        }
+        
         return redirect()->route("groupes.index");
     }
 
@@ -74,7 +95,9 @@ class EntrepriseController extends Controller
      */
     public function edit(Entreprise $entreprise)
     {
-        return view("entreprises.edit", ["entreprise"=>$entreprise]);
+        $categories = Categorie::all();
+        $villes = Ville::all();
+        return view("entreprises.edit", ["entreprise"=>$entreprise, "categories"=>$categories, "villes"=>$villes]);
     }
 
     /**
@@ -109,6 +132,9 @@ class EntrepriseController extends Controller
      */
     public function destroy(Entreprise $entreprise)
     {
+
+        @unlink($entreprise->urlLogo);
+        @unlink($entreprise->urlPhoto);
         $entreprise->delete();
         return redirect()->route("groupes.index");
     }

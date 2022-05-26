@@ -24,6 +24,7 @@
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
             <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
             <li><a href="{{route('favories.index')}}">Favories</a></li>
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
         </ul>
         <ul>
             @if(Auth::user())

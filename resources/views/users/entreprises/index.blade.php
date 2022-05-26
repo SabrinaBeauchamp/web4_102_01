@@ -1,10 +1,10 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.dashboard')
 
-@section('titre')
-    Les entreprises
+@section('titre gestion')
+    gere les entreprises
 @endsection
 
-@section('contenu')
+@section('contenu gestion')
     @include('entreprises.liste')
     @if(Auth::check() && Auth::user()->role === 'admin')
     <a href="{{route('entreprises.create')}}">Ajouter une entreprise</a>

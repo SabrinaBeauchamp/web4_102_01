@@ -1,10 +1,9 @@
 @extends('mesLayouts.dashboard')
 
 @section('titre gestion')
-    information du compte
+    Activités populaires
 @endsection
 
-
 @section('contenu gestion')
-<form action="{{route('users.update', Auth::user()}}" methode="post"></form>
+    @include('entreprises.toggle')
 @endsection

@@ -12,4 +12,7 @@ class Ville extends Model
     public function evenements() {
         return $this->hasMany(Evenement::class, 'ville_id');
     }
+    public function entreprises() {
+        return $this->hasMany(Entreprise::class, 'ville_id');
+    }
 }

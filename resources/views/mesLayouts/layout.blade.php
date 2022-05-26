@@ -8,6 +8,7 @@
     <script src="{{asset('https://kit.fontawesome.com/f4e3a6480f.js')}}" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="{{asset('')}}"> -->
     <script src="{{asset('js/Favori.js')}}"></script>
+    <script src="{{asset('js/Populaire.js')}}"></script>
     <title>@yield("titre") - Les Forfaits</title>
 </head>
 <body>
@@ -17,7 +18,6 @@
                 <h1 class="titre">@yield("titre")</h1>
             </a>
         </header>
-        @include('groupes.menu')
         <footer></footer>
         <div class="main">
             @yield("contenu")
