@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/williamCSS/style.css">
     <script src="https://kit.fontawesome.com/f4e3a6480f.js" crossorigin="anonymous"></script>
-    <title>Page Dashboard Favoris User</title>
+    <title>Page Dashboard User Profil</title>
 </head>
 
-<body> 
+<body>
+    <!-- Conteneur pour dashboard et affichage -->
     <div class="conteneurDashboard">
-        <!-- button ouverture doit avoir sa propre blade -->
         <div class="conteneurButtonMenuDash">
             <div class="boutonOpen">
                 <i class="fa-solid fa-bars"></i>
@@ -22,7 +22,6 @@
             <div class="conteneurSidebarTop boutonClose">
                 <i class="fa-solid fa-xmark"></i>
                 <a href="" class="dashboardLink">Dashboard</a>
-                <!-- <i class="fa-solid fa-x" boutonClose></i> -->
             </div>
             <div class="conteneurSidebarProfil conteneurSidebarAll">
                 <i class="fa-solid fa-user"></i>
@@ -33,7 +32,7 @@
                 <a href="">Paiement</a>
             </div>
             <div class="conteneurSidebarFavoris conteneurSidebarAll">
-                <i class="fa-solid fa-heart" ></i>
+                <i class="fa-solid fa-heart"></i>
                 <a href="">Favoris</a>
                 <i class="fa-solid fa-caret-right" id="arrowFav"></i>
             </div>
@@ -60,8 +59,49 @@
                 <a href="">Déconnexion</a>
             </div>
         </div>
+        <!-- profil commence ici -->
+        <div class="conteneurProfil">
+            <div class="conteneurProfilTop">
+                <img src="/public\williamCSS\temporaire_img\profilPlaceholder.png" alt="" class="DashProfilImage">
+                <h2 class="dashNomUser">John Appleseed</h2>
+            </div>
+            <div class="conteneurProfilNom conteneurProfilAll">
+                <label for="nomProfil">Nom et prénom</label>
+                <div class="conteneurInputProfil">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <input type="text" placeholder="John Appleseed" class="nomProfil">
+                </div>
+            </div>
+            <div class="conteneurProfilEmail conteneurProfilAll">
+                <label for="emailProfil">Adresse courriel</label>
+                <div class="conteneurInputProfil">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="username@email.com" class="emailProfil">
+                </div>
+            </div>
+            <div class="conteneurProfilPhone conteneurProfilAll">
+                <label for="phoneProfil">Numéro de téléphone</label>
+                <div class="conteneurInputProfil">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="text" placeholder="+1 (450) 123-4567" class="phoneProfil">
+                </div>
+            </div>
+            <div class="conteneurProfilAddress conteneurProfilAll">
+                <label for="addressProfil">Adresse complète</label>
+                <div class="conteneurInputProfil">
+                    <i class="fa-solid fa-house"></i>
+                    <input type="text" placeholder="1234 boulevard de Montigny, Saint-Jérôme (Québec) A1B2C3
+                    " class="addressProfil">
+                </div>
+            </div>
+            <div class="conteneurProfilButtons">
+                <button class="buttonProfilMaj">Mettre à jour les informations</button>
+                <button class="buttonProfilDelete">Supprimer mon compte</button>
+            </div>
+        </div>
     </div>
-    
+  
 </body>
 <script src="/public/williamCSS/javascript William/sidebarAccordionUser.js"></script>
+
 </html>

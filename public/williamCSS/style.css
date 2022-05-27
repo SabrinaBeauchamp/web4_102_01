@@ -12,6 +12,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -12485,10 +12489,24 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .conteneurDashboard {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .conteneurDashboard .conteneurSidebar {
-  width: 370px;
+  width: 20%;
   height: 100%;
   background-color: #FF6868;
   display: -webkit-box;
@@ -12498,9 +12516,11 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  white-space: nowrap;
+  -webkit-transition-duration: 800ms;
+          transition-duration: 800ms;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .conteneurDashboard .conteneurSidebar > .conteneurSidebarTop {
@@ -12542,8 +12562,20 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   margin-top: auto;
 }
 
-.conteneurDashboard a {
-  font-family: 'Roboto';
+.conteneurDashboard .conteneurSidebar i {
+  font-size: 24px;
+  color: white;
+}
+
+.conteneurDashboard .conteneurSidebar i:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+}
+
+.conteneurDashboard .conteneurSidebar a {
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   color: white;
   text-decoration: none;
@@ -12555,7 +12587,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   left: 50px;
 }
 
-.conteneurDashboard a::after {
+.conteneurDashboard .conteneurSidebar a::after {
   content: '';
   width: 0px;
   height: 2px;
@@ -12565,20 +12597,8 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   transition: 300ms;
 }
 
-.conteneurDashboard a:hover::after {
+.conteneurDashboard .conteneurSidebar a:hover::after {
   width: 100%;
-}
-
-.conteneurDashboard i {
-  font-size: 24px;
-  color: white;
-}
-
-.conteneurDashboard i:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
 }
 
 .conteneurSidebarAll {
@@ -12591,5 +12611,203 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 
 .conteneurSidebarAll:hover {
   background-color: #ff9f9f;
+}
+
+.conteneurProfil {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conteneurProfil > .conteneurProfilTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 980px;
+  gap: 50px;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+.conteneurProfil > .conteneurProfilTop > img.DashProfilImage {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  border: 3px solid #FF6868;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+.conteneurProfil > .conteneurProfilTop > img.DashProfilImage:hover {
+  -webkit-filter: brightness(50%);
+}
+
+.conteneurProfil > .conteneurProfilTop > h2.dashNomUser, .conteneurProfil > .conteneurProfilTop > .dashNomUser.h2 {
+  font-family: 'Roboto', sans-serif;
+  color: #434343;
+  font-size: 38px;
+  font-weight: 500;
+}
+
+.conteneurProfil > .conteneurProfilAll {
+  margin-bottom: 36px;
+}
+
+.conteneurProfil > .conteneurProfilAll label {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  color: #434343;
+  margin-bottom: 4px;
+}
+
+.conteneurProfil > .conteneurProfilAll .conteneurInputProfil {
+  width: 980px;
+  height: 65px;
+  border: solid 2px #434343;
+  border-radius: 200px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conteneurProfil > .conteneurProfilAll .conteneurInputProfil i {
+  margin-left: -20px;
+  font-size: 28px;
+  color: #434343;
+}
+
+.conteneurProfil > .conteneurProfilAll .conteneurInputProfil input {
+  width: 90%;
+  font-size: 20px;
+  padding-left: 50px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+  color: #434343;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.conteneurProfil > .conteneurProfilButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 980px;
+}
+
+.conteneurProfil > .conteneurProfilButtons > button {
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color: #FF6868;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 33px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-transition: -webkit-box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  transition: -webkit-box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+  transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), transform 200ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1), -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
+}
+
+.conteneurProfil > .conteneurProfilButtons > button:hover {
+  color: #fdc6c6;
+  background-color: #f87c7c;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+          box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+}
+
+.conteneurProfil > .conteneurProfilButtons > .buttonProfilMaj {
+  width: 350px;
+}
+
+.conteneurProfil > .conteneurProfilButtons > .buttonProfilDelete {
+  width: 350px;
+}
+
+.conteneurButtonMenuDash {
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+}
+
+.conteneurButtonMenuDash > .boutonOpen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #db4c4c;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.conteneurButtonMenuDash > .boutonOpen:hover {
+  background-color: #FF6868;
+}
+
+.conteneurButtonMenuDash > .boutonOpen > i {
+  font-size: 24px;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
