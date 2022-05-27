@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/williamCSS/style.css">
+    <script src="https://kit.fontawesome.com/f4e3a6480f.js" crossorigin="anonymous"></script>
+    <title>Page Register User</title>
+</head>
+
+<body>
+    <div class="conteneurRegisterPage">
+        <h1 class="messageAccueilCreate">Créer un compte</h1>
+        <div class="conteneurBoiteCreate">
+            <div class="conteneurCreateTout">
+                <form action="">
+                    <div class="conteneurNom">
+                        <label for="name" class="labelCreate">Nom</label>
+                        <div class="conteneurInput">
+                            <i class="fa fa-user iconRegister"></i>
+                            <input type="text" placeholder="John Appleseed" class="name" />
+                        </div>
+                    </div>
+                    <div class="conteneurEmail">
+                        <label for="name" class="labelCreate">Email</label>
+                        <div class="conteneurInput">
+                            <i class="fa-solid fa-at iconRegister"></i>
+                            <input type="text" placeholder="username@email.com" class="email" />
+                        </div>
+                    </div>
+                    <div class="conteneurRole">
+                        <label for="role" class="labelCreate">Role</label>
+                        <select name="role_id" id="role_id" class="select">
+                            <option value="">-- select --</option>
+                            @foreach($roles as $role)
+
+                            <option value="{{$role->id}}">{{$role->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="conteneurPassword">
+                        <label for="password" class="labelCreate">Mot de passe</label>
+                        <div class="conteneurInput">
+                            <i class="fa-solid fa-lock iconRegister"></i>
+                            <input type="text" placeholder="tacos123" class="password" />
+                        </div>
+                    </div>
+                    <div class="conteneurPasswordConfirm">
+                        <label for="passwordConfirm" class="labelCreate">Confirmer le mot de passe</label>
+                        <div class="conteneurInput">
+                            <i class="fa-solid fa-arrow-rotate-right iconRegister"></i>
+                            <input type="text" placeholder="..." class="passwordConfirm" />
+                        </div>
+                    </div>
+                    <div class="conteneurBoutonRegister">
+                        <button type="submit">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

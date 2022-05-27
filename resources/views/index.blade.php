@@ -43,5 +43,5 @@
             <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
     </nav>
-
+    <x-champ-pop-up text="Pop-up"></x-champ-pop-up>
 @endsection
