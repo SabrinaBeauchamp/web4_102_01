@@ -24,12 +24,20 @@ class Menu {
     }
 
     static openPanneau(panneau) {
-        panneau.classList.add('panneau-open');
-        panneau.classList.remove('panneau-close');
+        if (panneau.classList !== null){
+            panneau.classList.add('panneau-open');
+            if (panneau.classList.contains('panneau-close')) {
+                panneau.classList.remove('panneau-close');
+            }
+        }
     }
     static closePanneau(panneau) {
-        panneau.classList.add('panneau-close');
-        panneau.classList.remove('panneau-open');
+        if (panneau !== null){
+            panneau.classList.add('panneau-close');
+            if (panneau.classList.contains('panneau-open')) {
+                panneau.classList.remove('panneau-open');
+            }
+        }
     }
 
     static ouverturePanneau() {

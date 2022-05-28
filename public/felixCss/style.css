@@ -11330,12 +11330,15 @@ img {
 }
 
 :root {
-  --lightest: #bbff00;
-  --lighter: #0c471e;
-  --light: #ff7edf;
-  --dark: #281855;
-  --darker: #b91934;
-  --darkest: #cbd0ff;
+  --lightest: #ffffff;
+  --lighter: #eeeeee;
+  --light: #dddddd;
+  --accent: #F15D5C;
+  --accentContrast: #1A8F3B;
+  --accentHeavy: #8F4545;
+  --dark: #424242;
+  --darker: #303030;
+  --darkest: #202020;
 }
 
 #container-menu {
@@ -11359,34 +11362,45 @@ img {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   height: auto;
   width: 100%;
   transition-duration: 1000ms;
-  background-color: var(--darker);
+  background-color: var(--accentHeavy);
 }
 .zone-btn .btn-ouvrirPanneau {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 16px;
-  width: 32px;
-  height: 32px;
-  background-color: white;
+  width: 10vw;
+  height: 10vw;
+  background-color: var(--accent);
   color: var(--lilas3);
   border-radius: 3px;
   cursor: pointer;
   outline: none;
+  border-radius: 100vw;
+}
+.zone-btn .btn-ouvrirPanneau.panneau-open {
+  height: 0;
+  width: 0;
+  color: var(--accentHeavy);
 }
 .zone-btn .btn-ouvrirPanneau:hover {
-  background-color: var(--dark);
+  background-color: var(--accentHeavy);
 }
 .zone-btn .btn-ouvrirPanneau:disabled {
   background-color: rgba(255, 255, 255, 0.26);
   border: 1px solid rgba(255, 255, 255, 0.35);
-  color: var(--darker);
+  color: var(--accentHeavy);
+}
+@media (min-width: 900px) {
+  .zone-btn .btn-ouvrirPanneau {
+    width: 4vw;
+    height: 4vw;
+  }
 }
 
 .container-panneau {
@@ -11394,49 +11408,104 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
+  background-color: var(--lighter);
 }
 
 .panneau, .panneau3, .panneau2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  row-gap: 0.5vw;
+  -moz-column-gap: 0.5vw;
+       column-gap: 0.5vw;
   position: relative;
-  overflow: hidden;
   transition-duration: 1000ms;
-  background-color: var(--lightest);
+  height: auto;
 }
 .panneau.panneau-close, .panneau-close.panneau3, .panneau-close.panneau2 {
-  height: 0;
   width: 0;
 }
 .panneau.panneau-open, .panneau-open.panneau3, .panneau-open.panneau2 {
-  height: 30vh;
   width: 100vw;
 }
+.panneau:after, .panneau3:after, .panneau2:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 60%;
+  width: 40vw;
+  background-color: var(--accent);
+  opacity: 0.1;
+  transform: translateX(-8vw);
+}
+.panneau:nth-of-type(2):after, .panneau3:nth-of-type(2):after, .panneau2:nth-of-type(2):after {
+  background-color: var(--accentHeavy);
+  transform: translateX(8vw);
+}
+.panneau:first-of-type, .panneau3:first-of-type, .panneau2:first-of-type {
+  margin-top: 4vw;
+}
+.panneau:last-of-type, .panneau3:last-of-type, .panneau2:last-of-type {
+  margin-bottom: 1vw;
+}
 .panneau h2, .panneau3 h2, .panneau2 h2, .panneau .h2, .panneau3 .h2, .panneau2 .h2 {
-  margin: 8px 8px;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vw;
+  width: 10vw;
+  font-size: 4vw;
+  color: var(--dark);
+  background-color: var(--accent);
+  position: relative;
+}
+.panneau h2:after, .panneau3 h2:after, .panneau2 h2:after, .panneau .h2:after, .panneau3 .h2:after, .panneau2 .h2:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 10vw;
+  width: 10vw;
+  border: 0.5vw var(--accentHeavy) solid;
+  opacity: 0.5;
+  transform: translate(1vw, 1vw);
 }
 @media (min-width: 900px) {
   .panneau, .panneau3, .panneau2 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
+  .panneau:after, .panneau3:after, .panneau2:after {
+    height: 90%;
+    width: 90vw;
+    opacity: 0.6;
+    border: 0.3vw var(--accentHeavy) solid;
+    background: none;
+    transform: translateX(-3vw);
+  }
+  .panneau:nth-of-type(2):after, .panneau3:nth-of-type(2):after, .panneau2:nth-of-type(2):after {
+    transform: translateX(3vw);
+    background: none;
+  }
   .panneau h2, .panneau3 h2, .panneau2 h2, .panneau .h2, .panneau3 .h2, .panneau2 .h2 {
+    font-size: 3vw;
     margin: 2vw;
-    font-size: 2.4rem;
+    height: 8vw;
+    width: 8vw;
+  }
+  .panneau h2:after, .panneau3 h2:after, .panneau2 h2:after, .panneau .h2:after, .panneau3 .h2:after, .panneau2 .h2:after {
+    display: none;
   }
 }
 
-.panneau2 {
-  background-color: var(--lighter);
-}
-
-.panneau3 {
-  background-color: var(--light);
+@media (min-width: 900px) {
+  .panneau2 {
+    flex-direction: row-reverse;
+  }
 }
 
 .menu1, .menu3, .menu2 {
@@ -11444,70 +11513,43 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 2vw;
+  padding: 4vw;
   flex-wrap: wrap;
   row-gap: 0.5vw;
   -moz-column-gap: 2vw;
        column-gap: 2vw;
   z-index: 100;
-  width: 100%;
+  width: 100vw;
   list-style: none;
 }
 .menu1 li, .menu3 li, .menu2 li {
-  padding: 2px 2px;
+  border: 0.1vw solid var(--dark);
+  border-radius: 100vw;
   transition-duration: 500ms;
 }
 .menu1 li:hover, .menu3 li:hover, .menu2 li:hover {
-  background-color: var(--lighter) !important;
-}
-.menu1 li:hover button, .menu3 li:hover button, .menu2 li:hover button {
-  color: var(--darkest);
-}
-.menu1 li.active, .menu3 li.active, .menu2 li.active {
-  opacity: 0.3;
-  background-color: var(--lighter) !important;
-}
-.menu1 li.active button, .menu3 li.active button, .menu2 li.active button {
-  color: var(--darkest);
+  background-color: var(--accent);
+  border: 0.1vw solid var(--accent);
 }
 .menu1 li button, .menu3 li button, .menu2 li button {
-  font-size: 3vw;
+  padding: 0.3vw 2vw;
+  font-size: 2.5vw;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  color: var(--darker) !important;
+  color: var(--dark);
   font-weight: 300;
-  border: none;
   background: none;
+  border: none;
 }
 @media (min-width: 900px) {
-  .menu1 li, .menu3 li, .menu2 li {
-    padding: 0.5vw;
-  }
-  .menu1 li:hover, .menu3 li:hover, .menu2 li:hover {
-    padding: 0.5vw;
-  }
-  .menu1 li.active, .menu3 li.active, .menu2 li.active {
-    padding: 0.5vw;
+  .menu1, .menu3, .menu2 {
+    width: 80vw;
   }
   .menu1 li button, .menu3 li button, .menu2 li button {
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 100;
-    line-height: 2.4rem;
+    padding: 0.2vw 1.5vw;
   }
-}
-
-.menu2 li:hover {
-  background-color: var(--light) !important;
-}
-.menu2 li.active {
-  color: var(--light) !important;
-}
-
-.menu3 li:hover {
-  background-color: var(--dark) !important;
-}
-.menu3 li.active {
-  color: var(--dark) !important;
 }
 
 section.rechercheFiltree form {
@@ -11670,6 +11712,7 @@ section .container-titre h2, section .container-titre .h2 {
   font-size: 5vw;
   font-family: "Koulen", cursive;
   opacity: 1;
+  color: var(--accent);
 }
 section .container-titre .titre2 {
   position: absolute;
@@ -11681,6 +11724,7 @@ section .container-titre .titre-accent {
   font-weight: 200;
   font-family: "Roboto", sans-serif;
   font-size: 15vw;
+  color: var(--darkest);
 }
 @media (min-width: 900px) {
   section {
@@ -11829,10 +11873,11 @@ section .container-titre .titre-accent {
   }
 }
 
-.calendrierEvenements {
-  background-color: var(--lighter);
-}
 .calendrierEvenements .container-calendrier {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 .calendrierEvenements .container-calendrier .calendrier-grid {
@@ -11850,25 +11895,42 @@ section .container-titre .titre-accent {
   background-color: var(--dark);
   width: 10vw;
   height: 10vw;
-}
-.calendrierEvenements .container-calendrier .calendrier-grid .calendrier-item .popup {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-radius: 100vw;
   transition-duration: 500ms;
 }
 .calendrierEvenements .container-calendrier .calendrier-grid .calendrier-item:hover {
   background-color: var(--light);
 }
-.calendrierEvenements .container-calendrier .calendrier-grid .calendrier-item:hover .popup {
-  background-color: var(--lightest);
-  height: 30vw;
-  width: 90vw;
+.calendrierEvenements .container-calendrier .calendrier-grid .calendrier-item .popup {
+  display: none;
+}
+.calendrierEvenements .container-calendrier .calendrier-popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1vw;
+  width: 80vw;
+  height: 100%;
+  padding: 1vw;
+  transition-duration: 500ms;
+}
+.calendrierEvenements .container-calendrier .calendrier-popup .popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1vw;
+  padding: 2vw;
+  background-color: var(--light);
+  transition-duration: 500ms;
 }
 @media (min-width: 900px) {
+  .calendrierEvenements .container-calendrier {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   .calendrierEvenements .container-calendrier .calendrier-grid {
     display: flex;
     flex-direction: row;
@@ -11883,9 +11945,8 @@ section .container-titre .titre-accent {
     width: 5vw;
     height: 5vw;
   }
-  .calendrierEvenements .container-calendrier .calendrier-grid .calendrier-item:hover .popup {
-    height: 30vw;
-    width: 80vw;
+  .calendrierEvenements .container-calendrier .calendrier-popup {
+    width: 40vw;
   }
 }
 
@@ -11903,7 +11964,7 @@ section .container-titre .titre-accent {
   list-style-type: none;
 }
 .propositionsLogements .liste li:nth-of-type(2) {
-  transform: translateY(5vw);
+  transform: translateX(5vw);
 }
 .propositionsLogements .liste .propositionLogement {
   position: relative;
@@ -11936,6 +11997,9 @@ section .container-titre .titre-accent {
     /* Track */
     /* Handle */
     /* Handle on hover */
+  }
+  .propositionsLogements .liste li:nth-of-type(2) {
+    transform: translateY(5vw);
   }
   .propositionsLogements .liste::-webkit-scrollbar {
     width: 2vw;

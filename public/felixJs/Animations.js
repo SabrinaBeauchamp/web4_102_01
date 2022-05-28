@@ -5,7 +5,7 @@
 class Animation {
 
     static main() {
-        this.ouverturePanneau();
+        console.log("Animations.js");
     }
 
     /** * * * * * * * * * * * * * * * * * * * * * * * * * * *

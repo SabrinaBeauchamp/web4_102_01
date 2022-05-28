@@ -131,14 +131,85 @@
                 <div class="calendrier-grid">
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
-                    <div class="calendrier-item">
-                        1
+                    <div class="calendrier-item">1
                         <div class="popup">
-                            <h2>kill me</h2>
-                            ANPAN ANPAN ANPAN ANPAN ANPAN
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
                         </div>
                     </div>
-                    <div class="calendrier-item">2<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
+                    <div class="calendrier-item">2
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
                     <div class="calendrier-item">3<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">4<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">5<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
@@ -170,6 +241,9 @@
                     <div class="calendrier-item">31<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
+                </div>
+                <div class="calendrier-popup">
+                    e
                 </div>
             </div>
         </section>
@@ -230,5 +304,6 @@
 </div>
 <script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
 <script src="{{ URL::asset('felixJs/Animations.js') }}"></script>
+<script src="{{ URL::asset('felixJs/Calendrier.js') }}"></script>
 </body>
 </html>
