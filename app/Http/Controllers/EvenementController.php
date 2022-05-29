@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evenement;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class EvenementController extends Controller
@@ -15,7 +16,7 @@ class EvenementController extends Controller
     public function index()
     {
         $evenements = Evenement::all();
-        return view ('.evenements.index', ['evenements'=>$evenements]);
+        return view ('evenements.index', ['evenements'=>$evenements]);
     }
 
     /**
@@ -26,7 +27,8 @@ class EvenementController extends Controller
     public function create()
     {
         $evenements = new Evenement();
-        return view ('.evenements.create', ['evenements'=>$evenements]);
+        $villes = Ville::all();
+        return view ('evenements.create', ['evenement'=>$evenements, 'villes'=>$villes]);
     }
 
     /**
@@ -40,7 +42,7 @@ class EvenementController extends Controller
         $evenement = new Evenement();
         $evenement->fill($request->all());
         $evenement->save();
-        return redirect()->route('.evenements.index', $evenement);
+        return redirect()->route('evenements.index', $evenement);
     }
 
     /**
@@ -51,7 +53,8 @@ class EvenementController extends Controller
      */
     public function show(Evenement $evenement)
     {
-        return view (".evenements.show", ['evenement'=>$evenement]);
+        $villes = Ville::all();
+        return view ("evenements.show", ['evenement'=>$evenement, 'villes'=>$villes]);
     }
 
     /**
@@ -62,7 +65,8 @@ class EvenementController extends Controller
      */
     public function edit(Evenement $evenement)
     {
-        return view('.evenements.edit', ['evenements'=>$evenement]);
+        $villes = Ville::all();
+        return view ("evenements.edit", ['evenement'=>$evenement, 'villes'=>$villes]);
     }
 
     /**
@@ -76,7 +80,8 @@ class EvenementController extends Controller
     {
         $evenement->fill($request->all());
         $evenement->save();
-        return redirect()->route('.evenements.show', $evenement);
+        
+        return redirect()->route('evenements.show', $evenement);
     }
 
     /**
@@ -87,7 +92,7 @@ class EvenementController extends Controller
      */
     public function delete(Evenement $evenement)
     {
-        return view('.evenements.delete', ['evenements'=>$evenement]);
+        return view('evenements.delete', ['evenements'=>$evenement]);
     }
 
     /**
@@ -100,9 +105,9 @@ class EvenementController extends Controller
     {
         if ($request->has('delete')) {
             $evenement->delete();
-            return redirect()->route('.evenements.index');
+            return redirect()->route('evenements.index');
         } else {
-            return redirect()->route('.evenements.show', $evenement);
+            return redirect()->route('evenements.show', $evenement);
         }
     }
 }

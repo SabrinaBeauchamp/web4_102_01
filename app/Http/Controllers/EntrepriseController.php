@@ -8,7 +8,10 @@ use App\Models\CommoditeEntreprise;
 use App\Models\Commodite;
 use App\Models\Categorie;
 use App\Models\Groupe;
+use App\Models\Ville;
 use Illuminate\Http\Request;
+
+use Image;
 
 class EntrepriseController extends Controller
 {
@@ -21,6 +24,12 @@ class EntrepriseController extends Controller
     {
         $entreprises = Entreprise::all();
         return view('entreprises.index', ['entreprises' => $entreprises]);
+    }
+
+    public function togglePopulaire(Entreprise $entreprise) {
+        $entreprise->populaire = !$entreprise->populaire;
+        $entreprise->save();
+        return ['resultat'=>$entreprise->populaire];
     }
 
     /**
@@ -193,7 +202,34 @@ class EntrepriseController extends Controller
      */
     public function destroy(Entreprise $entreprise)
     {
+
+        @unlink($entreprise->urlLogo);
+        @unlink($entreprise->urlPhoto);
         $entreprise->delete();
         return redirect()->route("groupes.index");
+    }
+
+    /**
+     * Ajouter dans les favories.
+     *
+     * @param  $id 
+     * @return \Illuminate\Http\resultat
+     */
+    public function like($id)
+    {
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        $user->likesEntreprises()->attach($id);
+        return ["resultat"=>true];
+    }
+
+    /**
+     * enlever des favories
+     */
+    public function dislike($id)
+    {
+        $user = Auth::user();
+        $user->likesEntreprises()->detach($id);
+        return ["resultat"=>false];
     }
 }
