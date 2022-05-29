@@ -8,8 +8,12 @@ use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\CategorieForfaitController;
 use App\Http\Controllers\EvenementController;
-use App\Http\Controllers\CommoditeController;
-use App\Http\Controllers\GroupeCommoditeController;
+use App\Http\Controllers\FavorieController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Models\Entreprise;
+use App\Models\Favorie;
+use App\Http\Controllers\CommoditeCOntroller;
 
 /*
 |--------------------------------------------------------------------------

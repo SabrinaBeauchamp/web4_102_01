@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     //Recherche de toute les tables importantes
+    //N'est plus utilisé dans le projet
     public function recherche(Request $request)
     {
         //Récupérer les données
@@ -41,9 +42,10 @@ class AppController extends Controller
     //Recherche avancée
     public function rechercheEntreprises(Request $request)
     {
+        //Récupéré les entreprises selon les groupes selectionnés et la recherche
         $groupes = $request->groupes;
 
-        $query = Entreprise::select('id', 'nom', "entreprises as model")
+        $query = Entreprise::select('id', 'nom', "entreprises as model", 'populaire')
             ->where(function($query) use($request){
                 $query->orWhere("nom", "LIKE", "%$request->q%");
                 $query->orWhere("description", "LIKE", "%$request->q%");
@@ -58,9 +60,23 @@ class AppController extends Controller
         }
         $entreprises = $query->get();
         
+        //Si il n'a pas fait de recherche ou de sélection
+        //Il retourne un tableau vide
         if($request->q === null || $groupes === null)
         {
             $entreprises = array();
+        }
+
+        //Si il veux les entreprises populaires
+        if($request->entreprises_populaires !== null)
+        {
+            foreach($entreprises as $entrepriseId => $entreprise)
+            {
+                if($entreprise->populaire !== 1)
+                {
+                    unset($entreprises[$entrepriseId]);
+                }
+            }
         }
             
         return view("rechercheAvancee", ['resultats'=>$entreprises]);
