@@ -51,7 +51,10 @@ class EntrepriseController extends Controller
             array_push($id, $commoditeId->commodite_id);
         }
 
-        return view("entreprises.create", ["entreprise"=>$entreprise, "commodites"=>$commodites, "commoditesDeEntreprise"=>$id]);
+        $categories = Categorie::all();
+        $villes = Ville::all();
+
+        return view("entreprises.create", ["entreprise"=>$entreprise, "commodites"=>$commodites, "commoditesDeEntreprise"=>$id, "categories"=>$categories, "villes"=>$villes]);
     }
 
     /**
@@ -142,7 +145,10 @@ class EntrepriseController extends Controller
         foreach($commoditesId as $commoditeId){
             array_push($id, $commoditeId->commodite_id);
         }
-        return view("entreprises.edit", ["entreprise"=>$entreprise, "commodites"=>$commodites, "commoditesDeEntreprise"=>$id]);
+
+        $categories = Categorie::all();
+        $villes = Ville::all();
+        return view("entreprises.edit", ["entreprise"=>$entreprise, "commodites"=>$commodites, "commoditesDeEntreprise"=>$id, "categories"=>$categories, "villes"=>$villes]);
     }
 
     /**
