@@ -96,7 +96,7 @@ class FavorieController extends Controller
      * @param  \App\Models\Favorie  $favorie
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showE()
     {
         $favories = Favorie::all();;
         return view ("favories.show", ['favorie'=>$favorie]);

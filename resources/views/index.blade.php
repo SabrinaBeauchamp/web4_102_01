@@ -18,21 +18,10 @@
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
             <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
             <li><a href="{{route('favories.index')}}">Favories</a></li>
-            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+            
         </ul>
         <ul>
-            @if(Auth::user())
-                <li>
-                    <form action="{{route('logout')}}" method="POST">
-                        @csrf
-                        <button type="submit">Deconnexion</button>
-                    </form>
-                </li>
-            @else
-                <li>
-                    <a href="{{route('login')}}">Me connecter</a>
-                </li>
-            @endif
+            
             <li><a href="{{route('commodites.index')}}">Commodites</a></li>
             <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
@@ -53,6 +42,8 @@
 </head>
 <body>
 <div class="interface">
+    
+        
     <!-- Menu hamburger -->
     <div id="container-menu">
         <nav id="nav-principale">
@@ -75,6 +66,19 @@
                         @endforeach
                     </ul>
                 </div>
+                <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+                @if(Auth::user())
+                    <li>
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button type="submit">Deconnexion</button>
+                        </form>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{route('login')}}">Me connecter</a>
+                    </li>
+                @endif
                 <!-- <div class="panneau2 isPanneau panneau-close">
                     <h2>Groupes</h2>
                     <ul class="menu2">
