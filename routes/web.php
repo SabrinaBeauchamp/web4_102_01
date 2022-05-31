@@ -11,6 +11,8 @@ use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VilleController;
+use App\Http\Controllers\CategorieRegionController;
 use App\Models\Entreprise;
 use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
@@ -204,6 +206,32 @@ Route::group(['prefix'=>'/agrotouristique/commodites', 'as'=>'commodites.', 'con
 
     Route::get('/{commodite}/delete', 'delete')->name('delete');
     Route::post('/{commodite}/delete', 'destroy')->name('destroy');
+});
+Route::group(['prefix'=>'/agrotouristique/villes', 'as'=>'villes.', 'controller'=>VilleController::class, 'where'=>['ville'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{ville}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{ville}/edit', 'edit')->name('edit');
+    Route::post('/{ville}/edit', 'update')->name('update');
+
+    Route::get('/{ville}/delete', 'delete')->name('delete');
+    Route::post('/{ville}/delete', 'destroy')->name('destroy');
+});
+Route::group(['prefix'=>'/agrotouristique/mrc', 'as'=>'categoriesRegion.', 'controller'=>CategorieRegionController::class, 'where'=>['categorieRegion'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{categorieRegion}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{categorieRegion}/edit', 'edit')->name('edit');
+    Route::post('/{categorieRegion}/edit', 'update')->name('update');
+
+    Route::get('/{categorieRegion}/delete', 'delete')->name('delete');
+    Route::post('/{categorieRegion}/delete', 'destroy')->name('destroy');
 });
 
 Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'controller'=>AppController::class], function () {
