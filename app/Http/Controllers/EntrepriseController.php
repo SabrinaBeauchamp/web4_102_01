@@ -105,11 +105,10 @@ class EntrepriseController extends Controller
     public function show($id)
     {
         $entreprise = Entreprise::find($id);
-        //Récupère seulement la première categorie qu'il appartient
+        //Récupère seulement la première catégorie qu'il appartient
         $categorie_entreprise = CategorieEntreprise::where('entreprise_id', $id)->first();
         $categorie = Categorie::find($categorie_entreprise->categorie_id);
         //Récupère seulement le premier groupe auquel il appartient
-        $categorie = Categorie::find($id);
         $groupeId = $categorie['groupe_id'];
         $groupe = Groupe::find($groupeId);
 

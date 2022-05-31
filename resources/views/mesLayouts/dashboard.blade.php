@@ -8,7 +8,6 @@
 <nav>
     <ul>
     @if(Auth::user()->role->name === 'admin')
-        <li><a href="{{route('entreprises.')}}">Gestion de membre</a></li>
         <li><a href="{{route('populaire')}}">Gestion d'activités populaire</a></li>
         <li><a href="{{route('evenements.index')}}">Gestion des évènements</a></li>
     @else
