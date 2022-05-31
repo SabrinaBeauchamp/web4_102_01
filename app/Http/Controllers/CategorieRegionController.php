@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategorieRegion;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
 class CategorieRegionController extends Controller
@@ -14,7 +15,8 @@ class CategorieRegionController extends Controller
      */
     public function index()
     {
-        //
+        $categoriesRegion = CategorieRegion::all();
+        return view('categoriesRegion.index', ['categoriesRegion' => $categoriesRegion]);
     }
 
     /**
@@ -24,7 +26,8 @@ class CategorieRegionController extends Controller
      */
     public function create()
     {
-        //
+        $categorieRegion = new CategorieRegion();
+        return view("categoriesRegion.create", ["categorieRegion"=>$categorieRegion]);
     }
 
     /**
@@ -35,7 +38,10 @@ class CategorieRegionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categorieRegion = new CategorieRegion();
+        $categorieRegion->fill($request->all());
+        $categorieRegion->save();
+        return redirect()->route("categoriesRegion.index");
     }
 
     /**
@@ -44,9 +50,13 @@ class CategorieRegionController extends Controller
      * @param  \App\Models\CategorieRegion  $categorieRegion
      * @return \Illuminate\Http\Response
      */
-    public function show(CategorieRegion $categorieRegion)
+    public function show($id)
     {
-        //
+        $categorieRegion = CategorieRegion::find($id);
+        $villes = Ville::where("categorie_region_id", "LIKE", "%$id%")
+            ->select('id', 'nom')
+            ->get();
+        return view('categoriesRegion.show', ['villes' => $villes, 'categorieRegion' => $categorieRegion]);
     }
 
     /**
@@ -57,7 +67,10 @@ class CategorieRegionController extends Controller
      */
     public function edit(CategorieRegion $categorieRegion)
     {
-        //
+        return view("categoriesRegion.edit",
+            [
+                "categorieRegion"=>$categorieRegion
+            ]);
     }
 
     /**
@@ -69,7 +82,14 @@ class CategorieRegionController extends Controller
      */
     public function update(Request $request, CategorieRegion $categorieRegion)
     {
-        //
+        $categorieRegion->fill($request->all());
+        $categorieRegion->save();
+        return redirect()->route("categoriesRegion.index");
+    }
+
+    public function delete(CategorieRegion $categorieRegion)
+    {
+        return view('categoriesRegion.delete',['categorieRegion' => $categorieRegion]);
     }
 
     /**
@@ -80,6 +100,7 @@ class CategorieRegionController extends Controller
      */
     public function destroy(CategorieRegion $categorieRegion)
     {
-        //
+        $categorieRegion->delete();
+        return redirect()->route("categoriesRegion.index");
     }
 }

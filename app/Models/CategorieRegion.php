@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CategorieRegion extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "nom"
+    ];
+    protected $table = "categorie_region";
 }
