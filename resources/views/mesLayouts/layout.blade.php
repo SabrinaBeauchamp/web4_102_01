@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="{{asset('')}}"> -->
     <script src="{{asset('js/Favori.js')}}"></script>
     <script src="{{asset('js/Populaire.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('CSS/style.css')}}">
     <title>@yield("titre") - Les Forfaits</title>
 </head>
 <body>
@@ -18,11 +19,18 @@
                 <h1 class="titre">@yield("titre")</h1>
             </a>
         </header>
-        <footer></footer>
         <div class="main">
             @yield("contenu")
             
         </div>
+        <footer>
+            <div class="infolettre">
+                <h3>
+                    Ceci est une infolettre
+                </h3>
+            </div>
+            <p>hello world</p>
+        </footer>
     </div>
 </body>
 </html>

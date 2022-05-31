@@ -1053,6 +1053,17 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/bf8fbdd9061611b2c05562fa14f6987cc5145d78",
                 "reference": "bf8fbdd9061611b2c05562fa14f6987cc5145d78",
+            "name": "laravel/framework",
+            "version": "v8.83.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "d85c34179f209977043502441f9e44ca432a14b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d85c34179f209977043502441f9e44ca432a14b4",
+                "reference": "d85c34179f209977043502441f9e44ca432a14b4",
                 "shasum": ""
             },
             "require": {
@@ -1879,6 +1890,15 @@
             "time": "2022-04-07T21:38:12+00:00"
         },
         {
+            "name": "monolog/monolog",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0"
+            },
+            "dist": {
+                "type": "zip",
             "name": "monolog/monolog",
             "version": "2.6.0",
             "source": {
@@ -8133,5 +8153,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }

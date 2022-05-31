@@ -62,7 +62,7 @@ Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', '
 });
 
 
-Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
     
