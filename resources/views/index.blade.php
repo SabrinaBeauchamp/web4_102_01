@@ -27,7 +27,19 @@
             
         </ul>
         <ul>
-            
+            @if(Auth::user())
+                <li>
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit">Deconnexion</button>
+                    </form>
+                </li>
+            @else
+                <li>
+                    <a href="{{route('login')}}">Me connecter</a>
+                </li>
+            @endif
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
             <li><a href="{{route('commodites.index')}}">Commodites</a></li>
             <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>

@@ -11,6 +11,6 @@
         <x-champ-button-delete type="submit" titre="Suprimer l'évènement"></x-champ-button>
     </form>
     <div class="options">
-        <x-champ-lien href="{{route('evenements.index')}}" titre="Retour aux évènements"></x-champ-lien>
+        <x-champ-lien href="{{route('evenements')}}" titre="Retour aux évènements"></x-champ-lien>
     </div>
 @endsection

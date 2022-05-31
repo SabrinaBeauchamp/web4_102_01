@@ -6,6 +6,8 @@ use App\Models\Evenement;
 use App\Models\Ville;
 use Illuminate\Http\Request;
 
+
+
 class EvenementController extends Controller
 {
     /**
@@ -16,6 +18,7 @@ class EvenementController extends Controller
     public function index()
     {
         $evenements = Evenement::all();
+        $evenements = Evenement::orderBy('start', 'desc')->get();
         return view ('evenements.index', ['evenements'=>$evenements]);
     }
 
