@@ -52,7 +52,7 @@ class GroupeController extends Controller
     public function show($id)
     {
         $groupe = Groupe::find($id);
-        return view('groupes.show',['groupe' => $groupe]);
+        return view('groupes.show',['groupeSelection' => $groupe]);
     }
 
     /**

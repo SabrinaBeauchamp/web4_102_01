@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<link rel="stylesheet" href="{{asset('felixCss/style.css')}}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../../public/felixCss/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <title>Web 4 synthèse | Recherche Filtrée</title>
     </head>
     <body>
@@ -150,10 +150,10 @@
         <header id="mainHeader">
             <section class="rechercheFiltree">
                 <h1>Recherche Avancée</h1>
-                <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-                <input type="text" name="q" id="q" placeholder=" j'ai faim" class="barreRecherche">   
+                <form action="">
+                    <input type="text" placeholder=" j'ai faim" class="barreRecherche">
                     <div class="filtresEtResultats">
-                        <!-- <fieldset>
+                        <fieldset>
                             <label class="container">Agriculture
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
@@ -182,11 +182,9 @@
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                        </fieldset> -->
-                        @include('groupes.checkbox')
+                        </fieldset>
                         <div class="resultats">
-                        @include('recherche')
-                            <!-- <p>Resultat 1</p>
+                            <p>Resultat 1</p>
                             <p>mhmmm soup</p>
                             <p>Resultat 1</p>
                             <p>Resultat 1</p>
@@ -233,7 +231,7 @@
                             <p>Resultat 1</p>
                             <p>Resultat 1</p>
                             <p>Resultat 1</p>
-                            <p>Resultat 1</p> -->
+                            <p>Resultat 1</p>
                         </div>
                     </div>
                     <button>Rechercher</button>
@@ -276,7 +274,7 @@
             </section>
         </footer>
     </div>
-    <script src="felixJs/Menu.js"></script>
-        <script src="felixJs/Animations.js"></script>
+    <script src="../../public/felixJs/Animations.js"></script>
+    <script src="../../public/felixJs/Menu.js"></script>
     </body>
     </html>
