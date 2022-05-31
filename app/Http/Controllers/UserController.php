@@ -16,10 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        
-        // dd($users[0]->likesEntreprises);
-        return view('users.gestionaires.index', ['users' => $users]);
+        $user = \Auth::user();
+        return view('users.gestionaires.index', ['user' => $user]);
     }
 
     /**

@@ -61,4 +61,17 @@ class User extends Authenticatable
     public function likesEvenements() {
         return $this->morphedByMany(Evenement::class, 'favorie');
     }
+    public function getVerificationAttribute() {
+        $array = array();
+        $resultat = true;
+        $array = \Auth::user()->attributesToArray();
+        array_splice($array, 4, 5);
+        foreach ($array as $item => $value) {
+            if ($value === null) {
+                $resultat = false;
+                return $resultat;
+            }  
+        }
+        return $resultat;
+    }
 }

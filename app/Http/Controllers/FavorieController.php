@@ -90,6 +90,17 @@ class FavorieController extends Controller
         $favories = Favorie::all();;
         return view("users.favories.index", ['favories'=>$favories]);
     }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Favorie  $favorie
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        $favories = Favorie::all();;
+        return view ("favories.show", ['favorie'=>$favorie]);
+    }
 
     /**
      * Show the form for creating a new resource.

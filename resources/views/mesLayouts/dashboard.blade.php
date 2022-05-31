@@ -14,6 +14,9 @@
     @else
         <li><a href="{{route('users.gestionaires.edit', Auth::user())}}">Gestion de compte</a></li>
         <li><a href="{{route('favories.index')}}">Gestion de favories</a></li>
+            <ul>
+                <li><a href=""> Entreprises </a></li>
+            </ul>
         <li><a href="">Gestion des informations de paiment</a></li>
     @endif
         

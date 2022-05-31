@@ -1,15 +1,18 @@
 @extends('mesLayouts.dashboard')
 
 @section('titre gestion')
-    menu
+    Bonjour {{Auth::user()->name}}
 @endsection
 
 
 @section('contenu gestion')
 <div class="information_utilisateur">
+    @if($user->verification === false)
+    <h3>Veuillez compléter votre inscription</h3>
+    <a href="{{route('users.gestionaires.edit', Auth::user())}}">Gestion de compte</a>
+    @endif
     <h5>Information du compte</h5>
     <x-champ-text name="nom" label="Nom">{{Auth::user()->name}}</x-champs-text>
-    <x-champ-text name="prenom" label="Prenom">{{Auth::user()->prenom}}</x-champs-text>
     <x-champ-text name="email" label="Email">{{Auth::user()->email}}</x-champs-text>
     <x-champ-text name="role" label="Role">{{Auth::user()->role->name}}</x-champs-text>
 </div>

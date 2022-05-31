@@ -1,8 +1,12 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.dashboard')
 
-@section('titre')
-    Tout mes favories
+@section('titre gestion')
+    Tous mes favories
 @endsection
 
-@section('contenu')
+@section('contenu gestion')
+    <h3>Entreprises</h3>
+    @foreach(Auth::user()->likesEntreprises as $entreprise)
+    <p>{{$entreprise->nom}}</p> 
+    @endforeach
 @endsection
