@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $user = \Auth::user();
-        return view('users.gestionaires.index', ['user' => $user]);
+        return view('users.gestionaires.index', ['user'=>$user]);
     }
 
     /**

@@ -1,9 +1,10 @@
 @foreach($categories as $categorie)
-<li>
-    <button class="btn2">
+<ul>
+    <li>
         <a href="{{route('categories.show', $categorie)}}">
             {{$categorie->nom}} ({{$categorie->groupe->nom}})
         </a>
-    </button>
-</li>
+        @include('entreprises.liste', ['entreprises'=>$categorie->entreprises])
+    </li>
+</ul>
 @endforeach

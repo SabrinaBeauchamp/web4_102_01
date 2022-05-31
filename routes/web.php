@@ -109,7 +109,7 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'con
     Route::post('/{evenement}/edit', 'update')->name('update');
 
     Route::get('/{evenement}/delete', 'delete')->name('delete');
-    Route::post('/{evenement}/delete', 'destroy')->name('d          estroy');
+    Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
 
 Route::group(['prefix'=>'/agrotouristique/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
@@ -179,7 +179,7 @@ Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-Route::group(['prefix'=>'/agrotouristique/groupesCommodite', 'as'=>'groupesCommodite.', 'controller'=>GroupeCommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/groupeCommodites', 'as'=>'groupeCommodites.', 'controller'=>CommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupeCommodite}', 'show')->name('show');
 
