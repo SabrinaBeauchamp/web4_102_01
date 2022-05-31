@@ -41,7 +41,8 @@ class Menu {
     }
 
     static ouverturePanneau() {
-        var btn_panneau, btn1, btn2, btn3, panneau, panneau2, panneau3;
+        var container_panneau, btn_panneau, btn1, btn2, btn3, panneau, panneau2, panneau3;
+        container_panneau = document.querySelector('.container-panneau');
         btn_panneau = document.querySelector('.btn-ouvrirPanneau');
         btn1 = document.querySelectorAll('.btn1');
         btn2 = document.querySelectorAll('.btn2');
@@ -49,8 +50,14 @@ class Menu {
         panneau = document.querySelector(".panneau");
         panneau2 = document.querySelector(".panneau2");
         panneau3 = document.querySelector(".panneau3");
+        container_panneau.addEventListener("mouseleave", e => {
+            this.closePanneau(panneau);
+            this.closePanneau(panneau2);
+            this.closePanneau(panneau3);
+
+            e.preventDefault();
+        });
         if (panneau.classList.contains('isPanneau')) {
-            
             btn_panneau.addEventListener("mousedown", e => {
                 this.togglePanneau(panneau);
                 this.togglePanneau(panneau2);
@@ -58,19 +65,7 @@ class Menu {
    
                 e.preventDefault();
             });
-            for (let i = 0; i < btn1.length; i++) {
-                btn1[i].addEventListener("mousedown", e => {
-                    this.openPanneau(panneau2);
-                    this.closePanneau(panneau3);
-                    e.preventDefault();
-                });
-            }
-            for (let i = 0; i < btn2.length; i++) {
-                btn2[i].addEventListener("mousedown", e => {
-                    this.openPanneau(panneau3);
-                    e.preventDefault();
-                });
-            }
+
         }
     }
 

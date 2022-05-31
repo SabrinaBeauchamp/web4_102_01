@@ -14,9 +14,9 @@
 // Bouton ouverture menu
 //--------------------
 .zone-btn {
-    @include setFlex(row-reverse, flex-start, center);
+    @include setFlex(row, flex-start, center);
     position: relative;
-    height: auto;
+    height: 12vw;
     width: 100%;
     transition-duration: 1000ms;
     background-color: var(--accentHeavy);
@@ -24,6 +24,7 @@
         @include setFlex(column, center, center);
         width: 10vw;
         height: 10vw;
+        margin: 1vw;
         background-color: var(--accent);
         color: var(--lilas3);
         border-radius: 3px;
@@ -43,9 +44,12 @@
             border: 1px solid rgba(255, 255, 255, 0.35);
             color: var(--accentHeavy);
         }
-        @include breakpoint-min(900){
-            width: 4vw;
-            height: 4vw;
+    }
+    @include breakpoint-min(900){
+        height: 5vw;
+        .btn-ouvrirPanneau{
+            width: 3vw;
+            height: 3vw;    
         }
     }
 }
@@ -60,6 +64,7 @@
 }
 .panneau {
     @include setFlex(column, center, center);
+    overflow: hidden;
     row-gap: 0.5vw;
     column-gap: 0.5vw;
     position: relative;
@@ -73,6 +78,7 @@
     }
     &:after{
         content: '';
+        overflow: hidden;
         display: inline-block;
         position: absolute;
         height: 60%;
@@ -86,7 +92,7 @@
         transform: translateX(8vw);
     }
     &:first-of-type{
-        margin-top: 4vw;
+        margin-top: 2vw;
     }
     &:last-of-type{
         margin-bottom: 1vw;
@@ -125,10 +131,10 @@
             background: none;
         }
         h2{
-            font-size: 3vw;
-            margin: 2vw;
-            height: 8vw;
-            width: 8vw;
+            font-size: 2vw;
+            margin: 1vw;
+            height: 7vw;
+            width: 7vw;
             &:after{
                 display: none
             }
@@ -150,7 +156,7 @@
 //--------------------
 .menu1 {
     @include setFlex(row, center, center);
-    padding: 4vw;
+    padding: 2vw;
     flex-wrap: wrap;
     row-gap: 0.5vw;
     column-gap: 2vw;
@@ -158,22 +164,21 @@
     width: 100vw;
     list-style: none;
     li{
-        border: 0.1vw solid var(--dark);
-        border-radius: 100vw;
-        transition-duration: 500ms;
-        &:hover {
-            background-color: var(--accent);
-            border: 0.1vw solid var(--accent);
-        }
         button {
-            padding: 0.3vw 2vw;
-            font-size: 2.5vw;
+            padding: 0.1vw 2vw;
+            font-size: 3vw;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
             color: var(--dark);
             font-weight: 300;
             background: none;
-            border:none;
+            border: 0.1vw solid var(--dark);
+            border-radius: 100vw;
+            transition-duration: 500ms;
+            &:hover {
+                background-color: var(--accent);
+                border: 0.1vw solid var(--accent);
+            }
         }
     }
     @include breakpoint-min(900){
@@ -194,4 +199,9 @@
 
 .menu3{
     @extend .menu1;
+}
+
+.menu4{
+    @extend .menu1;
+    width: 100%;
 }

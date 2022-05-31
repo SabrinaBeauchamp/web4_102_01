@@ -24,7 +24,7 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-close">
-                    <h2>Groupes</h2>
+                    <h2>Catégories</h2>
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -288,14 +288,15 @@
     </main>
     <!-- Footer de la page -->
     <footer>
-        <h2>Ceci est un footer</h2>
         <section class="infolettre">
             <div class="container-titre detectAnim">
                 <h2 class="titre1">Restez</h2>
                 <h2 class="titre-accent">À JOUR</h2>
                 <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
-            <button>Créer mon compte</button>
+            <div class="container-bouton">
+                <button>Créer mon compte</button>
+            </div>
         </section>
         <section class="partenaires">
             <h2>Voici nos partenaires</h2>

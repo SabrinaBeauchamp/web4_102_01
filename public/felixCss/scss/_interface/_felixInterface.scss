@@ -1,3 +1,6 @@
+@import '_felixEntreprise';
+
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 html::-webkit-scrollbar {
     display: none;
@@ -24,16 +27,24 @@ header
 .fil-ariane
 {
     @include setFlex(row, center, center);
-    height: 15vh;
-    background-color: var(--light);
+    height: 10vw;
+    background-color: var(--dark);
+    color: var(--light);
     ul{
         @include setFlex(row, center, flex-start);
         li{
-            margin: 16px;
+            font-size: 2vw;
+            margin: 1vw;
         }
     }
     @include breakpoint-min(900){
-        height: 10vh;
+        height: 5vw;
+        ul{
+            li{
+                font-size: 1vw;
+                margin: 1vw;
+            }
+        }
     }
 }
 
@@ -47,21 +58,22 @@ section
         position: relative;
         h2{
             margin: 0;
-            font-size: 5vw;
+            font-size: 3vw;
             font-family: 'Koulen', cursive;
             opacity: 1;
             color: var(--accent);
         }
         .titre2{
             position: absolute;
-            left: 40vw;
-            top: 11vw;
+            left: 30vw;
+            top: 7vw;
         }
         .titre-accent{
-            transform: translate(3vw, -7vw);
+            transform: translate(3vw, -3.5vw);
             font-weight: 200;
             font-family: 'Roboto', sans-serif;
-            font-size: 15vw;
+            font-size: 8vw;
+            text-transform: uppercase;
             color: var(--darkest);
         }
     }
@@ -374,14 +386,22 @@ footer{
 // Infolettre
 //--------------------
 .infolettre{
-    button{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 1vw;
-        margin: 0.2vw;
-        padding: 1.3vw;
-        border: 0.1vw solid var(--dark);
-        border-radius: 100vw;
-        background-color: var(--lightest);
+    .container-bouton{
+        @include setFlex(row, center, center);
+        button{
+            font-family: 'Roboto', sans-serif;
+            font-size: 3vw;
+            font-weight: 1vw;
+            margin: 0.2vw;
+            padding: 1.3vw;
+            border: 0.1vw solid var(--dark);
+            border-radius: 100vw;
+            color: var(--dark);
+            background-color: var(--lightest);
+            @include breakpoint-min(900){
+                font-size: 1vw;
+            }
+        }
     }
 }
 
