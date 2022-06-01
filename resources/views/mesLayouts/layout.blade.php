@@ -19,7 +19,7 @@
             </a>
         </header>
         <footer></footer>
-        <div class="main">
+        <div>
             @yield("contenu")
             
         </div>

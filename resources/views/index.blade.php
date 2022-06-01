@@ -18,10 +18,21 @@
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
             <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
             <li><a href="{{route('favories.index')}}">Favories</a></li>
-            
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
         </ul>
         <ul>
-           
+            @if(Auth::user())
+                <li>
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit">Deconnexion</button>
+                    </form>
+                </li>
+            @else
+                <li>
+                    <a href="{{route('login')}}">Me connecter</a>
+                </li>
+            @endif
             <li><a href="{{route('commodites.index')}}">Commodites</a></li>
             <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
@@ -67,13 +78,12 @@
                                     <a href="{{route('categoriesRegion.index')}}">MRC</a>
                                 </button>
                             </li>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-            </nav>
-        </div>
-        <!-- Header -->
-        
+            </div>
+        </nav>
+    </div>
+    <!-- Header -->
     <header id="mainHeader">
         <h1>hello</h1>
     </header>
@@ -81,19 +91,6 @@
     <div class="fil-ariane">
         <ul>
             <li><a href="#">Accueil</a></li>
-            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
-        @if(Auth::user())
-            <li>
-                <form action="{{route('logout')}}" method="POST">
-                    @csrf
-                    <button type="submit">Deconnexion</button>
-                </form>
-            </li>
-        @else
-            <li>
-                <a href="{{route('login')}}">Me connecter</a>
-            </li>
-        @endif
         </ul>
     </div>
     <!-- Contenu principal -->
@@ -114,9 +111,9 @@
             </div>
         </section>
         <section class="introduction">
-            <div class="container-titre detectAnim">
-                <h2 class="titre1">Recherche Avancée</h2>
-                <a href="{{route('recherche.rechercheAvancee')}}">Cliquer ici</a>
+            <h2 class="titre1">Recherche Avancée</h2>
+            <a href="{{route('recherche.rechercheAvancee')}}">Cliquer ici</a>
+            <div class="container-titre">
             </div>
         </section>
         <section class="activitesPopulaires">
@@ -134,19 +131,10 @@
                                     <h3>{{$entreprisePopulaire->nom}}</h3>
                                     <p>{{$entreprisePopulaire->description}}</p>
                                 </div>
-                                <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
                             </div>
                         </li>
                     @endforeach
-                    <!-- <li class="item-carrousel">
-                        <div class="activitePopulaire">
-                            <div class="activitePopulaire-container-texte">
-                                <h3>Activité populaire</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
-                            </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                        </div>
-                    </li> -->
                 </ul>
             </div>
         </section>

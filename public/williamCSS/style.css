@@ -12483,7 +12483,6 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .conteneurDashboard {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12501,7 +12500,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 
 .conteneurDashboard .conteneurSidebar {
   width: 20%;
-  height: 100%;
+  height: 100vh;
   background-color: #FF6868;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12513,7 +12512,6 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   white-space: nowrap;
   -webkit-transition-duration: 800ms;
           transition-duration: 800ms;
-  overflow: hidden;
   z-index: 2;
 }
 
