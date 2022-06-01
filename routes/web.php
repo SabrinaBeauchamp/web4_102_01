@@ -16,6 +16,7 @@ use App\Http\Controllers\CategorieRegionController;
 use App\Models\Entreprise;
 use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
+use App\Http\Controllers\GroupeCommoditeController;
 
 /*
 |--------------------------------------------------------------------------
