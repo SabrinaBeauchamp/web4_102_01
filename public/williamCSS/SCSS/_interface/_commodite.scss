@@ -1,0 +1,104 @@
+//mixins
+
+@mixin setFlex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin debug {
+    border: 1px red solid;
+}
+
+@mixin breakpoint-min($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-max($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin resetBox {
+    padding: 0;
+    margin: 0;
+}
+
+//fonts 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+
+
+//scss
+
+.commodites {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    width: 320px;
+    height: 40px;
+    margin: 4px 16px 4px 32px;
+    padding: 8px 8px 8px 32px;
+    background-color: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;
+    border-radius: 0px 40px 40px 0px;
+    @include setFlex(column, center, flex-start);
+    
+}
+
+.commodites:hover {
+    background-color: #eee;
+}
+
+.commodites::before {
+    content: "\f061";
+    @include setFlex(column, center, center);
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background-color: #f25c5c;
+    height: 45px;
+    width: 45px;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    color: white;
+}
+
+.boutonUniforme{
+   
+    @include setFlex(column, center, center);
+    width: 80%;
+    height: 50px;
+    width: 320px;
+    margin-left: 16px;
+    text-align: center;
+    background-color: #f25c5c;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 33px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: box-shadow 400ms cubic-bezier(.2, 0, .7, 1), transform 200ms cubic-bezier(.2, 0, .7, 1);
+
+    &:hover {
+        color: #fdc6c6;
+        background-color: #f87c7c;
+        transform: scale(1.05);
+        box-shadow: 0 0 1px 10px rgba(#ff8f8f, 0.4),
+            0 0 1px 15px rgba(#ff8f8f, 0.1),
+            0 0 1px 20px rgba(#ff8f8f, 0.1);
+    }
+}
