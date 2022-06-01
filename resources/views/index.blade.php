@@ -1,43 +1,3 @@
-
-<!-- <h2>Agrotouristique</h2>
-    <p>Cherche dans tout</p>
-    <form action="{{route('recherche.recherche')}}" method="get">
-        <input type="text" name="q" id="q">
-        <button>Rechercher</button>
-    </form>
-    <p>Cherche seulement les entreprises</p>
-    <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-        <input type="text" name="q" id="q">
-        <button>Rechercher</button>
-    </form>
-    <nav>
-        <ul>
-            <li><a href="{{route('groupes.index')}}">Groupe</a></li>
-            <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
-            <li><a href="{{route('forfaits.categories.index')}}">Catégories</a></li>
-            <li><a href="{{route('evenements.index')}}">Évènements</a></li>
-            <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
-            <li><a href="{{route('favories.index')}}">Favories</a></li>
-            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
-        </ul>
-        <ul>
-            @if(Auth::user())
-                <li>
-                    <form action="{{route('logout')}}" method="POST">
-                        @csrf
-                        <button type="submit">Deconnexion</button>
-                    </form>
-                </li>
-            @else
-                <li>
-                    <a href="{{route('login')}}">Me connecter</a>
-                </li>
-            @endif
-            <li><a href="{{route('commodites.index')}}">Commodites</a></li>
-            <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
-        </ul>
-        <p>poyo</p>
-    </nav> -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -124,15 +84,6 @@
                             </div>
                         </li>
                     @endforeach
-                    <!-- <li class="item-carrousel">
-                        <div class="activitePopulaire">
-                            <div class="activitePopulaire-container-texte">
-                                <h3>Activité populaire</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
-                            </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                        </div>
-                    </li> -->
                 </ul>
             </div>
         </section>

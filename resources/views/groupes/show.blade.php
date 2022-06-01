@@ -81,7 +81,7 @@
                 <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
             <div class="container-bouton">
-                <button>Créer mon compte</button>
+                <a href="{{route('register')}}">Créer mon compte</a>
             </div>
         </section>
         <section class="partenaires">
