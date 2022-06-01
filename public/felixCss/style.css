@@ -11559,53 +11559,55 @@ img {
   width: 100%;
 }
 
+section.rechercheFiltree {
+  height: auto;
+}
 section.rechercheFiltree form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   row-gap: 2vw;
-  padding: 2vw;
-  border: 0.2vw solid var(--dark);
 }
 section.rechercheFiltree form input.barreRecherche {
-  width: 40vw;
+  width: 90vw;
   border-radius: 100vw;
-  height: 2vw;
-  padding: 0.2vw 1vw;
-}
-section.rechercheFiltree form button {
-  margin: 0.2vw;
-  padding: 0.3vw;
-  border: 0.1vw solid var(--dark);
-  border-radius: 100vw;
+  height: auto;
+  padding: 0.2vw 2vw;
+  border: 0.2vw solid var(--dark);
+  font-size: 5vw;
 }
 section.rechercheFiltree form .filtresEtResultats {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  -moz-column-gap: 2vw;
-       column-gap: 2vw;
-  width: 50vw;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 2vw;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  width: 15vw;
-  padding: 0.8vw 0;
-  border: 0.2vw solid var(--dark);
-  border-radius: 100vw;
+  row-gap: 2vw;
+  background-color: var(--lighter);
+  -moz-column-gap: 1vw;
+       column-gap: 1vw;
+  padding: 1vw;
+  border-radius: 2vw;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container {
   position: relative;
-  width: 80%;
-  margin: 0.2vw;
-  padding: 0.3vw;
+  width: auto;
+  height: auto;
   text-align: center;
+  font-size: 4vw;
+  border-radius: 100vw;
+  background-color: var(--lightest);
+  color: var(--dark);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -11622,10 +11624,7 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container input {
   z-index: 1000;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container input:checked ~ .checkmark {
-  background-color: var(--darkest);
-}
-section.rechercheFiltree form .filtresEtResultats fieldset .container input:checked ~ .checkmark:after {
-  display: block;
+  border: 0.2vw solid var(--accent);
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark {
   position: absolute;
@@ -11633,10 +11632,7 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
-  border: 0.1vw solid var(--dark);
   border-radius: 100vw;
-  background-color: var(--lighter);
   transition-duration: 500ms;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark:after {
@@ -11645,7 +11641,18 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark
   display: none;
 }
 section.rechercheFiltree form .filtresEtResultats fieldset .container:hover input ~ .checkmark {
-  opacity: 0.5;
+  border: 0.2vw solid var(--accent);
+}
+section.rechercheFiltree form .filtresEtResultats button {
+  margin: 0.2vw;
+  padding: 0.2vw 2vw;
+  border-radius: 100vw;
+  border-color: var(--accent);
+  font-size: 5vw;
+  font-family: "Roboto", sans-serif;
+  color: var(--dark);
+  background-color: var(--accent);
+  font-weight: 300;
 }
 section.rechercheFiltree form .filtresEtResultats .resultats {
   display: flex;
@@ -11653,14 +11660,66 @@ section.rechercheFiltree form .filtresEtResultats .resultats {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  -moz-column-gap: 2vw;
+       column-gap: 2vw;
   width: 100%;
+  height: auto;
 }
 section.rechercheFiltree form .filtresEtResultats .resultats p {
-  margin: 0.2vw;
-  padding: 0.3vw;
-  border: 0.1vw solid var(--dark);
+  padding: 1vw 3vw;
+  height: auto;
+  border: 0.1vw solid var(--accent);
   border-radius: 100vw;
-  background-color: var(--lightest);
+  font-size: 3vw;
+  font-family: "Roboto", sans-serif;
+  color: var(--dark);
+  font-weight: 300;
+}
+@media (min-width: 900px) {
+  section.rechercheFiltree form input.barreRecherche {
+    width: 100%;
+    border-radius: 100vw;
+    height: auto;
+    padding: 0.2vw 2vw;
+    font-size: 2vw;
+  }
+  section.rechercheFiltree form .filtresEtResultats {
+    -moz-column-gap: 0.4vw;
+         column-gap: 0.4vw;
+  }
+  section.rechercheFiltree form .filtresEtResultats fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    -moz-column-gap: 0.4vw;
+         column-gap: 0.4vw;
+    padding: 0.3vw;
+  }
+  section.rechercheFiltree form .filtresEtResultats fieldset .container {
+    padding: 0.2vw 0.4vw;
+    font-size: 1.2vw;
+  }
+  section.rechercheFiltree form .filtresEtResultats button {
+    margin: 0.2vw;
+    padding: 0.2vw 2vw;
+    font-size: 1.5vw;
+  }
+  section.rechercheFiltree form .filtresEtResultats .resultats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -moz-column-gap: 1vw;
+         column-gap: 1vw;
+    width: auto;
+    height: auto;
+  }
+  section.rechercheFiltree form .filtresEtResultats .resultats p {
+    padding: 0.2vw 1vw;
+    font-size: 1vw;
+  }
 }
 
 .introduction-entreprise {

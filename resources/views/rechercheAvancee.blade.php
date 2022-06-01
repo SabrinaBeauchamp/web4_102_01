@@ -37,101 +37,8 @@
                 </div>
             </nav>
         </div>
-        <!-- Header -->
-        <header id="mainHeader">
-            <section class="rechercheFiltree">
-                <h1>Recherche Avancée</h1>
-                <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-                <input type="text" name="q" id="q" placeholder=" j'ai faim" class="barreRecherche">   
-                    <div class="filtresEtResultats">
-                        <!-- <fieldset>
-                            <label class="container">Agriculture
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Agriculture
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Agriculture
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Agriculture
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Agriculture
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Agriculture
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">Recherches Populaires
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </fieldset> -->
-                        @include('groupes.checkbox')
-                        <div class="resultats">
-                        @include('recherche')
-                            <!-- <p>Resultat 1</p>
-                            <p>mhmmm soup</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>hand it over, your dark soul</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>AAAAAAAAAAAAAAAARGH</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>hi</p>
-                            <p>Resultat 1</p>
-                            <p>POUTINE POUTINE POUTINE</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>jesus loves you, but he doesnt get you valentines chocolate</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>why do we have to do this</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p>
-                            <p>Resultat 1</p> -->
-                        </div>
-                    </div>
-                    <button>Rechercher</button>
-                </form>
 
-            </section>
-        </header>
+       
         <!-- Fil d'Ariane -->
         <div class="fil-ariane">
             <ul>
@@ -140,27 +47,36 @@
         </div>
         <!-- Contenu principal -->
         <main>
-            <section class="introduction">
-                <div class="container-titre detectAnim">
-                    <h2 class="titre1">Les Laurentides, un territoire </h2>
-                    <h2 class="titre-accent">GOURMAND!</h2>
-                    <h2 class="titre2"></h2>
-                </div>
-                <div class="container-introduction">
-                    <div class="container-img-introduction detectAnim2">
-                        <img src="../../public/images/Placeholder.svg" alt="placeholder" class="image1">
-                        <img src="../../public/images/Placeholder.svg" alt="placeholder" class="image2">
-                        <img src="../../public/images/Placeholder.svg" alt="placeholder" class="image3">
+            <section class="rechercheFiltree">
+            <div class="container-titre detectAnim">
+                    <h2 class="titre1">Recherche par</h2>
+                    <h2 class="titre-accent">FILTRES</h2>
+                    <h2 class="titre2">et mots clés</h2>
+            </div>
+            <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
+            <input type="text" name="q" id="q" placeholder="mots-clés ici" class="barreRecherche">   
+            <div class="filtresEtResultats">                  
+                @include('groupes.checkbox')
+                <button>Rechercher</button>
+                <div class="resultats">
+                    @include('recherche')
                     </div>
-                    <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
                 </div>
-            </section>
+            </form>
+
+        </section>
         </main>
         <!-- Footer de la page -->
         <footer>
-            <h2>Ceci est un footer</h2>
             <section class="infolettre">
-                <h2>Ceci est une infolettre</h2>
+                <div class="container-titre detectAnim">
+                    <h2 class="titre1">Restez</h2>
+                    <h2 class="titre-accent">À JOUR</h2>
+                    <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
+                </div>
+                <div class="container-bouton">
+                    <a href="{{route('register')}}">Créer mon compte</a>
+                </div>
             </section>
             <section class="partenaires">
                 <h2>Voici nos partenaires</h2>
