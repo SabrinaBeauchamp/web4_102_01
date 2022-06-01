@@ -39,9 +39,9 @@
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
-                                <button class="btn1">
+                                <a class="btn1">
                                     <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                </button>
+                                </a>
                             </li>
                         @endforeach
                     </ul>

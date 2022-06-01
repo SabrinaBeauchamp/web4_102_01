@@ -16,12 +16,11 @@
     <!-- Menu hamburger -->
     <div id="container-menu">
         <nav id="nav-principale">
-            <div class="zone-btn isPanneau panneau-close">
+            <div class="zone-btn isPanneau panneau-open">
                 <div class="container-btn-ouvrirPanneau">
                     <i class="btn-ouvrirPanneau" tabindex="0"></i>
                 </div>
             </div>
-            <!-- PANNEAUX -->
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-open">
@@ -29,15 +28,11 @@
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
-                                <button class="btn1">
-                                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                </button>
+                                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
                             </li>
                         @endforeach
                         <li>
-                                <button class="btn1">
-                                    <a href="{{route('categoriesRegion.index')}}">MRC</a>
-                                </button>
+                            <a href="{{route('categoriesRegion.index')}}" class="btn1">MRC</a>
                         </li>
                     </ul>
                 </div>

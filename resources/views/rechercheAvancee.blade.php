@@ -23,62 +23,60 @@
                 <!-- PANNEAUX -->
                 <div class="container-panneau">
                     <div class="panneau isPanneau panneau-close">
-                        <h2>Catégories</h2>
+                        <h2>Groupes</h2>
                         <ul class="menu1">
                             @foreach($groupes as $groupe)
                                 <li>
-                                    <button class="btn1">
-                                        <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                    </button>
+                                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
                                 </li>
                             @endforeach
+                            <li>
+                                <a href="{{route('categoriesRegion.index')}}" class="btn1">MRC</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-
-       
+        <!-- Contenu principal -->
+        <main>
+            <section class="rechercheFiltree">
+                <div class="container-titre detectAnim">
+                    <h2 class="titre1">Recherche par</h2>
+                    <h2 class="titre-accent">FILTRES</h2>
+                    <h2 class="titre2">et mots clés</h2>
+                </div>
+                <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
+                    <input type="text" name="q" id="q" placeholder="mots-clés ici" class="barreRecherche">   
+                    <div class="filtresEtResultats">                  
+                        @include('groupes.checkbox')
+                        <button>Rechercher</button>
+                        <div class="resultats">
+                            @include('recherche')
+                        </div>
+                </div>
+            </form>
+        </section>
         <!-- Fil d'Ariane -->
         <div class="fil-ariane">
             <ul>
                 <li><a href="#">Accueil</a></li>
             </ul>
         </div>
-        <!-- Contenu principal -->
-        <main>
-            <section class="rechercheFiltree">
+    </main>
+    <!-- Footer de la page -->
+    <footer>
+        <section class="infolettre">
             <div class="container-titre detectAnim">
-                    <h2 class="titre1">Recherche par</h2>
-                    <h2 class="titre-accent">FILTRES</h2>
-                    <h2 class="titre2">et mots clés</h2>
+                <h2 class="titre1">Restez</h2>
+                <h2 class="titre-accent">À JOUR</h2>
+                <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
-            <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-            <input type="text" name="q" id="q" placeholder="mots-clés ici" class="barreRecherche">   
-            <div class="filtresEtResultats">                  
-                @include('groupes.checkbox')
-                <button>Rechercher</button>
-                <div class="resultats">
-                    @include('recherche')
-                    </div>
-                </div>
-            </form>
-
+            <div class="container-bouton">
+                <a href="{{route('register')}}">Créer mon compte</a>
+            </div>
         </section>
-        </main>
-        <!-- Footer de la page -->
-        <footer>
-            <section class="infolettre">
-                <div class="container-titre detectAnim">
-                    <h2 class="titre1">Restez</h2>
-                    <h2 class="titre-accent">À JOUR</h2>
-                    <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
-                </div>
-                <div class="container-bouton">
-                    <a href="{{route('register')}}">Créer mon compte</a>
-                </div>
-            </section>
-            <section class="partenaires">
+        <section class="partenaires">
                 <h2>Voici nos partenaires</h2>
             </section>
         </footer>

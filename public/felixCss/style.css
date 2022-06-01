@@ -11528,7 +11528,7 @@ img {
   width: 100vw;
   list-style: none;
 }
-.menu1 li button, .menu4 li button, .menu3 li button, .menu2 li button {
+.menu1 li a, .menu4 li a, .menu3 li a, .menu2 li a {
   padding: 0.1vw 2vw;
   font-size: 3vw;
   text-decoration: none;
@@ -11540,7 +11540,7 @@ img {
   border-radius: 100vw;
   transition-duration: 500ms;
 }
-.menu1 li button:hover, .menu4 li button:hover, .menu3 li button:hover, .menu2 li button:hover {
+.menu1 li a:hover, .menu4 li a:hover, .menu3 li a:hover, .menu2 li a:hover {
   background-color: var(--accent);
   border: 0.1vw solid var(--accent);
 }
@@ -11548,7 +11548,7 @@ img {
   .menu1, .menu4, .menu3, .menu2 {
     width: 80vw;
   }
-  .menu1 li button, .menu4 li button, .menu3 li button, .menu2 li button {
+  .menu1 li a, .menu4 li a, .menu3 li a, .menu2 li a {
     font-size: 1.5vw;
     font-weight: 100;
     padding: 0.2vw 1.5vw;
@@ -11841,6 +11841,39 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+header img {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: -1;
+}
+header .blanc {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--lightest);
+  opacity: 0;
+  position: absolute;
+  transition-duration: 2000ms;
+}
+header h1, header .h1 {
+  font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  font-size: 8vw;
+  text-transform: uppercase;
+  color: var(--darkest);
+  transform: translateX(-100vw);
+  transition-duration: 1000ms;
+}
+header:hover h1, header:hover .h1 {
+  margin: 5vw;
+  transform: translateX(0vw);
+}
+header:hover .blanc {
+  opacity: 1;
 }
 
 .fil-ariane {
@@ -12204,32 +12237,93 @@ section .container-titre .titre-accent {
 }
 
 footer {
-  background-color: var(--lighter);
+  background-color: var(--accent);
 }
-
-.infolettre .container-bouton {
+footer section {
+  padding: 10vw 5vw;
+}
+footer section .container-titre {
+  position: relative;
+}
+footer section .container-titre h2, footer section .container-titre .h2 {
+  margin: 0;
+  font-size: 3vw;
+  font-family: "Koulen", cursive;
+  opacity: 1;
+  color: var(--lightest);
+}
+footer section .container-titre .titre2 {
+  position: absolute;
+  left: 30vw;
+  top: 7vw;
+}
+footer section .container-titre .titre-accent {
+  transform: translate(3vw, -3.5vw);
+  font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  font-size: 8vw;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+footer section .container-bouton {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.infolettre .container-bouton button {
+footer section .container-bouton a {
   font-family: "Roboto", sans-serif;
   font-size: 3vw;
   font-weight: 1vw;
   margin: 0.2vw;
   padding: 1.3vw;
-  border: 0.1vw solid var(--dark);
+  border: 0.2vw solid var(--accentHeavy);
   border-radius: 100vw;
   color: var(--dark);
   background-color: var(--lightest);
 }
 @media (min-width: 900px) {
-  .infolettre .container-bouton button {
+  footer section .container-bouton a {
+    font-size: 1vw;
+  }
+}
+@media (min-width: 900px) {
+  footer .footer1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  footer .footer1 section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    padding: 5vw 0vw;
+  }
+  footer .footer1 section .container-titre {
+    transform: translateX(-5vw);
+  }
+  footer .footer1 section .container-titre h2, footer .footer1 section .container-titre .h2 {
+    font-size: 2vw;
+  }
+  footer .footer1 section .container-titre .titre2 {
+    position: absolute;
+    left: 20vw;
+    top: 5vw;
+  }
+  footer .footer1 section .container-titre .titre-accent {
+    transform: translate(3vw, -3vw);
+    font-size: 7vw;
+  }
+  footer .footer1 section .container-bouton a {
+    margin-top: 5vw;
+    padding: 0.5vw;
     font-size: 1vw;
   }
 }
 
 .partenaires {
-  background-color: var(--light);
+  background-color: var(--accentHeavy);
 }/*# sourceMappingURL=style.css.map */

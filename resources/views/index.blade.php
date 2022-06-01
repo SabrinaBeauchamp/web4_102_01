@@ -28,15 +28,11 @@
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
-                                <button class="btn1">
-                                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                </button>
+                                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
                             </li>
                         @endforeach
                             <li>
-                                <button class="btn1">
-                                    <a href="{{route('categoriesRegion.index')}}">MRC</a>
-                                </button>
+                                <a href="{{route('categoriesRegion.index')}}" class="btn1">MRC</a>
                             </li>
                     </ul>
                 </div>
@@ -45,7 +41,10 @@
     </div>
     <!-- Header -->
     <header id="mainHeader">
-        <h1>hello</h1>
+        <img src="/images/placeholderHeader.jpg" alt="header">
+        <img src="/images/effetHeader.png" alt="effet">
+        <div class="blanc"> </div>
+        <h1>Agrotourisme </br>Laurentides</h1>
     </header>
     <!-- Fil d'Ariane -->
     <div class="fil-ariane">
@@ -59,7 +58,7 @@
             <div class="container-titre detectAnim">
                 <h2 class="titre1">Les Laurentides, un territoire </h2>
                 <h2 class="titre-accent">GOURMAND!</h2>
-                <h2 class="titre2"></h2>
+                <h2 class="titre2"> </h2>
             </div>
             <div class="container-introduction">
                 <div class="container-img-introduction detectAnim2">
@@ -68,12 +67,6 @@
                     <img src="/images/Placeholder.svg" alt="placeholder" class="image3">
                 </div>
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
-            </div>
-        </section>
-        <section class="introduction">
-            <div class="container-titre detectAnim">
-                <h2 class="titre1">Recherche Avancée</h2>
-                <a href="{{route('recherche.rechercheAvancee')}}">Cliquer ici</a>
             </div>
         </section>
         <section class="activitesPopulaires">
@@ -265,16 +258,28 @@
     </main>
     <!-- Footer de la page -->
     <footer>
-        <section class="infolettre">
-            <div class="container-titre detectAnim">
-                <h2 class="titre1">Restez</h2>
-                <h2 class="titre-accent">À JOUR</h2>
-                <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
-            </div>
-            <div class="container-bouton">
-                <a href="{{route('register')}}">Créer mon compte</a>
-            </div>
-        </section>
+        <div class="footer1">
+            <section class="rechercheAvancee">
+                <div class="container-titre detectAnim">
+                    <h2 class="titre1">Vous </h2>
+                    <h2 class="titre-accent">CHERCHEZ</h2>
+                    <h2 class="titre2">quelque chose en particulier?</h2>
+                </div>
+                <div class="container-bouton">
+                    <a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a>
+                </div>
+            </section>
+            <section class="infolettre">
+                <div class="container-titre detectAnim">
+                    <h2 class="titre1">Restez</h2>
+                    <h2 class="titre-accent">À JOUR</h2>
+                    <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
+                </div>
+                <div class="container-bouton">
+                    <a href="{{route('register')}}">Créer mon compte</a>
+                </div>
+            </section>
+        </div>
         <section class="partenaires">
             <h2>Voici nos partenaires</h2>
         </section>

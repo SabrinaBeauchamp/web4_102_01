@@ -28,24 +28,20 @@
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
-                                <button class="btn1">
-                                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                </button>
+                                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
                             </li>
-                            @endforeach
-                            <li>
-                                <button class="btn1">
-                                    <a href="{{route('categoriesRegion.index')}}">MRC</a>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panneau2 isPanneau panneau-close">
-                        <h2>{{$groupeSelectionner->nom}}</h2>
-                        <ul class="menu2"> 
-                            @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
-                        </ul>
-                    </div>
+                        @endforeach
+                        <li>
+                            <a href="{{route('categoriesRegion.index')}}" class="btn1">MRC</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panneau2 isPanneau panneau-close">
+                    <h2>{{$groupeSelectionner->nom}}</h2>
+                    <ul class="menu2"> 
+                        @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
+                    </ul>
+                </div>
                 <div class="panneau3 isPanneau panneau-close">
                     <h2>{{$categorie->nom}}</h2>
                     <ul class="menu3">

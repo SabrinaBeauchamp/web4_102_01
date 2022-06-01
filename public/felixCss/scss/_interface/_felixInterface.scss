@@ -20,6 +20,41 @@ header
     width: 100vw;
     height: 100vh;
     @include setFlex(row, center, center);
+    img{
+        position: absolute;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        min-width: 100vw;
+        z-index: -1;
+    }
+    .blanc{
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--lightest);
+        opacity: 0;
+        position: absolute;
+        transition-duration: 2000ms;
+    }
+    h1{
+        font-weight: 200;
+        font-family: 'Roboto', sans-serif;
+        font-size: 8vw;
+        text-transform: uppercase;
+        color: var(--darkest);
+        transform: translateX(-100vw);
+        transition-duration: 1000ms;
+    }
+    &:hover{
+        h1{
+            margin: 5vw;
+            transform: translateX(0vw);
+        }
+        .blanc{
+            opacity: 1;
+        }
+    }
 }
 
 //--------------------
@@ -380,35 +415,93 @@ section
 // Footer
 //--------------------
 footer{
-    background-color: var(--lighter);
-}
-
-//--------------------
-// Infolettre
-//--------------------
-.infolettre{
-    .container-bouton{
-        @include setFlex(row, center, center);
-        button{
-            font-family: 'Roboto', sans-serif;
-            font-size: 3vw;
-            font-weight: 1vw;
-            margin: 0.2vw;
-            padding: 1.3vw;
-            border: 0.1vw solid var(--dark);
-            border-radius: 100vw;
-            color: var(--dark);
-            background-color: var(--lightest);
-            @include breakpoint-min(900){
-                font-size: 1vw;
+    background-color: var(--accent);
+    //--------------------
+    // Section de contenu de la page
+    //--------------------
+    section
+    {
+        padding: 10vw 5vw;
+        .container-titre{
+            position: relative;
+            h2{
+                margin: 0;
+                font-size: 3vw;
+                font-family: 'Koulen', cursive;
+                opacity: 1;
+                color: var(--lightest);
+            }
+            .titre2{
+                position: absolute;
+                left: 30vw;
+                top: 7vw;
+            }
+            .titre-accent{
+                transform: translate(3vw, -3.5vw);
+                font-weight: 200;
+                font-family: 'Roboto', sans-serif;
+                font-size: 8vw;
+                text-transform: uppercase;
+                color: var(--dark);
+            }
+        }
+        .container-bouton{
+            @include setFlex(row, center, center);
+            a{
+                font-family: 'Roboto', sans-serif;
+                font-size: 3vw;
+                font-weight: 1vw;
+                margin: 0.2vw;
+                padding: 1.3vw;
+                border: 0.2vw solid var(--accentHeavy);
+                border-radius: 100vw;
+                color: var(--dark);
+                background-color: var(--lightest);
+                @include breakpoint-min(900){
+                    font-size: 1vw;
+                }
+            }
+        }
+    }
+    @include breakpoint-min(900){
+        .footer1{
+            @include setFlex(row, space-around, center);
+            section
+            {
+                @include setFlex(column, center, center);
+                width: 50vw;
+                padding: 5vw 0vw;
+                .container-titre{
+                    transform: translateX(-5vw);
+                    h2{
+                        font-size: 2vw;
+                    }
+                    .titre2{
+                        position: absolute;
+                        left: 20vw;
+                        top: 5vw;
+                    }
+                    .titre-accent{
+                        transform: translate(3vw, -3vw);
+                        font-size: 7vw;
+                    }
+                }
+                .container-bouton{
+                    a{
+                        margin-top: 5vw;
+                        padding: 0.5vw;
+                        font-size: 1vw;                        
+                    }
+                }
             }
         }
     }
 }
 
+
 //--------------------
 // Partenaires
 //--------------------
 .partenaires{
-    background-color: var(--light);
+    background-color: var(--accentHeavy);
 }

@@ -38,9 +38,9 @@
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
-                                <button class="btn1">
+                                <a class="btn1">
                                     <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                </button>
+                                </a>
                             </li>
                         @endforeach
                     </ul>
@@ -88,28 +88,28 @@
                             @foreach($categoriesRegion as $categorieRegion)
                                 <li>
                                     <img src="../../public/images/Placeholder.svg" alt="icone" class="icone-mrc">
-                                    <button class="details-carte">
+                                    <a class="details-carte">
                                         <a href="{{route('categoriesRegion.show', ['categorieRegion'=>$categorieRegion])}}"><h2>{{$categorieRegion->nom}}</h2></a>
-                                    </button>
+                                    </a>
                                 </li>
                             @endforeach
                             <li class="item-liste-carte">
                                 <img src="../../public/images/Placeholder.svg" alt="icone" class="icone-mrc">
-                                <button class="details-carte">
+                                <a class="details-carte">
                                     <h2>Détails</h2>
-                                </button>
+                                </a>
                             </li>
                             <li class="item-liste-carte">
                                 <img src="../../public/images/Placeholder.svg" alt="icone" class="icone-mrc">
-                                <button class="details-carte">
+                                <a class="details-carte">
                                     <h2>Détails</h2>
-                                </button>
+                                </a>
                             </li>
                             <li class="item-liste-carte">
                                 <img src="../../public/images/Placeholder.svg" alt="icone" class="icone-mrc">
-                                <button class="details-carte">
+                                <a class="details-carte">
                                     <h2>Détails</h2>
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </div>
