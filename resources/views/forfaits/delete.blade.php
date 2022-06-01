@@ -1,18 +1,16 @@
 @extends('mesLayouts.layout')
 
 @section('titre')
-    Forfaits - {{$forfaits->nom}}
+    Forfaits - {{$forfait->nom}}
 @endsection
 
 @section('contenu')
-<h2>Voulez-vous supprimer ce forfait {{$forfaits->nom}}</h2>
-    <form action="{{route('forfaits.destroy', $forfaits)}}" method="post">
+<h2>Voulez-vous supprimer ce forfait {{$forfait->nom}}</h2>
+    <form action="{{route('forfaits.destroy', $forfait)}}" method="post">
         @csrf
-        <div><button type="submit" name="delete">Supprimer le forfait</button></div>
+        <x-champ-button type="submit" titre="'Supprimer le forfait'"></x-champ-button>
+        <x-champ-button-delete type="submit" titre="'Modifier le forfait'"></x-champ-button>
         
-        <div>
-            <button data-icon="done" type="submit">Modifier le forfait</button>
-        </div>
     </form>
     <div class="options">
         <a data-icon="calendar_view_month" href="{{route('forfaits.index')}}">Retour aux forfaits</a>

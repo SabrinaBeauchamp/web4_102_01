@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/williamCSS/style.css">
+    <script src="https://kit.fontawesome.com/f4e3a6480f.js" crossorigin="anonymous"></script>
+    <title>Page Dashboard Favoris User</title>
+</head>
+
+<body> 
+    <div class="conteneurDashboard">
+        <!-- button ouverture doit avoir sa propre blade -->
+        <div class="conteneurButtonMenuDash">
+            <div class="boutonOpen">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="conteneurSidebar">
+            <div class="conteneurSidebarTop boutonClose">
+                <i class="fa-solid fa-xmark"></i>
+                <a href="" class="dashboardLink">Dashboard</a>
+                <!-- <i class="fa-solid fa-x" boutonClose></i> -->
+            </div>
+            <div class="conteneurSidebarProfil conteneurSidebarAll">
+                <i class="fa-solid fa-user"></i>
+                <a href="">Profil</a>
+            </div>
+            <div class="conteneurSidebarPaiement conteneurSidebarAll">
+                <i class="fa-solid fa-credit-card"></i>
+                <a href="">Paiement</a>
+            </div>
+            <div class="conteneurSidebarFavoris conteneurSidebarAll">
+                <i class="fa-solid fa-heart" ></i>
+                <a href="">Favoris</a>
+                <i class="fa-solid fa-caret-right" id="arrowFav"></i>
+            </div>
+            <div class="conteneurSideBarSousFavoris" id="sidebarFav">
+                <div class="conteneurSidebarEntreprise sousFav">
+                    <i class="fa-solid fa-building"></i>
+                    <a href="">Entreprises</a>
+                </div>
+                <div class="conteneurSidebarEvent sousFav">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <a href="">Évènements</a>
+                </div>
+                <div class="conteneurSidebarForfait sousFav">
+                    <i class="fa-solid fa-store"></i>
+                    <a href="">Forfaits</a>
+                </div>
+            </div>
+            <div class="conteneurSidebarSetting conteneurSidebarAll">
+                <i class="fa-solid fa-gear"></i>
+                <a href="">Réglage</a>
+            </div>
+            <div class="conteneurSidebarDisconnect conteneurSidebarAll">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <a href="">Déconnexion</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="/public/williamCSS/javascript William/sidebarAccordionUser.js"></script>
+</html>

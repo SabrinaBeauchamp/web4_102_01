@@ -33,7 +33,57 @@
                                     <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
                                 </button>
                             </li>
+<<<<<<< HEAD
                         @endforeach
+=======
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="panneau2 isPanneau panneau-open">
+                        <h2>Categorie</h2>
+                        <ul class="menu2"> 
+                            @include("categories.liste", ['categories'=>$groupeSelection->categories])
+                        </ul>
+                    </div>
+                <!-- <div class="panneau3 isPanneau panneau-close">
+                    <h2>Groupes</h2>
+                    <ul class="menu3">
+                        <li>
+                            <button class="btn3">
+                                Agriculture
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn3">
+                                Groupe
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn3">
+                                Groupe
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn3">
+                                Groupe
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn3">
+                                Groupe
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn3">
+                                Groupe
+                            </button>
+                        </li>
+                        <li>
+                            <button class="btn3">
+                                Groupe
+                            </button>
+                        </li>
+>>>>>>> origin/mathis
                     </ul>
                 </div>
                 <div class="panneau2 isPanneau panneau-open">

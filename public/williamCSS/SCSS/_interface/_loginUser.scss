@@ -1,0 +1,159 @@
+//Mixins Temporaire-----------------------------------------------
+//----------------------------------------------------------------
+
+@mixin setFlex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+//---------------------------------------------------------------
+//Typos
+//----------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+
+//---------------------------------------------------------------
+//SCSS du login de l'user
+//----------------------------------------------------------------
+* {
+    font-size: 100%;
+    font-family: Arial;
+}
+
+div.conteneurLoginUser {
+    width: 100vw;
+    height: 100vh;
+    @include setFlex(column, center, center);
+
+    &>.messageAccueil {
+        text-align: center;
+        font-family: 'Roboto';
+        font-weight: bold;
+        font-size: 58px;
+        margin-bottom: 50px;
+    }
+
+    &>.conteneurBoiteLogin {
+        background-color: white;
+        width: 835px;
+        height: 634px;
+        margin: 0 auto;
+        border: solid 1px #cfcfcf;
+        box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+
+        &>.conteneurUsernamePassword {
+            @include setFlex(column, center, center);
+
+            &>.conteneurUsername {
+                margin-top: 40px;
+
+                &>.conteneurInput {
+                    @include setFlex(row, center, center);
+                    width: 734px;
+                    height: 65px;
+                    border: solid 2px #1D1D1D;
+                    border-radius: 137px;
+                    margin-bottom: 15px;
+
+                    &>.username {
+                        width: 90%;
+                        font-size: 20px;
+                        padding: 5px;
+                        padding-left: 60px;
+                        outline: none;
+                        border: none;
+                        overflow: hidden;
+
+                        &:focus {
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            &>.conteneurPassword {
+                margin-top: 30px;
+
+                &>.conteneurInput {
+                    @include setFlex(row, center, center);
+                    width: 734px;
+                    height: 65px;
+                    border: solid 2px #1D1D1D;
+                    border-radius: 137px;
+                    margin-bottom: 15px;
+
+                    &>.motDePasse {
+                        width: 90%;
+                        font-size: 20px;
+                        padding: 5px;
+                        padding-left: 60px;
+                        outline: none;
+                        border: none;
+                        overflow: hidden;
+
+                        &:focus {
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &>.conteneurBoutonLoginUser {
+            text-align: center;
+            margin-top: 80px;
+
+            &>button {
+                width: 510px;
+                height: 66px;
+                border: none;
+                background-color: #FF6868;
+                border-radius: 33px;
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                transition: box-shadow 400ms cubic-bezier(.2, 0, .7, 1), transform 200ms cubic-bezier(.2, 0, .7, 1);
+
+
+                &:hover {
+                    color: #fdc6c6;
+                    background-color: #f87c7c;
+                    transform: scale(1.05);
+                    box-shadow: 0 0 1px 10px rgba(#ff8f8f, 0.4),
+                        0 0 1px 15px rgba(#ff8f8f, 0.1),
+                        0 0 1px 20px rgba(#ff8f8f, 0.1);
+                }
+            }
+        }
+
+        &>.conteneurLiensLogin {
+            @include setFlex(row, space-around, center);
+            row-gap: 100px;
+            margin-top: 80px;
+
+
+            &>a {
+                color: #FF6868;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.iconLogin {
+    padding: 10px;
+    min-width: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.labelLogin {
+    font-weight: bold;
+    font-size: 24px;
+
+}

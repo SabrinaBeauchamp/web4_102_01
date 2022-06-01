@@ -36,13 +36,21 @@
                         </ul>
                     </div>
                     <div class="panneau2 isPanneau panneau-open">
+<<<<<<< HEAD
                         <h2>{{$groupeSelectionner->nom}}</h2>
+=======
+                        <h2>Catégories</h2>
+>>>>>>> origin/mathis
                         <ul class="menu2"> 
                             @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
                         </ul>
                     </div>
                 <div class="panneau3 isPanneau panneau-open">
+<<<<<<< HEAD
                     <h2>{{$categorie->nom}}</h2>
+=======
+                    <h2>Entreprises</h2>
+>>>>>>> origin/mathis
                     <ul class="menu3">
                         @include("entreprises.liste", ['entreprises'=>$categorie->entreprises])
                     </ul>

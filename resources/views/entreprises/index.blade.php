@@ -1,4 +1,12 @@
-@foreach($entreprises as $entreprise)
-    <p>{{$entreprise['nom']}}</p>
-@endforeach
-<a href="{{route('entreprises.create')}}">Ajouter une entreprise</a>
+@extends('mesLayouts.layout')
+
+@section('titre')
+    Les entreprises
+@endsection
+
+@section('contenu')
+    @include('entreprises.liste')
+    @if(Auth::check() && Auth::user()->role === 'admin')
+    <a href="{{route('entreprises.create')}}">Ajouter une entreprise</a>
+    @endif
+@endsection

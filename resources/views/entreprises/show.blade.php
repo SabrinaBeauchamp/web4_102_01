@@ -24,7 +24,11 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-close">
+<<<<<<< HEAD
                     <h2>Catégories</h2>
+=======
+                    <h2>Groupes</h2>
+>>>>>>> origin/mathis
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -36,13 +40,21 @@
                         </ul>
                     </div>
                     <div class="panneau2 isPanneau panneau-close">
+<<<<<<< HEAD
                         <h2>{{$groupeSelectionner->nom}}</h2>
+=======
+                        <h2>Catégories</h2>
+>>>>>>> origin/mathis
                         <ul class="menu2"> 
                             @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
                         </ul>
                     </div>
                 <div class="panneau3 isPanneau panneau-close">
+<<<<<<< HEAD
                     <h2>{{$categorie->nom}}</h2>
+=======
+                    <h2>Entreprises</h2>
+>>>>>>> origin/mathis
                     <ul class="menu3">
                         @include("entreprises.liste", ['entreprises'=>$categorie->entreprises])
                     </ul>
@@ -54,6 +66,13 @@
     <header id="mainHeader">
         <h1>{{$entreprise->nom}}</h1>
     </header>
+    <!-- Commodites -->
+    <h3>Commodites</h3>
+    <div>
+        @foreach($commodites as $commodite)
+            <a href="{{route('commodites.show', ['commodite'=>$commodite])}}">{{$commodite['nom']}}</a> <br>
+        @endforeach
+    </div>
     <!-- Fil d'Ariane -->
     <div class="fil-ariane">
         <ul>

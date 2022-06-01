@@ -1,4 +1,4 @@
-@foreach($entreprises as $entreprise)
+                @foreach($entreprises as $entreprise)
     <li>
         <button class="btn3">
             <a href="{{route('entreprises.show', $entreprise)}}">
