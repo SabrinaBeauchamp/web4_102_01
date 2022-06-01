@@ -24,11 +24,7 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-close">
-<<<<<<< HEAD
-                    <h2>Catégories</h2>
-=======
                     <h2>Groupes</h2>
->>>>>>> origin/mathis
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -40,21 +36,13 @@
                         </ul>
                     </div>
                     <div class="panneau2 isPanneau panneau-close">
-<<<<<<< HEAD
-                        <h2>{{$groupeSelectionner->nom}}</h2>
-=======
                         <h2>Catégories</h2>
->>>>>>> origin/mathis
                         <ul class="menu2"> 
                             @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
                         </ul>
                     </div>
                 <div class="panneau3 isPanneau panneau-close">
-<<<<<<< HEAD
-                    <h2>{{$categorie->nom}}</h2>
-=======
                     <h2>Entreprises</h2>
->>>>>>> origin/mathis
                     <ul class="menu3">
                         @include("entreprises.liste", ['entreprises'=>$categorie->entreprises])
                     </ul>
