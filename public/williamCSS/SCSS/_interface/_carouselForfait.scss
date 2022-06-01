@@ -46,7 +46,6 @@
                 filter: brightness(200%);
                 opacity: 1;
                 transform: scale(1.1);
-
             }
         }
 
@@ -64,7 +63,7 @@
             color: white;
 
             &>.carousel-caption {
-               
+
                 &>h1 {
                     margin: 0 auto;
                     font-family: 'Teko', sans-serif;
@@ -81,12 +80,11 @@
                         display: block;
                         background: white;
                         transition: 300ms;
-                   
                     }
+
                     &:hover::after {
                         width: 100%;
                         margin: 0 auto;
-                    
                     }
                 }
 
@@ -132,7 +130,6 @@
                         box-shadow: 0 0 1px 10px rgba(#ff8f8f, 0.4),
                             0 0 1px 15px rgba(#ff8f8f, 0.1),
                             0 0 1px 20px rgba(#ff8f8f, 0.1);
-
 
                         &:hover::after {
                             opacity: 1;
