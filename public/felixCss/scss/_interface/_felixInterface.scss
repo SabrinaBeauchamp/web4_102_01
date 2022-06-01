@@ -1,3 +1,7 @@
+@import '_felixEntreprise';
+@import '_felixCarte';
+
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 html::-webkit-scrollbar {
     display: none;
@@ -24,16 +28,24 @@ header
 .fil-ariane
 {
     @include setFlex(row, center, center);
-    height: 15vh;
-    background-color: var(--light);
+    height: 10vw;
+    background-color: var(--dark);
+    color: var(--light);
     ul{
         @include setFlex(row, center, flex-start);
         li{
-            margin: 16px;
+            font-size: 2vw;
+            margin: 1vw;
         }
     }
     @include breakpoint-min(900){
-        height: 10vh;
+        height: 5vw;
+        ul{
+            li{
+                font-size: 1vw;
+                margin: 1vw;
+            }
+        }
     }
 }
 
@@ -47,36 +59,39 @@ section
         position: relative;
         h2{
             margin: 0;
-            font-size: 5vw;
+            font-size: 3vw;
             font-family: 'Koulen', cursive;
             opacity: 1;
+            color: var(--accent);
         }
         .titre2{
             position: absolute;
-            left: 60vw;
-            top: 11vw;
+            left: 30vw;
+            top: 7vw;
         }
         .titre-accent{
-            transform: translate(3vw, -7vw);
+            transform: translate(3vw, -3.5vw);
             font-weight: 200;
             font-family: 'Roboto', sans-serif;
-            font-size: 15vw;
+            font-size: 8vw;
+            text-transform: uppercase;
+            color: var(--darkest);
         }
     }
     @include breakpoint-min(900){
         padding: 10vw 10vw;
         .container-titre{
             h2{
-                font-size: 3vw;
+                font-size: 2vw;
             }
             .titre2{
                 position: absolute;
-                left: 40vw;
-                top: 8vw;
+                left: 20vw;
+                top: 5vw;
             }
             .titre-accent{
-                transform: translate(3vw, -4vw);
-                font-size: 10vw;
+                transform: translate(3vw, -3vw);
+                font-size: 7vw;
             }
         }
     }
@@ -115,11 +130,11 @@ section
             .container-img-introduction{
                 position: relative;
                 height: auto;
-                width: 18vw;
+                width: 15vw;
                 opacity: 1;
                 img{
                     display: block;
-                    width: 10vw;
+                    width: 8vw;
                     &:nth-of-type(2){
                         align-self: flex-end;       
                     }
@@ -127,7 +142,7 @@ section
             }
             p{
                 width: 50vw;
-                font-size: 2vw;
+                font-size: 1.5vw;
             }
         }
     }
@@ -182,7 +197,7 @@ section
         /* Handle */
         &::-webkit-scrollbar-thumb {
             background: var(--dark);
-            border-radius: 1vw;
+            border-radius: 100vw;
         }
         /* Handle on hover */
         &::-webkit-scrollbar-thumb:hover {
@@ -211,9 +226,8 @@ section
 //--------------------
 .calendrierEvenements
 {
-    background-color: var(--lighter);
     .container-calendrier{
-
+        @include setFlex(column, space-between, center);
         position: relative;
         .calendrier-grid{
             @include setFlex(row, center, center);
@@ -225,26 +239,48 @@ section
                 background-color: var(--dark);
                 width: 10vw;
                 height: 10vw;
-                .popup{
-                    overflow: hidden;
-                    position: absolute;
-                    left: 0;
-                    width: 0;
-                    height: 0;
-                    border-radius: 1vw;
-                    transition-duration: 500ms;
-                }
+                transition-duration: 500ms;
                 &:hover{
                     background-color: var(--light);
-                    .popup{
-                        background-color: var(--lightest);
-                        height: 30vw;
-                        width: 90vw;
-                    }
+                }
+                .popup{
+                    display:none;
                 }
             }
         }
+        .calendrier-popup{
+            @include setFlex(column, center, center);
+            row-gap: 1vw;
+            width: 80vw;
+            height: 100%;
+            padding: 1vw;
+            transition-duration: 500ms;
+            .popup{
+                @include setFlex(column, center, center);
+                row-gap: 1vw;
+                padding: 2vw;
+                background-color: var(--light);
+                transition-duration: 500ms;
+                .nom-evenement{
+
+                }
+                .dates-evenement{
+
+                }
+                .description-evenement{
+
+                }
+                .ville-evenement{
+
+                }
+                .prix-evenement{
+
+                }
+            }
+        }
+        
         @include breakpoint-min(900){
+            @include setFlex(row, space-between, center);
             .calendrier-grid{
                 @include setFlex(row, center, center);
                 column-gap: 0.5vw;
@@ -253,13 +289,10 @@ section
                 .calendrier-item{
                     width: 5vw;
                     height: 5vw;
-                    &:hover{
-                        .popup{
-                            height: 30vw;
-                            width: 80vw;
-                        }
-                    }
                 }
+            }
+            .calendrier-popup{
+                width: 40vw;
             }
         }
     }
@@ -271,6 +304,76 @@ section
 .propositionsLogements
 {
     background-color: var(--light);
+    .liste
+    {
+        @include setFlex(column, center, center);
+        position: relative;
+        row-gap: 5vw;
+        padding: 0 0 5vw;
+        list-style-type: none;
+        li:nth-of-type(2){
+            transform: translateX(5vw);
+        }
+        .propositionLogement{
+            position: relative;
+            background-color: gray;
+            width: 70vw;
+
+            .propositionLogement-container-texte{
+                position: absolute;
+                color: white;
+                transform: translate(6vw, 10vw);
+                h3{
+                    font-size: 10vw; 
+                }
+                p{
+                    font-size: 4vw;
+                }
+            }
+        }
+        @include breakpoint-min(900){
+            @include setFlex(row, start, flex-start);
+            overflow-x: scroll;
+            overflow-y: hidden;
+            row-gap: 5vw;
+            column-gap: 5vw;
+            li:nth-of-type(2){
+                transform: translateY(5vw);
+            }
+            /* width */
+            &::-webkit-scrollbar {
+                width: 2vw;
+            }
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: var(--light);
+            }
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: var(--dark);
+                border-radius: 100vw;
+            }
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: var(--darker);
+            }
+            .propositionLogement{
+                width: 20vw;
+                .propositionLogement-container-texte{
+                    position: absolute;
+                    width: 18vw;
+                    color: white;
+                    transform: translate(6vw, 10vw);
+                    h3{
+                        font-size: 2vw;
+                    }
+                    p{
+                        font-size: 0.8vw;
+                    }
+                }
+            }
+        }
+    }
 }
 
 //--------------------
@@ -284,7 +387,23 @@ footer{
 // Infolettre
 //--------------------
 .infolettre{
-    background-color: var(--light);
+    .container-bouton{
+        @include setFlex(row, center, center);
+        button{
+            font-family: 'Roboto', sans-serif;
+            font-size: 3vw;
+            font-weight: 1vw;
+            margin: 0.2vw;
+            padding: 1.3vw;
+            border: 0.1vw solid var(--dark);
+            border-radius: 100vw;
+            color: var(--dark);
+            background-color: var(--lightest);
+            @include breakpoint-min(900){
+                font-size: 1vw;
+            }
+        }
+    }
 }
 
 //--------------------

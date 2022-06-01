@@ -5,7 +5,7 @@
 class Animation {
 
     static main() {
-        this.ouverturePanneau();
+        console.log("Animations.js");
     }
 
     /** * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -99,6 +99,38 @@ class Animation {
             }
         }
     }
+
+    // /** * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * Animation des groupes d'images décoratives 2
+    // */
+    //     static animationImagesDecoration2() {
+    //         const detectAnim = document.querySelectorAll('.detectAnim3');
+    //         for (let i = 0; i < detectAnim.length; i++) {
+    //             for (let index = 0; index < array.length; index++) {
+    //                 const element = array[index];
+    //                 2
+    //             }
+    //             if (this.isVisible(detectAnim[i])) {
+    //                 element1.style.opacity = "0.1";
+    //                 element1.style.opacity = "1";
+    //                 element1.style.setProperty('--animate-duration', '1s');
+    //                 element1.classList.add('animate__animated', 'animate__' + 'fadeInRight');
+    //                 element2.style.opacity = "1";
+    //                 element2.style.setProperty('--animate-duration', '1.5s');
+    //                 element2.classList.add('animate__animated', 'animate__' + 'fadeInLeft');
+    //                 element3.style.opacity = "1";
+    //                 element3.style.setProperty('--animate-duration', '2s');
+    //                 element3.classList.add('animate__animated', 'animate__' + 'fadeInRight');
+    //             } else {
+    //                 element1.style.opacity = "0";
+    //                 element1.classList.remove('animate__animated', 'animate__' + 'fadeInRight');
+    //                 element2.style.opacity = "0";
+    //                 element2.classList.remove('animate__animated', 'animate__' + 'fadeInLeft');
+    //                 element3.style.opacity = "0";
+    //                 element3.classList.remove('animate__animated', 'animate__' + 'fadeInRight');
+    //             }
+    //         }
+    //     }
     
     /** * * * * * * * * * * * * * * * * * * * * * * * * * * *
      * Initialisation du code au chargement de la page

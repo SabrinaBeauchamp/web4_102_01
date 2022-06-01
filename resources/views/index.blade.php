@@ -64,7 +64,7 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-close">
-                    <h2>Groupes</h2>
+                    <h2>Catégories</h2>
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -75,86 +75,6 @@
                         @endforeach
                     </ul>
                 </div>
-                <!-- <div class="panneau2 isPanneau panneau-close">
-                    <h2>Groupes</h2>
-                    <ul class="menu2">
-                        <li>
-                            <button class="btn2">
-                                Agriculture
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn2">
-                                Groupe
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="panneau3 isPanneau panneau-close">
-                    <h2>Groupes</h2>
-                    <ul class="menu3">
-                        <li>
-                            <button class="btn3">
-                                Agriculture
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn3">
-                                Groupe
-                            </button>
-                        </li>
-                    </ul>
-                </div> -->
             </div>
         </nav>
     </div>
@@ -199,7 +119,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -208,7 +128,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -217,7 +137,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -226,7 +146,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                     <li class="item-carrousel">
@@ -235,7 +155,7 @@
                                 <h3>Activité populaire</h3>
                                 <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
                             </div>
-                            <img src="images/PlaceholderImage.svg" alt="image de l'entreprise" class="image-evenement">
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
                 </ul>
@@ -251,14 +171,85 @@
                 <div class="calendrier-grid">
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
-                    <div class="calendrier-item">
-                        1
+                    <div class="calendrier-item">1
                         <div class="popup">
-                            <h2>kill me</h2>
-                            ANPAN ANPAN ANPAN ANPAN ANPAN
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
                         </div>
                     </div>
-                    <div class="calendrier-item">2<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
+                    <div class="calendrier-item">2
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                NOM DE L'EVENEMENT
+                            </div>
+                            <div class="dates-evenement">
+                                XX mois au XX mois
+                            </div>
+                            <div class="description-evenement">
+                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
                     <div class="calendrier-item">3<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">4<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">5<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
@@ -291,6 +282,9 @@
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
                 </div>
+                <div class="calendrier-popup">
+                    e
+                </div>
             </div>
         </section>
         <section class="propositionsLogements">
@@ -299,13 +293,34 @@
                 <h2 class="titre-accent">LOGER</h2>
                 <h2 class="titre2"></h2>
             </div>
-            <div class="container-logement">
-                <ul class="calendrier">
-                    <li class="calendrier-item">
-                        <p>allo</p>
+            <div id="container">
+                <ul class="liste">
+                    <li class="item">
+                        <div class="propositionLogement">
+                            <div class="propositionLogement-container-texte">
+                                <h3>Option de logement</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                        </div>
                     </li>
-                    <li class="calendrier-item">
-                        <p>allo2</p>
+                    <li class="item">
+                        <div class="propositionLogement">
+                            <div class="propositionLogement-container-texte">
+                                <h3>Option de logement</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="propositionLogement">
+                            <div class="propositionLogement-container-texte">
+                                <h3>Option de logement</h3>
+                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                            </div>
+                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -313,16 +328,23 @@
     </main>
     <!-- Footer de la page -->
     <footer>
-        <h2>Ceci est un footer</h2>
         <section class="infolettre">
-            <h2>Ceci est une infolettre</h2>
+            <div class="container-titre detectAnim">
+                <h2 class="titre1">Restez</h2>
+                <h2 class="titre-accent">À JOUR</h2>
+                <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
+            </div>
+            <div class="container-bouton">
+                <button>Créer mon compte</button>
+            </div>
         </section>
         <section class="partenaires">
             <h2>Voici nos partenaires</h2>
         </section>
     </footer>
 </div>
-<script src="felixJs/Menu.js"></script>
-<script src="felixJs/Animations.js"></script>
+<script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
+<script src="{{ URL::asset('felixJs/Animations.js') }}"></script>
+<script src="{{ URL::asset('felixJs/Calendrier.js') }}"></script>
 </body>
 </html>

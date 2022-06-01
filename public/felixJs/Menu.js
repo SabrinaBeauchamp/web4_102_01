@@ -24,16 +24,25 @@ class Menu {
     }
 
     static openPanneau(panneau) {
-        panneau.classList.add('panneau-open');
-        panneau.classList.remove('panneau-close');
+        if (panneau.classList !== null){
+            panneau.classList.add('panneau-open');
+            if (panneau.classList.contains('panneau-close')) {
+                panneau.classList.remove('panneau-close');
+            }
+        }
     }
     static closePanneau(panneau) {
-        panneau.classList.add('panneau-close');
-        panneau.classList.remove('panneau-open');
+        if (panneau !== null){
+            panneau.classList.add('panneau-close');
+            if (panneau.classList.contains('panneau-open')) {
+                panneau.classList.remove('panneau-open');
+            }
+        }
     }
 
     static ouverturePanneau() {
-        var btn_panneau, btn1, btn2, btn3, panneau, panneau2, panneau3;
+        var container_panneau, btn_panneau, btn1, btn2, btn3, panneau, panneau2, panneau3;
+        container_panneau = document.querySelector('.container-panneau');
         btn_panneau = document.querySelector('.btn-ouvrirPanneau');
         btn1 = document.querySelectorAll('.btn1');
         btn2 = document.querySelectorAll('.btn2');
@@ -41,27 +50,22 @@ class Menu {
         panneau = document.querySelector(".panneau");
         panneau2 = document.querySelector(".panneau2");
         panneau3 = document.querySelector(".panneau3");
-        if (panneau.classList.contains('isPanneau')) {
+        container_panneau.addEventListener("mouseleave", e => {
+            this.closePanneau(panneau);
+            this.closePanneau(panneau2);
+            this.closePanneau(panneau3);
 
+            e.preventDefault();
+        });
+        if (panneau.classList.contains('isPanneau')) {
             btn_panneau.addEventListener("mousedown", e => {
                 this.togglePanneau(panneau);
-                this.closePanneau(panneau2);
-                this.closePanneau(panneau3);
+                this.togglePanneau(panneau2);
+                this.togglePanneau(panneau3);
+   
                 e.preventDefault();
             });
-            for (let i = 0; i < btn1.length; i++) {
-                btn1[i].addEventListener("mousedown", e => {
-                    this.openPanneau(panneau2);
-                    this.closePanneau(panneau3);
-                    e.preventDefault();
-                });
-            }
-            for (let i = 0; i < btn2.length; i++) {
-                btn2[i].addEventListener("mousedown", e => {
-                    this.openPanneau(panneau3);
-                    e.preventDefault();
-                });
-            }
+
         }
     }
 

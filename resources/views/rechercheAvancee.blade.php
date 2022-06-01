@@ -276,7 +276,7 @@
             </section>
         </footer>
     </div>
-    <script src="felixJs/Menu.js"></script>
-        <script src="felixJs/Animations.js"></script>
+        <script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
+        <script src="public/felixJs/Animations.js"></script>
     </body>
     </html>
