@@ -11707,6 +11707,61 @@ section.rechercheFiltree form .filtresEtResultats .resultats p {
   }
 }
 
+.item-liste-carte {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: space-between;
+  background-color: var(--accent);
+  width: 10vw;
+  overflow: hidden;
+  height: 10vw;
+  border-radius: 100vw;
+}
+.item-liste-carte:hover {
+  width: 40vw;
+}
+.item-liste-carte:hover .details-carte {
+  width: 30vw;
+}
+@media (min-width: 900px) {
+  .item-liste-carte {
+    height: 5vw;
+    width: 5vw;
+  }
+  .item-liste-carte:hover {
+    width: 15vw;
+  }
+  .item-liste-carte:hover .details-carte {
+    width: 10vw;
+  }
+}
+
+.icone-mrc {
+  width: 10vw;
+  height: 10vw;
+}
+@media (min-width: 900px) {
+  .icone-mrc {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+
+.details-carte {
+  width: 0;
+  font-size: 3vw;
+  border: none;
+  border-radius: 100vw;
+  background-color: var(--accentHeavy);
+  transition-duration: 500ms;
+}
+@media (min-width: 900px) {
+  .details-carte {
+    font-size: 2vw;
+  }
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 html::-webkit-scrollbar {
   display: none;

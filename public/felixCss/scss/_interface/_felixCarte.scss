@@ -1,0 +1,56 @@
+// .carte-interactive{
+// }
+// .container-carte{
+// }
+// .carte{
+// }
+// .container-liste{
+    
+// }
+// .liste-carte{
+    
+// }
+.item-liste-carte{
+    @include setFlex(row, flex-start, space-between);
+    background-color: var(--accent);
+    width: 10vw;
+    overflow: hidden;
+    height: 10vw;
+    border-radius: 100vw;
+    
+    &:hover{
+        width: 40vw;
+        .details-carte{
+            width: 30vw;
+        }
+    }
+    @include breakpoint-min(900){
+        height: 5vw;
+        width: 5vw;
+        &:hover{
+            width: 15vw;
+            .details-carte{
+                width: 10vw;
+            }
+        }
+    }
+}
+.icone-mrc{
+    width: 10vw;
+    height: 10vw;
+    @include breakpoint-min(900){
+        width: 5vw;
+        height: 5vw;
+    }
+}
+.details-carte{
+    width: 0;
+    font-size: 3vw;
+    border: none;
+    border-radius: 100vw;
+    background-color: var(--accentHeavy);
+    transition-duration: 500ms;
+    @include breakpoint-min(900){
+        font-size: 2vw;
+    }
+}
