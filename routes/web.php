@@ -14,6 +14,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VilleController;
 use App\Http\Controllers\CategorieRegionController;
 use App\Models\Entreprise;
+use App\Models\Evenement;
 use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
 use App\Http\Controllers\GroupeCommoditeController;
@@ -56,6 +57,10 @@ Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=
 
     Route::get('/{user}/delete', 'delete')->name('delete');
     Route::post('/{user}/delete', 'destroy')->name('destroy');
+
+    Route::group([ 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['groupe'=>'favoris|entreprises|forfaits|evenements']], function () {
+        Route::get('/{groupe}', 'index')->name('index');
+    });
 });
 
 Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
@@ -105,6 +110,11 @@ Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'
     Route::post('/{favorie}/delete', 'destroy')->name('destroy');
 });
 
+Route::get('/dashboard/evenement', function() {
+    $evenements = Evenement::all();
+    $evenements = Evenement::orderBy('start', 'asc')->get();
+    return view('users.evenements.index', ['evenements'=>$evenements]);
+})->name('evenements');
 Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{evenement}', 'show')->name('show');
@@ -153,6 +163,10 @@ Route::get('/dashboard/populaire', function() {
     $entreprises = Entreprise::all();
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
+Route::get('/dashboard/entreprises', function() {
+    $entreprises = Entreprise::all();
+    return view('users.entreprises.index', ['entreprises'=>$entreprises]);
+})->name('entreprises');
 
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');

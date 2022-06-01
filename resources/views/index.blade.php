@@ -18,21 +18,10 @@
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
             <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
             <li><a href="{{route('favories.index')}}">Favories</a></li>
-            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+            
         </ul>
         <ul>
-            @if(Auth::user())
-                <li>
-                    <form action="{{route('logout')}}" method="POST">
-                        @csrf
-                        <button type="submit">Deconnexion</button>
-                    </form>
-                </li>
-            @else
-                <li>
-                    <a href="{{route('login')}}">Me connecter</a>
-                </li>
-            @endif
+           
             <li><a href="{{route('commodites.index')}}">Commodites</a></li>
             <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
@@ -78,12 +67,13 @@
                                     <a href="{{route('categoriesRegion.index')}}">MRC</a>
                                 </button>
                             </li>
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Header -->
+            </nav>
+        </div>
+        <!-- Header -->
+        
     <header id="mainHeader">
         <h1>hello</h1>
     </header>
@@ -91,6 +81,19 @@
     <div class="fil-ariane">
         <ul>
             <li><a href="#">Accueil</a></li>
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+        @if(Auth::user())
+            <li>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit">Deconnexion</button>
+                </form>
+            </li>
+        @else
+            <li>
+                <a href="{{route('login')}}">Me connecter</a>
+            </li>
+        @endif
         </ul>
     </div>
     <!-- Contenu principal -->

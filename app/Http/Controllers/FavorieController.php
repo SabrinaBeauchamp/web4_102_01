@@ -79,16 +79,31 @@ class FavorieController extends Controller
     }
 
 
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($groupe)
     {
-        // $user = auth()->user();
-        $favories = Favorie::all();;
-        return view("users.favories.index", ['favories'=>$favories]);
+        $user = Auth::user();
+        if($groupe === 'favoris') {
+            $favories = $user->likes;
+            $type = 'Tous mes favoris';
+        }
+        else if($groupe === 'entreprises') {
+            $favories = $user->likesEntreprises;
+            $type = 'Entreprises';
+        }
+        else if($groupe === 'evenements') {
+            $favories = $user->likesEvenements;
+            $type = 'Évènements';
+        }
+        else if($groupe === 'forfaits') {
+            $favories = $user->likesForfaits;
+            $type = 'Forfaits';
+        }
+        return view("users.favories.index", ['favories'=>$favories, 'type'=>$type]);
     }
 
     /**
