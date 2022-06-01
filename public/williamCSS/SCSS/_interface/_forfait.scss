@@ -35,85 +35,83 @@
 
 
 //scss
-.conteneurForfaits {
-    @include setFlex(row, center, flex-start);
-    column-gap: 50px;
-    margin-top: 100px;
+.conteneurPageForfait1 {
     width: 100vw;
+    height: 100%;
+    &>.conteneurForfaits1 {
+        @include setFlex(row, center, center);
+        gap: 100px;
 
-    &>.conteneurForfait {
-        background-color: darkgray;
-        width: 500px;
-        height: 600px;
-        border-radius: 15px;
+        &>.conteneurCarteForfait1 {
+            width: 400px;
+            height: 500px;
+            background-color: #fdc6c6;
+            
 
-
-        &>.conteneurImgForfait {
-            width: 100%;
-            height: 300px;
-            background-color: lightgray;
-            border-radius: 15px 15px 0px 0px;
-
-            &>.imgForfait {
-                background-color: red;
-            }
-
-            &>h1 {
-                color: white;
+            &>.conteneurImgForfait1 {
+                position: relative;
                 text-align: center;
-                font-family: 'Roboto';
-                font-weight: 300;
-            }
-        }
 
-        &>.conteneurInfoForfait {
-            @include setFlex(column, center, center);
-            position: relative;
+                &>img {
+                    width: 100%;
+                }
 
-            &>h2 {
-                @include setFlex(column, center, center);
-                color: white;
-                margin-top: 15px;
-                
-            }
-
-            &>p {}
-
-            &>a {
-                @include setFlex(column, center, center);
-                background-color: grey;
-                width: 45%;
-                height: 40px;
-                border-radius: 20px;
-                color: white;
-                background-color: crimson;
-                font-family: 'Roboto';
-                text-decoration: none;
-                margin-top: 100px;
-
-                &:hover{
-                    width:48%;
-                    height:45px;
-                    transition-duration: 100ms;
-                    background-color: rgb(156, 26, 52);
+                &>.texteImgForfait1 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 50px;
+                    color: white;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: bold;
                 }
             }
 
-        } 
+            &>.conteneurTexteForfait1 {
+                @include setFlex(column, center, center);
+
+                &>h3 {
+                    font-size: 30px;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 400;
+                }
+
+                &>.descriptionForfait1 {
+                    font-size: 30px;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 200;
+                }
+            }
+
+            &>.conteneurBoutonForfait1 {
+                @include setFlex(column, center, center);
+
+                &>.boutonCarteForfait1 {
+                    @include setFlex(column, center, center);
+                    width: 80%;
+                    height: 50px;
+                    text-align: center;
+                    background-color: #f25c5c;
+                    font-family: 'Roboto', sans-serif;
+                    border-radius: 33px;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+                    transition: box-shadow 400ms cubic-bezier(.2, 0, .7, 1), transform 200ms cubic-bezier(.2, 0, .7, 1);
+
+                    &:hover {
+                        color: #fdc6c6;
+                        background-color: #f87c7c;
+                        transform: scale(1.05);
+                        box-shadow: 0 0 1px 10px rgba(#ff8f8f, 0.4),
+                            0 0 1px 15px rgba(#ff8f8f, 0.1),
+                            0 0 1px 20px rgba(#ff8f8f, 0.1);
+                    }
+                }
+            }
+        }
     }
-
-
 }
 
-.conteneurCirclePage {
-    @include setFlex(row, center, center);
-    margin-top:25px;
-    
-    &>.radio1 {
-        margin-right: 10px;
-        accent-color: crimson; //css ne reconnait pas mais ça marche
-    }
-    &>.radio2 {
-        accent-color: crimson; //css ne reconnait pas mais ça marche
-    }
-}
+
