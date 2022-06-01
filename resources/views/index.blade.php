@@ -113,7 +113,18 @@
             </div>
             <div id="container-carrousel">
                 <ul class="liste-carrousel">
-                    <li class="item-carrousel">
+                    @foreach($entreprisesPopulaires as $entreprisePopulaire)
+                        <li class="item-carrousel">
+                            <div class="activitePopulaire">
+                                <div class="activitePopulaire-container-texte">
+                                    <h3>{{$entreprisePopulaire->nom}}</h3>
+                                    <p>{{$entreprisePopulaire->description}}</p>
+                                </div>
+                                <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            </div>
+                        </li>
+                    @endforeach
+                    <!-- <li class="item-carrousel">
                         <div class="activitePopulaire">
                             <div class="activitePopulaire-container-texte">
                                 <h3>Activité populaire</h3>
@@ -121,43 +132,7 @@
                             </div>
                             <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
-                    </li>
-                    <li class="item-carrousel">
-                        <div class="activitePopulaire">
-                            <div class="activitePopulaire-container-texte">
-                                <h3>Activité populaire</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
-                            </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                        </div>
-                    </li>
-                    <li class="item-carrousel">
-                        <div class="activitePopulaire">
-                            <div class="activitePopulaire-container-texte">
-                                <h3>Activité populaire</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
-                            </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                        </div>
-                    </li>
-                    <li class="item-carrousel">
-                        <div class="activitePopulaire">
-                            <div class="activitePopulaire-container-texte">
-                                <h3>Activité populaire</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
-                            </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                        </div>
-                    </li>
-                    <li class="item-carrousel">
-                        <div class="activitePopulaire">
-                            <div class="activitePopulaire-container-texte">
-                                <h3>Activité populaire</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
-                            </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                        </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </section>
@@ -335,7 +310,7 @@
                 <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
             <div class="container-bouton">
-                <button>Créer mon compte</button>
+                <a href="{{route('register')}}">Créer mon compte</a>
             </div>
         </section>
         <section class="partenaires">

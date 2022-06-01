@@ -32,7 +32,15 @@ Route::get('/', function() {
 });
 Route::get('/agrotouristique', function() {
     $favories = Favorie::all();
-    return view('index',['favories'=>$favories]);
+    $entreprises = Entreprise::all();
+    foreach($entreprises as $entrepriseId => $entreprise)
+    {
+        if($entreprise->populaire !== 1)
+        {
+            unset($entreprises[$entrepriseId]);
+        }
+    }
+    return view('index',['favories'=>$favories, 'entreprisesPopulaires' => $entreprises]);
 })->name('acceuil');
 
 Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {

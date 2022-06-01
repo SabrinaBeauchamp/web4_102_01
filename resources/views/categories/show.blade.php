@@ -57,9 +57,9 @@
     <!-- Fil d'Ariane -->
     <div class="fil-ariane">
         <ul>
-            <li><a href="#">Accueil</a></li>
+            <li><a href="{{route('acceuil')}}">Accueil</a></li>
             <li>></li>
-            <li><a href="#">{{$groupeSelectionner->nom}}</a></li>
+            <li><a href="{{route('groupes.show', ['groupe' => $groupeSelectionner])}}">{{$groupeSelectionner->nom}}</a></li>
             <li>></li>
             <li><a href="#">{{$categorie->nom}}</a></li>
         </ul>
@@ -88,7 +88,9 @@
                 <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
             <div class="container-bouton">
-                <button>Créer mon compte</button>
+                <a href="{{route('register')}}">
+                Créer mon compte
+                </a>
             </div>
         </section>
         <section class="partenaires">

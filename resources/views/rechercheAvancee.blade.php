@@ -12,7 +12,6 @@
     <title>Web 4 synthèse | Recherche Filtrée</title>
     </head>
     <body>
-    <div class="interface">
         <!-- Menu hamburger -->
         <div id="container-menu">
             <nav id="nav-principale">
@@ -24,123 +23,15 @@
                 <!-- PANNEAUX -->
                 <div class="container-panneau">
                     <div class="panneau isPanneau panneau-close">
-                        <h2>Groupes</h2>
+                        <h2>Catégories</h2>
                         <ul class="menu1">
-                            <li>
-                                <button class="btn1">
-                                    Agriculture
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn1">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn1">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn1">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn1">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn1">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn1">
-                                    Groupe
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panneau2 isPanneau panneau-close">
-                        <h2>Groupes</h2>
-                        <ul class="menu2">
-                            <li>
-                                <button class="btn2">
-                                    Agriculture
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn2">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn2">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn2">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn2">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn2">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn2">
-                                    Groupe
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="panneau3 isPanneau panneau-close">
-                        <h2>Groupes</h2>
-                        <ul class="menu3">
-                            <li>
-                                <button class="btn3">
-                                    Agriculture
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn3">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn3">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn3">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn3">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn3">
-                                    Groupe
-                                </button>
-                            </li>
-                            <li>
-                                <button class="btn3">
-                                    Groupe
-                                </button>
-                            </li>
+                            @foreach($groupes as $groupe)
+                                <li>
+                                    <button class="btn1">
+                                        <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
+                                    </button>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
