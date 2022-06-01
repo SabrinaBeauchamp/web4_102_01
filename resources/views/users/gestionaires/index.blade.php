@@ -7,7 +7,7 @@
 
 @section('contenu gestion')
 <div class="information_utilisateur">
-    @if($user->verification === false)
+    @if(Auth::user()->verification === false)
     <h3>Veuillez compléter votre inscription</h3>
     <a href="{{route('users.gestionaires.edit', Auth::user())}}">Gestion de compte</a>
     @endif

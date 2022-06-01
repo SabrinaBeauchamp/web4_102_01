@@ -10,6 +10,7 @@ class CategorieForfait extends Model
     use HasFactory;
     protected $fillable=[
         "nom",
+        "message",
       ];
     public function forfaits(){
         return $this->hasMany(Forfait::class, 'categorie_id');
