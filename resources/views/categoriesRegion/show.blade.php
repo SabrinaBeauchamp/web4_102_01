@@ -139,7 +139,11 @@
             </div>
             <div>
                 <ul class="menu4"> 
-                    @include("entreprises.liste", ['entreprises'=>$categorie->entreprises])
+                    @foreach($villes as $ville)
+                        <li>
+                            <a href="{{route('villes.show', ['ville'=>$ville])}}">{{$ville->nom}}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </section>
@@ -153,7 +157,7 @@
                 <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
             <div class="container-bouton">
-                <button>Créer mon compte</button>
+                <a href="{{route('register')}}">Créer mon compte</a>
             </div>
         </section>
         <section class="partenaires">

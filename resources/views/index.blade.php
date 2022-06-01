@@ -64,7 +64,7 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-close">
-                    <h2>Catégories</h2>
+                    <h2>Groupes</h2>
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -73,6 +73,11 @@
                                 </button>
                             </li>
                         @endforeach
+                            <li>
+                                <button class="btn1">
+                                    <a href="{{route('categoriesRegion.index')}}">MRC</a>
+                                </button>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -103,6 +108,12 @@
                     <img src="/images/Placeholder.svg" alt="placeholder" class="image3">
                 </div>
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
+            </div>
+        </section>
+        <section class="introduction">
+            <div class="container-titre detectAnim">
+                <h2 class="titre1">Recherche Avancée</h2>
+                <a href="{{route('recherche.rechercheAvancee')}}">Cliquer ici</a>
             </div>
         </section>
         <section class="activitesPopulaires">

@@ -24,7 +24,7 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-close">
-                    <h2>Catégories</h2>
+                    <h2>Groupes</h2>
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -33,6 +33,11 @@
                                 </button>
                             </li>
                             @endforeach
+                            <li>
+                                <button class="btn1">
+                                    <a href="{{route('categoriesRegion.index')}}">MRC</a>
+                                </button>
+                            </li>
                         </ul>
                     </div>
                     <div class="panneau2 isPanneau panneau-close">
@@ -57,9 +62,7 @@
     <!-- Commodites -->
     <h3>Commodites</h3>
     <div>
-        @foreach($commodites as $commodite)
-            <a href="{{route('commodites.show', ['commodite'=>$commodite])}}">{{$commodite['nom']}}</a> <br>
-        @endforeach
+
     </div>
     <!-- Fil d'Ariane -->
     <div class="fil-ariane">
@@ -84,11 +87,14 @@
             <div class="container-introduction">
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
                 <div class="container-img-introduction detectAnim3">
-                    <img src="/images/Placeholder.svg" alt="placeholder" class="image1">
+                    @foreach($commodites as $commodite)
+                        <a href="{{route('commodites.show', ['commodite'=>$commodite])}}">{{$commodite['nom']}}</a> <br>
+                    @endforeach
+                    <!-- <img src="/images/Placeholder.svg" alt="placeholder" class="image1">
                     <img src="/images/Placeholder.svg" alt="placeholder" class="image2">
                     <img src="/images/Placeholder.svg" alt="placeholder" class="image3">
                     <img src="/images/Placeholder.svg" alt="placeholder" class="image4">
-                    <img src="/images/Placeholder.svg" alt="placeholder" class="image5">
+                    <img src="/images/Placeholder.svg" alt="placeholder" class="image5"> -->
                 </div>
             </div>
         </section>

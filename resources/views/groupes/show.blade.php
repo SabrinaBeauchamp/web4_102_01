@@ -25,7 +25,7 @@
             <!-- PANNEAUX -->
             <div class="container-panneau">
                 <div class="panneau isPanneau panneau-open">
-                    <h2>Catégories</h2>
+                    <h2>Groupes</h2>
                     <ul class="menu1">
                         @foreach($groupes as $groupe)
                             <li>
@@ -34,6 +34,11 @@
                                 </button>
                             </li>
                         @endforeach
+                        <li>
+                                <button class="btn1">
+                                    <a href="{{route('categoriesRegion.index')}}">MRC</a>
+                                </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="panneau2 isPanneau panneau-open">
@@ -81,7 +86,7 @@
                 <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
             </div>
             <div class="container-bouton">
-                <button>Créer mon compte</button>
+                <a href="{{route('register')}}">Créer mon compte</a>
             </div>
         </section>
         <section class="partenaires">

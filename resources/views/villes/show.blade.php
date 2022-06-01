@@ -1,5 +1,6 @@
 <h1>{{$ville->nom}}</h1>
 <p>({{$categorieRegion->nom}})</p>
+<h2>Entreprises</h2>
 <ul>
     @foreach($entreprises as $entreprise)
     <li>
