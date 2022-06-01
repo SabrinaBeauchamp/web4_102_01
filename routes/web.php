@@ -11,7 +11,10 @@ use App\Http\Controllers\EvenementController;
 use App\Http\Controllers\FavorieController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VilleController;
+use App\Http\Controllers\CategorieRegionController;
 use App\Models\Entreprise;
+use App\Models\Evenement;
 use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
 
@@ -45,6 +48,11 @@ Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=
 
     Route::get('/{user}/delete', 'delete')->name('delete');
     Route::post('/{user}/delete', 'destroy')->name('destroy');
+
+    Route::group([ 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['groupe'=>'favoris|entreprises|forfaits|evenements']], function () {
+        
+        Route::get('/{groupe}', 'index')->name('index');
+    });
 });
 
 Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
@@ -66,7 +74,6 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
     
-    
     Route::get('/{forfait}/like', [FavorieController::class, 'likeF'])->name('like');
     Route::get('/{forfait}/dislike', [FavorieController::class, 'dislikeF'])->name('dislike');
 
@@ -80,26 +87,19 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/{favorie}/like', 'like')->name('like');
 
-    Route::get('{favorie}/create', 'create')->name('create');
-    Route::post('{favorie}/create', 'store')->name('store');
-
-    Route::get('/{favorie}/edit', 'edit')->name('edit');
-    Route::post('/{favorie}/edit', 'update')->name('update');
-
-    Route::get('/{favorie}/delete', 'delete')->name('delete');
-    Route::post('/{favorie}/delete', 'destroy')->name('destroy');
-});
-
+Route::get('/dashboard/evenement', function() {
+    $evenements = Evenement::all();
+    $evenements = Evenement::orderBy('start', 'asc')->get();
+    return view('users.evenements.index', ['evenements'=>$evenements]);
+})->name('evenements');
 Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{evenement}', 'show')->name('show');
 
     Route::get('/{evenement}/like', [FavorieController::class, 'likeE'])->name('like');
     Route::get('/{evenement}/dislike', [FavorieController::class, 'dislikeE'])->name('dislike');
+    
 
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
@@ -142,6 +142,10 @@ Route::get('/dashboard/populaire', function() {
     $entreprises = Entreprise::all();
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
+Route::get('/dashboard/entreprises', function() {
+    $entreprises = Entreprise::all();
+    return view('users.entreprises.index', ['entreprises'=>$entreprises]);
+})->name('entreprises');
 
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
@@ -203,6 +207,32 @@ Route::group(['prefix'=>'/agrotouristique/commodites', 'as'=>'commodites.', 'con
 
     Route::get('/{commodite}/delete', 'delete')->name('delete');
     Route::post('/{commodite}/delete', 'destroy')->name('destroy');
+});
+Route::group(['prefix'=>'/agrotouristique/villes', 'as'=>'villes.', 'controller'=>VilleController::class, 'where'=>['ville'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{ville}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{ville}/edit', 'edit')->name('edit');
+    Route::post('/{ville}/edit', 'update')->name('update');
+
+    Route::get('/{ville}/delete', 'delete')->name('delete');
+    Route::post('/{ville}/delete', 'destroy')->name('destroy');
+});
+Route::group(['prefix'=>'/agrotouristique/mrc', 'as'=>'categoriesRegion.', 'controller'=>CategorieRegionController::class, 'where'=>['categorieRegion'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{categorieRegion}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{categorieRegion}/edit', 'edit')->name('edit');
+    Route::post('/{categorieRegion}/edit', 'update')->name('update');
+
+    Route::get('/{categorieRegion}/delete', 'delete')->name('delete');
+    Route::post('/{categorieRegion}/delete', 'destroy')->name('destroy');
 });
 
 Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'controller'=>AppController::class], function () {

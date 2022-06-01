@@ -84,11 +84,37 @@ class FavorieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($groupe)
     {
-        // $user = auth()->user();
+        $user = Auth::user();
+        if($groupe === 'favoris') {
+            $favories = $user->likes;
+            $type = 'Tous mes favoris';
+        }
+        else if($groupe === 'entreprises') {
+            $favories = $user->likesEntreprises;
+            $type = 'Entreprises';
+        }
+        else if($groupe === 'evenements') {
+            $favories = $user->likesEvenements;
+            $type = 'Évènements';
+        }
+        else if($groupe === 'forfaits') {
+            $favories = $user->likesForfaits;
+            $type = 'Forfaits';
+        }
+        return view("users.favories.index", ['favories'=>$favories, 'type'=>$type]);
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Favorie  $favorie
+     * @return \Illuminate\Http\Response
+     */
+    public function showE()
+    {
         $favories = Favorie::all();;
-        return view("users.favories.index", ['favories'=>$favories]);
+        return view ("favories.show", ['favorie'=>$favorie]);
     }
 
     /**

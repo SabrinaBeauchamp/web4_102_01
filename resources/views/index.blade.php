@@ -19,12 +19,10 @@
     <nav>
         <ul>
             <li><a href="{{route('groupes.index')}}">Groupe</a></li>
-            <li><a href="{{route('forfaits.index')}}">Forfaits</a></li>
             <li><a href="{{route('forfaits.categories.index')}}">Catégories</a></li>
             <li><a href="{{route('evenements.index')}}">Évènements</a></li>
             <li><a href="{{route('entreprises.index')}}">Entreprises</a></li>
-            <li><a href="{{route('favories.index')}}">Favories</a></li>
-            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+            
         </ul>
         <ul>
             @if(Auth::user())
@@ -39,6 +37,7 @@
                     <a href="{{route('login')}}">Me connecter</a>
                 </li>
             @endif
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
             <li><a href="{{route('commodites.index')}}">Commodites</a></li>
             <li><a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a></li>
         </ul>
