@@ -1,6 +1,5 @@
 @csrf
-
-        
+       {{session('message')}} 
         <div class="conteneurProfilNom conteneurProfilAll">
             <label for="nomProfil name">Nom et prénom</label>
             <div class="conteneurInputProfil">

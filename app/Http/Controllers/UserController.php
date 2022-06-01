@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Permission;
 use Illuminate\Http\Request;
-
+use Auth;
 class UserController extends Controller
 {
     /**
@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = \Auth::user();
+        $user = Auth::user();
         return view('users.gestionaires.index', ['user'=>$user]);
     }
 
@@ -80,6 +80,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        
         $user->fill($request->all());
         $user->save();
         return redirect()->route("users.gestionaires.index");

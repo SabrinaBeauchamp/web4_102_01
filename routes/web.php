@@ -48,6 +48,11 @@ Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=
 
     Route::get('/{user}/delete', 'delete')->name('delete');
     Route::post('/{user}/delete', 'destroy')->name('destroy');
+
+    Route::group([ 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['groupe'=>'favoris|entreprises|forfaits|evenements']], function () {
+        
+        Route::get('/{groupe}', 'index')->name('index');
+    });
 });
 
 Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
@@ -71,7 +76,6 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     
     Route::get('/{forfait}/like', [FavorieController::class, 'likeF'])->name('like');
     Route::get('/{forfait}/dislike', [FavorieController::class, 'dislikeF'])->name('dislike');
-    
 
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
@@ -83,19 +87,7 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
-    Route::get('/', 'index')->name('index');
-    // Route::get('/', 'show')->name('show');
 
-    Route::get('{favorie}/create', 'create')->name('create');
-    Route::post('{favorie}/create', 'store')->name('store');
-
-    Route::get('/{favorie}/edit', 'edit')->name('edit');
-    Route::post('/{favorie}/edit', 'update')->name('update');
-
-    Route::get('/{favorie}/delete', 'delete')->name('delete');
-    Route::post('/{favorie}/delete', 'destroy')->name('destroy');
-});
 Route::get('/dashboard/evenement', function() {
     $evenements = Evenement::all();
     $evenements = Evenement::orderBy('start', 'asc')->get();

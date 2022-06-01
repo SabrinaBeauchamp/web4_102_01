@@ -18,18 +18,18 @@
             <a href="{{route('users.gestionaires.edit', Auth::user())}}">Profil</a>
         </div>
         @if(Auth::user()->role->name === 'admin')
-        <div class="conteneurSidebarTop boutonClose">
-            <i class="fa-solid "></i>
-            <a href="{{route('entreprises')}}" >gestion de membre</a>
-        </div>
-        <div class="conteneurSidebarTop boutonClose">
-            <i class="fa-solid "></i>
-            <a href="{{route('populaire')}}" >gestion d'activités populaires</a>
-        </div>
-        <div class="conteneurSidebarTop boutonClose">
-            <i class="fa-solid "></i>
-            <a href="{{route('evenements')}}" >gestion des évènements</a>
-        </div>
+            <div class="conteneurSidebarTop boutonClose">
+                <i class="fa-solid "></i>
+                <a href="{{route('entreprises')}}" >gestion de membre</a>
+            </div>
+            <div class="conteneurSidebarTop boutonClose">
+                <i class="fa-solid "></i>
+                <a href="{{route('populaire')}}" >gestion d'activités populaires</a>
+            </div>
+            <div class="conteneurSidebarTop boutonClose">
+                <i class="fa-solid "></i>
+                <a href="{{route('evenements')}}" >gestion des évènements</a>
+            </div>
         @else
             <div class="conteneurSidebarPaiement conteneurSidebarAll">
                 <i class="fa-solid fa-credit-card"></i>
@@ -37,21 +37,21 @@
             </div>
             <div class="conteneurSidebarFavoris conteneurSidebarAll">
                 <i class="fa-solid fa-heart" ></i>
-                <a href="{{route('favories.index')}}">Favoris</a>
+                <a href="">Favoris</a>
                 <i class="fa-solid fa-caret-right" id="arrowFav"></i>
             </div>
             <div class="conteneurSideBarSousFavoris" id="sidebarFav">
                 <div class="conteneurSidebarEntreprise sousFav">
                     <i class="fa-solid fa-building"></i>
-                    <a href="">Entreprises</a>
+                    <a href="{{route('users.gestionaires.favories.index', 'entreprises')}}">Entreprises</a>
                 </div>
                 <div class="conteneurSidebarEvent sousFav">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <a href="">Évènements</a>
+                    <a href="{{route('users.gestionaires.favories.index', 'evenements')}}">Évènements</a>
                 </div>
                 <div class="conteneurSidebarForfait sousFav">
                     <i class="fa-solid fa-store"></i>
-                    <a href="">Forfaits</a>
+                    <a href="{{route('users.gestionaires.favories.index', 'forfaits')}}">Forfaits</a>
                 </div>
             </div>
             <div class="conteneurSidebarSetting conteneurSidebarAll">
@@ -67,14 +67,14 @@
                     <button type="submit">Deconnexion</button>
                 </form>
             @else
-                <a href="">Déconnexion</a> 
+            <a href="">Déconnexion</a> 
             @endif
         </div>
     </div>
     <div>
         <h2>@yield('titre gestion')</h2>
         <div>@yield('contenu gestion')</div>
-</div>
-
+    </div>
+    
     <script src="{{asset('williamCSS/javascript William/sidebarAccordionUser.js')}}"></script>
 @endsection

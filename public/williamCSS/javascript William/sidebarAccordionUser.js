@@ -29,14 +29,16 @@
   //   }
   // })
 
-
+if(btnOpen) {
   btnOpen.addEventListener('click', () => {
     dashMenu.style.width = '20%';
     btnOpen.style.visibility ='hidden';
   })
+}
 
+if(btnClose) {
   btnClose.addEventListener('click', () => {
     dashMenu.style.width = '0px';
     btnOpen.style.visibility ='visible';
-
   })
+}
