@@ -1,6 +1,9 @@
 @extends('mesLayouts.layout')
+@section('titre')
+<h1>Villes</h1>
+
+@endsection
 @section('contenu')
-    <h1>Villes</h1>
     <ul>
         @foreach($villes as $ville)
         <li>
