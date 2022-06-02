@@ -22,7 +22,7 @@
             <div class="carousel-caption d-none d-md-block">
                 <h1>{{$categories[$i]->nom}}</h1>
                 <p>{{$categories[$i]->phrase}}</p>
-                <a href="{{route('forfaits.categories.show', $categories[$i])}}">Découvrez ses forfait</a>
+                <a href="{{route('forfaits.categories.show', $categories[$i])}}">Découvrez ses forfaits</a>
             </div>
         </div>
     @endif

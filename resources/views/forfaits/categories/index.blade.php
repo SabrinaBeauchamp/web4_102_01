@@ -1,11 +1,8 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.layoutCarousel')
 
-@section('titre')
-    Categorie des forfait
-@endsection
 
 @section('contenu')
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
     <div class="carousel-indicators">
         @for ($i = 0; $i < $categories->count(); $i++)
             @if ($i === 0)
@@ -30,5 +27,5 @@
         <span class="carousel-control-next-icon" aria-hidden="false"></span>
         <span class="">Prochain</span>
     </button>
-</div>
+
 @endsection
