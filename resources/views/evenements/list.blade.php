@@ -16,24 +16,19 @@
             {{$evenement->description}} 
         </div>
         <div class="prix-evenement">
-            {{$evenement->prix}}
+            {{$evenement->prix}} / jour / personne
         </div>
         @if (Auth::check())
         @if($evenement->isLiked)
-        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked fa-regular fa-heart"></button>
+        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked fa-solid fa-heart"></button>
         @else
-        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user fa-solid fa-heart"></button>
+        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user fa-regular fa-heart"></button>
         @endif
         @else
         <button class="like_user">
             <a href="{{route('login')}}"><i class="fa-solid fa-heart iconeListeForfaits"></i></a>
         </button> 
         @endif
-        
-        <div class="choix">
-            <x-champ-lien href="{{route('evenements.edit', $evenement)}}" titre="Modifier"></x-champ-lien>
-            <x-champ-lien href="{{route('evenements.delete', $evenement)}}" titre="Supprimer"></x-champ-lien>
-        </div>
     </div>
     @endif
 @endforeach

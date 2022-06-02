@@ -1,4 +1,5 @@
 @foreach($entreprises as $entreprise)
+<li>
     <a class="btn3" href="{{route('entreprises.show', $entreprise)}}">
         {{$entreprise->nom}}
         @if (Auth::check())
@@ -13,4 +14,5 @@
             </button> 
         @endif
     </a>
+</li>
 @endforeach

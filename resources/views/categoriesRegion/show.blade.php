@@ -61,6 +61,21 @@
     </div>
     <!-- Contenu principal -->
     <main>
+        <section class="sous-categories">
+            <div class="container-titre detectAnim">
+                <h2 class="titre1">Toutes les villes dans</h2>
+                <h2 class="titre-accent">{{$categorieRegion->nom}}</h2>
+            </div>
+            <div>
+                <ul class="menu4"> 
+                    @foreach($villes as $ville)
+                        <li>
+                            <a href="{{route('villes.show', ['ville'=>$ville])}}">{{$ville->nom}}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </section>
         <section class="introduction">
             <div class="container-titre detectAnim">
                 <h2 class="titre1">Les Laurentides, un territoire </h2>
@@ -129,21 +144,6 @@
                             <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
                     </li>
-                </ul>
-            </div>
-        </section>
-        <section class="sous-categories">
-            <div class="container-titre detectAnim">
-                <h2 class="titre1">Toutes les villes dans</h2>
-                <h2 class="titre-accent">{{$categorieRegion->nom}}</h2>
-            </div>
-            <div>
-                <ul class="menu4"> 
-                    @foreach($villes as $ville)
-                        <li>
-                            <a href="{{route('villes.show', ['ville'=>$ville])}}">{{$ville->nom}}</a>
-                        </li>
-                    @endforeach
                 </ul>
             </div>
         </section>

@@ -3,7 +3,7 @@
 <div class="forfait">
     <!-- changer les sources des images -->
     @if(file_exists('img/forfaits/'.$forfait->id.'.jpg'))
-        <img src="{{asset('img/forfaits/'.$forfait->id.'.jgp')}}" class="d-block w-100">
+        <img src="{{asset('img/forfaits/'.$forfait->id.'.jpg')}}" class="d-block w-100">
     @else
         <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de forfait" class="image-evenement">
     @endif

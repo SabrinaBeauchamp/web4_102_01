@@ -40,11 +40,13 @@ Agrotourisme Laurentides
                                     <h3>{{$entreprisePopulaire->nom}}</h3>
                                     <p>{{$entreprisePopulaire->description}}</p>
                                 </div>
-                                @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
-                                <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @else
-                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @endif
+                                <div class="image-populaires">
+                                    @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
+                                    <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @else
+                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @endif
+                                </div>
                             </div>
                         </li>
                     @endforeach
@@ -78,7 +80,7 @@ Agrotourisme Laurentides
                                 {{$evenement->description}} 
                             </div>
                             <div class="prix-evenement">
-                                {{$evenement->prix}}
+                                {{$evenement->prix}} / jour / personne
                                 @if (Auth::check())
                                     @if($evenement->isLiked)
                                         <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked fa-regular fa-heart"></button>
@@ -194,11 +196,13 @@ Agrotourisme Laurentides
                                 <h3>{{$premierLogement->nom}}</h3>
                                 <p>{{$premierLogement->description}}</p>
                             </div>
-                            @if(file_exists('img/entreprises/'.$premierLogement->id.'.jpg'))
-                            <img src="{{asset('img/entreprises/'.$premierLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                            @else
-                            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                            @endif
+                            <div class="image-logements">
+                                @if(file_exists('img/entreprises/'.$premierLogement->id.'.jpg'))
+                                <img src="{{asset('img/entreprises/'.$premierLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @else
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @endif
+                            </div>
                         </div>
                     </li>
                     <li class="item">
@@ -207,11 +211,13 @@ Agrotourisme Laurentides
                                 <h3>{{$deuxiemeLogement->nom}}</h3>
                                 <p>{{$deuxiemeLogement->description}}</p>
                             </div>
-                            @if(file_exists('img/entreprises/'.$deuxiemeLogement->id.'.jpg'))
-                            <img src="{{asset('img/entreprises/'.$deuxiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                            @else
-                            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                            @endif
+                            <div class="image-logements">
+                                @if(file_exists('img/entreprises/'.$deuxiemeLogement->id.'.jpg'))
+                                <img src="{{asset('img/entreprises/'.$deuxiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @else
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @endif
+                            </div>
                         </div>
                     </li>
                     <li class="item">
@@ -220,11 +226,13 @@ Agrotourisme Laurentides
                                 <h3>{{$troisiemeLogement->nom}}</h3>
                                 <p>{{$troisiemeLogement->description}}</p>
                             </div>
-                            @if(file_exists('img/entreprises/'.$troisiemeLogement->id.'.jpg'))
-                            <img src="{{asset('img/entreprises/'.$troisiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                            @else
-                            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                            @endif
+                            <div class="image-logements">
+                                @if(file_exists('img/entreprises/'.$troisiemeLogement->id.'.jpg'))
+                                <img src="{{asset('img/entreprises/'.$troisiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @else
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @endif
+                            </div>
                         </div>
                     </li>
                 </ul>

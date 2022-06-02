@@ -40,13 +40,13 @@
                                 <a class="btn1" href="{{route('evenements.index')}}">Évènements</a>
                             </li>
                             @if(Auth::user())
+                                <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
                                 <li>
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
                                         <button class="btn1" type="submit">Deconnexion</button>
                                     </form>
                                 </li>
-                                <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
                             @else
                                 <li>
                                     <a class="btn1" href="{{route('login')}}">Me connecter</a>

@@ -3,6 +3,10 @@
 @section('titre')
     Categorie des forfait
 @endsection
+@section('arial')
+<li>></li>
+<li><a href="{{route('forfaits.categories.show', $categorie)}}">{{$categorie->nom}}</a></li>
+@endsection
 
 @section('contenu')
     <div class="conteneurListeForfaits">
