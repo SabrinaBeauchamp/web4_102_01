@@ -15,9 +15,13 @@ use App\Http\Controllers\VilleController;
 use App\Http\Controllers\CategorieRegionController;
 use App\Models\Entreprise;
 use App\Models\Evenement;
+use App\Models\Groupe;
 use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
 use App\Http\Controllers\GroupeCommoditeController;
+use App\Models\Categorie;
+use App\Models\CategorieEntreprise;
+use Dotenv\Parser\Value;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +30,7 @@ use App\Http\Controllers\GroupeCommoditeController;
 |
 | Here is where you can  web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create something great! 
 |
 */
 Route::get('/', function() {
@@ -34,6 +38,7 @@ Route::get('/', function() {
 });
 Route::get('/agrotouristique', function() {
     $favories = Favorie::all();
+    //Entreprises populaires
     $entreprises = Entreprise::all();
     foreach($entreprises as $entrepriseId => $entreprise)
     {
@@ -42,7 +47,45 @@ Route::get('/agrotouristique', function() {
             unset($entreprises[$entrepriseId]);
         }
     }
-    return view('index',['favories'=>$favories, 'entreprisesPopulaires' => $entreprises]);
+    //Les 3 logements choisis au hasard
+    //récupère seulement les entreprises de hébergement
+    $groupe = Groupe::find(5);
+    $categoriesLogements = Categorie::where("groupe_id", "LIKE", "%$groupe->id%")
+        ->select('id')
+        ->get();
+    $logements = array();
+    foreach($categoriesLogements as $categorieLogements)
+    {
+        $entreprisesDeLoge = CategorieEntreprise::where("categorie_id", "LIKE", "%$categorieLogements->id%")
+            ->select('entreprise_id')
+            ->get()
+            ->toArray();
+        foreach($entreprisesDeLoge as $entrepriseDeLoge)
+        {
+            //parfois une entreprise vas se trouver dans plusieurs catégories pour éviter de l'avoir plusieurs fois, on vérifie s'il n'est pas déjà dans le tableau
+            if(in_array($entrepriseDeLoge, $logements ) == false) {
+                array_push($logements, $entrepriseDeLoge);
+            }
+        }
+    };
+    //choisi des logements au hasard
+    $idPremierLogement = array_rand($logements);
+    $premierLogement = Entreprise::find($logements[$idPremierLogement])[0];
+    //[0] car à cause du $logements[$idPremierLogement], il crée une collection à l'intérieur d'un array, donc je récupère le seul élément du array.
+    unset($logements[$idPremierLogement]); //On le retire pour ne pas l'avoir en double
+    $idDeuxiemeLogement = array_rand($logements);
+    $deuxiemeLogement = Entreprise::find($logements[$idDeuxiemeLogement])[0];
+    unset($logements[$idDeuxiemeLogement]); //On le retire pour ne pas l'avoir en double
+    $idTroisiemeLogement = array_rand($logements);
+    $troisiemeLogement = Entreprise::find($logements[$idTroisiemeLogement])[0];
+    
+    return view('index',[
+        'favories'=>$favories, 
+        'entreprisesPopulaires' => $entreprises,
+        'premierLogement' => $premierLogement,
+        'deuxiemeLogement' => $deuxiemeLogement,
+        'troisiemeLogement' => $troisiemeLogement
+    ]);
 })->name('acceuil');
 
 Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
