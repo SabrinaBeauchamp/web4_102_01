@@ -1,7 +1,7 @@
 @extends('mesLayouts.layout')
 
 @section('titre')
-{{$groupeSelection->nom}}
+{{$entreprise->nom}}
 @endsection
 
 @section('panneaux0')
@@ -46,16 +46,16 @@
 
 @section('panneaux')
     <div class="panneau2 isPanneau panneau-open">
-        <h2>{{$groupeSelection->nom}}</h2>
+        <h2>{{$entreprise->nom}}</h2>
         <ul class="menu2"> 
-            @include("categories.liste", ['categories'=>$groupeSelection->categories])
+            @include("categories.liste", ['categories'=>$entreprise->categories])
         </ul>
     </div>
 @endsection
 
 @section('arial')
     <li>></li>
-    <li><a href="#">{{$groupeSelection->nom}}</a></li>
+    <li><a href="#">{{$entreprise->nom}}</a></li>
 @endsection
 
 @section('contenu')
