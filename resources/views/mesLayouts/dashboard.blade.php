@@ -37,7 +37,7 @@
         
             <div class="conteneur conteneurSidebarAll">
             <i class="fa-solid fa-users"></i>
-                <a href="{{route('gestion')}}">Gestion de membre</a>
+                <a href="{{route('gestion')}}">Gestion des membres</a>
             </div>
             <div class=" conteneurSidebarAll">
             <i class="fa-solid fa-person-running"></i>
