@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des forfaits d'une categories specifiques</title>
+    <link rel="stylesheet" href="../public/williamCSS/style.css">
+    <script src="https://kit.fontawesome.com/f4e3a6480f.js" crossorigin="anonymous"></script>
+    <!-- PAS OUBLIER SCRIPT A LA FIN POUR JS -->
+</head>
+
+<body>
+    <div class="conteneurListeForfaits">
+        <!-- le h2 va pouvoir etre changer -->
+        <h2>Forfait escapade gourmande</h2>
+        <!-- faire foreach -->
+        <div class="conteneurForfait">
+            <div class="forfait">
+                <!-- changer les sources des images -->
+                <img src="../public/williamCSS/temporaire_img/imgPlaceholderCarousel.jpg" alt="">
+                <!-- changer les href des a -->
+                <a href=". . .">Nom du Forfait</a>
+                <div class="forfaitRating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="conteneurBtnOuvrir">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
+                <div class="conteneurBtnCarte">
+                    <button class="button btn_visiter btn_carte">
+                        <!-- href du a est le meme que a du nom forfait, aussi mettre fleche en after-->
+                        <a href=". . .">Visiter le forfait</a>
+                    </button>
+                    <button class="like_user btn_carte">
+                        <a href=". . ."><i class="fa-solid fa-heart iconeListeForfaits"></i></a>
+                    </button>
+                    <!-- admin seulement ? -->
+                    <button class="button btn_modifier btn_carte">
+                        <a href=". . ."><i class="fa-solid fa-gear iconeListeForfaits"></i></a>
+                    </button>
+                    <button class="button btn_supprimer btn_carte">
+                        <a href=". . ."><i class="fa-solid fa-trash-can iconeListeForfaits"></i></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="conteneurBtnAutres">
+            <!-- pas admin -->
+            <div class="button">
+                <a href=". . .">Retour aux catégories des forfaits</a>
+            </div>
+            <!-- admin seulement ? -->
+            <div class="button">
+                <a href=". . ." class="btnCreateForfait">Créer un forfait</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../public/williamCSS/javascript William/forfaitListeAnim.js"></script>
+</html>
