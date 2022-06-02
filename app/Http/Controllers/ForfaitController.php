@@ -116,6 +116,7 @@ class ForfaitController extends Controller
      */
     public function destroy(Request $request, forfait $forfait)
     {
+        @unlink($forfait->urlImg);
         if ($request->has('delete')) {
             $forfait->delete();
             return redirect()->route('forfaits.index');

@@ -203,13 +203,13 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
 });
 
 Route::get('/dashboard/populaire', function() {
-    $entreprises = Entreprise::all();
+    $entreprises = Entreprise::paginate(48);
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
-Route::get('/dashboard/entreprises', function() {
-    $entreprises = Entreprise::all();
+Route::get('/dashboard/les_entreprises', function() {
+    $entreprises = Entreprise::paginate(48);
     return view('users.entreprises.index', ['entreprises'=>$entreprises]);
-})->name('entreprises');
+})->name('gestion');
 
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');

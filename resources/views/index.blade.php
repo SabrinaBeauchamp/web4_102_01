@@ -42,7 +42,11 @@ hello
                                     <h3>{{$entreprisePopulaire->nom}}</h3>
                                     <p>{{$entreprisePopulaire->description}}</p>
                                 </div>
-                                <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
+                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @else
+                                    <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @endif
                             </div>
                         </li>
                     @endforeach
@@ -189,7 +193,11 @@ hello
                                 <h3>{{$premierLogement->nom}}</h3>
                                 <p>{{$premierLogement->description}}</p>
                             </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @if(file_exists('img/entreprises/'.$premierLogement->id.'.jpg'))
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @else
+                                <img src="{{asset('img/entreprises/'.$premierLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @endif
                         </div>
                     </li>
                     <li class="item">
@@ -198,7 +206,11 @@ hello
                                 <h3>{{$deuxiemeLogement->nom}}</h3>
                                 <p>{{$deuxiemeLogement->description}}</p>
                             </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @if(file_exists('img/entreprises/'.$deuxiemeLogement->id.'.jpg'))
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @else
+                                <img src="{{asset('img/entreprises/'.$deuxiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @endif
                         </div>
                     </li>
                     <li class="item">
@@ -207,7 +219,11 @@ hello
                                 <h3>{{$troisiemeLogement->nom}}</h3>
                                 <p>{{$troisiemeLogement->description}}</p>
                             </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @if(file_exists('img/entreprises/'.$troisiemeLogement->id.'.jpg'))
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @else
+                                <img src="{{asset('img/entreprises/'.$troisiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @endif
                         </div>
                     </li>
                 </ul>

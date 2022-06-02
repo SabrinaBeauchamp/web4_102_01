@@ -30,5 +30,8 @@ class Forfait extends Model
     public function getIsLikedAttribute() {
       return !!$this->users()->find(\Auth::user()->id);
     }
+    public function getUrlImgAttribute() {
+      return public_path("img/forfaits/$this->id.jpg");
+  }
     
 }

@@ -12351,13 +12351,21 @@ img {
 section.rechercheFiltree {
   height: auto;
 }
+
 section.rechercheFiltree form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   row-gap: 2vw;
 }
 
@@ -12374,10 +12382,18 @@ section.rechercheFiltree form .filtresEtResultats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   row-gap: 2vw;
 }
@@ -12386,14 +12402,21 @@ section.rechercheFiltree form .filtresEtResultats fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   row-gap: 2vw;
   background-color: var(--lighter);
-  -moz-column-gap: 1vw;
-       column-gap: 1vw;
+  -webkit-column-gap: 1vw;
+          column-gap: 1vw;
   padding: 1vw;
   border-radius: 2vw;
 }
@@ -12435,7 +12458,8 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark
   width: 100%;
   height: 100%;
   border-radius: 100vw;
-  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark:after {
@@ -12447,13 +12471,14 @@ section.rechercheFiltree form .filtresEtResultats fieldset .container .checkmark
 section.rechercheFiltree form .filtresEtResultats fieldset .container:hover input ~ .checkmark {
   border: 0.2vw solid var(--accent);
 }
+
 section.rechercheFiltree form .filtresEtResultats button {
   margin: 0.2vw;
   padding: 0.2vw 2vw;
   border-radius: 100vw;
   border-color: var(--accent);
   font-size: 5vw;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--dark);
   background-color: var(--accent);
   font-weight: 300;
@@ -12463,12 +12488,20 @@ section.rechercheFiltree form .filtresEtResultats .resultats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  -moz-column-gap: 2vw;
-       column-gap: 2vw;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
   width: 100%;
   height: auto;
 }
@@ -12479,10 +12512,11 @@ section.rechercheFiltree form .filtresEtResultats .resultats p {
   border: 0.1vw solid var(--accent);
   border-radius: 100vw;
   font-size: 3vw;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--dark);
   font-weight: 300;
 }
+
 @media (min-width: 900px) {
   section.rechercheFiltree form input.barreRecherche {
     width: 100%;
@@ -12492,16 +12526,25 @@ section.rechercheFiltree form .filtresEtResultats .resultats p {
     font-size: 2vw;
   }
   section.rechercheFiltree form .filtresEtResultats {
-    -moz-column-gap: 0.4vw;
-         column-gap: 0.4vw;
+    -webkit-column-gap: 0.4vw;
+            column-gap: 0.4vw;
   }
   section.rechercheFiltree form .filtresEtResultats fieldset {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    -moz-column-gap: 0.4vw;
-         column-gap: 0.4vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 0.4vw;
+            column-gap: 0.4vw;
     padding: 0.3vw;
   }
   section.rechercheFiltree form .filtresEtResultats fieldset .container {
@@ -12514,13 +12557,23 @@ section.rechercheFiltree form .filtresEtResultats .resultats p {
     font-size: 1.5vw;
   }
   section.rechercheFiltree form .filtresEtResultats .resultats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    -moz-column-gap: 1vw;
-         column-gap: 1vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-column-gap: 1vw;
+            column-gap: 1vw;
     width: auto;
     height: auto;
   }
