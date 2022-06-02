@@ -11512,9 +11512,10 @@ img {
     border-radius: 0vw;
   }
   .panneau h2::before, .panneau0 h2::before, .panneau3 h2::before, .panneau2 h2::before, .panneau .h2::before, .panneau0 .h2::before, .panneau3 .h2::before, .panneau2 .h2::before {
-    transform: translate(-1vw, -1vw);
-    height: 6vw;
-    width: 8vw;
+    transform: translate(2vw, 0.8vw);
+    height: 0.2vw;
+    width: 4vw;
+    opacity: 1;
   }
 }
 
