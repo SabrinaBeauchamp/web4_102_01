@@ -34,17 +34,22 @@
             <a href="{{route('users.gestionaires.edit', Auth::user())}}">Profil</a>
         </div>
         @if(Auth::user()->role->name === 'admin')
-            <div class="conteneurSidebarTop boutonClose">
-                <i class="fa-solid "></i>
-                <a href="{{route('gestion')}}">gestion de membre</a>
+        
+            <div class="conteneur conteneurSidebarAll">
+            <i class="fa-solid fa-users"></i>
+                <a href="{{route('gestion')}}">Gestion de membre</a>
             </div>
-            <div class="conteneurSidebarTop boutonClose">
-                <i class="fa-solid "></i>
-                <a href="{{route('populaire')}}" >gestion d'activités populaires</a>
+            <div class=" conteneurSidebarAll">
+            <i class="fa-solid fa-person-running"></i>
+                <a href="{{route('populaire')}}" >Gestion d'activités</a>
             </div>
-            <div class="conteneurSidebarTop boutonClose">
-                <i class="fa-solid "></i>
-                <a href="{{route('evenements')}}" >gestion des évènements</a>
+            <div class=" conteneurSidebarAll">
+            <i class="fa-solid fa-calendar-days"></i>
+                <a href="{{route('evenements')}}" >Gestion des évènements</a>
+            </div>
+            <div class=" conteneurSidebarAll conteneurSidebarEventAdmin">
+            <i class="fa-solid fa-campground"></i>
+                <a href="{{route('evenements')}}" >Gestion des forfaits</a>
             </div>
         @else
             <div class="conteneurSidebarPaiement conteneurSidebarAll">
@@ -80,7 +85,7 @@
             @if(Auth::user())
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <button type="submit">Deconnexion</button>
+                    <button type="submit">Déconnexion</button>
                 </form>
             @else
             <a href="">Déconnexion</a> 

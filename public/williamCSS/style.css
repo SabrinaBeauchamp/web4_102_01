@@ -12511,7 +12511,8 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 }
 
 .conteneurDashboard .conteneurSidebar {
-  width: 20%;
+  position: fixed;
+  width: 420px;
   height: 100vh;
   background-color: #FF6868;
   display: -webkit-box;
@@ -12524,6 +12525,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   white-space: nowrap;
   -webkit-transition-duration: 800ms;
           transition-duration: 800ms;
+  overflow: hidden;
   z-index: 2;
 }
 
@@ -13666,6 +13668,114 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+.conteneurSidebarEventAdmin {
+  border-bottom: 2px solid white;
+}
+
+.conteneurSidebarDisconnect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conteneurSidebarDisconnect i:hover {
+  -webkit-animation: wobble 0.5s;
+          animation: wobble 0.5s;
+}
+
+.conteneurSidebarDisconnect button {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  margin-left: 16px;
+}
+
+.conteneurSidebarDisconnect button::after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: white;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.conteneurSidebarDisconnect button:hover::after {
+  width: 100%;
+}
+
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+            transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+            transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+            transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+            transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+            transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+            transform: translateX(-25%) rotate(-5deg);
+  }
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+            transform: translateX(20%) rotate(3deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+            transform: translateX(-15%) rotate(-3deg);
+  }
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+            transform: translateX(10%) rotate(2deg);
+  }
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+            transform: translateX(-5%) rotate(-1deg);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 /*# sourceMappingURL=style.css.map */
