@@ -21,6 +21,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -12955,5 +12958,127 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .carousel img:hover {
   -webkit-filter: brightness(70%);
           filter: brightness(70%);
+}
+
+.conteneurPopup {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conteneurPopup > .popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 540px;
+  height: 250px;
+  background-color: #eee;
+  border-radius: 30px;
+  border: solid 1px #cfcfcf;
+  -webkit-box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+          box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+}
+
+.conteneurPopup > .popup > .conteneurTopPopup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 65px;
+}
+
+.conteneurPopup > .popup > .conteneurTopPopup > i {
+  color: #f25c5c;
+  font-size: 58px;
+}
+
+.conteneurPopup > .popup > .conteneurTopPopup > h3, .conteneurPopup > .popup > .conteneurTopPopup > .h3 {
+  width: 380px;
+  color: #505050;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > .btnPopup {
+  position: relative;
+  width: 210px;
+  height: 55px;
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 10px;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > :nth-child(1) {
+  background-color: #f25c5c;
+  color: white;
+  margin-right: 16px;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > :nth-child(1):hover {
+  background-color: #f87c7c;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > :nth-child(1)::after {
+  content: "\f2ed";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  opacity: 0;
+  left: 30px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > :nth-child(1):hover::after {
+  opacity: 1;
+  left: 140px;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > :nth-child(2) {
+  background-color: #CECECE;
+  color: #464646;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.conteneurPopup > .popup > .conteneurBottomPopup > :nth-child(2):hover {
+  background-color: #464646;
+  color: #eee;
 }
 /*# sourceMappingURL=style.css.map */
