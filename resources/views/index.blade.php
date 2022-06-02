@@ -228,8 +228,8 @@
                     <li class="item">
                         <div class="propositionLogement">
                             <div class="propositionLogement-container-texte">
-                                <h3>Option de logement</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                                <h3>{{$premierLogement->nom}}</h3>
+                                <p>{{$premierLogement->description}}</p>
                             </div>
                             <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
@@ -237,8 +237,8 @@
                     <li class="item">
                         <div class="propositionLogement">
                             <div class="propositionLogement-container-texte">
-                                <h3>Option de logement</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                                <h3>{{$deuxiemeLogement->nom}}</h3>
+                                <p>{{$deuxiemeLogement->description}}</p>
                             </div>
                             <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
@@ -246,8 +246,8 @@
                     <li class="item">
                         <div class="propositionLogement">
                             <div class="propositionLogement-container-texte">
-                                <h3>Option de logement</h3>
-                                <p>Depuis au moins trente-six secondes, cette activité est devenue un incontournable pour beaucoup d'amateur de l'agrotourisme dans les Laurentides</p>
+                                <h3>{{$troisiemeLogement->nom}}</h3>
+                                <p>{{$troisiemeLogement->description}}</p>
                             </div>
                             <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
                         </div>
