@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Permission;
 use Illuminate\Http\Request;
-
+use Auth;
 class UserController extends Controller
 {
     /**
@@ -16,10 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        
-        // dd($users[0]->likesEntreprises);
-        return view('users.gestionaires.index', ['users' => $users]);
+        $user = Auth::user();
+        return view('users.gestionaires.index', ['user'=>$user]);
     }
 
     /**
@@ -57,7 +55,6 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        dd($user->likesEntreprises);
         $roles = Role::all();
         return view('users.gestionaires.show', ['user' => $user]);
     }
@@ -82,6 +79,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        
         $user->fill($request->all());
         $user->save();
         return redirect()->route("users.gestionaires.index");

@@ -92,6 +92,14 @@ class EntrepriseController extends Controller
                 $commoditeEntreprise->save();
             }
         }
+        if($request->file('logo')->isValid()) {
+            $logo = Image::make($request->logo)->resize(300, 200);
+            $logo->save(public_path("img/entreprises/logo/$entreprise->id.jpg"));
+        }
+        if($request->file('photo')->isValid()) {
+            $photo = Image::make($request->photo)->resize(300, 200);
+            $photo->save(public_path("img/entreprises/$entreprise->id.jpg"));
+        }
 
         return redirect()->route("groupes.index");
     }

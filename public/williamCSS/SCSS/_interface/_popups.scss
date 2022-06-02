@@ -1,0 +1,121 @@
+//mixins
+
+@mixin setFlex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin debug {
+    border: 1px red solid;
+}
+
+@mixin breakpoint-min($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin breakpoint-max($screen) {
+    @media (min-width: #{$screen}px) {
+        @content;
+    }
+}
+
+@mixin resetBox {
+    padding: 0;
+    margin: 0;
+}
+
+//fonts 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+
+
+//SCSS popups
+
+.conteneurPopup {
+    width: 100vw;
+    height: 100vh;
+    @include setFlex(column, center, center);
+
+    &>.popup {
+        @include setFlex(column, center, center);
+        width: 540px;
+        height: 250px;
+        background-color: #eee;
+        border-radius: 30px;
+        border: solid 1px #cfcfcf;
+        box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+
+        &>.conteneurTopPopup {
+            @include setFlex(row, center, center);
+            margin-bottom: 65px;
+
+            &>i {
+                color: #f25c5c;
+                font-size: 58px;
+            }
+
+            &>h3 {
+                width: 380px;
+                color: #505050;
+                font-size: 24px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                text-align: center;
+            }
+        }
+
+        &>.conteneurBottomPopup {
+            &>.btnPopup {
+                position: relative;
+                width: 210px;
+                height: 55px;
+                font-size: 28px;
+                font-family: 'Roboto', sans-serif;
+                border: none;
+                border-radius: 10px;
+            }
+
+            &>:nth-child(1) {
+                background-color: #f25c5c;
+                color: white;
+                margin-right: 16px;
+
+                &:hover {
+                    background-color: #f87c7c;
+                    transition-duration: 300ms;
+                }
+
+                &::after {
+                    content: "\f2ed";
+                    font-family: "Font Awesome 5 Free";
+                    position: absolute;
+                    opacity: 0;
+                    left: 30px;
+                    transition: 0.5s;
+                    z-index: 1;
+                }
+
+                &:hover::after {
+                    opacity: 1;
+                    left: 140px;
+                }
+            }
+
+            &>:nth-child(2) {
+                background-color: #CECECE;
+                color: #464646;
+                transition-duration: 300ms;
+
+                &:hover {
+                    background-color: #464646;
+                    color: #eee;
+                }
+            }
+        }
+    }
+}

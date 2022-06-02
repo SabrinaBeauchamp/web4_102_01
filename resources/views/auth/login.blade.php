@@ -1,4 +1,4 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.connexion')
 
 @section('contenu')
 <div class="conteneurLoginUser">

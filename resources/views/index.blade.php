@@ -1,59 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<link rel="stylesheet" href="{{asset('felixCss/style.css')}}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-<title>Web 4 synthèse | Agrotourisme Laurentides</title>
-</head>
-<body>
-<div class="interface">
-    <!-- Menu hamburger -->
-    <div id="container-menu">
-        <nav id="nav-principale">
-            <div class="zone-btn isPanneau panneau-close">
-                <div class="container-btn-ouvrirPanneau">
-                    <i class="btn-ouvrirPanneau" tabindex="0"></i>
-                </div>
-            </div>
-            <!-- PANNEAUX -->
-            <div class="container-panneau">
-                <div class="panneau isPanneau panneau-close">
-                    <h2>Groupes</h2>
-                    <ul class="menu1">
-                        @foreach($groupes as $groupe)
-                            <li>
-                                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
-                            </li>
-                        @endforeach
-                            <li>
-                                <a href="{{route('categoriesRegion.index')}}" class="btn1">MRC</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Header -->
-    <header id="mainHeader">
-        <img src="/images/placeholderHeader.jpg" alt="header">
-        <img src="/images/effetHeader.png" alt="effet">
-        <div class="blanc"> </div>
-        <h1>Agrotourisme </br>Laurentides</h1>
-    </header>
-    <!-- Fil d'Ariane -->
-    <div class="fil-ariane">
-        <ul>
-            <li><a href="#">Accueil</a></li>
-        </ul>
-    </div>
+@extends('mesLayouts.layout')
+
+@section('titre')
+hello
+@endsection
+
+@section('contenu')
     <!-- Contenu principal -->
-    <main>
         <section class="introduction">
             <div class="container-titre detectAnim">
                 <h2 class="titre1">Les Laurentides, un territoire </h2>
@@ -62,11 +14,17 @@
             </div>
             <div class="container-introduction">
                 <div class="container-img-introduction detectAnim2">
-                    <img src="/images/Placeholder.svg" alt="placeholder" class="image1">
-                    <img src="/images/Placeholder.svg" alt="placeholder" class="image2">
-                    <img src="/images/Placeholder.svg" alt="placeholder" class="image3">
+                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image1">
+                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image2">
+                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image3">
                 </div>
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
+            </div>
+        </section>
+        <section class="introduction">
+            <h2 class="titre1">Recherche Avancée</h2>
+            <a href="{{route('recherche.rechercheAvancee')}}">Cliquer ici</a>
+            <div class="container-titre">
             </div>
         </section>
         <section class="activitesPopulaires">
@@ -84,9 +42,11 @@
                                     <h3>{{$entreprisePopulaire->nom}}</h3>
                                     <p>{{$entreprisePopulaire->description}}</p>
                                 </div>
-                                <div class="image-carrousel">
-                                    <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                </div>
+                                @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
+                                <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @else
+                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                @endif
                             </div>
                         </li>
                     @endforeach
@@ -233,7 +193,11 @@
                                 <h3>{{$premierLogement->nom}}</h3>
                                 <p>{{$premierLogement->description}}</p>
                             </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @if(file_exists('img/entreprises/'.$premierLogement->id.'.jpg'))
+                            <img src="{{asset('img/entreprises/'.$premierLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @else
+                            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @endif
                         </div>
                     </li>
                     <li class="item">
@@ -242,7 +206,11 @@
                                 <h3>{{$deuxiemeLogement->nom}}</h3>
                                 <p>{{$deuxiemeLogement->description}}</p>
                             </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @if(file_exists('img/entreprises/'.$deuxiemeLogement->id.'.jpg'))
+                            <img src="{{asset('img/entreprises/'.$deuxiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @else
+                            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @endif
                         </div>
                     </li>
                     <li class="item">
@@ -251,44 +219,14 @@
                                 <h3>{{$troisiemeLogement->nom}}</h3>
                                 <p>{{$troisiemeLogement->description}}</p>
                             </div>
-                            <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @if(file_exists('img/entreprises/'.$troisiemeLogement->id.'.jpg'))
+                            <img src="{{asset('img/entreprises/'.$troisiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @else
+                            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                            @endif
                         </div>
                     </li>
                 </ul>
             </div>
         </section>
-    </main>
-    <!-- Footer de la page -->
-    <footer>
-        <div class="footer1">
-            <section class="rechercheAvancee">
-                <div class="container-titre detectAnim">
-                    <h2 class="titre1">Vous </h2>
-                    <h2 class="titre-accent">CHERCHEZ</h2>
-                    <h2 class="titre2">quelque chose en particulier?</h2>
-                </div>
-                <div class="container-bouton">
-                    <a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a>
-                </div>
-            </section>
-            <section class="infolettre">
-                <div class="container-titre detectAnim">
-                    <h2 class="titre1">Restez</h2>
-                    <h2 class="titre-accent">À JOUR</h2>
-                    <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
-                </div>
-                <div class="container-bouton">
-                    <a href="{{route('register')}}">Créer mon compte</a>
-                </div>
-            </section>
-        </div>
-        <section class="partenaires">
-            <h2>Voici nos partenaires</h2>
-        </section>
-    </footer>
-</div>
-<script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
-<script src="{{ URL::asset('felixJs/Animations.js') }}"></script>
-<script src="{{ URL::asset('felixJs/Calendrier.js') }}"></script>
-</body>
-</html>
+@endsection

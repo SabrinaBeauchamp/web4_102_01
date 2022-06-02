@@ -1,7 +1,7 @@
 @extends('mesLayouts.dashboard')
 
 @section('titre gestion')
-    Entreprises
+    Entreprises re
 @endsection
 
 @section('contenu gestion')
