@@ -84,7 +84,9 @@
                                     <h3>{{$entreprisePopulaire->nom}}</h3>
                                     <p>{{$entreprisePopulaire->description}}</p>
                                 </div>
-                                <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                <div class="image-carrousel">
+                                    <img src="{{asset('images/placeholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                </div>
                             </div>
                         </li>
                     @endforeach
