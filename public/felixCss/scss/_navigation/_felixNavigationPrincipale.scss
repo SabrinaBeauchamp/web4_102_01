@@ -151,6 +151,10 @@
     @extend .panneau;
 }
 
+.panneau0{
+    @extend .panneau;
+}
+
 //--------------------
 // Ul du menu
 //--------------------
@@ -164,7 +168,7 @@
     width: 100vw;
     list-style: none;
     li{
-        button {
+        a {
             padding: 0.1vw 2vw;
             font-size: 3vw;
             text-decoration: none;
@@ -184,7 +188,7 @@
     @include breakpoint-min(900){
         width: 80vw;
         li{    
-            button {
+            a {
                 font-size: 1.5vw;
                 font-weight: 100;
                 padding: 0.2vw 1.5vw;
@@ -204,4 +208,8 @@
 .menu4{
     @extend .menu1;
     width: 100%;
+}
+
+.menu0{
+    @extend .menu1;
 }
