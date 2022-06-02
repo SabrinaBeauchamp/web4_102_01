@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CategorieForfait;
 use App\Models\Entreprise;
 use App\Models\forfait;
+use App\Models\Groupe;
 use Illuminate\Http\Request;
 
 class CategorieForfaitController extends Controller
@@ -17,7 +18,8 @@ class CategorieForfaitController extends Controller
     public function index()
     {
         $categories = CategorieForfait::all();
-        return view("forfaits.categories.index", ["categories"=>$categories]);
+        $groupes = Groupe::all();
+        return view("forfaits.categories.index", ["categories"=>$categories,  'groupes'=>$groupes]);
     }
 
     /**
@@ -55,7 +57,8 @@ class CategorieForfaitController extends Controller
      */
     public function show(categorieForfait $categorie)
     {
-        return view("forfaits.categories.show", ["categorie"=>$categorie]);
+        $groupes = Groupe::all();
+        return view("forfaits.categories.show", ["categorie"=>$categorie, 'groupes'=>$groupes]);
     }
 
     /**

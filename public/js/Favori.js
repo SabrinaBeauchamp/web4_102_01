@@ -27,11 +27,13 @@ class Favori {
             console.log(e.target.response.resultat);
             if(e.target.response.resultat === true) {
                 lien.classList.add("liked");
-                lien.innerHTML = "je t'aime";
+                var img = lien.appendChild(document.querySelector(".iconeListeForfaits"));
+                img.classList.add("fa-heart");
             }
             else {
                 lien.classList.remove("liked");
-                lien.innerHTML = "je t'aime pu";
+                var img = lien.appendChild(document.querySelector(".iconeListeForfaits"));
+                img.classList.remove("fa-heart");
             }
         });
         xhr.send();
