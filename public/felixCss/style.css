@@ -12226,24 +12226,45 @@ section .container-titre .titre-accent {
 }
 .propositionsLogements .liste .propositionLogement {
   position: relative;
-  background-color: gray;
   width: 70vw;
 }
 .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte {
   position: absolute;
-  color: white;
+  color: var(--lightest);
   transform: translate(6vw, 10vw);
 }
 .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte h3, .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte .h3 {
   font-size: 6vw;
+  background-color: var(--accent);
+  padding: 0.1vw 1vw;
+  z-index: 3;
 }
 .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte p {
   font-size: 2.4vw;
   opacity: 0;
   transition-duration: 500ms;
+  background-color: var(--darkest);
+  padding: 0.3vw;
+  z-index: 1;
+}
+.propositionsLogements .liste .propositionLogement .image-logements {
+  width: 70vw;
+  height: 70vw;
+  overflow: hidden;
+  background-color: var(--darkest);
+  z-index: 2;
+}
+.propositionsLogements .liste .propositionLogement .image-logements img {
+  max-width: 100%;
+  min-height: 100%;
+  transition-duration: 500ms;
+  z-index: 2;
 }
 .propositionsLogements .liste .propositionLogement:hover p {
   opacity: 1;
+}
+.propositionsLogements .liste .propositionLogement:hover img {
+  transform: translateY(70vw);
 }
 @media (min-width: 900px) {
   .propositionsLogements .liste {
