@@ -11980,6 +11980,9 @@ section .container-titre .titre-accent {
   section {
     padding: 10vw 10vw;
   }
+  section .container-titre {
+    margin-bottom: 5vw;
+  }
   section .container-titre h2, section .container-titre .h2 {
     font-size: 2vw;
   }
@@ -12063,27 +12066,48 @@ section .container-titre .titre-accent {
 }
 .liste-carrousel .activitePopulaire {
   position: relative;
-  background-color: gray;
   width: 70vw;
 }
 .liste-carrousel .activitePopulaire .activitePopulaire-container-texte {
   position: absolute;
-  color: white;
-  transform: translate(6vw, 10vw);
+  color: var(--lightest);
+  transform: translate(6vw, 5vw);
 }
 .liste-carrousel .activitePopulaire .activitePopulaire-container-texte h3, .liste-carrousel .activitePopulaire .activitePopulaire-container-texte .h3 {
   font-size: 6vw;
+  background-color: var(--accent);
+  padding: 0.1vw 1vw;
+  z-index: 3;
 }
 .liste-carrousel .activitePopulaire .activitePopulaire-container-texte p {
   font-size: 2.4vw;
   opacity: 0;
   transition-duration: 500ms;
-  background-color: var(--accent);
-  padding: 0.2vw;
-  border-radius: 1vw;
+  background-color: var(--darkest);
+  padding: 0.3vw;
+  z-index: 1;
+  transform: translate(0vw, 5vw);
+}
+.liste-carrousel .activitePopulaire .image-populaires {
+  width: 70vw;
+  height: 70vw;
+  overflow: hidden;
+  background-color: var(--darkest);
+  z-index: 2;
+}
+.liste-carrousel .activitePopulaire .image-populaires img {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transition-duration: 500ms;
+  z-index: 2;
 }
 .liste-carrousel .activitePopulaire:hover p {
   opacity: 1;
+  transform: translate(6vw, 5vw);
+}
+.liste-carrousel .activitePopulaire:hover img {
+  transform: translateX(-70vw);
 }
 @media (min-width: 900px) {
   .liste-carrousel {
@@ -12119,15 +12143,89 @@ section .container-titre .titre-accent {
   }
   .liste-carrousel .activitePopulaire .activitePopulaire-container-texte {
     position: absolute;
+    width: 20vw;
     color: white;
-    transform: translate(6vw, 10vw);
+    transform: translate(0vw, 0vw);
   }
   .liste-carrousel .activitePopulaire .activitePopulaire-container-texte h3, .liste-carrousel .activitePopulaire .activitePopulaire-container-texte .h3 {
+    transform: translate(6vw, 10vw);
     font-size: 1.5vw;
   }
   .liste-carrousel .activitePopulaire .activitePopulaire-container-texte p {
-    width: 22vw;
+    transform: translate(0vw, 10vw);
     font-size: 0.6vw;
+  }
+  .liste-carrousel .activitePopulaire .image-populaires {
+    width: 25vw;
+    height: 25vw;
+    overflow: hidden;
+    background-color: var(--darkest);
+    z-index: 2;
+  }
+  .liste-carrousel .activitePopulaire .image-populaires img {
+    max-width: 100%;
+    min-height: 100%;
+    transition-duration: 500ms;
+    z-index: 2;
+  }
+  .liste-carrousel .activitePopulaire:hover p {
+    opacity: 1;
+    transform: translate(6vw, 10vw);
+  }
+  .liste-carrousel .activitePopulaire:hover img {
+    transform: translateX(-25vw);
+  }
+}
+
+.item-carrousel:nth-of-type(1) {
+  transform: translateX(-2vw);
+}
+.item-carrousel:nth-of-type(2) {
+  transform: translateX(2vw);
+}
+.item-carrousel:nth-of-type(3) {
+  transform: translateX(-2vw);
+}
+.item-carrousel:nth-of-type(4) {
+  transform: translateX(2vw);
+}
+.item-carrousel:nth-of-type(5) {
+  transform: translateX(-2vw);
+}
+.item-carrousel:nth-of-type(6) {
+  transform: translateX(2vw);
+}
+.item-carrousel:nth-of-type(7) {
+  transform: translateX(-2vw);
+}
+@media (min-width: 900px) {
+  .item-carrousel:nth-of-type(1) {
+    transform: translateX(0vw);
+    transform: translateY(1vw);
+  }
+  .item-carrousel:nth-of-type(2) {
+    transform: translateX(0vw);
+    transform: translateY(-1vw);
+  }
+  .item-carrousel:nth-of-type(3) {
+    transform: translateX(0vw);
+    transform: translateY(1vw);
+  }
+  .item-carrousel:nth-of-type(4) {
+    transform: translateX(0vw);
+    transform: translateY(-1vw);
+  }
+  .item-carrousel:nth-of-type(5) {
+    transform: translateX(0vw);
+    transform: translateY(1vw);
+  }
+  .item-carrousel:nth-of-type(6) {
+    transform: translateX(0vw);
+    transform: translateY(-1vw);
+  }
+  .item-carrousel:nth-of-type(7) {
+    transform: translateX(0vw);
+    transform: translateY(1vw);
   }
 }
 

@@ -116,6 +116,7 @@ section
     @include breakpoint-min(900){
         padding: 10vw 10vw;
         .container-titre{
+            margin-bottom: 5vw;
             h2{
                 font-size: 2vw;
             }
@@ -200,34 +201,48 @@ section
     list-style-type: none;
     .activitePopulaire{
         position: relative;
-        background-color: gray;
         width: 70vw;
         .activitePopulaire-container-texte{
-            
             position: absolute;
-            color: white;
-            transform: translate(6vw, 10vw);
+            color: var(--lightest);
+            transform: translate(6vw, 5vw);
             h3{
                 font-size: 6vw; 
+                background-color: var(--accent);
+                padding: 0.1vw 1vw;
+                z-index: 3;
             }
             p{
                 font-size: 2.4vw;
                 opacity: 0;
                 transition-duration: 500ms;
-                background-color: var(--accent);
-                padding: 0.2vw;
-                border-radius: 1vw;
+                background-color: var(--darkest);
+                padding: 0.3vw;
+                z-index: 1;
+                transform: translate(0vw, 5vw);
             }
         }
-        .image-carrousel{
-
+        .image-populaires{
+            width: 70vw;
+            height: 70vw;
+            overflow: hidden;
+            background-color: var(--darkest);
+            z-index: 2;
             img{
-       
+                max-width: 100%;
+                min-width: 100%;
+                min-height: 100%;
+                transition-duration: 500ms;
+                z-index: 2;
             }
         }
         &:hover{
             p{
                 opacity: 1;
+                transform: translate(6vw, 5vw);
+            }
+            img{
+                transform: translateX(-70vw);
             }
         }
     }
@@ -258,17 +273,96 @@ section
             width: 25vw;
             .activitePopulaire-container-texte{
                 position: absolute;
+                width: 20vw;
                 color: white;
-                transform: translate(6vw, 10vw);
+                transform: translate(0vw, 0vw);
                 h3{
+                    transform: translate(6vw, 10vw);
                     font-size: 1.5vw;
                 }
                 p{
-                    width: 22vw;
+                    transform: translate(0vw, 10vw);
                     font-size: 0.6vw;
                 }
             }
+            .image-populaires{
+                width: 25vw;
+                height: 25vw;
+                overflow: hidden;
+                background-color: var(--darkest);
+                z-index: 2;
+                img{
+                    max-width: 100%;
+                    min-height: 100%;
+                    transition-duration: 500ms;
+                    z-index: 2;
+                }
+            }
+            &:hover{
+                p{
+                    opacity: 1;
+                    transform: translate(6vw, 10vw);
+                }
+                img{
+                    transform: translateX(-25vw);
+                }
+            }
         }
+    }
+}
+
+.item-carrousel{
+    &:nth-of-type(1){
+        transform: translateX(-2vw);
+    }
+    &:nth-of-type(2){
+        transform: translateX(2vw);
+    }
+    &:nth-of-type(3){
+        transform: translateX(-2vw);
+    }
+    &:nth-of-type(4){
+        transform: translateX(2vw);
+    }
+    &:nth-of-type(5){
+        transform: translateX(-2vw);
+    }
+    &:nth-of-type(6){
+        transform: translateX(2vw);
+    }
+    &:nth-of-type(7){
+        transform: translateX(-2vw);
+    }
+    @include breakpoint-min(900){
+        &:nth-of-type(1){
+            transform: translateX(0vw);
+            transform: translateY(1vw);
+        }
+        &:nth-of-type(2){
+            transform: translateX(0vw);
+            transform: translateY(-1vw);
+        }
+        &:nth-of-type(3){
+            transform: translateX(0vw);
+            transform: translateY(1vw);
+        }
+        &:nth-of-type(4){
+            transform: translateX(0vw);
+            transform: translateY(-1vw);
+        }
+        &:nth-of-type(5){
+            transform: translateX(0vw);
+            transform: translateY(1vw);
+        }
+        &:nth-of-type(6){
+            transform: translateX(0vw);
+            transform: translateY(-1vw);
+        }
+        &:nth-of-type(7){
+            transform: translateX(0vw);
+            transform: translateY(1vw);
+        }
+        
     }
 }
 

@@ -80,11 +80,13 @@ Agrotourisme Laurentides
                                     <h3>{{$entreprisePopulaire->nom}}</h3>
                                     <p>{{$entreprisePopulaire->description}}</p>
                                 </div>
-                                @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
-                                <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @else
-                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @endif
+                                <div class="image-populaires">
+                                    @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
+                                    <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @else
+                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @endif
+                                </div>
                             </div>
                         </li>
                     @endforeach
