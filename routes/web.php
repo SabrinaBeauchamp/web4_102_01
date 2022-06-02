@@ -42,7 +42,7 @@ Route::get('/agrotouristique', function() {
     $entreprises = Entreprise::all();
     foreach($entreprises as $entrepriseId => $entreprise)
     {
-        if($entreprise->populaire !== "1")
+        if($entreprise->populaire !== 1)
         {
             unset($entreprises[$entrepriseId]);
         }
