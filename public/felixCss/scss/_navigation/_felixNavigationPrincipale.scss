@@ -151,6 +151,10 @@
     @extend .panneau;
 }
 
+.panneau0{
+    @extend .panneau;
+}
+
 //--------------------
 // Ul du menu
 //--------------------
@@ -204,4 +208,8 @@
 .menu4{
     @extend .menu1;
     width: 100%;
+}
+
+.menu0{
+    @extend .menu1;
 }

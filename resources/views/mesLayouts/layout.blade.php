@@ -20,54 +20,15 @@
     <div class="interface">
         <div id="container-menu">
             <nav id="nav-principale">
-                <div class="zone-btn isPanneau panneau-close">
+                <div class="zone-btn isPanneau panneau-open">
                     <div class="container-btn-ouvrirPanneau">
                         <i class="btn-ouvrirPanneau" tabindex="0"></i>
                     </div>
                 </div>
                 <!-- PANNEAUX -->
                 <div class="container-panneau">
-                    <div class="panneau isPanneau panneau-open">
-                        <h2>Groupes</h2>
-                        <ul class="menu1">
-                            @foreach($groupes as $groupe)
-                                <li>
-                                    <button class="btn1">
-                                        <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-                                    </button>
-                                </li>
-                            @endforeach
-                                <li>
-                                    <button class="btn1">
-                                        <a href="{{route('categoriesRegion.index')}}">MRC</a>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="btn1">
-                                        <a href="{{route('forfaits.categories.index')}}">Catégories</a>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class="btn1">
-                                        <a href="{{route('evenements.index')}}">Évènements</a>
-                                    </button>
-                                </li>
-                                @if(Auth::user())
-                                    <li>
-                                        <form action="{{route('logout')}}" method="POST">
-                                            @csrf
-                                            <button type="submit">Deconnexion</button>
-                                        </form>
-                                    </li>
-                                @else
-                                    <li>
-                                        <a href="{{route('login')}}">Me connecter</a>
-                                    </li>
-                                @endif
-                                <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
-                        </ul>
-                    </div>
-                    @yield('menu')
+                    @yield('panneaux0')
+                    @yield('panneaux')
                 </div>
             </nav>
         </div>
@@ -88,16 +49,28 @@
         </main>
         <!-- Footer de la page -->
         <footer>
-            <section class="infolettre">
-                <div class="container-titre detectAnim">
-                    <h2 class="titre1">Restez</h2>
-                    <h2 class="titre-accent">À JOUR</h2>
-                    <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
-                </div>
-                <div class="container-bouton">
-                    <a href="{{route('register')}}">Créer mon compte</a>
-                </div>
-            </section>
+            <div class="footer1">
+                <section class="rechercheAvancee">
+                    <div class="container-titre detectAnim">
+                        <h2 class="titre1">Vous </h2>
+                        <h2 class="titre-accent">CHERCHEZ</h2>
+                        <h2 class="titre2">quelque chose en particulier?</h2>
+                    </div>
+                    <div class="container-bouton">
+                        <a href="{{route('recherche.rechercheAvancee')}}">Recherche Avancée</a>
+                    </div>
+                </section>
+                <section class="infolettre">
+                    <div class="container-titre detectAnim">
+                        <h2 class="titre1">Restez</h2>
+                        <h2 class="titre-accent">À JOUR</h2>
+                        <h2 class="titre2">avec Agrotourisme Laurentides!</h2>
+                    </div>
+                    <div class="container-bouton">
+                        <a href="{{route('register')}}">Créer mon compte</a>
+                    </div>
+                </section>
+            </div>
             <section class="partenaires">
                 <h2>Voici nos partenaires</h2>
             </section>

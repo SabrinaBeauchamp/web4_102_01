@@ -1,7 +1,51 @@
 @extends('mesLayouts.layout')
 
 @section('titre')
-hello
+Agrotourisme Laurentides
+@endsection
+
+@section('panneaux0')
+<!-- les panneaux essentiels. index et entreprise sont fermés à l'ouverture de la page -->
+<div class="panneau0 isPanneau panneau-close">
+    <ul class="menu0">
+        <li>
+            <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
+        </li>
+        <li>
+            <a class="btn1" href="{{route('forfaits.categories.index')}}">Catégories</a>
+        </li>
+        <li>
+            <a class="btn1" href="{{route('evenements.index')}}">Évènements</a>
+        </li>
+        @if(Auth::user())
+            <li>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit">Deconnexion</button>
+                </form>
+            </li>
+        @else
+            <li>
+                <a href="{{route('login')}}">Me connecter</a>
+            </li>
+        @endif
+        <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+    </ul>
+</div>
+<div class="panneau isPanneau panneau-close">
+    <h2>Groupes</h2>
+    <ul class="menu1">
+        @foreach($groupes as $groupe)
+            <li>
+                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
+            </li>
+        @endforeach
+    </ul>
+</div>
+@endsection
+
+@section('panneaux')
+<!-- index n'a pas de panneaux supplémentaires -->
 @endsection
 
 @section('contenu')
@@ -19,12 +63,6 @@ hello
                     <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image3">
                 </div>
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
-            </div>
-        </section>
-        <section class="introduction">
-            <h2 class="titre1">Recherche Avancée</h2>
-            <a href="{{route('recherche.rechercheAvancee')}}">Cliquer ici</a>
-            <div class="container-titre">
             </div>
         </section>
         <section class="activitesPopulaires">
@@ -175,7 +213,7 @@ hello
                     <div class="calendrier-item"></div>
                 </div>
                 <div class="calendrier-popup">
-                    e
+                    Cette section a été retirée du projet. Le visuel n'est donc pas final, mais le concept était intéressant, donc la section a été laissée ici. </br> La case 1 peut être cliquée pour afficher des événements
                 </div>
             </div>
         </section>
