@@ -14,6 +14,7 @@ class Evenement extends Model
     "id",
     "start",
     "end",
+    "specification",
     "prix",
     "ville_id",
     "nom",

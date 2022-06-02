@@ -27,11 +27,11 @@ class Favori {
             console.log(e.target.response.resultat);
             if(e.target.response.resultat === true) {
                 lien.classList.add("liked");
-                lien.innerHTML = "je t'aime";
+                lien.classList.replace("fa-regular", "fa-solid");
             }
             else {
                 lien.classList.remove("liked");
-                lien.innerHTML = "je t'aime pu";
+                lien.classList.replace("fa-solid", "fa-regular");
             }
         });
         xhr.send();

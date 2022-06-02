@@ -38,6 +38,7 @@ Route::get('/', function() {
 });
 Route::get('/agrotouristique', function() {
     $favories = Favorie::all();
+    $evenement = Evenement::find(1);
     //Entreprises populaires
     $entreprises = Entreprise::all();
     foreach($entreprises as $entrepriseId => $entreprise)
@@ -84,7 +85,8 @@ Route::get('/agrotouristique', function() {
         'entreprisesPopulaires' => $entreprises,
         'premierLogement' => $premierLogement,
         'deuxiemeLogement' => $deuxiemeLogement,
-        'troisiemeLogement' => $troisiemeLogement
+        'troisiemeLogement' => $troisiemeLogement,
+        'evenement'=>$evenement,
     ]);
 })->name('acceuil');
 

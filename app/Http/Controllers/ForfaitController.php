@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\forfait;
 use App\Models\CategorieForfait;
 use App\Models\Favorie;
+use App\Models\Groupe;
 use Illuminate\Http\Request;
 
 use Image;
@@ -19,10 +20,10 @@ class ForfaitController extends Controller
     public function index()
     {
         $forfaits = Forfait::all();
-        
+        $groupes = Groupe::all();
         $categories = CategorieForfait::all();
         $favories = Favorie::all();
-        return view("forfaits.index", ['forfaits'=>$forfaits,'categories'=>$categories, 'favories'=>$favories]);
+        return view("forfaits.index", ['forfaits'=>$forfaits,'categories'=>$categories, 'favories'=>$favories, 'groupes'=>$groupes]);
     }
     
     /**

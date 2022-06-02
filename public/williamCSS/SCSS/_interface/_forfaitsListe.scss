@@ -48,114 +48,126 @@
         font-size: 36px;
     }
 
-    &>.conteneurForfait {
-        width: 320px;
-        height: 450px;
-        background-color: #eee;
-        border-radius: 20px;
-        overflow: hidden;
-        border: solid 1px #cfcfcf;
-        box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
-        transition-duration: 300ms;
-        white-space: nowrap;
+    &>.conteneurAllForfait {
+        @include setFlex(row, center, center);
+        gap: 50px;
 
-        &>.forfait {
+        &>.conteneurForfait {
             @include setFlex(column, center, center);
-            height: 100%;
+            width: 320px;
+            height: 450px;
+            background-color: #eee;
+            border-radius: 20px;
+            overflow: hidden;
+            border: solid 1px #cfcfcf;
+            box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+            transition-duration: 300ms;
+            white-space: nowrap;
 
-            &>img {
-                width: 100%;
-                height: 200px
-            }
+            &>.forfait {
+                @include setFlex(column, center, center);
+                height: 100%;
+                width:320px;
 
-            &>a {
-                color: #464646;
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 24px;
-                font-family: 'Roboto', sans-serif;
-                margin-top: 24px;
-            }
-
-            &>.forfaitRating {
-                &>i {
-                    //color: #f25c5c;
-                    color: #464646;
+                &>img {
+                    width: 100%;
+                    height: 200px
                 }
-            }
 
-            &>.conteneurBtnCarte {
-                width: 100%;
-                height: auto;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                column-gap: 0px;
-                row-gap: 0px;
-                margin-top: auto;
-                transition-duration: 300ms;
+                &>a {
+                    color: #464646;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 24px;
+                    font-family: 'Roboto', sans-serif;
+                    margin-top: 24px;
+                }
 
-                &>.btn_carte {
-                    height: 60px;
-                    background-color: #f25c5c;
-                    border: none;
+                &>.forfaitRating {
+                    &>i {
+                        //color: #f25c5c;
+                        color: #464646;
+                    }
+                }
+
+                &>.conteneurBtnCarte {
+                    width: 100%;
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    column-gap: 0px;
+                    row-gap: 0px;
+                    margin-top: auto;
                     transition-duration: 300ms;
 
-                    &:hover {
-                        background-color: #f87c7c;
+                    &>.btn_carte {
+                        height: 60px;
+                        background-color: #f25c5c;
+                        border: none;
+                        transition-duration: 300ms;
+
+                        &:hover {
+                            background-color: #f87c7c;
+                        }
+                    }
+
+                    &>.btn_visiter {
+                        grid-area: 1 / 1 / 2 / 4;
+                        border-bottom: 1px solid #eee;
+
+                        &>a {
+                            position: relative;
+                            color: white;
+                            text-decoration: none;
+                            font-weight: 700;
+                            font-size: 20px;
+                            font-family: 'Roboto', sans-serif;
+
+                            &::after {
+                                position: absolute;
+                                content: "\f061";
+                                font-family: "Font Awesome 5 Free";
+                                opacity: 0;
+                                left: 100px;
+                                transition: 0.5s;
+                                z-index: 1;
+                            }
+
+                            &:hover::after {
+                                opacity: 1;
+                                left: 150px;
+                            }
+
+                        }
+                    }
+
+                    &>.like_user {
+                        grid-area: 2 / 1 / 3 / 2;
+                        background-color: #f25c5c;
+                        grid-template-columns: 250px auto;
+                        border: none;
+                        width: 100%;
+                        
+                    }
+
+                    &>.btn_modifier {
+                        grid-area: 2 / 2 / 3 / 3;
+                        border-left: 1px solid #eee;
+                        border-right: 1px solid #eee;
+                    }
+
+                    &>.btn_supprimer {
+                        grid-area: 2 / 3 / 3 / 4;
                     }
                 }
 
-                &>.btn_visiter {
-                    grid-area: 1 / 1 / 2 / 4;
-                    border-bottom: 1px solid #eee;
+                &>.conteneurBtnOuvrir {
+                    margin-top: 8px;
 
-                    &>a {
-                        position: relative;
-                        color: white;
-                        text-decoration: none;
-                        font-weight: 700;
-                        font-size: 20px;
-                        font-family: 'Roboto', sans-serif;
-
-                        &::after {
-                            position: absolute;
-                            content: "\f061";
-                            font-family: "Font Awesome 5 Free";
-                            opacity: 0;
-                            left: 100px;
-                            transition: 0.5s;
-                            z-index: 1;
-                        }
-
-                        &:hover::after {
-                            opacity: 1;
-                            left: 150px;
-                        }
-
+                    &>i:hover {
+                        opacity: 0.5;
                     }
-                }
-
-                &>.like_user {
-                    grid-area: 2 / 1 / 3 / 2;
-                }
-
-                &>.btn_modifier {
-                    grid-area: 2 / 2 / 3 / 3;
-                    border-left: 1px solid #eee;
-                    border-right: 1px solid #eee;
-                }
-
-                &>.btn_supprimer {
-                    grid-area: 2 / 3 / 3 / 4;
-                }
-            }
-
-            &>.conteneurBtnOuvrir {
-                margin-top: 8px;
-
-                &>i:hover {
-                    opacity: 0.5;
                 }
             }
         }
