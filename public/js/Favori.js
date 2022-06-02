@@ -28,12 +28,14 @@ class Favori {
             if(e.target.response.resultat === true) {
                 lien.classList.add("liked");
                 var img = lien.appendChild(document.querySelector(".iconeListeForfaits"));
-                img.classList.add("fa-heart");
+                img.classList.add("fa-regular");
+                img.classList.remove("fa-solid");
             }
             else {
                 lien.classList.remove("liked");
                 var img = lien.appendChild(document.querySelector(".iconeListeForfaits"));
-                img.classList.remove("fa-heart");
+                img.classList.remove("fa-solid");
+                img.classList.add("fa-regular");
             }
         });
         xhr.send();

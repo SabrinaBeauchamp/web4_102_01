@@ -21,15 +21,15 @@ Agrotourisme Laurentides
             <li>
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <button type="submit">Deconnexion</button>
+                    <button class="btn1" type="submit">Deconnexion</button>
                 </form>
             </li>
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
         @else
             <li>
-                <a href="{{route('login')}}">Me connecter</a>
+                <a class="btn1" href="{{route('login')}}">Me connecter</a>
             </li>
         @endif
-        <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
     </ul>
 </div>
 <div class="panneau isPanneau panneau-close">
@@ -104,33 +104,36 @@ Agrotourisme Laurentides
                     <div class="calendrier-item">1
                         <div class="popup">
                             <div class="nom-evenement">
-                                NOM DE L'EVENEMENT
+                                {{$evenement->nom}}
                             </div>
                             <div class="dates-evenement">
-                                XX mois au XX mois
+                                @if($evenement->end === null)
+                                    {{$evenement->start}}
+                                @else
+                                    {{$evenement->start}} au {{$evenement->end}}
+                                @endif
+                                <p>{{$evenement->specification}}</p>
                             </div>
                             <div class="description-evenement">
-                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
+                                {{$evenement->description}} 
                             </div>
                             <div class="prix-evenement">
-                                28.98$
-                                /jour/personne
+                                {{$evenement->prix}}
+                                {{-- @if (Auth::check())
+                                    @if($evenement->isLiked)
+                                        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked"><i class="fa-solid iconeListeForfaits"></button>
+                                    @else
+                                        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user"><i class="fa-solid fa-heart iconeListeForfaits"></button>
+                                    @endif
+                                @else
+                                    <button class="like_user">
+                                        <a href="{{route('login')}}"><i class="fa-solid fa-heart iconeListeForfaits"></a>
+                                    </button> 
+                                @endif --}}
                             </div>
                         </div>
                         <div class="popup">
-                            <div class="nom-evenement">
-                                NOM DE L'EVENEMENT
-                            </div>
-                            <div class="dates-evenement">
-                                XX mois au XX mois
-                            </div>
-                            <div class="description-evenement">
-                                Vestibulum non ipsum ut ipsum facilisis scelerisque ut non metus. Sed quis ligula ut massa ultrices congue. 
-                            </div>
-                            <div class="prix-evenement">
-                                28.98$
-                                /jour/personne
-                            </div>
+                            <a href="{{route('evenements.index')}}" class="btn1">Voir les autres évènements</a>
                         </div>
                     </div>
                     <div class="calendrier-item">2

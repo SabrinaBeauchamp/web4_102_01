@@ -1,5 +1,6 @@
 @foreach ($evenements as $evenement)
     <div class="evenement">
+        
         @if ($evenement->dateNow <= $evenement->end)
             <x-champ-lien href="{{route('evenements.show', $evenement)}}" titre="{{$evenement->nom}}"></x-champ-lien>
             @if($evenement->end === null)
@@ -9,15 +10,16 @@
             @endif
             @if (Auth::check())
                 @if($evenement->isLiked)
-                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked btn1">Je t'aime</button>
+                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user btn_carte liked"><i class="fa-solid iconeListeForfaits"></i></button>
                 @else
-                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user btn1">Je t'aime pu</button>
+                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user btn_carte"><i class="fa-solid fa-heart iconeListeForfaits"></i></button>
                 @endif
             @else
                 <button class="like_user">
-                    <a href="{{route('login')}}">Je t'aime</a>
+                    <a href="{{route('login')}}"><i class="fa-solid fa-heart iconeListeForfaits"></i></a>
                 </button> 
             @endif
+            
             <div class="choix">
                 <x-champ-lien href="{{route('evenements.edit', $evenement)}}" titre="Modifier"></x-champ-lien>
                 <x-champ-lien href="{{route('evenements.delete', $evenement)}}" titre="Supprimer"></x-champ-lien>

@@ -2,6 +2,7 @@
     <div class="evenement">
         @if ($evenement->dateNow >= $evenement->end)
         <x-champ-lien href="{{route('evenements.delete', $evenement)}}" titre="{{$evenement->nom}}"></x-champ-lien>
+        <x-champ-lien href="{{route('evenements.edit', $evenement)}}" titre="Modifier"></x-champ-lien>
         <p>FINI</p>
         @if($evenement->end === null)
         <p>{{$evenement->start}}</p>

@@ -86,7 +86,7 @@ class EvenementController extends Controller
         $evenement->fill($request->all());
         $evenement->save();
         
-        return redirect()->route('evenements.show', $evenement);
+        return redirect()->route('evenements');
     }
 
     /**
