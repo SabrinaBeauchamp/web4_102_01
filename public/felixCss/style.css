@@ -12231,7 +12231,7 @@ section .container-titre .titre-accent {
 .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte {
   position: absolute;
   color: var(--lightest);
-  transform: translate(6vw, 10vw);
+  transform: translate(6vw, 5vw);
 }
 .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte h3, .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte .h3 {
   font-size: 6vw;
@@ -12246,6 +12246,7 @@ section .container-titre .titre-accent {
   background-color: var(--darkest);
   padding: 0.3vw;
   z-index: 1;
+  transform: translate(0vw, 5vw);
 }
 .propositionsLogements .liste .propositionLogement .image-logements {
   width: 70vw;
@@ -12262,9 +12263,10 @@ section .container-titre .titre-accent {
 }
 .propositionsLogements .liste .propositionLogement:hover p {
   opacity: 1;
+  transform: translate(6vw, 5vw);
 }
 .propositionsLogements .liste .propositionLogement:hover img {
-  transform: translateY(70vw);
+  transform: translateX(-70vw);
 }
 @media (min-width: 900px) {
   .propositionsLogements .liste {
@@ -12305,13 +12307,35 @@ section .container-titre .titre-accent {
     position: absolute;
     width: 18vw;
     color: white;
-    transform: translate(6vw, 10vw);
+    transform: translate(0vw, 0vw);
   }
   .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte h3, .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte .h3 {
+    transform: translate(6vw, 10vw);
     font-size: 1.5vw;
   }
   .propositionsLogements .liste .propositionLogement .propositionLogement-container-texte p {
+    transform: translate(0vw, 10vw);
     font-size: 0.6vw;
+  }
+  .propositionsLogements .liste .propositionLogement .image-logements {
+    width: 20vw;
+    height: 20vw;
+    overflow: hidden;
+    background-color: var(--darkest);
+    z-index: 2;
+  }
+  .propositionsLogements .liste .propositionLogement .image-logements img {
+    max-width: 100%;
+    min-height: 100%;
+    transition-duration: 500ms;
+    z-index: 2;
+  }
+  .propositionsLogements .liste .propositionLogement:hover p {
+    opacity: 1;
+    transform: translate(6vw, 10vw);
+  }
+  .propositionsLogements .liste .propositionLogement:hover img {
+    transform: translateX(-20vw);
   }
 }
 
