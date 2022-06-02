@@ -1,27 +1,39 @@
 @foreach ($evenements as $evenement)
-    <div class="evenement">
-        @if ($evenement->dateNow <= $evenement->end)
-            <x-champ-lien href="{{route('evenements.show', $evenement)}}" titre="{{$evenement->nom}}"></x-champ-lien>
+    @if ($evenement->dateNow <= $evenement->end)
+    <div class="popup">
+        <div class="nom-evenement">
+            {{$evenement->nom}}
+        </div>
+        <div class="dates-evenement">
             @if($evenement->end === null)
-                <p>{{$evenement->start}}</p>
+                {{$evenement->start}}
             @else
-                <p>{{$evenement->start}} à {{$evenement->end}}</p>
+                {{$evenement->start}} au {{$evenement->end}}
             @endif
-            @if (Auth::check())
-                @if($evenement->isLiked)
-                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked btn1">Je t'aime</button>
-                @else
-                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user btn1">Je t'aime pu</button>
-                @endif
-            @else
-                <button class="like_user">
-                    <a href="{{route('login')}}">Je t'aime</a>
-                </button> 
-            @endif
-            <div class="choix">
-                <x-champ-lien href="{{route('evenements.edit', $evenement)}}" titre="Modifier"></x-champ-lien>
-                <x-champ-lien href="{{route('evenements.delete', $evenement)}}" titre="Supprimer"></x-champ-lien>
-            </div>
+            <p>{{$evenement->specification}}</p>
+        </div>
+        <div class="description-evenement">
+            {{$evenement->description}} 
+        </div>
+        <div class="prix-evenement">
+            {{$evenement->prix}}
+        </div>
+        @if (Auth::check())
+        @if($evenement->isLiked)
+        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked fa-regular fa-heart"></button>
+        @else
+        <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user fa-solid fa-heart"></button>
         @endif
-    </div> 
+        @else
+        <button class="like_user">
+            <a href="{{route('login')}}"><i class="fa-solid fa-heart iconeListeForfaits"></i></a>
+        </button> 
+        @endif
+        
+        <div class="choix">
+            <x-champ-lien href="{{route('evenements.edit', $evenement)}}" titre="Modifier"></x-champ-lien>
+            <x-champ-lien href="{{route('evenements.delete', $evenement)}}" titre="Supprimer"></x-champ-lien>
+        </div>
+    </div>
+    @endif
 @endforeach
