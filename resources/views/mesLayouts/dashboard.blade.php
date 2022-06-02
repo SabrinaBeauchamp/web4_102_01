@@ -1,10 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('williamCSS/style.css')}}">
+    <script src="{{asset('https://kit.fontawesome.com/f4e3a6480f.js')}}" crossorigin="anonymous"></script>
 
-@extends('mesLayouts.layout')
-
-@section('titre')
-@endsection
-
-@section('contenu')
+    <script src="{{asset('js/Favori.js')}}"></script>
+    <script src="{{asset('js/Populaire.js')}}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{asset('felixCss/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <title>@yield("titre") - Les Forfaits</title>
+</head>
+<body>
 <div class="conteneurDashboard">
     <!-- button ouverture doit avoir sa propre blade -->
     <div class="conteneurButtonMenuDash">
@@ -13,10 +25,10 @@
         </div>
     </div>
     <div class="conteneurSidebar">
-    <div class="conteneurSidebarTop boutonClose">
-                <i class="fa-solid fa-xmark"></i>
-                <a href="" class="dashboardLink">Dashboard</a>
-            </div>
+        <div class="conteneurSidebarTop boutonClose">
+            <i class="fa-solid fa-xmark"></i>
+            <a href="{{route('acceuil')}}" class="dashboardLink">Dashboard</a>
+        </div>
         <div class="conteneurSidebarProfil conteneurSidebarAll">
             <i class="fa-solid fa-user"></i>
             <a href="{{route('users.gestionaires.edit', Auth::user())}}">Profil</a>
@@ -24,7 +36,7 @@
         @if(Auth::user()->role->name === 'admin')
             <div class="conteneurSidebarTop boutonClose">
                 <i class="fa-solid "></i>
-                <a href="{{route('entreprises')}}" >gestion de membre</a>
+                <a href="{{route('gestion')}}">gestion de membre</a>
             </div>
             <div class="conteneurSidebarTop boutonClose">
                 <i class="fa-solid "></i>
@@ -64,22 +76,22 @@
             </div>
         @endif
         <div class="conteneurSidebarDisconnect conteneurSidebarAll">
-            
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
             @if(Auth::user())
-            <form action="{{route('logout')}}" method="POST">
+                <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <button class="boutonDeconnexionDash"  type="submit">Deconnexion</button>
+                    <button type="submit">Deconnexion</button>
                 </form>
             @else
             <a href="">Déconnexion</a> 
             @endif
         </div>
     </div>
-    <div class="contenuGestionFlex">
+    <div>
         <h2>@yield('titre gestion')</h2>
         <div>@yield('contenu gestion')</div>
     </div>
     
-    <script src="{{asset('williamCSS/javascript William/sidebarAccordionUser.js')}}"></script>
-@endsection
+</body>
+<script src="{{asset('williamCSS/javascript William/sidebarAccordionUser.js')}}"></script>
+</html>

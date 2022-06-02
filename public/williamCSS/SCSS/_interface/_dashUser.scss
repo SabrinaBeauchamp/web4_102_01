@@ -20,24 +20,23 @@
 //---------------------------------------------------------------
 
 .conteneurDashboard {
-    @include setFlex(row, start, center);
     width: 100vw;
     height: 100vh;
-    margin-top: -8px;
-    overflow: hidden; // cache la scrollbar
-    // background-color: grey;
+    // overflow: hidden; // cache la scrollbar
+    @include setFlex(row, start, center);
+   // background-color: grey;
 
     .conteneurSidebar {
         width: 20%;
-        height: 100%;
+        height: 100vh;
         background-color: #FF6868;
         display: flex;
         flex-direction: column;
         white-space: nowrap;
         transition-duration: 800ms;
-        overflow: hidden;
+        // overflow: hidden;
         z-index: 2;
-
+     
         &>.conteneurSidebarTop {
             background-color: #db4c4c;
             padding: 24px 0px 24px 32px;
@@ -129,25 +128,3 @@
         background-color: #ff9f9f;
     }
 }
-
-.boutonDeconnexionDash {
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    margin-left: 16px;
-    transition-duration: 200ms;
-    display: inline-block;
-    text-align: left;
-    left: 50px;
-    border: none;
-    background-color: transparent;
-    padding: 0px;
-    cursor: pointer;
-    outline: none;
-
-    &:hover {
-        background-color: #ff9f9f;
-    }
-}
-

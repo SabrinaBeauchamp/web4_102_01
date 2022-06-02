@@ -34,6 +34,5 @@ class Evenement extends Model
   public function getDateNowAttribute($evenement) {
     $date = Carbon::now();
     return $date;
-    
   }
 }

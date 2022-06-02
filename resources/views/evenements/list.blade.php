@@ -9,9 +9,9 @@
             @endif
             @if (Auth::check())
                 @if($evenement->isLiked)
-                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked">Je t'aime</button>
+                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user liked btn1">Je t'aime</button>
                 @else
-                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user">Je t'aime pu</button>
+                    <button data-like="{{route('evenements.like', $evenement)}}" data-dislike="{{route('evenements.dislike', $evenement)}}" class="like_user btn1">Je t'aime pu</button>
                 @endif
             @else
                 <button class="like_user">

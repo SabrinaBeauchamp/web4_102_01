@@ -1,9 +1,9 @@
-<h2>Groupes</h2>
+@extends('mesLayouts.layout')
+<h1>Groupes</h1>
 @foreach($groupes as $groupe)
 <ul>
     <li>
-        <a href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
-        @include("categories.liste", ['categories'=>$groupe->categories])
+        <a class="commodites" href="{{route('groupes.show', ['groupe'=>$groupe])}}">{{$groupe['nom']}}</a>
     </li>
 </ul>
 @endforeach

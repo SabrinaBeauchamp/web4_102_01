@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Evenement;
 use App\Models\Ville;
+use App\Models\Groupe;
 use Illuminate\Http\Request;
 
 
@@ -19,7 +20,8 @@ class EvenementController extends Controller
     {
         $evenements = Evenement::all();
         $evenements = Evenement::orderBy('start', 'desc')->get();
-        return view ('evenements.index', ['evenements'=>$evenements]);
+        $groupes = Groupe::all();
+        return view ('evenements.index', ['evenements'=>$evenements, 'groupes'=>$groupes]);
     }
 
     /**

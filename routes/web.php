@@ -15,8 +15,13 @@ use App\Http\Controllers\VilleController;
 use App\Http\Controllers\CategorieRegionController;
 use App\Models\Entreprise;
 use App\Models\Evenement;
+use App\Models\Groupe;
 use App\Models\Favorie;
 use App\Http\Controllers\CommoditeCOntroller;
+use App\Http\Controllers\GroupeCommoditeController;
+use App\Models\Categorie;
+use App\Models\CategorieEntreprise;
+use Dotenv\Parser\Value;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +30,7 @@ use App\Http\Controllers\CommoditeCOntroller;
 |
 | Here is where you can  web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create something great! 
 |
 */
 Route::get('/', function() {
@@ -33,7 +38,54 @@ Route::get('/', function() {
 });
 Route::get('/agrotouristique', function() {
     $favories = Favorie::all();
-    return view('index',['favories'=>$favories]);
+    //Entreprises populaires
+    $entreprises = Entreprise::all();
+    foreach($entreprises as $entrepriseId => $entreprise)
+    {
+        if($entreprise->populaire !== "1")
+        {
+            unset($entreprises[$entrepriseId]);
+        }
+    }
+    //Les 3 logements choisis au hasard
+    //récupère seulement les entreprises de hébergement
+    $groupe = Groupe::find(5);
+    $categoriesLogements = Categorie::where("groupe_id", "LIKE", "%$groupe->id%")
+        ->select('id')
+        ->get();
+    $logements = array();
+    foreach($categoriesLogements as $categorieLogements)
+    {
+        $entreprisesDeLoge = CategorieEntreprise::where("categorie_id", "LIKE", "%$categorieLogements->id%")
+            ->select('entreprise_id')
+            ->get()
+            ->toArray();
+        foreach($entreprisesDeLoge as $entrepriseDeLoge)
+        {
+            //parfois une entreprise vas se trouver dans plusieurs catégories pour éviter de l'avoir plusieurs fois, on vérifie s'il n'est pas déjà dans le tableau
+            if(in_array($entrepriseDeLoge, $logements ) == false) {
+                array_push($logements, $entrepriseDeLoge);
+            }
+        }
+    };
+    //choisi des logements au hasard
+    $idPremierLogement = array_rand($logements);
+    $premierLogement = Entreprise::find($logements[$idPremierLogement])[0];
+    //[0] car à cause du $logements[$idPremierLogement], il crée une collection à l'intérieur d'un array, donc je récupère le seul élément du array.
+    unset($logements[$idPremierLogement]); //On le retire pour ne pas l'avoir en double
+    $idDeuxiemeLogement = array_rand($logements);
+    $deuxiemeLogement = Entreprise::find($logements[$idDeuxiemeLogement])[0];
+    unset($logements[$idDeuxiemeLogement]); //On le retire pour ne pas l'avoir en double
+    $idTroisiemeLogement = array_rand($logements);
+    $troisiemeLogement = Entreprise::find($logements[$idTroisiemeLogement])[0];
+    
+    return view('index',[
+        'favories'=>$favories, 
+        'entreprisesPopulaires' => $entreprises,
+        'premierLogement' => $premierLogement,
+        'deuxiemeLogement' => $deuxiemeLogement,
+        'troisiemeLogement' => $troisiemeLogement
+    ]);
 })->name('acceuil');
 
 Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
@@ -50,7 +102,6 @@ Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=
     Route::post('/{user}/delete', 'destroy')->name('destroy');
 
     Route::group([ 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['groupe'=>'favoris|entreprises|forfaits|evenements']], function () {
-        
         Route::get('/{groupe}', 'index')->name('index');
     });
 });
@@ -74,6 +125,7 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
     
+    
     Route::get('/{forfait}/like', [FavorieController::class, 'likeF'])->name('like');
     Route::get('/{forfait}/dislike', [FavorieController::class, 'dislikeF'])->name('dislike');
 
@@ -87,6 +139,19 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
+Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{favorie}/like', 'like')->name('like');
+
+    Route::get('{favorie}/create', 'create')->name('create');
+    Route::post('{favorie}/create', 'store')->name('store');
+
+    Route::get('/{favorie}/edit', 'edit')->name('edit');
+    Route::post('/{favorie}/edit', 'update')->name('update');
+
+    Route::get('/{favorie}/delete', 'delete')->name('delete');
+    Route::post('/{favorie}/delete', 'destroy')->name('destroy');
+});
 
 Route::get('/dashboard/evenement', function() {
     $evenements = Evenement::all();
@@ -99,7 +164,6 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'con
 
     Route::get('/{evenement}/like', [FavorieController::class, 'likeE'])->name('like');
     Route::get('/{evenement}/dislike', [FavorieController::class, 'dislikeE'])->name('dislike');
-    
 
     Route::get('/create', 'create')->name('create');
     Route::post('/create', 'store')->name('store');
@@ -139,13 +203,13 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
 });
 
 Route::get('/dashboard/populaire', function() {
-    $entreprises = Entreprise::all();
+    $entreprises = Entreprise::paginate(48);
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
-Route::get('/dashboard/entreprises', function() {
-    $entreprises = Entreprise::all();
+Route::get('/dashboard/les_entreprises', function() {
+    $entreprises = Entreprise::paginate(48);
     return view('users.entreprises.index', ['entreprises'=>$entreprises]);
-})->name('entreprises');
+})->name('gestion');
 
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
@@ -182,7 +246,7 @@ Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-Route::group(['prefix'=>'/agrotouristique/groupeCommodites', 'as'=>'groupeCommodites.', 'controller'=>CommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/groupesCommodite', 'as'=>'groupesCommodite.', 'controller'=>GroupeCommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupeCommodite}', 'show')->name('show');
 

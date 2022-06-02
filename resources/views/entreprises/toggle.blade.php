@@ -1,7 +1,6 @@
 @foreach($entreprises as $entreprise)
-<ul>
-    <li>
-        <a href="{{route('entreprises.show', $entreprise)}}">
+<button class="btn3">
+        <a class="commodites" href="{{route('entreprises.show', $entreprise)}}">
             {{$entreprise->nom}}
         </a>
         @if($entreprise->isPopulaire)
@@ -9,6 +8,5 @@
         @else
         <button data-populaire="{{route('entreprises.togglePopulaire', $entreprise)}}" class="populaire">Non Populaire</button>
         @endif
-    </li>
-</ul>
+    </button >
 @endforeach

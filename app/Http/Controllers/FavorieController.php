@@ -79,7 +79,7 @@ class FavorieController extends Controller
     }
 
 
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -104,17 +104,6 @@ class FavorieController extends Controller
             $type = 'Forfaits';
         }
         return view("users.favories.index", ['favories'=>$favories, 'type'=>$type]);
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Favorie  $favorie
-     * @return \Illuminate\Http\Response
-     */
-    public function showE()
-    {
-        $favories = Favorie::all();;
-        return view ("favories.show", ['favorie'=>$favorie]);
     }
 
     /**

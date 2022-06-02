@@ -1,10 +1,18 @@
 @extends('mesLayouts.dashboard')
 
 @section('titre gestion')
-    gere les entreprises
+les entrepises
 @endsection
 
 @section('contenu gestion')
-    <a href="{{route('entreprises.create')}}">Ajouter une entreprise</a>
     @include('entreprises.liste')
+    <div class="pagination">
+        {{$entreprises->links()}}
+    </div>
+    <style>
+        .w-5{
+            display: inline;
+            width: 5%
+        }
+    </style>
 @endsection

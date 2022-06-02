@@ -1,0 +1,215 @@
+//--------------------
+// Menu
+//--------------------
+#container-menu{
+    @include setFlex(row, center, center);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+#nav-principale {
+    @include setFlex(column, flex-start, flex-start);
+}
+//--------------------
+// Bouton ouverture menu
+//--------------------
+.zone-btn {
+    @include setFlex(row, flex-start, center);
+    position: relative;
+    height: 12vw;
+    width: 100%;
+    transition-duration: 1000ms;
+    background-color: var(--accentHeavy);
+    .btn-ouvrirPanneau {
+        @include setFlex(column, center, center);
+        width: 10vw;
+        height: 10vw;
+        margin: 1vw;
+        background-color: var(--accent);
+        color: var(--lilas3);
+        border-radius: 3px;
+        cursor: pointer;
+        outline: none;
+        border-radius: 100vw;
+        &.panneau-open{
+            height: 0;
+            width: 0;
+            color: var(--accentHeavy);
+        }
+        &:hover {
+            background-color: var(--accentHeavy);
+        }
+        &:disabled {
+            background-color: rgba(255, 255, 255, 0.26);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--accentHeavy);
+        }
+    }
+    @include breakpoint-min(900){
+        height: 5vw;
+        .btn-ouvrirPanneau{
+            width: 3vw;
+            height: 3vw;    
+        }
+    }
+}
+
+//--------------------
+// Panneau du menu
+//--------------------
+.container-panneau{
+    @include setFlex(column, center, flex-start);
+    overflow: hidden;
+    background-color: var(--lighter);
+}
+.panneau {
+    @include setFlex(column, center, center);
+    overflow: hidden;
+    row-gap: 0.5vw;
+    column-gap: 0.5vw;
+    position: relative;
+    transition-duration: 1000ms;
+    height: auto;
+    &.panneau-close{
+        width: 0;
+    }
+    &.panneau-open{
+        width: 100vw;
+    }
+    &:after{
+        content: '';
+        overflow: hidden;
+        display: inline-block;
+        position: absolute;
+        height: 60%;
+        width: 40vw;
+        background-color: var(--accent);
+        opacity: 0.1;
+        transform: translateX(-8vw);
+    }
+    &:nth-of-type(2):after{
+        background-color: var(--accentHeavy);
+        transform: translateX(8vw);
+    }
+    &:first-of-type{
+        margin-top: 2vw;
+    }
+    &:last-of-type{
+        margin-bottom: 1vw;
+    }
+    h2{
+        @include setFlex(column, center, center);
+        height: 10vw;
+        width: 10vw;
+        font-size: 4vw;
+        color: var(--dark);
+        background-color: var(--accent);
+        position: relative;
+        &:after{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            height: 10vw;
+            width: 10vw;
+            border: 0.5vw var(--accentHeavy) solid;
+            opacity: 0.5;
+            transform: translate(1vw, 1vw);
+        }
+    }
+    @include breakpoint-min(900){
+        @include setFlex(row, center, center);
+        &:after{
+            height: 90%;
+            width: 90vw;
+            opacity: 0.6;
+            border: 0.3vw var(--accentHeavy) solid;
+            background: none;
+            transform: translateX(-3vw);
+        }
+        &:nth-of-type(2):after{
+            transform: translateX(3vw);
+            background: none;
+        }
+        h2{
+            font-size: 2vw;
+            margin: 1vw;
+            height: 7vw;
+            width: 7vw;
+            &:after{
+                display: none
+            }
+        }
+    }
+}
+.panneau2 {
+    @extend .panneau;
+    @include breakpoint-min(900){
+        flex-direction: row-reverse;
+    }
+}
+.panneau3 {
+    @extend .panneau;
+}
+
+.panneau0{
+    @extend .panneau;
+}
+
+//--------------------
+// Ul du menu
+//--------------------
+.menu1 {
+    @include setFlex(row, center, center);
+    padding: 2vw;
+    flex-wrap: wrap;
+    row-gap: 0.5vw;
+    column-gap: 2vw;
+    z-index: 100;
+    width: 100vw;
+    list-style: none;
+    li{
+        a {
+            padding: 0.1vw 2vw;
+            font-size: 3vw;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            font-weight: 300;
+            background: none;
+            border: 0.1vw solid var(--dark);
+            border-radius: 100vw;
+            transition-duration: 500ms;
+            &:hover {
+                background-color: var(--accent);
+                border: 0.1vw solid var(--accent);
+            }
+        }
+    }
+    @include breakpoint-min(900){
+        width: 80vw;
+        li{    
+            a {
+                font-size: 1.5vw;
+                font-weight: 100;
+                padding: 0.2vw 1.5vw;
+            }
+        }
+    }
+}
+
+.menu2{
+    @extend .menu1;
+}
+
+.menu3{
+    @extend .menu1;
+}
+
+.menu4{
+    @extend .menu1;
+    width: 100%;
+}
+
+.menu0{
+    @extend .menu1;
+}

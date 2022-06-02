@@ -1,4 +1,4 @@
-@extends('mesLayouts.layout')
+@extends('mesLayouts.connexion')
 
 @section('contenu')
     <div class="conteneurRegisterPage">
@@ -67,6 +67,9 @@
                     </div>
                     <div class="conteneurBoutonRegister">
                         <button type="submit">S'inscrire</button>
+                    </div>
+                    <div class="conteneurBoutonRegister">
+                        <a href="{{route('login')}}"> Vous avez déjas un compte </a>
                     </div>
                 </form>
             </div>

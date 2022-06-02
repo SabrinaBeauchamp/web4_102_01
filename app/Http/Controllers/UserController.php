@@ -55,7 +55,6 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        dd($user->likesEntreprises);
         $roles = Role::all();
         return view('users.gestionaires.show', ['user' => $user]);
     }

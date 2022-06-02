@@ -1,0 +1,40 @@
+.introduction-entreprise
+{
+    position: relative;
+    height: fit-content;
+    background-color: var(--lighter);
+    .container-introduction{
+        @include setFlex(column, space-around, center);
+        .container-img-introduction{
+            @include setFlex(row, space-around, flex-start);
+            img{
+                margin: 1vw;
+                width: 12vw;
+                &:nth-of-type(2){
+                    transform: translateY(3vw);      
+                }
+                &:nth-of-type(4){
+                    transform: translateY(3vw);      
+                }
+            }  
+        }
+        p{
+            margin: 2vw;
+            width: 90vw;
+            font-size: 4vw;
+        }
+    }
+    @include breakpoint-min(900){
+        .container-introduction{
+            .container-img-introduction{
+                img{
+                    width: 8vw;
+                }  
+            }
+            p{
+                width: 70vw;
+                font-size: 1.5vw;
+            }
+        }
+    }
+}

@@ -9,7 +9,11 @@ Tout les forfaits
     <div class="conteneurForfaits">
         <div class="conteneurForfait">
             <div class="conteneurImgForfait">
-                <img src="" alt="" class="imgForfait">
+                @if(file_exists('img/forfaits/'.$forfait->id.'.jpg'))
+                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                @else
+                    <x-champ-img src="{{asset('img/forfaits/'.$forfait->id.'.jpg')}}" alt="forfait {{$forfait->id}}"></x-champ-img>
+                @endif
                 <h1>Forfait escapade gourmande</h1>
             </div>
             <div class="conteneurInfoForfait">
@@ -19,7 +23,7 @@ Tout les forfaits
             </div>
         </div>
         @foreach($forfaits as $forfait)
-            {{$forfait['nom']}}
+            {{$forfait->nom}}
         @endforeach
     </div>
     <div class="conteneurCirclePage">

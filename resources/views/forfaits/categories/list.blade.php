@@ -1,18 +1,29 @@
-@foreach ($categories as $categorie)
-<div class="conteneurCarteForfait1">
-    <div class="conteneurImgForfait1">
-        <!-- le div va devoir avoir son propre texte et le img sa propre src pour l'image.  -->
-        <img src="{{asset('williamCSS/temporaire_img/imgPlaceholder.png')}}" alt="" class="imgForfait1">
-        <div class="texteImgForfait1"> {{$categorie->nom}}</div>
-    </div>
-    <div class="conteneurTexteForfait1">
-        <!-- changer les textes pour du vrai texte -->
-        <h3>Catchphrase!</h3>
-        <div class="descriptionForfait1">{{$categorie->message}}</div>
-    </div>
-    <!-- animation de fleche quand hover avec un after -->
-    <div class="conteneurBoutonForfait1">
-        <a href="{{route('forfaits.categories.show', $categorie)}}" class="boutonCarteForfait1">{{$categorie->nom}}</a>
-    </div>
-</div>
-@endforeach
+@for ($i = 0; $i < $categories->count(); $i++)
+    @if ($i === 0)
+        <div class="carousel-item active">
+            @if(file_exists('img/forfaits/categories/'.$i.'.jpg'))
+            <img src="{{asset('img/forfaits/categories/'.$i.'.jgp')}}" class="d-block w-100">
+            @else
+            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+            @endif
+            <div class="carousel-caption d-none d-md-block">
+                <h1>{{$categories[$i]->nom}}</h1>
+                <p>{{$categories[$i]->phrase}}</p>
+                <a href="{{route('forfaits.categories.show', $categories[$i])}}">Découvrez ses forfait</a>
+            </div>
+        </div>
+    @else
+        <div class="carousel-item">
+            @if(file_exists('img/forfaits/categories/'.$i.'.jpg'))
+            <img src="{{asset('img/forfaits/categories/'.$i.'.jgp')}}" class="d-block w-100">
+            @else
+            <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+            @endif
+            <div class="carousel-caption d-none d-md-block">
+                <h1>{{$categories[$i]->nom}}</h1>
+                <p>{{$categories[$i]->phrase}}</p>
+                <a href="{{route('forfaits.categories.show', $categories[$i])}}">Découvrez ses forfait</a>
+            </div>
+        </div>
+    @endif
+@endfor
