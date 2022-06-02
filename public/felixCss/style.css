@@ -11367,7 +11367,7 @@ img {
   height: 8vw;
   width: 100%;
   transition-duration: 1000ms;
-  background-color: var(--lighter);
+  background-color: var(--accentHeavy);
   border-radius: 100vw;
 }
 .zone-btn .btn-ouvrirPanneau {
@@ -11469,7 +11469,7 @@ img {
   position: absolute;
   height: 6vw;
   width: 14vw;
-  background-color: var(--accent);
+  background-color: var(--accentHeavy);
   opacity: 0.1;
 }
 @media (min-width: 900px) {
@@ -11483,7 +11483,7 @@ img {
     height: 90%;
     width: 90vw;
     opacity: 0.2;
-    border: 0.3vw var(--accentHeavy) solid;
+    border: 0.3vw var(--accent) solid;
     background: none;
     transform: translateX(-3vw);
   }
