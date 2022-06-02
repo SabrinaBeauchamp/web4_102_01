@@ -27,15 +27,11 @@ class Favori {
             console.log(e.target.response.resultat);
             if(e.target.response.resultat === true) {
                 lien.classList.add("liked");
-                var img = lien.appendChild(document.querySelector(".iconeListeForfaits"));
-                img.classList.add("fa-regular");
-                img.classList.remove("fa-solid");
+                lien.classList.replace("fa-solid", "fa-regular");
             }
             else {
                 lien.classList.remove("liked");
-                var img = lien.appendChild(document.querySelector(".iconeListeForfaits"));
-                img.classList.remove("fa-solid");
-                img.classList.add("fa-regular");
+                lien.classList.replace("fa-regular", "fa-solid");
             }
         });
         xhr.send();

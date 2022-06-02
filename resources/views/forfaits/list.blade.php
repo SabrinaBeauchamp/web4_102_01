@@ -25,9 +25,9 @@
         </button>
         @if (Auth::check())
             @if($forfait->isLiked)
-                <button data-like="{{route('forfaits.like', $forfait)}}" data-dislike="{{route('forfaits.dislike', $forfait)}}" class="like_user btn_carte liked"><i class="fa-regular fa-heart iconeListeForfaits"></i></button>
+                <button data-like="{{route('forfaits.like', $forfait)}}" data-dislike="{{route('forfaits.dislike', $forfait)}}" class="like_user btn_carte liked fa-solid fa-heart"></button>
             @else
-                <button data-like="{{route('forfaits.like', $forfait)}}" data-dislike="{{route('forfaits.dislike', $forfait)}}" class="like_user btn_carte"><i class="fa-solid fa-heart iconeListeForfaits"></i></button>
+                <button data-like="{{route('forfaits.like', $forfait)}}" data-dislike="{{route('forfaits.dislike', $forfait)}}" class="like_user btn_carte fa-regular  fa-heart"></button>
             @endif
         @else
             <button class="like_user">
