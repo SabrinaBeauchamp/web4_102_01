@@ -45,10 +45,16 @@
 @endsection
 
 @section('panneaux')
-    <div class="panneau2 isPanneau panneau-open">
-        <h2>{{$entreprise->nom}}</h2>
+    <div class="panneau2 isPanneau panneau-close">
+        <h2>{{$groupeSelectionner->nom}}</h2>
         <ul class="menu2"> 
             @include("categories.liste", ['categories'=>$entreprise->categories])
+        </ul>
+    </div>
+    <div class="panneau3 isPanneau panneau-close">
+        <h2>{{$categorie->nom}}</h2>
+        <ul class="menu3">
+            @include("entreprises.liste", ['entreprises'=>$categorie->entreprises])
         </ul>
     </div>
 @endsection
