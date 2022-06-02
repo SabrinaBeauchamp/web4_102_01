@@ -11438,7 +11438,7 @@ img {
   height: 60%;
   width: 40vw;
   background-color: var(--accent);
-  opacity: 0.1;
+  opacity: 0.06;
   transform: translateX(-8vw);
 }
 .panneau:nth-of-type(2):after, .panneau0:nth-of-type(2):after, .panneau3:nth-of-type(2):after, .panneau2:nth-of-type(2):after {
@@ -11470,17 +11470,7 @@ img {
   height: 6vw;
   width: 14vw;
   background-color: var(--accent);
-  opacity: 0.2;
-}
-.panneau h2:after, .panneau0 h2:after, .panneau3 h2:after, .panneau2 h2:after, .panneau .h2:after, .panneau0 .h2:after, .panneau3 .h2:after, .panneau2 .h2:after {
-  content: "";
-  display: none;
-  position: absolute;
-  height: 6vw;
-  width: 10vw;
-  border: 0.5vw var(--accentHeavy) solid;
-  opacity: 0.5;
-  transform: translate(1vw, 2vw);
+  opacity: 0.1;
 }
 @media (min-width: 900px) {
   .panneau, .panneau0, .panneau3, .panneau2 {
@@ -11492,7 +11482,7 @@ img {
   .panneau:after, .panneau0:after, .panneau3:after, .panneau2:after {
     height: 90%;
     width: 90vw;
-    opacity: 0.6;
+    opacity: 0.2;
     border: 0.3vw var(--accentHeavy) solid;
     background: none;
     transform: translateX(-3vw);
@@ -11698,12 +11688,16 @@ section.rechercheFiltree form .filtresEtResultats button {
   margin: 0.2vw;
   padding: 0.2vw 2vw;
   border-radius: 100vw;
-  border-color: var(--accent);
+  border: none;
   font-size: 5vw;
   font-family: "Roboto", sans-serif;
   color: var(--dark);
   background-color: var(--accent);
   font-weight: 300;
+  transition-duration: 500ms;
+}
+section.rechercheFiltree form .filtresEtResultats button:hover {
+  background-color: var(--accentHeavy);
 }
 section.rechercheFiltree form .filtresEtResultats .resultats {
   display: flex;
@@ -12345,11 +12339,15 @@ footer section .container-bouton a {
   border-radius: 100vw;
   color: var(--dark);
   background-color: var(--lightest);
+  transition-duration: 500ms;
 }
 @media (min-width: 900px) {
   footer section .container-bouton a {
     font-size: 1vw;
   }
+}
+footer section .container-bouton a:hover {
+  background-color: var(--accent);
 }
 @media (min-width: 900px) {
   footer .footer1 {

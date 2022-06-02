@@ -79,7 +79,7 @@
         height: 60%;
         width: 40vw;
         background-color: var(--accent);
-        opacity: 0.1;
+        opacity: 0.06;
         transform: translateX(-8vw);
     }
     &:nth-of-type(2):after{
@@ -107,17 +107,7 @@
             height: 6vw;
             width: 14vw;
             background-color: var(--accent);
-            opacity: 0.2;
-        }
-        &:after{
-            content: '';
-            display: none;
-            position: absolute;
-            height: 6vw;
-            width: 10vw;
-            border: 0.5vw var(--accentHeavy) solid;
-            opacity: 0.5;
-            transform: translate(1vw, 2vw);
+            opacity: 0.1;
         }
     }
     @include breakpoint-min(900){
@@ -125,7 +115,7 @@
         &:after{
             height: 90%;
             width: 90vw;
-            opacity: 0.6;
+            opacity: 0.2;
             border: 0.3vw var(--accentHeavy) solid;
             background: none;
             transform: translateX(-3vw);

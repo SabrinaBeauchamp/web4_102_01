@@ -480,8 +480,12 @@ footer{
                 border-radius: 100vw;
                 color: var(--dark);
                 background-color: var(--lightest);
+                transition-duration: 500ms;
                 @include breakpoint-min(900){
                     font-size: 1vw;
+                }
+                &:hover{
+                    background-color: var(--accent);
                 }
             }
         }
