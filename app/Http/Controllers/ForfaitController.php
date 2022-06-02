@@ -62,7 +62,8 @@ class ForfaitController extends Controller
      */
     public function show(forfait $forfait)
     {
-        return view ("forfaits.show", ['forfait'=>$forfait]);
+        $groupes = Groupe::all();
+        return view ("forfaits.show", ['forfait'=>$forfait, 'groupes'=>$groupes]);
     }
 
     /**

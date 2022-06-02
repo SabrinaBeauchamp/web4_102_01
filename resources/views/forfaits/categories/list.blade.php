@@ -1,8 +1,8 @@
 @for ($i = 0; $i < $categories->count(); $i++)
     @if ($i === 0)
         <div class="carousel-item active">
-            @if(file_exists('img/forfaits/categories/'.$i.'.jpg'))
-            <img src="{{asset('img/forfaits/categories/'.$i.'.jgp')}}" class="d-block w-100">
+            @if(file_exists('img/forfaits/categories/'.$categories[$i]->id.'.jpg'))
+            <img src="{{asset('img/forfaits/categories/'.$categories[$i]->id.'.jpg')}}" class="d-block w-100">
             @else
             <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
             @endif
@@ -14,8 +14,8 @@
         </div>
     @else
         <div class="carousel-item">
-            @if(file_exists('img/forfaits/categories/'.$i.'.jpg'))
-            <img src="{{asset('img/forfaits/categories/'.$i.'.jgp')}}" class="d-block w-100">
+            @if(file_exists('img/forfaits/categories/'.$categories[$i]->id.'.jpg'))
+            <img src="{{asset('img/forfaits/categories/'.$categories[$i]->id.'.jpg')}}" class="d-block w-100">
             @else
             <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
             @endif
