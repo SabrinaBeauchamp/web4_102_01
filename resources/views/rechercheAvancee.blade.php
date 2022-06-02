@@ -106,23 +106,23 @@
         </div>
         <main>
                 <!-- Contenu principal -->
-    <section class="rechercheFiltree">
-                <div class="container-titre detectAnim">
-                    <h2 class="titre1">Recherche par</h2>
-                    <h2 class="titre-accent">FILTRES</h2>
-                    <h2 class="titre2">et mots clés</h2>
-                </div>
-                <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
-                    <input type="text" name="q" id="q" placeholder="mots-clés ici" class="barreRecherche">   
-                    <div class="filtresEtResultats">                  
-                        @include('groupes.checkbox')
-                        <button>Rechercher</button>
-                        <div class="resultats">
-                            @include('recherche')
-                        </div>
-                </div>
-            </form>
-        </section>
+            <section class="rechercheFiltree">
+                    <div class="container-titre detectAnim">
+                        <h2 class="titre1">Recherche par</h2>
+                        <h2 class="titre-accent">FILTRES</h2>
+                        <h2 class="titre2">et mots clés</h2>
+                    </div>
+                    <form action="{{route('recherche.rechercheEntreprise')}}" method="get">
+                        <input type="text" name="q" id="q" placeholder="mots-clés ici" class="barreRecherche">   
+                        <div class="filtresEtResultats">                  
+                            @include('groupes.checkbox')
+                            <button>Rechercher</button>
+                            <div class="resultats">
+                                @include('recherche')
+                            </div>
+                    </div>
+                </form>
+            </section>
         </main>
         <!-- Footer de la page -->
         <footer>
