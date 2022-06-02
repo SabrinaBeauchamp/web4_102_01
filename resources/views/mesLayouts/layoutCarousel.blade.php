@@ -8,10 +8,64 @@
     <title>Page forfait 1.1</title>
     <link rel="stylesheet" href="{{asset('williamCSS/style.css')}}">
     <script src="https://kit.fontawesome.com/f4e3a6480f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{asset('felixCss/style.css')}}">
     <!-- INCLURE LES SCRIPTS QUI SONT A LA FIN DU DOC SINON CAROUSEL MARCHE PAS -->
 </head>
 
 <body>
+    <div id="container-menu">
+        <nav id="nav-principale">
+            <div class="zone-btn isPanneau panneau-open">
+                <div class="container-btn-ouvrirPanneau">
+                    <i class="btn-ouvrirPanneau" tabindex="0"></i>
+                </div>
+            </div>
+            <!-- PANNEAUX -->
+            <div class="container-panneau">
+                <div class="panneau0 isPanneau panneau-close">
+                    <ul class="menu0">
+                        <li>
+                            <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
+                        </li>
+                        <li>
+                            <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
+                        </li>
+                        <li>
+                            <a class="btn1" href="{{route('forfaits.categories.index')}}">Catégories</a>
+                        </li>
+                        <li>
+                            <a class="btn1" href="{{route('evenements.index')}}">Évènements</a>
+                        </li>
+                        @if(Auth::user())
+                            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
+                            <li>
+                                <form action="{{route('logout')}}" method="POST">
+                                    @csrf
+                                    <button class="btn1" type="submit">Deconnexion</button>
+                                </form>
+                            </li>
+                        @else
+                            <li>
+                                <a class="btn1" href="{{route('login')}}">Me connecter</a>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
+                <div class="panneau isPanneau panneau-close">
+                    <h2>Groupes</h2>
+                    <ul class="menu1">
+                        @foreach($groupes as $groupe)
+                            <li>
+                                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                @yield('panneaux')
+            </div>
+        </nav>
+    </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         @yield('contenu')
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -33,5 +87,6 @@
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
 </script>
 <script src="{{asset('js/forfaitListeAnim.js')}}"></script>
+<script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
 
 </html>
