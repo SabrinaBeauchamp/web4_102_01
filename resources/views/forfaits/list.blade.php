@@ -1,4 +1,5 @@
 @foreach ($forfaits as $forfait)
+<div class="conteneurForfait">
 <div class="forfait">
     <!-- changer les sources des images -->
     @if(file_exists('img/forfaits/'.$forfait->id.'.jpg'))
@@ -47,6 +48,7 @@
             </button>
         @endif
     </div>
+</div>
 </div>
     
 @endforeach

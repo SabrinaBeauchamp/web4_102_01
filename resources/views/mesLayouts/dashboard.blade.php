@@ -93,5 +93,5 @@
     </div>
     
 </body>
-<script src="{{asset('williamCSS/javascript William/sidebarAccordionUser.js')}}"></script>
+<script src="{{asset('williamCSS/javascript_William/sidebarAccordionUser.js')}}"></script>
 </html>

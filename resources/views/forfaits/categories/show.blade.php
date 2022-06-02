@@ -9,7 +9,8 @@
         <!-- le h2 va pouvoir etre changer -->
         <h2>{{$categorie->nom}}</h2>
         <!-- faire foreach -->
-        <div class="conteneurForfait">
+        <div class="conteneurAllForfait">
+        
             @if($categorie->forfaits->count() === 0)
                 <p>la liste est vide</p> 
             @else
@@ -27,5 +28,6 @@
                 </div>
             @endif
         </div>
+        
     </div>
 @endsection
