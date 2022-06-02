@@ -101,8 +101,6 @@ Agrotourisme Laurentides
             </div>
             <div class="container-calendrier">
                 <div class="calendrier-grid">
-                    <div class="calendrier-item"></div>
-                    <div class="calendrier-item"></div>
                     <div class="calendrier-item">1
                         <div class="popup">
                             <div class="nom-evenement">
@@ -194,17 +192,245 @@ Agrotourisme Laurentides
                     <div class="calendrier-item">12<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">13<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">14<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">15<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">16<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">17<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">18<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">19<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">20<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">21<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">22<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">23<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">24<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
-                    <div class="calendrier-item">25<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
+                    <div class="calendrier-item case-evenement">15
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">16
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">17
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">18
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">19
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">20
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">21
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">22
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">23
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">24
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendrier-item case-evenement">25
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                        <div class="popup">
+                            <div class="nom-evenement">
+                                Le festival Broue-nord
+                            </div>
+                            <div class="dates-evenement">
+                                15 au 25 mai 
+                            </div>
+                            <div class="description-evenement">
+                                Praesent in tristique tellus. Suspendisse vulputate tempus porttitor. Proin aliquam mollis lacus non pretium. 
+                            </div>
+                            <div class="ville-evenement">
+                                Saint-Sauveur 
+                            </div>
+                            <div class="prix-evenement">
+                                28.98$
+                                /jour/personne
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="calendrier-item">26<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">27<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item">28<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
@@ -213,9 +439,11 @@ Agrotourisme Laurentides
                     <div class="calendrier-item">31<div class="popup">ANPAN ANPAN ANPAN ANPAN ANPAN</div></div>
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
+                    <div class="calendrier-item"></div>
+                    <div class="calendrier-item"></div>
                 </div>
                 <div class="calendrier-popup">
-                    Cette section a été retirée du projet. Le visuel n'est donc pas final, mais le concept était intéressant, donc la section a été laissée ici. </br> La case 1 peut être cliquée pour afficher des événements
+                    Sélectionnez une journée en surbrillance du calendrier pour afficher les évènements du jour
                 </div>
             </div>
         </section>

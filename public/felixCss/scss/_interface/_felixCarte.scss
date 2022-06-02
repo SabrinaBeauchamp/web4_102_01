@@ -1,56 +1,66 @@
-// .carte-interactive{
-// }
-// .container-carte{
-// }
-// .carte{
-// }
-// .container-liste{
-    
-// }
-// .liste-carte{
-    
-// }
-.item-liste-carte{
-    @include setFlex(row, flex-start, space-between);
-    background-color: var(--accent);
-    width: 10vw;
-    overflow: hidden;
-    height: 10vw;
-    border-radius: 100vw;
-    
-    &:hover{
-        width: 40vw;
-        .details-carte{
-            width: 30vw;
+.container-carte{
+    @include setFlex(column, center, center);
+    width: 90vw;
+    margin-top: 5vw;
+    .container-liste{
+        width: 100%;
+        background-color: var(--accentHeavy);
+        padding: 2vw;
+        border-radius: 3vw;
+    }
+    .container-background-carte{
+        width: 90vw;
+        height: 90vw;
+        z-index: -1;
+        img{
+            position: absolute;
+            width: 90vw;
+            opacity: 0.1;
+            transition-duration: 500ms;
         }
     }
     @include breakpoint-min(900){
-        height: 5vw;
-        width: 5vw;
-        &:hover{
-            width: 15vw;
-            .details-carte{
-                width: 10vw;
+        @include setFlex(row, space-around, flex-start);
+        width: 70vw;
+        margin-top: -4vw;
+        .container-liste{
+            width: 20vw;
+            margin-top: 5vw;
+        }
+        .container-background-carte{
+            width: 50vw;
+            height: 50vw;
+            img{
+                width: 50vw;
             }
         }
     }
 }
-.icone-mrc{
-    width: 10vw;
-    height: 10vw;
+.liste-carte{
+    @include setFlex(row, space-around, center);
+    flex-wrap: wrap;
+    column-gap: 2vw;
+    row-gap: 2vw;
     @include breakpoint-min(900){
-        width: 5vw;
-        height: 5vw;
+        @include setFlex(column, space-around, center);
     }
 }
-.details-carte{
-    width: 0;
-    font-size: 3vw;
-    border: none;
+.item-carte{
+    @include setFlex(row, center, center);
+    background-color: var(--accent);
+    border: 0.2vw solid var(--accent);
     border-radius: 100vw;
-    background-color: var(--accentHeavy);
+    padding: 0.5vw 1vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+    color: var(--lightest)!important;
     transition-duration: 500ms;
+    &:hover{
+        background-color: var(--accentHeavy);
+    }
     @include breakpoint-min(900){
-        font-size: 2vw;
+        padding: 0.5vw 1vw;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
     }
 }

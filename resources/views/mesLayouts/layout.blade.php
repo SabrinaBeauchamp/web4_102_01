@@ -80,4 +80,5 @@
 <script src="{{ URL::asset('felixJs/Menu.js') }}"></script>
 <script src="{{ URL::asset('felixJs/Animations.js') }}"></script>
 <script src="{{ URL::asset('felixJs/Calendrier.js') }}"></script>
+<script src="{{ URL::asset('felixJs/Carte.js') }}"></script>
 </html>
