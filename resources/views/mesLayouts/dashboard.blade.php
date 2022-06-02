@@ -13,6 +13,10 @@
         </div>
     </div>
     <div class="conteneurSidebar">
+        <div class="conteneurSidebarTop boutonClose">
+            <i class="fa-solid fa-xmark"></i>
+            <a href="{{route('acceuil')}}" class="dashboardLink">Dashboard</a>
+        </div>
         <div class="conteneurSidebarProfil conteneurSidebarAll">
             <i class="fa-solid fa-user"></i>
             <a href="{{route('users.gestionaires.edit', Auth::user())}}">Profil</a>

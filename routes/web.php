@@ -172,7 +172,7 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'con
     Route::post('/{evenement}/edit', 'update')->name('update');
 
     Route::get('/{evenement}/delete', 'delete')->name('delete');
-    Route::post('/{evenement}/delete', 'destroy')->name('d          estroy');
+    Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
 
 Route::group(['prefix'=>'/agrotouristique/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
