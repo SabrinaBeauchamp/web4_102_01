@@ -1,0 +1,130 @@
+//--------------------
+// Logements
+//--------------------
+.propositionsLogements
+{
+    background-color: var(--light);
+    .liste
+    {
+        @include setFlex(column, center, center);
+        position: relative;
+        row-gap: 5vw;
+        padding: 0 0 5vw;
+        list-style-type: none;
+        li:nth-of-type(2){
+            transform: translateX(5vw);
+        }
+        .propositionLogement{
+            position: relative;
+            width: 70vw;
+            .propositionLogement-container-texte{
+                position: absolute;
+                color: var(--lightest);
+                transform: translate(4vw, 5vw);
+                h3{
+                    font-size: 6vw; 
+                    background-color: var(--accent);
+                    padding: 0.1vw 1vw;
+                    z-index: 3;
+                }
+                p{
+                    font-size: 2.4vw;
+                    opacity: 0;
+                    transition-duration: 500ms;
+                    background-color: var(--darkest);
+                    padding: 0.3vw;
+                    z-index: 1;
+                    transform: translate(0vw, 5vw);
+                }
+            }
+            .image-logements{
+                width: 70vw;
+                height: 70vw;
+                overflow: hidden;
+                background-color: var(--darkest);
+                z-index: 2;
+                img{
+                    max-width: 100%;
+                    min-height: 100%;
+                    transition-duration: 500ms;
+                    z-index: 2;
+                }
+            }
+            &:hover{
+                p{
+                    opacity: 1;
+                    transform: translate(3vw, 5vw);
+                }
+                img{
+                    transform: translateX(-70vw);
+                }
+            }
+        }
+        @include breakpoint-min(900){
+            @include setFlex(row, start, flex-start);
+            overflow-x: scroll;
+            overflow-y: hidden;
+            row-gap: 5vw;
+            column-gap: 5vw;
+            li:nth-of-type(2){
+                transform: translateY(5vw);
+            }
+            /* width */
+            &::-webkit-scrollbar {
+                width: 2vw;
+            }
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: var(--light);
+            }
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: var(--dark);
+                border-radius: 100vw;
+            }
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: var(--darker);
+            }
+            .propositionLogement{
+                width: 20vw;
+                .propositionLogement-container-texte{
+                    position: absolute;
+                    width: 20vw;
+                    color: white;
+                    transform: translate(0vw, 0vw);
+                    h3{
+                        transform: translate(4vw, 10vw);
+                        font-size: 1.5vw;
+                    }
+                    p{
+                        transform: translate(0vw, 10vw);
+                        font-size: 0.6vw;
+                    }
+                }
+                .image-logements{
+                    width: 20vw;
+                    height: 20vw;
+                    overflow: hidden;
+                    background-color: var(--darkest);
+                    z-index: 2;
+                    img{
+                        max-width: 100%;
+                        min-height: 100%;
+                        transition-duration: 500ms;
+                        z-index: 2;
+                    }
+                }
+                &:hover{
+                    p{
+                        opacity: 1;
+                        transform: translate(3vw, 10vw);
+                    }
+                    img{
+                        transform: translateX(-20vw);
+                    }
+                }
+            }
+        }
+    }
+}

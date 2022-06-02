@@ -42,9 +42,9 @@
 
 @section('panneaux')
     <div class="panneau2 isPanneau panneau-open">
-        <h2>{{$groupeSelection->nom}}</h2>
+        <h2>{{$groupeSelectionner->nom}}</h2>
         <ul class="menu2"> 
-            @include("categories.liste", ['categories'=>$groupeSelection->categories])
+            @include("categories.liste", ['categories'=>$groupeSelectionner->categories])
         </ul>
     </div>
     <div class="panneau3 isPanneau panneau-open">

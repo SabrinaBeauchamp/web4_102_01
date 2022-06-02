@@ -1,0 +1,44 @@
+//--------------------
+// Header
+//--------------------
+header
+{
+    width: 100vw;
+    height: 100vh;
+    @include setFlex(row, center, center);
+    img{
+        position: absolute;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        min-width: 100vw;
+        z-index: -1;
+    }
+    .blanc{
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--lightest);
+        opacity: 0;
+        position: absolute;
+        transition-duration: 2000ms;
+    }
+    h1{
+        font-weight: 200;
+        font-family: 'Roboto', sans-serif;
+        font-size: 8vw;
+        text-transform: uppercase;
+        color: var(--darkest);
+        transform: translateX(-100vw);
+        transition-duration: 1000ms;
+    }
+    &:hover{
+        h1{
+            margin: 5vw;
+            transform: translateX(0vw);
+        }
+        .blanc{
+            opacity: 1;
+        }
+    }
+}
