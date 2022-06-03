@@ -24,19 +24,20 @@
     height: 100vh;
     // overflow: hidden; // cache la scrollbar
     @include setFlex(row, start, center);
-   // background-color: grey;
+    // background-color: grey;
 
     .conteneurSidebar {
-        width: 20%;
+        position: fixed;
+        width: 420px;
         height: 100vh;
         background-color: #FF6868;
         display: flex;
         flex-direction: column;
         white-space: nowrap;
         transition-duration: 800ms;
-        // overflow: hidden;
-        z-index: 2;
-     
+        overflow: hidden;
+        z-index: 4;
+
         &>.conteneurSidebarTop {
             background-color: #db4c4c;
             padding: 24px 0px 24px 32px;
