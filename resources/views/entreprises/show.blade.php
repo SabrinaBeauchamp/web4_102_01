@@ -79,11 +79,15 @@
         </div>
         <div class="container-introduction">
             <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
-            <div class="container-img-introduction detectAnim3">
+        </div>
+        <div>
+            <ul class="menu4">
                 @foreach($commodites as $commodite)
+                <li>
                     <a href="{{route('commodites.show', ['commodite'=>$commodite])}}">{{$commodite['nom']}}</a> <br>
-                @endforeach
-            </div>
+                </li>
+                @endforeach 
+            </ul>
         </div>
     </section>
 @endsection
