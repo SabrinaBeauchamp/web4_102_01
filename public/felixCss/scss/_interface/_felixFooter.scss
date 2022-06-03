@@ -2,9 +2,9 @@
 // Footer
 //--------------------
 footer{
-    background-color: var(--accent);
     section
     {
+        background-color: var(--accent)!important;
         padding: 10vw 5vw;
         .container-titre{
             position: relative;
@@ -89,5 +89,5 @@ footer{
 // Partenaires
 //--------------------
 .partenaires{
-    background-color: var(--accentHeavy);
+    background-color: var(--accentHeavy)!important;
 }

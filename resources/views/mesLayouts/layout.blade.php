@@ -33,10 +33,19 @@
                 </div>
             </nav>
         </div>
-        <header>
-            <a href="{{asset('')}}">
-                <h1 class="titre">@yield("titre")</h1>
-            </a>
+        <header id="header">
+            <div class="slide1">
+                <img src="{{asset('images/Placeholder.svg')}}" alt="logo">
+            </div>
+            <div class="container-slides">
+                <div class="slide2">
+                    <div class="slide3"></div>
+                    <a class="titre" href="{{asset('')}}">@yield("titre")</a>
+                </div>
+            </div>
+            <div class="bg-header">
+                <img class="bg-header-img" src="{{asset('images/placeholderHeader.jpg')}}" alt="image header">
+            </div>
         </header>
         <!-- Fil d'Ariane -->
         <div class="fil-ariane">
