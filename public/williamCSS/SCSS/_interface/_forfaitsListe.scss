@@ -37,6 +37,7 @@
 //SCSS listes des forfaits d'une categories
 .conteneurListeForfaits {
     @include setFlex(column, center, center);
+    background-color: white;
 
     &>h2 {
         color: #464646;

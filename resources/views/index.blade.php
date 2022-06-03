@@ -314,7 +314,11 @@ Agrotourisme Laurentides
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
                     <div class="calendrier-item"></div>
-                    <a href="{{route('evenements.index')}}" class="btn1">Voir tous les évènements</a>
+                    <ul class="menu4"> 
+                        <li>
+                            <a href="{{route('evenements.index')}}" class="btn1">Voir tous les évènements</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="calendrier-popup">
                     Sélectionnez une journée en surbrillance du calendrier pour afficher les évènements du jour
@@ -323,7 +327,7 @@ Agrotourisme Laurentides
         </section>
         <section class="propositionsLogements">
             <div class="container-titre detectAnim">
-                <h2 class="titre1">Ou se</h2>
+                <h2 class="titre1">Où se</h2>
                 <h2 class="titre-accent">LOGER</h2>
                 <h2 class="titre2"></h2>
             </div>
