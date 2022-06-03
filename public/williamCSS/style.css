@@ -33,6 +33,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -14129,5 +14132,258 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   background-color: transparent;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+
+.conteneurForfaitSpecifique {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 100vw;
+  height: 100%;
+  padding: 32px 84px 32px 84px;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+  height: 550px;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .nomForfait {
+  text-align: left;
+  font-family: 'Teko', sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .nomForfait::after {
+  content: '';
+  margin: 0 auto;
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #212529;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .nomForfait:hover::after {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .description {
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  padding-right: 20px;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f25c5c;
+  border: none;
+  width: 320px;
+  height: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier:hover {
+  background-color: #f87c7c;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+          box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier > .prixForfait {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier > .prixForfait::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: '140$';
+  font-size: 26px;
+  font-weight: 700;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier > .prixForfait::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  content: 'Ajouter au panier';
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier > .prixForfait:hover::before {
+  top: -60px;
+}
+
+.conteneurForfaitSpecifique > .conteneurGauche > .btnAjoutPanier > .prixForfait:hover::after {
+  top: 0;
+}
+
+.conteneurForfaitSpecifique > .conteneurDroite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  height: 550px;
+}
+
+.conteneurForfaitSpecifique > .conteneurDroite > .conteneurImg {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+
+.conteneurForfaitSpecifique > .conteneurDroite > .conteneurImg:hover {
+  background: #ff5252;
+  -webkit-box-shadow: 0 0 0 0 #ff5252;
+          box-shadow: 0 0 0 0 #ff5252;
+  -webkit-animation: pulse-red 2s infinite;
+          animation: pulse-red 2s infinite;
+}
+
+@-webkit-keyframes pulse-red {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+            box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+            box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+            box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+            box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+
+.conteneurForfaitSpecifique > .conteneurDroite > .conteneurImg > img {
+  width: 100%;
+  height: 550px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+.conteneurForfaitSpecifique > .conteneurDroite > .conteneurImg > img:hover {
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 0 0 0 #f25c5c;
+          box-shadow: 0 0 0 0 #f25c5c;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: pulse 2s;
+          animation: pulse 2s;
 }
 /*# sourceMappingURL=style.css.map */

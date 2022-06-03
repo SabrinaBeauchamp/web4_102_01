@@ -18,7 +18,4 @@
             </div>
         </div>
     </form>
-    <div class="options">
-        <x-champ-lien href="{{route('users.gestionaires.index')}}" titre="Retour au tableau de bord"></x-champ-lien>
-    </div>
 @endsection
