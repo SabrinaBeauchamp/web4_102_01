@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('williamCSS/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styleSabrina.css')}}">
     <script src="{{asset('https://kit.fontawesome.com/f4e3a6480f.js')}}" crossorigin="anonymous"></script>
 
     <script src="{{asset('js/Favori.js')}}"></script>
@@ -93,7 +94,7 @@
         </div>
     </div>
     <div>
-        <h2>@yield('titre gestion')</h2>
+        <h1 class="titre_section">@yield('titre gestion')</h1>
         <div>@yield('contenu gestion')</div>
     </div>
     <div class="darkenScreen"></div>
