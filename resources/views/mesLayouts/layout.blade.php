@@ -82,9 +82,35 @@
                     </div>
                 </section>
             </div>
-            <section class="partenaires">
-                <h2>Voici nos partenaires</h2>
-            </section>
+            <div class="footer2">
+                <section class="partenaires">
+                    <div class="container-titre detectAnim">
+                        <h2 class="titre1"> </h2>
+                        <h2 class="titre-accent">Sans oublier nos partenaires</h2>
+                        <h2 class="titre2"> </h2>
+                    </div>
+                    <ul class="liste-logos-partenaires">
+                        <li>
+                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                        </li>
+                        <li>
+                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                        </li>
+                        <li>
+                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                        </li>
+                        <li>
+                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                        </li>
+                        <li>
+                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                        </li>
+                        <li>
+                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                        </li>
+                    </ul>
+                </section>
+            </div>
         </footer>
     </div>
 </body>

@@ -85,6 +85,28 @@ footer{
         }
     }
 }
+.footer2{
+    @extend .footer1;
+    width: 100vw;
+    section.partenaires{
+        width: 100vw;
+        h2.titre-accent{
+            color: var(--lightest);
+        }
+        .liste-logos-partenaires{
+            @include setFlex(row, center, center);
+            flex-wrap: wrap;
+            column-gap: 2vw;
+            row-gap: 2vw;
+            img{
+                width: 30vw;
+                @include breakpoint-min(900){
+                    width: 10vw;
+                }
+            }
+        }
+    }
+}
 //--------------------
 // Partenaires
 //--------------------
