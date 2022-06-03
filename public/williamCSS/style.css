@@ -13683,6 +13683,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   z-index: 2;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
+  visibility: visible;
 }
 
 @-webkit-keyframes fadeOut {
@@ -13899,6 +13900,36 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   text-decoration: none;
 }
 
+.conteneurGestionMembre > .carteGestionMembre li > .entrepriseNom > button:hover {
+  -webkit-animation: heart 1s;
+          animation: heart 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@keyframes heart {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .conteneurGestionMembre > .carteGestionMembre > button {
   border: none;
 }
@@ -13936,5 +13967,164 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   top: -10px;
+}
+
+.conteneurGestionMembre > .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre > .pagination > nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conteneurGestionMembre > .pagination > nav > div {
+  margin-bottom: 20px;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > span {
+  color: #f25c5c;
+  border-color: #f25c5c;
+  border-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > a {
+  color: #f25c5c;
+  border-color: #f25c5c;
+  border-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > div > p {
+  color: #f25c5c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > div > p > .font-medium {
+  color: #f25c5c;
+  border-color: #f25c5c;
+  border-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > div > span > span {
+  color: #f25c5c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre > .pagination > nav > div > div > span > a {
+  color: #f25c5c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.conteneurGestionMembre .btnGestionAjouter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  top: -70px;
+}
+
+.conteneurGestionMembre .btnGestionAjouter > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #f25c5c;
+  border-radius: 30px;
+  height: 40px;
+  width: 240px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #f25c5c;
+  font-size: 16px;
+  gap: 10px;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.conteneurGestionMembre .btnGestionAjouter > a > i {
+  color: #f25c5c;
+  font-size: 14px;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.conteneurGestionMembre .btnGestionAjouter > a:hover {
+  background-color: #f25c5c;
+}
+
+.conteneurGestionMembre .btnGestionAjouter > a:hover,
+.conteneurGestionMembre .btnGestionAjouter > a:hover > i {
+  color: #eee;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.conteneurGestionMembre .relative.z-0.inline-flex.shadow-sm.rounded-md {
+  display: inline-block;
 }
 /*# sourceMappingURL=style.css.map */
