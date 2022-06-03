@@ -60,9 +60,9 @@ Agrotourisme Laurentides
             </div>
             <div class="container-introduction">
                 <div class="container-img-introduction detectAnim2">
-                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image1">
-                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image2">
-                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image3">
+                    <img src="{{asset('images/logo_sans_texte.svg')}}" alt="placeholder" class="image1">
+                    <img src="{{asset('images/logo_sans_texte.svg')}}" alt="placeholder" class="image2">
+                    <img src="{{asset('images/logo_sans_texte.svg')}}" alt="placeholder" class="image3">
                 </div>
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
             </div>
