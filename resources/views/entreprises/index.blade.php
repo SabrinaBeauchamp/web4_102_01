@@ -4,6 +4,11 @@
 <h1>Entreprises</h1>
 @endsection
 
+@section('arial')
+<li>></li>
+<li><a href="#">Entreprises</a></li>
+@endsection
+
 @section('contenu')
 
     @foreach($entreprises as $entreprise)

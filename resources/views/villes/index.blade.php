@@ -3,6 +3,14 @@
 <h1>Villes</h1>
 
 @endsection
+
+@section('arial')
+<li>></li>
+<li><a href="{{route('categoriesRegion.index')}}">MRC</a></li>
+<li>></li>
+<li><a href="#">Villes</a></li>
+@endsection
+
 @section('contenu')
     <ul>
         @foreach($villes as $ville)

@@ -4,6 +4,11 @@
 Carte interactive des MRC
 @endsection
 
+@section('arial')
+<li>></li>
+<li><a href="#">MRC</a></li>
+@endsection
+
 @section('panneaux0')
 <!-- les panneaux essentiels. index et entreprise sont fermés à l'ouverture de la page -->
 <div class="panneau0 isPanneau panneau-close">

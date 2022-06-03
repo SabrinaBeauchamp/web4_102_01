@@ -61,6 +61,10 @@
 
 @section('arial')
     <li>></li>
+    <li><a href="{{route('groupes.show', ['groupe' => $groupe])}}">{{$groupe->nom}}</a></li>
+    <li>></li>
+    <li><a href="{{route('categories.show', ['categorie' => $categorie])}}">{{$categorie->nom}}</a></li>
+    <li>></li>
     <li><a href="#">{{$entreprise->nom}}</a></li>
 @endsection
 

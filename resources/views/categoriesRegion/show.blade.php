@@ -1,7 +1,14 @@
 @extends('mesLayouts.layout')
 
 @section('titre')
-recherche avancée
+{{$categorieRegion->nom}}
+@endsection
+
+@section('arial')
+<li>></li>
+<li><a href="{{route('categoriesRegion.index')}}">MRC</a></li>
+<li>></li>
+<li><a href="#">{{$categorieRegion->nom}}</a></li>
 @endsection
 
 @section('panneaux0')
