@@ -14708,6 +14708,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 48px;
+  padding: 0px 32px 0px 32px;
 }
 
 .formEntreprise > .conteneurEntreprise5 {

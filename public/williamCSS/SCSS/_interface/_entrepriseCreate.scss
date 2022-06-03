@@ -195,6 +195,7 @@
     &>.conteneurEntreprise4 {
         @include setFlex(column, center, center);
         margin-bottom: 48px;
+        padding: 0px 32px 0px 32px;
         //  background-color: purple;
     }
 
