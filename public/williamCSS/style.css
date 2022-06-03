@@ -14522,10 +14522,64 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   display: inline-block;
   padding-right: 10px;
   white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
 }
 
 .formEntreprise > .conteneurEntreprise2 li label > input {
   vertical-align: middle;
+  color: #c94f4f;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #f25c5c;
+  height: 16px;
+  width: 16px;
+  vertical-align: bottom;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 2px;
+  background-color: transparent;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.formEntreprise > .conteneurEntreprise2 li label input[type="checkbox"]:after {
+  content: "";
+  vertical-align: middle;
+  background-color: #f25c5c;
+  height: 6px;
+  width: 6px;
+  background-color: transparent;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.formEntreprise > .conteneurEntreprise2 li label input[type="checkbox"]:checked:after {
+  content: "";
+  vertical-align: middle;
+  background-color: #f25c5c;
+  height: 6px;
+  width: 6px;
 }
 
 .formEntreprise > .conteneurEntreprise3 {
@@ -14579,13 +14633,6 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   display: inline-block;
   padding-right: 10px;
   white-space: nowrap;
-}
-
-.formEntreprise > .conteneurEntreprise3 li label > input {
-  vertical-align: middle;
-}
-
-.formEntreprise > fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14599,17 +14646,79 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 5px;
+}
+
+.formEntreprise > .conteneurEntreprise3 li label > input {
+  vertical-align: middle;
+  color: #c94f4f;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #f25c5c;
+  height: 16px;
+  width: 16px;
+  vertical-align: bottom;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 2px;
+  background-color: transparent;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.formEntreprise > .conteneurEntreprise3 li label input[type="checkbox"]:after {
+  content: "";
+  vertical-align: middle;
+  background-color: #f25c5c;
+  height: 6px;
+  width: 6px;
+  background-color: transparent;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.formEntreprise > .conteneurEntreprise3 li label input[type="checkbox"]:checked:after {
+  content: "";
+  vertical-align: middle;
+  background-color: #f25c5c;
+  height: 6px;
+  width: 6px;
+}
+
+.formEntreprise > .conteneurEntreprise4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 48px;
+  padding: 0px 32px 0px 32px;
 }
 
 .formEntreprise > .conteneurEntreprise5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -14633,9 +14742,10 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 }
 
 .photo > label {
+  text-transform: capitalize;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-  color: white;
+  color: #1D1D1D;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
 }
@@ -14657,9 +14767,10 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 .logo > label {
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-  color: white;
+  color: #1D1D1D;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
+  text-transform: capitalize;
 }
 
 .logo > span > input {
@@ -14723,6 +14834,34 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   gap: 20px;
   width: 100%;
   height: auto;
+}
+
+.ulCommodite > .liRadio input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.ulCommodite > .liRadio input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #f25c5c;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
 
 .divForm {
