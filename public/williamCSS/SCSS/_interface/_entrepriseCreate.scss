@@ -78,9 +78,45 @@
                 display: inline-block;
                 padding-right: 10px;
                 white-space: nowrap;
+                @include setFlex(row, center, center);
+                gap: 5px;
 
                 &>input {
+
                     vertical-align: middle;
+                    color: hsl(0, 53%, 55%);
+                    appearance: none;
+                    border: 1px solid #f25c5c;
+                    height: 16px;
+                    width: 16px;
+                    vertical-align: bottom;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 2px;
+                    background-color: transparent;
+                    transition-duration: 300ms;
+
+                }
+
+                input[type="checkbox"]:after {
+                    content: "";
+                    vertical-align: middle;
+                    background-color: #f25c5c;
+                    height: 6px;
+                    width: 6px;
+                    background-color: transparent;
+                    transition-duration: 300ms;
+
+                }
+
+                input[type="checkbox"]:checked:after {
+                    content: "";
+                    vertical-align: middle;
+                    background-color: #f25c5c;
+                    height: 6px;
+                    width: 6px;
+
                 }
             }
         }
@@ -90,6 +126,7 @@
         @include setFlex(column, center, center);
         margin-bottom: 32px;
         // background-color: orange;
+        
 
         li {
             width: 240px;
@@ -110,23 +147,59 @@
                 display: inline-block;
                 padding-right: 10px;
                 white-space: nowrap;
+                @include setFlex(row, center, center);
+                gap: 5px;
 
                 &>input {
+
                     vertical-align: middle;
+                    color: hsl(0, 53%, 55%);
+                    appearance: none;
+                    border: 1px solid #f25c5c;
+                    height: 16px;
+                    width: 16px;
+                    vertical-align: bottom;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 2px;
+                    background-color: transparent;
+                    transition-duration: 300ms;
+
+                }
+
+                input[type="checkbox"]:after {
+                    content: "";
+                    vertical-align: middle;
+                    background-color: #f25c5c;
+                    height: 6px;
+                    width: 6px;
+                    background-color: transparent;
+                    transition-duration: 300ms;
+
+                }
+
+                input[type="checkbox"]:checked:after {
+                    content: "";
+                    vertical-align: middle;
+                    background-color: #f25c5c;
+                    height: 6px;
+                    width: 6px;
+
                 }
             }
         }
     }
 
 
-    &>fieldset {
-        @include setFlex(row, center, center);
+    &>.conteneurEntreprise4 {
+        @include setFlex(column, center, center);
         margin-bottom: 48px;
         //  background-color: purple;
     }
 
     &>.conteneurEntreprise5 {
-        @include setFlex(row, center, center);
+        @include setFlex(column, center, center);
         margin-bottom: 48px;
         //   background-color: green;
         gap: 40px;
@@ -136,7 +209,7 @@
     h3 {
         font-family: 'Teko', sans-serif;
         font-size: 48px;
-        
+
     }
 }
 
@@ -147,10 +220,10 @@
     height: 50px;
 
     &>label {
-
+        text-transform: capitalize;
         overflow: hidden;
         font-family: 'Roboto', sans-serif;
-        color: white;
+        color: #1D1D1D;
         transition-duration: 300ms;
     }
 
@@ -173,11 +246,11 @@
     height: 50px;
 
     &>label {
-
         overflow: hidden;
         font-family: 'Roboto', sans-serif;
-        color: white;
+        color: #1D1D1D;
         transition-duration: 300ms;
+        text-transform: capitalize;
     }
 
     &>span {
@@ -221,6 +294,38 @@
     gap: 20px;
     width: 100%;
     height: auto;
+
+    &>.liRadio{
+
+        input[type='radio']:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #d1d3d1;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+    
+        input[type='radio']:checked:after {
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #f25c5c;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+    }
+
 }
 
 .divForm {
