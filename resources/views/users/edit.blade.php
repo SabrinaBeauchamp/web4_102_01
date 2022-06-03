@@ -2,7 +2,7 @@
 
 
 @section('contenu gestion')
-    <form action="{{route('users.gestionaires.update', Auth::user())}}" method="post">
+    <form action="{{route('users.gestionaires.update', Auth::user())}}" method="post" class="form">
         <div class="conteneurProfil">
             <div class="conteneurProfilTop">
                 <img src="{{asset('williamCSS\temporaire_img\profilPlaceholder.png')}}" alt="" class="DashProfilImage">
