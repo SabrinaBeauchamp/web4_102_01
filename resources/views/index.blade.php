@@ -327,7 +327,7 @@ Agrotourisme Laurentides
         </section>
         <section class="propositionsLogements">
             <div class="container-titre detectAnim">
-                <h2 class="titre1">Ou se</h2>
+                <h2 class="titre1">Où se</h2>
                 <h2 class="titre-accent">LOGER</h2>
                 <h2 class="titre2"></h2>
             </div>

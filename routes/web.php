@@ -44,10 +44,22 @@ Route::get('/agrotouristique', function() {
     $entreprises = Entreprise::all();
     foreach($entreprises as $entrepriseId => $entreprise)
     {
-        //il faut parfois changer 
-        if($entreprise->populaire !== "1")
+        //IMPORTANT POUR L'AFFICHAGE DES ACTIVITÉS POPULAIRES <-------------
+        //il faut parfois ajouter ou supprimer les guillemets selon l'ordinateur ;)
+        //Sur certain ordinateur, il considère que la valeur de $entreprise->populaire est un string
+        //donc pour que tous les membres de l'équipe puissent avoir les entreprises populaires d'afficher
+        //un is_string est utilisé pour identifier ce que l'ordinateur veut.
+        if (is_string($entreprise->populaire)) 
         {
-            unset($entreprises[$entrepriseId]);
+            if($entreprise->populaire !== "1")
+            {
+                unset($entreprises[$entrepriseId]);
+            }
+        } else {
+            if($entreprise->populaire !== 1)
+            {
+                unset($entreprises[$entrepriseId]);
+            }
         }
     }
     //Les 3 logements choisis au hasard
