@@ -35,7 +35,7 @@
         </div>
         <header id="header">
             <div class="slide1">
-                <img src="{{asset('images/Placeholder.svg')}}" alt="logo">
+                <img src="{{asset('images/logo_Final.svg')}}" alt="logo">
             </div>
             <div class="container-slides">
                 <div class="slide2">
@@ -44,7 +44,8 @@
                 </div>
             </div>
             <div class="bg-header">
-                <img class="bg-header-img" src="{{asset('images/placeholderHeader.jpg')}}" alt="image header">
+                <img src="{{asset('images/img_header.jpg')}}" alt="image de l'entreprise" class="bg-header-img">
+                @yield("image")
             </div>
         </header>
         <!-- Fil d'Ariane -->

@@ -16,17 +16,17 @@
 .zone-btn {
     @include setFlex(row, flex-start, center);
     position: relative;
-    height: 10vw;
+    height: 16vw;
     width: 100%;
-    min-width: 10vw;
+    min-width: 16vw;
     transition-duration: 1000ms;
     background-color: var(--accentHeavy);
     border-radius: 100vw;
     .btn-ouvrirPanneau {
         @include setFlex(column, center, center);
-        width: 8vw;
-        height: 8vw;
-        margin: 1vw;
+        width: 12vw;
+        height: 12vw;
+        margin: 2vw;
         background-color: var(--accent);
         border-radius: 3px;
         cursor: pointer;
@@ -104,12 +104,12 @@
     h2{
         @include setFlex(column, center, center);
         background-color: var(--accentHeavy);
-        padding: 2vw 5vw;
+        padding: 3vw 6vw;
         height: auto;
         width: auto;
         font-family: 'Roboto', sans-serif;
         font-weight: 200;
-        font-size: 4vw;
+        font-size: 5vw;
         color: var(--lightest);
         &::before{
             content: '';
@@ -172,11 +172,11 @@
 //--------------------
 .menu1 {
     @include setFlex(row, center, flex-start);
-    padding: 2vw;
+    padding: 1vw;
     margin: none;
     flex-wrap: wrap;
-    row-gap: 1vw;
-    column-gap: 1vw;
+    row-gap: 2vw;
+    column-gap: 2vw;
     z-index: 100;
     width: 100vw;
     max-height: 20vh;
@@ -194,8 +194,8 @@
         background-color: var(--lighter);
     }
     li{
-        padding: 0.4vw 1.2vw;
-        font-size: 3vw;
+        padding: 0.5vw 1.4vw;
+        font-size: 3.6vw;
         text-decoration: none;
         font-family: 'Roboto', sans-serif;
         color: var(--dark);

@@ -1,7 +1,7 @@
 @extends('mesLayouts.layout')
 
 @section('titre')
-<h1>Entreprises</h1>
+Entreprises
 @endsection
 
 @section('panneaux0')

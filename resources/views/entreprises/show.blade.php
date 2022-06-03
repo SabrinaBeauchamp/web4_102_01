@@ -4,6 +4,10 @@
 {{$entreprise->nom}}
 @endsection
 
+@section('image')
+    <img src="{{asset('img/entreprises/'.$entreprise->id.'.jpg')}}" alt="image de l'entreprise" class="bg-header-img">
+@endsection
+
 @section('panneaux0')
     <!-- les panneaux essentiels. index et entreprise sont fermés à l'ouverture de la page -->
     <div class="panneau0 isPanneau panneau-close">
