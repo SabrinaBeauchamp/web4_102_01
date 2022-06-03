@@ -51,7 +51,7 @@
         <!-- Fil d'Ariane -->
         <div class="fil-ariane">
             <ul>
-                <li><a href="{{route('acceuil')}}">Accueil</a></li>
+                <li><a href="{{route('accueil')}}">Accueil</a></li>
                 @yield("arial")
             </ul>
         </div>
@@ -91,22 +91,22 @@
                     </div>
                     <ul class="liste-logos-partenaires">
                         <li>
-                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                            <img src="{{asset('images/logo_sans_texte.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
                         </li>
                         <li>
-                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                            <img src="{{asset('images/logo_sans_texte.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
                         </li>
                         <li>
-                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                            <img src="{{asset('images/logo_sans_texte.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
                         </li>
                         <li>
-                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                            <img src="{{asset('images/logo_sans_texte.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
                         </li>
                         <li>
-                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                            <img src="{{asset('images/logo_sans_texte.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
                         </li>
                         <li>
-                            <img src="{{asset('images/Placeholder.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
+                            <img src="{{asset('images/logo_sans_texte.svg')}}" alt="image du logo des partenaires" class="partenaire-logo">
                         </li>
                     </ul>
                 </section>

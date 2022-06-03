@@ -125,7 +125,7 @@
 }
 
 .titre_section {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 45px;
   font-weight: 18px;
   text-align: center;
@@ -137,119 +137,69 @@
 
 .logo_dashboard {
   width: 70%;
-  -webkit-filter: brightness(0) invert(1);
-          filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .containerFavori {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100%;
 }
-
 .containerFavori .carteGestionMembre {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   width: 250px;
   height: 10vh;
   background-color: #eee;
   border: solid 1px #cfcfcf;
-  -webkit-box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
-          box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
   border-radius: 15px;
   padding: 8px;
   margin: 2px;
 }
-
 .containerFavori div p {
   text-align: center;
 }
-
 .containerFavori .btnGestionLien {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: none;
   background-color: transparent;
   margin-top: 10px;
 }
-
 .containerFavori .btnGestionLien > a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border: 3px solid #f25c5c;
   border-radius: 30px;
   height: 40px;
   width: 240px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #f25c5c;
   font-size: 16px;
   gap: 10px;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
+  transition-duration: 300ms;
 }
-
 .containerFavori .btnGestionLien > a > i {
   color: #f25c5c;
   font-size: 14px;
-  -webkit-transition-duration: 300ms;
-          transition-duration: 300ms;
+  transition-duration: 300ms;
 }
-
 .containerFavori .btnGestionLien > a:hover {
   background-color: #f25c5c;
 }
-
-.containerFavori .btnGestionLien > a:hover,
-.containerFavori .btnGestionLien > a:hover > i {
+.containerFavori .btnGestionLien > a:hover, .containerFavori .btnGestionLien > a:hover > i {
   color: #eee;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-/*# sourceMappingURL=styleSabrina.css.map */
+  transform: scale(1.1);
+}/*# sourceMappingURL=styleSabrina.css.map */

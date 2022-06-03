@@ -94,7 +94,7 @@ class FavorieController extends Controller
         else if($groupe === 'entreprises') {
             $favories = $user->likesEntreprises;
             $type = 'Entreprises';
-            $lien = 'acceuil';
+            $lien = 'accueil';
         }
         else if($groupe === 'evenements') {
             $favories = $user->likesEvenements;

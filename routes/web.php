@@ -102,7 +102,7 @@ Route::get('/agrotouristique', function() {
         'troisiemeLogement' => $troisiemeLogement,
         'evenement'=>$evenement,
     ]);
-})->name('acceuil');
+})->name('accueil');
 
 Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
     Route::get('/', 'index')->name('index');
