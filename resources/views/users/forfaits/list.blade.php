@@ -3,7 +3,7 @@
 <div class="carteGestionMembre">
     <img src="{{asset('williamCSS\temporaire_img\profilPlaceholder.png')}}" alt="" class="imgCarteGestion">
     <li>
-        <span class="btn3 forfaitNom"> 
+        <span class="btn3 entrepriseNom"> 
         
             {{$forfait->nom}}
             @if (Auth::check())

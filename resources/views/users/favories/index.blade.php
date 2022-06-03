@@ -11,6 +11,7 @@ Vos favories
 <div class="containerFavori ">
     @foreach($favories as $favorie)
     <div class="favorie carteGestionMembre">
+        
         <p class="titre">{{$favorie->nom}}</p> 
     </div>
     @endforeach
