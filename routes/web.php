@@ -13,15 +13,17 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VilleController;
 use App\Http\Controllers\CategorieRegionController;
+use App\Http\Controllers\CommoditeCOntroller;
+use App\Http\Controllers\GroupeCommoditeController;
+
 use App\Models\Entreprise;
 use App\Models\Evenement;
 use App\Models\Groupe;
 use App\Models\Favorie;
-use App\Http\Controllers\CommoditeCOntroller;
-use App\Http\Controllers\GroupeCommoditeController;
 use App\Models\Categorie;
 use App\Models\CategorieEntreprise;
 use App\Models\Forfait;
+
 use Dotenv\Parser\Value;
 
 /*
@@ -104,25 +106,7 @@ Route::get('/agrotouristique', function() {
     ]);
 })->name('accueil');
 
-Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/{user}', 'show')->name('show');
-
-    Route::get('/create', 'create')->name('create');
-    Route::post('/create', 'store')->name('store');
-
-    Route::get('/{user}/edit', 'edit')->name('edit');
-    Route::post('/{user}/edit', 'update')->name('update');
-
-    Route::get('/{user}/delete', 'delete')->name('delete');
-    Route::post('/{user}/delete', 'destroy')->name('destroy');
-
-    Route::group([ 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['groupe'=>'favoris|entreprises|forfaits|evenements']], function () {
-        Route::get('/{groupe}', 'index')->name('index');
-    });
-});
-
-Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/forfait/categories', 'as'=>'forfaits.categories.', 'controller'=>CategorieForfaitController::class, 'where'=>['categorie'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{categorie}', 'show')->name('show');
     
@@ -136,11 +120,7 @@ Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', '
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
 
-Route::get('/dashboard/forfait', function() {
-    $forfaits = Forfait::paginate(20);
-    return view('users.forfaits.index', ['forfaits'=>$forfaits]);
-})->name('gestion_forfaits');
-Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
+Route::group(['prefix'=>'/agrotouristique/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
     
@@ -158,25 +138,6 @@ Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitCon
     Route::post('/{forfait}/delete', 'destroy')->name('destroy');
 });
 
-Route::group(['prefix'=>'/favories/entreprises', 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['favorie'=>'[0-9]+']], function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/{favorie}/like', 'like')->name('like');
-
-    Route::get('{favorie}/create', 'create')->name('create');
-    Route::post('{favorie}/create', 'store')->name('store');
-
-    Route::get('/{favorie}/edit', 'edit')->name('edit');
-    Route::post('/{favorie}/edit', 'update')->name('update');
-
-    Route::get('/{favorie}/delete', 'delete')->name('delete');
-    Route::post('/{favorie}/delete', 'destroy')->name('destroy');
-});
-
-Route::get('/dashboard/evenement', function() {
-    $evenements = Evenement::all();
-    $evenements = Evenement::orderBy('start', 'asc')->get();
-    return view('users.evenements.index', ['evenements'=>$evenements]);
-})->name('evenements');
 Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'controller'=>EvenementController::class, 'where'=>['evenement'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{evenement}', 'show')->name('show');
@@ -193,7 +154,6 @@ Route::group(['prefix'=>'/agrotouristique/evenements', 'as'=>'evenements.', 'con
     Route::get('/{evenement}/delete', 'delete')->name('delete');
     Route::post('/{evenement}/delete', 'destroy')->name('destroy');
 });
-
 Route::group(['prefix'=>'/agrotouristique/groupes', 'as'=>'groupes.', 'controller'=>GroupeController::class, 'where'=>['groupe'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupe}', 'show')->name('show');
@@ -220,16 +180,6 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
     Route::get('/{categorie}/delete', 'delete')->name('delete');
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
-
-Route::get('/dashboard/populaire', function() {
-    $entreprises = Entreprise::paginate(12);
-    return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
-})->name('populaire');
-Route::get('/dashboard/les_entreprises', function() {
-    $entreprises = Entreprise::paginate(12);
-    return view('users.entreprises.index', ['entreprises'=>$entreprises]);
-})->name('gestion');
-
 Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'controller'=>EntrepriseController::class, 'where'=>['entreprise'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{entreprise}', 'show')->name('show');
@@ -248,23 +198,6 @@ Route::group(['prefix'=>'/agrotouristique/entreprises', 'as'=>'entreprises.', 'c
     Route::get('/{entreprise}/delete', 'delete')->name('delete');
     Route::post('/{entreprise}/delete', 'destroy')->name('destroy');
 });
-// Authentication Routes...
-Route::get('login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
-Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
-
-// Registration Routes...
-Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
-
-// Password Reset Routes...
-Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-
 Route::group(['prefix'=>'/agrotouristique/groupesCommodite', 'as'=>'groupesCommodite.', 'controller'=>GroupeCommoditeController::class, 'where'=>['groupeCommodite'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{groupeCommodite}', 'show')->name('show');
@@ -323,3 +256,60 @@ Route::group(['prefix'=>'/agrotouristique/recherche', 'as'=>'recherche.', 'contr
     Route::get('/entreprises', 'rechercheEntreprises')->name('rechercheEntreprise');
     Route::get('/avancee', 'rechercheEntreprises')->name('rechercheAvancee');
 });
+
+
+
+Route::group(['prefix'=>'/dashboard', 'as'=>'users.gestionaires.', 'controller'=>UserController::class, 'where'=>['user'=>'[0-9]+'], 'middleware'=>'auth',], function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{user}', 'show')->name('show');
+
+    Route::get('/create', 'create')->name('create');
+    Route::post('/create', 'store')->name('store');
+
+    Route::get('/{user}/edit', 'edit')->name('edit');
+    Route::post('/{user}/edit', 'update')->name('update');
+
+    Route::get('/{user}/delete', 'delete')->name('delete');
+    Route::post('/{user}/delete', 'destroy')->name('destroy');
+
+    Route::group([ 'as'=>'favories.', 'controller'=>FavorieController::class, 'where'=>['groupe'=>'favoris|entreprises|forfaits|evenements']], function () {
+        Route::get('/{groupe}', 'index')->name('index');
+    });
+});
+
+Route::get('/dashboard/evenement', function() {
+    $evenements = Evenement::all();
+    $evenements = Evenement::orderBy('start', 'asc')->get();
+    return view('users.evenements.index', ['evenements'=>$evenements]);
+})->name('evenements');
+
+Route::get('/dashboard/forfait', function() {
+    $forfaits = Forfait::paginate(20);
+    return view('users.forfaits.index', ['forfaits'=>$forfaits]);
+})->name('gestion_forfaits');
+
+Route::get('/dashboard/populaire', function() {
+    $entreprises = Entreprise::paginate(12);
+    return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
+})->name('populaire');
+
+Route::get('/dashboard/les_entreprises', function() {
+    $entreprises = Entreprise::paginate(12);
+    return view('users.entreprises.index', ['entreprises'=>$entreprises]);
+})->name('gestion');
+
+// Authentication Routes...
+Route::get('login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
+Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
