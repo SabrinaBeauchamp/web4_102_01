@@ -2,6 +2,7 @@
 
 @section('contenu gestion')
 <form class="formEntreprise" action="{{route('entreprises.store')}}" method="post" enctype="multipart/form-data">
+
     @include('entreprises.form')
     @include('villes.radio', ['checked'=>$entreprise->ville_id])
     <div class="conteneurEntreprise5">
