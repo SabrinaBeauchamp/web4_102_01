@@ -14125,6 +14125,9 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 }
 
 .conteneurGestionMembre .relative.z-0.inline-flex.shadow-sm.rounded-md {
-  display: inline-block;
+  display: inline;
+  background-color: transparent;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 /*# sourceMappingURL=style.css.map */
