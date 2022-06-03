@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenu gestion')
-<form action="{{route('entreprises.store')}}" method="post" enctype="multipart/form-data">
+<form class="formEntreprise" action="{{route('entreprises.store')}}" method="post" enctype="multipart/form-data">
     @include('entreprises.form')
     @include('villes.radio', ['checked'=>$entreprise->ville_id])
     <x-champ-file name="photo" label="photo"></x-champs-text>
