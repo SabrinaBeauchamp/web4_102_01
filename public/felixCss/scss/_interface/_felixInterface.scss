@@ -28,6 +28,7 @@ html {
     color: var(--light);
     ul{
         @include setFlex(row, center, flex-start);
+        margin: 0;
         li{
             font-size: 2vw;
             margin: 1vw;

@@ -37,6 +37,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -12128,6 +12131,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 .conteneurListeForfaits > h2, .conteneurListeForfaits > .h2 {
   color: #464646;
@@ -12816,6 +12820,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   width: 100vw;
   height: 100%;
   padding: 32px 84px 32px 84px;
+  background-color: white;
 }
 .conteneurForfaitSpecifique > .conteneurGauche {
   display: flex;
@@ -12977,4 +12982,23 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   transform: scale(1);
   -webkit-animation: pulse 2s;
           animation: pulse 2s;
+}
+
+.formEntreprise {
+  background-color: aqua;
+}
+.formEntreprise > .conteneurEntreprise1 {
+  background-color: blue;
+}
+.formEntreprise > .conteneurEntreprise2 {
+  background-color: red;
+}
+.formEntreprise > .conteneurEntreprise3 {
+  background-color: orange;
+}
+.formEntreprise > fieldset {
+  background-color: purple;
+}
+.formEntreprise > .conteneurEntreprise5 {
+  background-color: green;
 }/*# sourceMappingURL=style.css.map */

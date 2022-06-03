@@ -11,7 +11,6 @@
             @include('groupes.checkbox')
             <button>Rechercher</button>
             <div class="resultats">
-               @dd($resultats)
                 @foreach($resultats as $resultat)
                 <p>
                     <a href="{{route($resultat->model.'.show', $resultat)}}">{{$resultat->nom}}</a>
