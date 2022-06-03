@@ -36,8 +36,13 @@
 //SCSS listes des forfaits d'une categories
 
 .formEntreprise {
+    position: absolute;
     background-color: aqua;
+    width: 100%;
     height: 100%;
+    overflow: auto;
+    top: 0;
+    overflow-x: hidden;
 
 
     &>.conteneurEntreprise1 {
@@ -48,18 +53,61 @@
     &>.conteneurEntreprise2 {
         @include setFlex(row, center, center);
         background-color: red;
+
+        li {
+            width: 240px;
+            padding-left: 20px;
+            @include setFlex(row, start, center);
+            flex-wrap: wrap !important;
+            width: 380px;
+            height: 28px;
+            font-family: 'Roboto', sans-serif;
+            list-style: none;
+            background-color: white;
+            margin-top: 8px;
+            border-radius: 20px;
+
+            label {
+                display: inline-block;
+                padding-right: 10px;
+                white-space: nowrap;
+
+                &>input {
+                    vertical-align: middle;
+                }
+            }
+        }
     }
 
     &>.conteneurEntreprise3 {
         @include setFlex(column, center, center);
         background-color: orange;
-        width: 350px;
 
-        &li{
-            background-color:
+        li {
+            width: 240px;
+            padding-left: 20px;
+            @include setFlex(row, start, center);
+            flex-wrap: wrap !important;
+            width: 380px;
+            height: 28px;
+            font-family: 'Roboto', sans-serif;
+            list-style: none;
+            background-color: white;
+            margin-top: 8px;
+            border-radius: 20px;
+
+            label {
+                display: inline-block;
+                padding-right: 10px;
+                white-space: nowrap;
+
+                &>input {
+                    vertical-align: middle;
+                }
+            }
         }
-        
     }
+
 
     &>fieldset {
         @include setFlex(row, center, center);
@@ -69,6 +117,7 @@
     &>.conteneurEntreprise5 {
         @include setFlex(row, center, center);
         background-color: green;
+        gap: 40px;
 
     }
 
@@ -98,4 +147,62 @@
             color: white;
         }
     }
+
+}
+
+.logo {
+    width: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 50px;
+
+    &>label {
+
+        overflow: hidden;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        transition-duration: 300ms;
+    }
+
+    &>span {
+
+        &>input {
+
+            background-color: #f25c5c;
+            border: none;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+        }
+    }
+}
+
+.btnCreer {
+    border: none;
+    @include setFlex(row, center, center);
+    background-color: #f25c5c;
+    color: white;
+    border: none;
+    width: 320px;
+    height: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    transition-duration: 300ms;
+
+    &:hover {
+        background-color: #f87c7c;
+        transform: scale(1.05);
+        box-shadow: 0 0 1px 10px rgba(#ff8f8f, 0.4),
+            0 0 1px 15px rgba(#ff8f8f, 0.1),
+            0 0 1px 20px rgba(#ff8f8f, 0.1);
+    }
+
+}
+
+.ulCommodite {
+    @include setFlex(row, center, center);
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    height: auto;
 }

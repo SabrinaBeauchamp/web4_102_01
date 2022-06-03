@@ -97,6 +97,7 @@
         <div>@yield('contenu gestion')</div>
     </div>
     <div class="darkenScreen"></div>
+<div>
 </body>
 <script src="{{asset('williamCSS/javascript_William/sidebarAccordionUser.js')}}"></script>
 

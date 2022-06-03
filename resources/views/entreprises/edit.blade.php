@@ -1,7 +1,7 @@
 @extends('mesLayouts.dashboard')
 
 @section('titre gestion')
-    Tous mes favories
+    Tous mes favoris
 @endsection
 
 @section('contenu gestion')

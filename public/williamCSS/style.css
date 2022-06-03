@@ -14441,8 +14441,13 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
 }
 
 .formEntreprise {
+  position: absolute;
   background-color: aqua;
+  width: 100%;
   height: 100%;
+  overflow: auto;
+  top: 0;
+  overflow-x: hidden;
 }
 
 .formEntreprise > .conteneurEntreprise1 {
@@ -14479,6 +14484,43 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   background-color: red;
 }
 
+.formEntreprise > .conteneurEntreprise2 li {
+  width: 240px;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
+  width: 380px;
+  height: 28px;
+  font-family: 'Roboto', sans-serif;
+  list-style: none;
+  background-color: white;
+  margin-top: 8px;
+  border-radius: 20px;
+}
+
+.formEntreprise > .conteneurEntreprise2 li label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.formEntreprise > .conteneurEntreprise2 li label > input {
+  vertical-align: middle;
+}
+
 .formEntreprise > .conteneurEntreprise3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14494,7 +14536,43 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
       -ms-flex-align: center;
           align-items: center;
   background-color: orange;
-  width: 350px;
+}
+
+.formEntreprise > .conteneurEntreprise3 li {
+  width: 240px;
+  padding-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap !important;
+      flex-wrap: wrap !important;
+  width: 380px;
+  height: 28px;
+  font-family: 'Roboto', sans-serif;
+  list-style: none;
+  background-color: white;
+  margin-top: 8px;
+  border-radius: 20px;
+}
+
+.formEntreprise > .conteneurEntreprise3 li label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.formEntreprise > .conteneurEntreprise3 li label > input {
+  vertical-align: middle;
 }
 
 .formEntreprise > fieldset {
@@ -14529,6 +14607,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
       -ms-flex-align: center;
           align-items: center;
   background-color: green;
+  gap: 40px;
 }
 
 .photo {
@@ -14551,5 +14630,83 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   border: none;
   font-family: 'Roboto', sans-serif;
   color: white;
+}
+
+.logo {
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  height: 50px;
+}
+
+.logo > label {
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.logo > span > input {
+  background-color: #f25c5c;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.btnCreer {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f25c5c;
+  color: white;
+  border: none;
+  width: 320px;
+  height: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.btnCreer:hover {
+  background-color: #f87c7c;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+          box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+}
+
+.ulCommodite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */
