@@ -14,7 +14,8 @@
         <ul class="menu0">
             <li>
                 <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
-            </li><li>
+            </li>
+            <li>
                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
             </li>
             <li>

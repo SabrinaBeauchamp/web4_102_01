@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('williamCSS/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/styleSabrina.css')}}">
     <script src="{{asset('https://kit.fontawesome.com/f4e3a6480f.js')}}" crossorigin="anonymous"></script>
 
     <script src="{{asset('js/Favori.js')}}"></script>
@@ -27,7 +28,9 @@
     <div class="conteneurSidebar">
         <div class="conteneurSidebarTop boutonClose">
             <i class="fa-solid fa-xmark"></i>
-            <a href="{{route('acceuil')}}" class="dashboardLink">Dashboard</a>
+            <a href="{{route('acceuil')}}" class="dashboardLink">
+                <img class="logo_dashboard" src="{{asset('images\logo_Final.svg')}}" alt="logo">
+            </a>
         </div>
         <div class="conteneurSidebarProfil conteneurSidebarAll">
             <i class="fa-solid fa-user"></i>
@@ -93,10 +96,11 @@
         </div>
     </div>
     <div>
-        <h2>@yield('titre gestion')</h2>
+        <h1 class="titre_section">@yield('titre gestion')</h1>
         <div>@yield('contenu gestion')</div>
     </div>
     <div class="darkenScreen"></div>
+<div>
 </body>
 <script src="{{asset('williamCSS/javascript_William/sidebarAccordionUser.js')}}"></script>
 

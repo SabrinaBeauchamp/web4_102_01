@@ -1,6 +1,6 @@
 @csrf
 <div class="conteneurEntreprise1">
-    <div>
+    <div class="divForm">
         <label for="nom">Nom</label>
         <span><input type="text" name="nom" id="nom" value="{{$entreprise->nom}}"></span>
     </div>

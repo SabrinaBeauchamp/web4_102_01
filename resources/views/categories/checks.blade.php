@@ -1,6 +1,6 @@
 <fieldset>
-    @foreach($categories as $categorie)
-    <ul>
+    <ul class="ulCommodite">
+        @foreach($categories as $categorie)
         <li>
             <label>
                 @if(in_array($categorie->id, $checkeds))
@@ -11,6 +11,6 @@
                 {{$categorie->nom}}
             </label>
         </li>
+        @endforeach
     </ul>
-    @endforeach
 </fieldset>
