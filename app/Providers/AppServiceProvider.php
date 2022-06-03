@@ -26,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(['groupes.checkbox', 'groupes.menu', 'categories.checks', 'index'
-        ,'groupes.show', 'categories.show', 'entreprises.show', 'rechercheAvancee', 'categoriesRegion.index', 'categoriesRegion.show'], GroupesComposer::class);
+        ,'groupes.show', 'categories.show', 'entreprises.show', 'entreprises.index', 'rechercheAvancee', 'categoriesRegion.index', 'categoriesRegion.show'], GroupesComposer::class);
     }
 }
