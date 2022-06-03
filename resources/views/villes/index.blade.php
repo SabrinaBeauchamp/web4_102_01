@@ -1,6 +1,6 @@
 @extends('mesLayouts.layout')
 @section('titre')
-<h1>Villes</h1>
+Villes
 
 @endsection
 
@@ -19,5 +19,5 @@
         </li>
         @endforeach
     </ul>
-    <a href="{{route('villes.create')}}">Ajouter une ville</a>
+    <a class="boutonUniforme" href="{{route('villes.create')}}">Ajouter une ville</a>
 @endsection

@@ -29,5 +29,7 @@
         @endforeach
         </ul>
     </div>
+    <a class="boutonUniforme" href="{{route('villes.edit', ['ville' => $ville])}}">Modifier une ville</a><br>
+    <a class="boutonUniforme" href="{{route('villes.delete', ['ville' => $ville])}}">Supprimer une ville</a>
 </section>
 @endsection
