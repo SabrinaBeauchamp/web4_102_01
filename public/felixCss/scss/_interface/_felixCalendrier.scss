@@ -39,22 +39,39 @@
                 @include setFlex(column, center, center);
                 row-gap: 1vw;
                 padding: 2vw;
-                background-color: var(--light);
+                background-color: var(--accent);
                 transition-duration: 500ms;
+                border-radius: 2vw;
                 .nom-evenement{
-
+                    font-weight: 300;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 3vw;
+                    text-transform: uppercase;
+                    color: var(--lightest);
                 }
                 .dates-evenement{
-
+                    font-weight: 500;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 2.4vw;
+                    color: var(--lightest);
                 }
                 .description-evenement{
-
+                    font-weight: 200;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 2vw;
+                    color: var(--lightest);
                 }
                 .ville-evenement{
-
+                    font-weight: 500;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 2.3vw;
+                    color: var(--lightest);
                 }
                 .prix-evenement{
-
+                    font-weight: 600;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 2vw;
+                    color: var(--lightest);
                 }
             }
         }
@@ -73,6 +90,24 @@
             }
             .calendrier-popup{
                 width: 40vw;
+                .popup
+                {
+                    .nom-evenement{
+                        font-size: 2vw;
+                    }
+                    .dates-evenement{
+                        font-size: 1.2vw;
+                    }
+                    .description-evenement{
+                        font-size: 1vw;
+                    }
+                    .ville-evenement{
+                        font-size: 1.2vw;
+                    }
+                    .prix-evenement{
+                        font-size: 1vw;
+                    }
+                }
             }
         }
     }
