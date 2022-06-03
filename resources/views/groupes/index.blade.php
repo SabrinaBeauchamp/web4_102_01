@@ -2,6 +2,10 @@
 @section('titre')
 <h1>Groupes</h1>
 @endsection
+@section('arial')
+<li>></li>
+<li><a href="#">Groupes</a></li>
+@endsection
 @section('contenu')
 @foreach($groupes as $groupe)
 <ul>

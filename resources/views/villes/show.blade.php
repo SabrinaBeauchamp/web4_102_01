@@ -6,7 +6,15 @@
 @endsection
 @section('contenu')
 
-<p>({{$categorieRegion->nom}})</p>
+@section('arial')
+<li>></li>
+<li><a href="{{route('categoriesRegion.index')}}">MRC</a></li>
+<li>></li>
+<li><a href="{{route('categoriesRegion.show', ['categorieRegion' => $categorieRegion])}}">{{$categorieRegion->nom}}</a></li>
+<li>></li>
+<li><a href="#">{{$ville->nom}}</a></li>
+@endsection
+
 <h2>Entreprises</h2>
 <ul>
     @foreach($entreprises as $entreprise)

@@ -17,8 +17,11 @@
                 width: 10vw;
                 height: 10vw;
                 transition-duration: 500ms;
+                &.case-evenement{
+                    background-color: var(--accent);
+                }
                 &:hover{
-                    background-color: var(--light);
+                    background-color: var(--accentHeavy);
                 }
                 .popup{
                     display:none;
