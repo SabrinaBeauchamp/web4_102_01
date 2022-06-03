@@ -46,6 +46,9 @@ Route::get('/agrotouristique', function() {
     {
         //IMPORTANT POUR L'AFFICHAGE DES ACTIVITÉS POPULAIRES <-------------
         //il faut parfois ajouter ou supprimer les guillemets selon l'ordinateur ;)
+        //Sur certain ordinateur, il considère que la valeur de $entreprise->populaire est un string
+        //donc pour que tous les membres de l'équipe puissent avoir les entreprises populaires d'afficher
+        //un is_string est utilisé pour identifier ce que l'ordinateur veut.
         if (is_string($entreprise->populaire)) 
         {
             if($entreprise->populaire !== "1")
