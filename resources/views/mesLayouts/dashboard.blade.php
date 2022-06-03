@@ -96,7 +96,8 @@
         <h2>@yield('titre gestion')</h2>
         <div>@yield('contenu gestion')</div>
     </div>
-    
+    <div class="darkenScreen"></div>
 </body>
 <script src="{{asset('williamCSS/javascript_William/sidebarAccordionUser.js')}}"></script>
+
 </html>

@@ -1,18 +1,26 @@
+
 @extends('mesLayouts.dashboard')
 
-@section('titre gestion')
-les entrepises
-@endsection
-
 @section('contenu gestion')
-    @include('entreprises.liste')
+<div class="conteneurGestionMembre conteneurResize">
+    <button class="btnGestionAjouter">
+
+    </button>
+    
+    @include('users.entreprises.liste')
+    
     <div class="pagination">
         {{$entreprises->links()}}
     </div>
+</div>
     <style>
         .w-5{
             display: inline;
             width: 5%
         }
     </style>
+
+
+  
 @endsection
+

@@ -12529,7 +12529,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   -webkit-transition-duration: 800ms;
           transition-duration: 800ms;
   overflow: hidden;
-  z-index: 2;
+  z-index: 4;
 }
 
 .conteneurDashboard .conteneurSidebar > .conteneurSidebarTop {
@@ -12787,7 +12787,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   visibility: hidden;
   position: absolute;
   top: 50px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .conteneurButtonMenuDash > .boutonOpen {
@@ -13674,6 +13674,37 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   }
 }
 
+.darkenScreen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 2;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 1;
+  }
+}
+
 .conteneurSidebarEventAdmin {
   border-bottom: 2px solid white;
 }
@@ -13780,5 +13811,130 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
+}
+
+.conteneurGestionMembre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 50px;
+}
+
+.conteneurGestionMembre > .carteGestionMembre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  width: 250px;
+  height: 350px;
+  background-color: #eee;
+  border: solid 1px #cfcfcf;
+  -webkit-box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+          box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+  border-radius: 15px;
+  padding: 8px;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > .imgCarteGestion {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.11);
+}
+
+.conteneurGestionMembre > .carteGestionMembre li {
+  list-style: none;
+}
+
+.conteneurGestionMembre > .carteGestionMembre li > .entrepriseNom {
+  width: 230px;
+  height: 58px;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  color: #f25c5c;
+  font-size: 18px;
+  font-weight: 500;
+  display: inline-block;
+  text-align: center;
+}
+
+.conteneurGestionMembre > .carteGestionMembre li > .entrepriseNom > button {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 180px;
+  right: 0;
+  top: -180px;
+  text-align: center;
+  color: #f25c5c;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > button {
+  border: none;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > button > a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: #A5A5A5;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > button > a:hover {
+  color: #464646;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > button > i {
+  color: #A5A5A5;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > button > i:hover {
+  color: #464646;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > .btnModifMembre {
+  position: relative;
+}
+
+.conteneurGestionMembre > .carteGestionMembre > .btnModifMembre::before {
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 2px;
+  display: block;
+  background: #dadada;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: -10px;
 }
 /*# sourceMappingURL=style.css.map */
