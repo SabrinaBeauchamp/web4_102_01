@@ -136,9 +136,6 @@ Agrotourisme Laurentides
                                 @endif
                             </div>
                         </div>
-                        <div class="popup">
-                            <a href="{{route('evenements.index')}}" class="btn1">Voir les autres évènements</a>
-                        </div>
                     </div>
                     <div class="calendrier-item">2</div>
                     <div class="calendrier-item">3</div>

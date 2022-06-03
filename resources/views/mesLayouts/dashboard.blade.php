@@ -28,7 +28,9 @@
     <div class="conteneurSidebar">
         <div class="conteneurSidebarTop boutonClose">
             <i class="fa-solid fa-xmark"></i>
-            <a href="{{route('acceuil')}}" class="dashboardLink">Dashboard</a>
+            <a href="{{route('acceuil')}}" class="dashboardLink">
+                <img class="logo_dashboard" src="{{asset('images\logo_Final.svg')}}" alt="logo">
+            </a>
         </div>
         <div class="conteneurSidebarProfil conteneurSidebarAll">
             <i class="fa-solid fa-user"></i>

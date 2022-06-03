@@ -13,7 +13,10 @@
 .titre_favori {
     text-align: center;
 }
-
+.logo_dashboard {
+    width: 70%;
+    filter: brightness(0) invert(1);
+}
 .containerFavori{
     @include setFlex(column, center, center);
     width: 100vw;
@@ -35,7 +38,7 @@
             text-align: center;
         }
     }
-    
+
     .btnGestionLien {
         @include setFlex(column, center, center);
         border: none;
