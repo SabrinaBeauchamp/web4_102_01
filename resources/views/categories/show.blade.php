@@ -5,6 +5,8 @@
     <div class="panneau0 isPanneau panneau-open">
         <ul class="menu0">
             <li>
+                <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
+            </li><li>
                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
             </li>
             <li>
@@ -14,6 +16,7 @@
                 <a class="btn1" href="{{route('evenements.index')}}">Évènements</a>
             </li>
             @if(Auth::user())
+            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
                 <li>
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
@@ -25,7 +28,6 @@
                     <a href="{{route('login')}}">Me connecter</a>
                 </li>
             @endif
-            <li><a href="{{route('users.gestionaires.index')}}">Compte</a></li>
         </ul>
     </div>
     <div class="panneau isPanneau panneau-open">
