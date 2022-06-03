@@ -8,7 +8,7 @@ Entreprises
 <div class="panneau0 isPanneau panneau-close">
     <ul class="menu0">
         <li>
-            <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
+            <a class="btn1" href="{{route('accueil')}}">Accueil</a>
         </li>
         <li>
             <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>

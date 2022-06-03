@@ -51,7 +51,7 @@
         <!-- Fil d'Ariane -->
         <div class="fil-ariane">
             <ul>
-                <li><a href="{{route('acceuil')}}">Accueil</a></li>
+                <li><a href="{{route('accueil')}}">Accueil</a></li>
                 @yield("arial")
             </ul>
         </div>

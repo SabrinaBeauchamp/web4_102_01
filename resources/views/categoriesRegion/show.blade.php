@@ -16,7 +16,7 @@
     <div class="panneau0 isPanneau panneau-close">
         <ul class="menu0">
             <li>
-                <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
+                <a class="btn1" href="{{route('accueil')}}">Accueil</a>
             </li><li>
                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
             </li>
@@ -84,19 +84,19 @@
     <div>
         <ul class="menu4"> 
             <li>
-                <a href="{{route('acceuil')}}">Production maraichère</a>
+                <a href="{{route('accueil')}}">Production maraichère</a>
             </li>
             <li>
-                <a href="{{route('acceuil')}}">Production laitière</a>
+                <a href="{{route('accueil')}}">Production laitière</a>
             </li>
             <li>
-                <a href="{{route('acceuil')}}">Acériculture</a>
+                <a href="{{route('accueil')}}">Acériculture</a>
             </li>
             <li>
-                <a href="{{route('acceuil')}}">Microbrasserie</a>
+                <a href="{{route('accueil')}}">Microbrasserie</a>
             </li>
             <li>
-                <a href="{{route('acceuil')}}">Cabane à sucre</a>
+                <a href="{{route('accueil')}}">Cabane à sucre</a>
             </li>
 
         </ul>
