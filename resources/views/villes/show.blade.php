@@ -1,9 +1,10 @@
 @extends('mesLayouts.layout')
 @section('titre')
 
-<h1>{{$ville->nom}}</h1>
+{{$ville->nom}}
 
 @endsection
+
 @section('contenu')
 
 @section('arial')
@@ -15,7 +16,6 @@
 <li><a href="#">{{$ville->nom}}</a></li>
 @endsection
 
-<h2>Entreprises</h2>
 <ul>
     @foreach($entreprises as $entreprise)
     <li>
@@ -23,6 +23,7 @@
     </li>
     @endforeach
 </ul>
-<a href="{{route('villes.edit', ['ville' => $ville])}}">Modifier</a> <br>
-<a href="{{route('villes.delete', ['ville'=>$ville])}}">Suprimmer</a>
+<br>
+<a  class="boutonUniforme" href="{{route('villes.edit', ['ville' => $ville])}}">Modifier</a> <br>
+<a  class="boutonUniforme" href="{{route('villes.delete', ['ville'=>$ville])}}">Suprimmer</a> <br>
 @endsection
