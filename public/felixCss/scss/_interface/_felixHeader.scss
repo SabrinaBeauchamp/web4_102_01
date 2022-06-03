@@ -5,40 +5,78 @@ header
 {
     width: 100vw;
     height: 100vh;
-    @include setFlex(row, center, center);
+    @include setFlex(column, center, center);
+}
+.slide1{
+    @include setFlex(column, center, center);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--lightest);
+    z-index: 50;
+    transition-duration: 1000ms;
+    transition-delay: 500ms;
+    transition-timing-function: ease-in-out;
     img{
-        position: absolute;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        min-width: 100vw;
-        z-index: -1;
+        width: 20vw;
     }
-    .blanc{
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--lightest);
-        opacity: 0;
-        position: absolute;
-        transition-duration: 2000ms;
-    }
-    h1{
+}
+.slide2{
+    position: relative;
+    background-color: var(--accent);
+    transform: translateX(-100vw);
+    transition-duration: 750ms;
+    transition-delay: 750ms;
+    transition-timing-function: ease-out;
+    overflow: hidden;
+    a{
         font-weight: 200;
         font-family: 'Roboto', sans-serif;
-        font-size: 8vw;
+        font-size: 5vw;
         text-transform: uppercase;
-        color: var(--darkest);
-        transform: translateX(-100vw);
-        transition-duration: 1000ms;
+        color: var(--lightest);
+        margin: 5vw;
+        padding: 0;
     }
-    &:hover{
-        h1{
-            margin: 5vw;
-            transform: translateX(0vw);
-        }
-        .blanc{
-            opacity: 1;
-        }
+}
+
+.slide3 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--lightest);
+    transition-duration: 666ms;
+    transition-delay: 1500ms;
+    transition-timing-function: ease-out;
+}
+
+header.slide{
+    .slide1{
+       transform: translateX(-100vw);
+    }
+    .slide2{
+        transform: translateX(0vw);
+    }
+    .slide3 {
+        transform: translateX(100vw);
+    }
+}
+
+.bg-header {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    z-index: -1;
+    .bg-header-img {
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        margin: auto; 
+        min-width: 50%;
+        min-height: 50%;
     }
 }

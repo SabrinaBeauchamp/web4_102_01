@@ -16,15 +16,16 @@
 .zone-btn {
     @include setFlex(row, flex-start, center);
     position: relative;
-    height: 8vw;
+    height: 10vw;
     width: 100%;
+    min-width: 10vw;
     transition-duration: 1000ms;
     background-color: var(--accentHeavy);
     border-radius: 100vw;
     .btn-ouvrirPanneau {
         @include setFlex(column, center, center);
-        width: 6vw;
-        height: 6vw;
+        width: 8vw;
+        height: 8vw;
         margin: 1vw;
         background-color: var(--accent);
         border-radius: 3px;
@@ -41,10 +42,13 @@
         }
     }
     @include breakpoint-min(900){
-        height: 5vw;
+        height: 4vw;
+        min-width: 4vw;
+        
         .btn-ouvrirPanneau{
             width: 3vw;
-            height: 3vw;    
+            height: 3vw;
+            margin: 0.5vw;
         }
     }
 }
@@ -53,18 +57,18 @@
 // Panneau du menu
 //--------------------
 .container-panneau{
-    @include setFlex(column, center, flex-start);
-    overflow: hidden;
+    @include setFlex(column, flex-start, center);
     background-color: var(--lightest);
+    height: 93vh;
 }
 .panneau {
     @include setFlex(column, center, center);
-    overflow: hidden;
-    row-gap: 0.3vw;
-    column-gap: 0.3vw;
+    row-gap: 0.2vw;
+    column-gap: 0.2vw;
     position: relative;
     transition-duration: 1000ms;
     height: auto;
+    overflow: hidden;
     &.panneau-close{
         width: 0;
     }
@@ -100,7 +104,7 @@
     h2{
         @include setFlex(column, center, center);
         background-color: var(--accentHeavy);
-        padding: 3vw 6vw;
+        padding: 2vw 5vw;
         height: auto;
         width: auto;
         font-family: 'Roboto', sans-serif;
@@ -118,6 +122,7 @@
     }
     @include breakpoint-min(900){
         @include setFlex(row, center, center);
+        
         &:after{
             height: 90%;
             width: 90vw;
@@ -166,14 +171,28 @@
 // Ul du menu
 //--------------------
 .menu1 {
-    @include setFlex(row, center, center);
+    @include setFlex(row, center, flex-start);
     padding: 2vw;
+    margin: none;
     flex-wrap: wrap;
     row-gap: 1vw;
     column-gap: 1vw;
     z-index: 100;
     width: 100vw;
+    max-height: 20vh;
     list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &:hover{
+        background-color: var(--lighter);
+    }
     li{
         padding: 0.4vw 1.2vw;
         font-size: 3vw;
@@ -192,9 +211,11 @@
 
     }
     @include breakpoint-min(900){
+        height: auto;
         row-gap: 1vw;
         column-gap: 1vw;
         width: 80vw;
+        background-color: none;
         li{    
             font-size: 1.5vw;
             font-weight: 200;
@@ -214,6 +235,9 @@
 .menu4{
     @extend .menu1;
     width: 100%;
+    height: auto;
+    overflow-y: none;
+    overflow-x: none;
 }
 
 .menu0{
@@ -222,7 +246,7 @@
     column-gap: 1vw;
     li{
         padding: 0.4vw 1.2vw;
-        font-size: 3.2vw;
+        font-size: 4vw;
         color: var(--lighter);
         font-weight: 400;
         background-color: var(--accentHeavy);
