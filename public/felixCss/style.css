@@ -12595,10 +12595,6 @@ html {
   /* Firefox */
 }
 
-a:link, a:visited, a:hover, a:active {
-  color: var(--darkest);
-}
-
 .fil-ariane {
   display: flex;
   flex-direction: row;
