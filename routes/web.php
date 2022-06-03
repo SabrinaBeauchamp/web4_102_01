@@ -44,7 +44,8 @@ Route::get('/agrotouristique', function() {
     $entreprises = Entreprise::all();
     foreach($entreprises as $entrepriseId => $entreprise)
     {
-        //il faut parfois changer 
+        //IMPORTANT POUR L'AFFICHAGE DES ACTIVITÉS POPULAIRES <-------------
+        //il faut parfois ajouter ou supprimer les guillemets selon l'ordinateur ;)
         if($entreprise->populaire !== "1")
         {
             unset($entreprises[$entrepriseId]);
