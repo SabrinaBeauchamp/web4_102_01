@@ -14494,6 +14494,7 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
       -ms-flex-align: center;
           align-items: center;
   background-color: orange;
+  width: 350px;
 }
 
 .formEntreprise > fieldset {
@@ -14530,12 +14531,25 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   background-color: green;
 }
 
+.photo {
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  height: 50px;
+}
+
 .photo > label {
-  border-radius: 20px;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
   color: white;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
+}
+
+.photo > span > input {
+  background-color: #f25c5c;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

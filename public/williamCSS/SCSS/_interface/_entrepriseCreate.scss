@@ -35,32 +35,38 @@
 
 //SCSS listes des forfaits d'une categories
 
-.formEntreprise{
+.formEntreprise {
     background-color: aqua;
     height: 100%;
-    
 
-    &>.conteneurEntreprise1{
+
+    &>.conteneurEntreprise1 {
         @include setFlex(row, center, center);
         background-color: blue;
     }
 
-    &>.conteneurEntreprise2{
+    &>.conteneurEntreprise2 {
         @include setFlex(row, center, center);
         background-color: red;
     }
 
-    &>.conteneurEntreprise3{
+    &>.conteneurEntreprise3 {
         @include setFlex(column, center, center);
         background-color: orange;
+        width: 350px;
+
+        &li{
+            background-color:
+        }
+        
     }
 
-    &>fieldset{
+    &>fieldset {
         @include setFlex(row, center, center);
         background-color: purple;
     }
 
-    &>.conteneurEntreprise5{
+    &>.conteneurEntreprise5 {
         @include setFlex(row, center, center);
         background-color: green;
 
@@ -68,20 +74,28 @@
 
 }
 
-.photo{
-    
-    &>label{
-        border-radius: 20px;
+.photo {
+    width: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 50px;
+
+    &>label {
+
         overflow: hidden;
         font-family: 'Roboto', sans-serif;
         color: white;
         transition-duration: 300ms;
     }
 
-    &>span{
-     
-        &>input{
+    &>span {
 
+        &>input {
+
+            background-color: #f25c5c;
+            border: none;
+            font-family: 'Roboto', sans-serif;
+            color: white;
         }
     }
 }
