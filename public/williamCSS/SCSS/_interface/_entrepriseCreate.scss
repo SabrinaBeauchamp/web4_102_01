@@ -37,4 +37,25 @@
 
 .formEntreprise{
     background-color: aqua;
+
+    &>.conteneurEntreprise1{
+        background-color: blue;
+    }
+
+    &>.conteneurEntreprise2{
+        background-color: red;
+    }
+
+    &>.conteneurEntreprise3{
+        background-color: orange;
+    }
+
+    &>fieldset{
+        background-color: purple;
+    }
+
+    &>.conteneurEntreprise5{
+        background-color: green;
+    }
+
 }
