@@ -46,9 +46,17 @@ Route::get('/agrotouristique', function() {
     {
         //IMPORTANT POUR L'AFFICHAGE DES ACTIVITÉS POPULAIRES <-------------
         //il faut parfois ajouter ou supprimer les guillemets selon l'ordinateur ;)
-        if($entreprise->populaire !== "1")
+        if (is_string($entreprise->populaire)) 
         {
-            unset($entreprises[$entrepriseId]);
+            if($entreprise->populaire !== "1")
+            {
+                unset($entreprises[$entrepriseId]);
+            }
+        } else {
+            if($entreprise->populaire !== 1)
+            {
+                unset($entreprises[$entrepriseId]);
+            }
         }
     }
     //Les 3 logements choisis au hasard
