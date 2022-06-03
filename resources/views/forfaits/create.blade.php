@@ -36,7 +36,7 @@
     <div class="panneau isPanneau panneau-close">
         <ul class="menu1">
             <li>
-                <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">Accueil</a>
+            <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
             </li>
         </ul>
     </div>
