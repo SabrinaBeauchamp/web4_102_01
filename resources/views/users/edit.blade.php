@@ -1,8 +1,5 @@
 @extends('mesLayouts.dashboard')
 
-@section('titre gestion')
-    Information de votre compte
-@endsection
 
 @section('contenu gestion')
     <form action="{{route('users.gestionaires.update', Auth::user())}}" method="post">

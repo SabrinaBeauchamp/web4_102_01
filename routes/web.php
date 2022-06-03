@@ -21,6 +21,7 @@ use App\Http\Controllers\CommoditeCOntroller;
 use App\Http\Controllers\GroupeCommoditeController;
 use App\Models\Categorie;
 use App\Models\CategorieEntreprise;
+use App\Models\Forfait;
 use Dotenv\Parser\Value;
 
 /*
@@ -43,7 +44,7 @@ Route::get('/agrotouristique', function() {
     $entreprises = Entreprise::all();
     foreach($entreprises as $entrepriseId => $entreprise)
     {
-        if($entreprise->populaire !== 1)
+        if($entreprise->populaire !== "1")
         {
             unset($entreprises[$entrepriseId]);
         }
@@ -122,7 +123,10 @@ Route::group(['prefix'=>'/activites/categories', 'as'=>'forfaits.categories.', '
     Route::post('/{categorie}/delete', 'destroy')->name('destroy');
 });
 
-
+Route::get('/dashboard/forfait', function() {
+    $forfaits = Forfait::paginate(20);
+    return view('users.forfaits.index', ['forfaits'=>$forfaits]);
+})->name('gestion_forfaits');
 Route::group(['prefix'=>'/forfaits', 'as'=>'forfaits.', 'controller'=>ForfaitController::class, 'where'=>['forfait'=>'[0-9]+']], function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{forfait}', 'show')->name('show');
@@ -205,11 +209,11 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
 });
 
 Route::get('/dashboard/populaire', function() {
-    $entreprises = Entreprise::paginate(48);
+    $entreprises = Entreprise::paginate(20);
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
 Route::get('/dashboard/les_entreprises', function() {
-    $entreprises = Entreprise::paginate(48);
+    $entreprises = Entreprise::paginate(12);
     return view('users.entreprises.index', ['entreprises'=>$entreprises]);
 })->name('gestion');
 

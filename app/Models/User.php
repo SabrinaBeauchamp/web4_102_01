@@ -92,7 +92,7 @@ class User extends Authenticatable
     public function validate() {
         $isInvalid = self::validator($this->attributes)->fails();
         if($isInvalid) {
-            return redirect()->route('users.gestionaires.edit', $this)->with('message','incomplet');
+            return redirect()->route('users.gestionaires.edit', $this)->with('message','veuillez complèter votre inscription');
         }
     }
 }

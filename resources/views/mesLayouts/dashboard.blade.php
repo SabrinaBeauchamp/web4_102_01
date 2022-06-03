@@ -49,7 +49,7 @@
             </div>
             <div class=" conteneurSidebarAll conteneurSidebarEventAdmin">
             <i class="fa-solid fa-campground"></i>
-                <a href="{{route('evenements')}}" >Gestion des forfaits</a>
+                <a href="{{route('gestion_forfaits')}}" >Gestion des forfaits</a>
             </div>
         @else
             <div class="conteneurSidebarPaiement conteneurSidebarAll">
