@@ -35,19 +35,21 @@ Agrotourisme Laurentides
                 <ul class="liste-carrousel">
                     @foreach($entreprisesPopulaires as $entreprisePopulaire)
                         <li class="item-carrousel">
-                            <div class="activitePopulaire">
-                                <div class="activitePopulaire-container-texte">
-                                    <h3>{{$entreprisePopulaire->nom}}</h3>
-                                    <p>{{$entreprisePopulaire->description}}</p>
+                            <a href="{{route('entreprises.show', ['entreprise' => $entreprisePopulaire])}}">
+                                <div class="activitePopulaire">
+                                    <div class="activitePopulaire-container-texte">
+                                        <h3>{{$entreprisePopulaire->nom}}</h3>
+                                        <p>{{$entreprisePopulaire->description}}</p>
+                                    </div>
+                                    <div class="image-populaires">
+                                        @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
+                                        <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                        @else
+                                        <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="image-populaires">
-                                    @if(file_exists('img/entreprises/'.$entreprisePopulaire->id.'.jpg'))
-                                    <img src="{{asset('img/entreprises/'.$entreprisePopulaire->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                                    @else
-                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                    @endif
-                                </div>
-                            </div>
+                            </a>
                         </li>
                     @endforeach
                 </ul>
@@ -419,49 +421,55 @@ Agrotourisme Laurentides
             <div id="container">
                 <ul class="liste">
                     <li class="item">
-                        <div class="propositionLogement">
-                            <div class="propositionLogement-container-texte">
-                                <h3>{{$premierLogement->nom}}</h3>
-                                <p>{{$premierLogement->description}}</p>
+                        <a href="{{route('entreprises.show', ['entreprise'=>$premierLogement])}}">
+                            <div class="propositionLogement">
+                                <div class="propositionLogement-container-texte">
+                                    <h3>{{$premierLogement->nom}}</h3>
+                                    <p>{{$premierLogement->description}}</p>
+                                </div>
+                                <div class="image-logements">
+                                    @if(file_exists('img/entreprises/'.$premierLogement->id.'.jpg'))
+                                    <img src="{{asset('img/entreprises/'.$premierLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @else
+                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @endif
+                                </div>
                             </div>
-                            <div class="image-logements">
-                                @if(file_exists('img/entreprises/'.$premierLogement->id.'.jpg'))
-                                <img src="{{asset('img/entreprises/'.$premierLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @else
-                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @endif
-                            </div>
-                        </div>
+                        </a>
                     </li>
                     <li class="item">
-                        <div class="propositionLogement">
-                            <div class="propositionLogement-container-texte">
-                                <h3>{{$deuxiemeLogement->nom}}</h3>
-                                <p>{{$deuxiemeLogement->description}}</p>
+                        <a href="{{route('entreprises.show', ['entreprise'=>$deuxiemeLogement])}}">
+                            <div class="propositionLogement">
+                                <div class="propositionLogement-container-texte">
+                                    <h3>{{$deuxiemeLogement->nom}}</h3>
+                                    <p>{{$deuxiemeLogement->description}}</p>
+                                </div>
+                                <div class="image-logements">
+                                    @if(file_exists('img/entreprises/'.$deuxiemeLogement->id.'.jpg'))
+                                    <img src="{{asset('img/entreprises/'.$deuxiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @else
+                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @endif
+                                </div>
                             </div>
-                            <div class="image-logements">
-                                @if(file_exists('img/entreprises/'.$deuxiemeLogement->id.'.jpg'))
-                                <img src="{{asset('img/entreprises/'.$deuxiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @else
-                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @endif
-                            </div>
-                        </div>
+                        </a>
                     </li>
                     <li class="item">
-                        <div class="propositionLogement">
-                            <div class="propositionLogement-container-texte">
-                                <h3>{{$troisiemeLogement->nom}}</h3>
-                                <p>{{$troisiemeLogement->description}}</p>
+                        <a href="{{route('entreprises.show', ['entreprise'=>$troisiemeLogement])}}">
+                            <div class="propositionLogement">
+                                <div class="propositionLogement-container-texte">
+                                    <h3>{{$troisiemeLogement->nom}}</h3>
+                                    <p>{{$troisiemeLogement->description}}</p>
+                                </div>
+                                <div class="image-logements">
+                                    @if(file_exists('img/entreprises/'.$troisiemeLogement->id.'.jpg'))
+                                    <img src="{{asset('img/entreprises/'.$troisiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @else
+                                    <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+                                    @endif
+                                </div>
                             </div>
-                            <div class="image-logements">
-                                @if(file_exists('img/entreprises/'.$troisiemeLogement->id.'.jpg'))
-                                <img src="{{asset('img/entreprises/'.$troisiemeLogement->id.'.jpg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @else
-                                <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
-                                @endif
-                            </div>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>
