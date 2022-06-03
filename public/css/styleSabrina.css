@@ -1,3 +1,129 @@
+.containerPopulaire {
+  width: 100vw;
+}
+
+.containerPopulaire .container {
+  width: 80vw;
+  margin: auto;
+}
+
+.containerPopulaire .fiche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.containerPopulaire .fiche .commodites {
+  width: 75vw;
+}
+
+.containerPopulaire .fiche button.populaire {
+  font-family: "Font Awesome 5 Free";
+  background-color: transparent;
+  border: none;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination > nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination > nav > div {
+  margin-bottom: 20px;
+}
+
+.pagination > nav > div > span {
+  color: #f25c5c;
+  border-color: #f25c5c;
+  border-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination > nav > div > a {
+  color: #f25c5c;
+  border-color: #f25c5c;
+  border-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination > nav > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.pagination > nav > div > div > p {
+  color: #f25c5c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination > nav > div > div > p > .font-medium {
+  color: #f25c5c;
+  border-color: #f25c5c;
+  border-width: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination > nav > div > div > span > span {
+  color: #f25c5c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination > nav > div > div > span > a {
+  color: #f25c5c;
+  font-family: 'Roboto', sans-serif;
+}
+
 .titre_section {
   font-family: 'Roboto', sans-serif;
   font-size: 45px;

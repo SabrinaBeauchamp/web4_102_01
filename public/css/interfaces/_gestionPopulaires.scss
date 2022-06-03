@@ -1,0 +1,73 @@
+@import '../mixins/_flex';
+
+.containerPopulaire {
+    width: 100vw;
+    .container {
+        width: 80vw;
+        margin: auto;
+    }
+    .fiche{
+        @include setFlex(row, space-between, center);
+        width:100%;
+        .commodites {
+            width: 75vw
+        }
+        button.populaire {
+            font-family: "Font Awesome 5 Free"; 
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+}
+
+.pagination {
+    @include setFlex(column, center, center);
+
+    font-family: 'Roboto', sans-serif;
+
+    &>nav {
+        @include setFlex(column, center, center);
+
+        &>div {
+            margin-bottom: 20px;
+
+            &>span {
+                color: #f25c5c;
+                border-color: #f25c5c;
+                border-width: 2px;
+                font-family: 'Roboto', sans-serif;
+            }
+            &>a {
+                color: #f25c5c;
+                border-color: #f25c5c;
+                border-width: 2px;
+                font-family: 'Roboto', sans-serif;
+            }
+            &>div {
+                @include setFlex(column, center, center);
+                text-align: center;
+                &>p {
+                    color: #f25c5c;
+                    font-family: 'Roboto', sans-serif;
+                    &>.font-medium {
+                        color: #f25c5c;
+                        border-color: #f25c5c;
+                        border-width: 2px;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                }
+                &>span {
+                    &>span {
+                        color: #f25c5c;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                    &>a {
+                        color: #f25c5c;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

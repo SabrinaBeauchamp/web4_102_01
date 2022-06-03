@@ -222,7 +222,7 @@ Route::group(['prefix'=>'/agrotouristique/categories', 'as'=>'categories.', 'con
 });
 
 Route::get('/dashboard/populaire', function() {
-    $entreprises = Entreprise::paginate(20);
+    $entreprises = Entreprise::paginate(12);
     return view('users.activites_populaires.index', ['entreprises'=>$entreprises]);
 })->name('populaire');
 Route::get('/dashboard/les_entreprises', function() {

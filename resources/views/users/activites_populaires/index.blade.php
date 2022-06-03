@@ -5,7 +5,11 @@
 @endsection
 
 @section('contenu gestion')
-    @include('entreprises.toggle')
+<div class="containerPopulaire">
+    <div class="container">
+        @include('entreprises.toggle')
+    </div>
+</div>
     <div class="pagination">
         {{$entreprises->links()}}
     </div>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('williamCSS/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/styleSabrina.css')}}">
     <script src="{{asset('https://kit.fontawesome.com/f4e3a6480f.js')}}" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/f4e3a6480f.js" crossorigin="anonymous"></script>
     <script src="{{asset('js/Favori.js')}}"></script>
     <script src="{{asset('js/Populaire.js')}}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
