@@ -4,9 +4,6 @@
 {{$ville->nom}}
 
 @endsection
-
-@section('contenu')
-
 @section('arial')
 <li>></li>
 <li><a href="{{route('categoriesRegion.index')}}">MRC</a></li>
@@ -15,15 +12,22 @@
 <li>></li>
 <li><a href="#">{{$ville->nom}}</a></li>
 @endsection
+@section('contenu')
 
-<ul>
-    @foreach($entreprises as $entreprise)
-    <li>
-        <a class="commodites" href="{{route('entreprises.show', ['entreprise'=>$entreprise])}}">{{$entreprise->nom}}</a>
-    </li>
-    @endforeach
-</ul>
-<br>
-<a  class="boutonUniforme" href="{{route('villes.edit', ['ville' => $ville])}}">Modifier</a> <br>
-<a  class="boutonUniforme" href="{{route('villes.delete', ['ville'=>$ville])}}">Suprimmer</a> <br>
+<section class="sous-categories">
+    <div class="container-titre detectAnim">
+        <h2 class="titre1">Toutes les entreprises dans</h2>
+        <h2 class="titre-accent">{{$ville->nom}}</h2>
+        <h2 class="titre2"> </h2>
+    </div>
+    <div>
+        <ul class="menu4"> 
+        @foreach($entreprises as $entreprise)
+        <li>
+            <a href="{{route('entreprises.show', ['entreprise'=>$entreprise])}}">{{$entreprise->nom}}</a>
+        </li>
+        @endforeach
+        </ul>
+    </div>
+</section>
 @endsection
