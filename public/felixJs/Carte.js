@@ -5,7 +5,9 @@
 class Carte {
 
     static main() {
-        this.highlightCarte();
+        if(document.querySelector(".liste-carte") != null){
+            this.highlightCarte();
+        }
     }
     
     static highlightCarte() {

@@ -58,12 +58,13 @@ Tout les évènements
         <h2 class="titre2"></h2>
     </div>
     <div class="container-calendrier">
-        <div class="calendrier-grid">
+        <div class="calendrier-popup">
             @if($evenements->count() > 0)
                 @include('evenements.list')
             @else
                 <p>la liste est vide</p>
-            @endif
+            @endif           
+        </div>
     </div>
 </section>
    
