@@ -1,5 +1,5 @@
 <fieldset>
-    <ul>
+    <ul class="ulCommodite">
         @foreach($commodites as $commodite)
             <li>
                 <label>
