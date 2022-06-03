@@ -13258,46 +13258,46 @@ footer section .container-bouton a:hover {
           align-items: center;
   row-gap: 1vw;
   padding: 2vw;
-<<<<<<< HEAD
   background-color: var(--accent);
-  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
   border-radius: 2vw;
 }
+
 .calendrierEvenements .container-calendrier .calendrier-popup .popup .nom-evenement {
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 3vw;
   text-transform: uppercase;
   color: var(--lightest);
 }
+
 .calendrierEvenements .container-calendrier .calendrier-popup .popup .dates-evenement {
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.4vw;
   color: var(--lightest);
 }
+
 .calendrierEvenements .container-calendrier .calendrier-popup .popup .description-evenement {
   font-weight: 200;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2vw;
   color: var(--lightest);
 }
+
 .calendrierEvenements .container-calendrier .calendrier-popup .popup .ville-evenement {
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.3vw;
   color: var(--lightest);
 }
+
 .calendrierEvenements .container-calendrier .calendrier-popup .popup .prix-evenement {
   font-weight: 600;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2vw;
   color: var(--lightest);
-=======
-  background-color: var(--light);
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
->>>>>>> origin/william_v2
 }
 
 @media (min-width: 900px) {
@@ -13782,12 +13782,6 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< HEAD
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 0;
-=======
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -13798,7 +13792,7 @@ html {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
->>>>>>> origin/william_v2
+  margin: 0;
 }
 
 .fil-ariane ul li {

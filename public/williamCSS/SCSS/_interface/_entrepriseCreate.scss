@@ -38,25 +38,50 @@
 .formEntreprise{
     background-color: aqua;
     height: 100%;
+    
 
     &>.conteneurEntreprise1{
+        @include setFlex(row, center, center);
         background-color: blue;
     }
 
     &>.conteneurEntreprise2{
+        @include setFlex(row, center, center);
         background-color: red;
     }
 
     &>.conteneurEntreprise3{
+        @include setFlex(column, center, center);
         background-color: orange;
     }
 
     &>fieldset{
+        @include setFlex(row, center, center);
         background-color: purple;
     }
 
     &>.conteneurEntreprise5{
+        @include setFlex(row, center, center);
         background-color: green;
+
     }
 
+}
+
+.photo{
+    
+    &>label{
+        border-radius: 20px;
+        overflow: hidden;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        transition-duration: 300ms;
+    }
+
+    &>span{
+     
+        &>input{
+
+        }
+    }
 }
