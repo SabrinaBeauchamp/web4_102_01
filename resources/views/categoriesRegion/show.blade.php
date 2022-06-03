@@ -75,4 +75,31 @@
         </ul>
     </div>
 </section>
+<section class="sous-categories">
+    <div class="container-titre detectAnim">
+        <h2 class="titre1">La région est</h2>
+        <h2 class="titre-accent">reconnue</h2>
+        <h2 class="titre2">pour</h2>
+    </div>
+    <div>
+        <ul class="menu4"> 
+            <li>
+                <a href="{{route('acceuil')}}">Production maraichère</a>
+            </li>
+            <li>
+                <a href="{{route('acceuil')}}">Production laitière</a>
+            </li>
+            <li>
+                <a href="{{route('acceuil')}}">Acériculture</a>
+            </li>
+            <li>
+                <a href="{{route('acceuil')}}">Microbrasserie</a>
+            </li>
+            <li>
+                <a href="{{route('acceuil')}}">Cabane à sucre</a>
+            </li>
+
+        </ul>
+    </div>
+</section>
 @endsection
