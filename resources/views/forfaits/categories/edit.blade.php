@@ -2,8 +2,8 @@
 
 @section('contenu gestion')
 
-<form action="{{route('groupes.update', $groupe)}}" method="post">
-    @include('groupes.form')
+<form action="{{route('forfaits.categories.update', $categorie)}}" method="post">
+    @include('categories.form')
     <div><button>Modifier</button></div>
 </form>
 @endsection

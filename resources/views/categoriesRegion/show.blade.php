@@ -16,7 +16,7 @@
     <div class="panneau0 isPanneau panneau-close">
         <ul class="menu0">
             <li>
-                <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
+                <a class="btn1" href="{{route('accueil')}}">Accueil</a>
             </li><li>
                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
             </li>
@@ -72,6 +72,33 @@
                     <a href="{{route('villes.show', ['ville'=>$ville])}}">{{$ville->nom}}</a>
                 </li>
             @endforeach
+        </ul>
+    </div>
+</section>
+<section class="sous-categories">
+    <div class="container-titre detectAnim">
+        <h2 class="titre1">La région est</h2>
+        <h2 class="titre-accent">reconnue</h2>
+        <h2 class="titre2">pour</h2>
+    </div>
+    <div>
+        <ul class="menu4"> 
+            <li>
+                <a href="{{route('accueil')}}">Production maraichère</a>
+            </li>
+            <li>
+                <a href="{{route('accueil')}}">Production laitière</a>
+            </li>
+            <li>
+                <a href="{{route('accueil')}}">Acériculture</a>
+            </li>
+            <li>
+                <a href="{{route('accueil')}}">Microbrasserie</a>
+            </li>
+            <li>
+                <a href="{{route('accueil')}}">Cabane à sucre</a>
+            </li>
+
         </ul>
     </div>
 </section>

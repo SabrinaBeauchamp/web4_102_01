@@ -23,7 +23,8 @@ class EntrepriseController extends Controller
     public function index()
     {
         $entreprises = Entreprise::all();
-        return view('entreprises.index', ['entreprises' => $entreprises]);
+        $groupes = Groupe::all();
+        return view('entreprises.index', ['entreprises' => $entreprises, 'groupes'=>$groupes]);
     }
 
     public function togglePopulaire(Entreprise $entreprise) {

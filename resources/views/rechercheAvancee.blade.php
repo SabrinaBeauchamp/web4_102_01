@@ -31,6 +31,9 @@
                     <div class="panneau0 isPanneau panneau-close">
                         <ul class="menu0">
                             <li>
+                                <a class="btn1" href="{{route('accueil')}}">Accueil</a>
+                            </li>
+                            <li>
                                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
                             </li>
                             <li>
@@ -67,6 +70,9 @@
                         <!-- les panneaux essentiels. index et entreprise sont fermés à l'ouverture de la page -->
                     <div class="panneau0 isPanneau panneau-close">
                         <ul class="menu0">
+                            <li>
+                                <a class="btn1" href="{{route('accueil')}}">Accueil</a>
+                            </li>
                             <li>
                                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
                             </li>

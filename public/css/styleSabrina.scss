@@ -1,0 +1,66 @@
+@import 'interfaces/_gestionPopulaires';
+@import 'interfaces/_gestionForfait';
+@import 'mixins/_flex';
+
+.titre_section {
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
+    font-weight: 18px;
+    text-align: center;
+}
+.titre_favori {
+    text-align: center;
+}
+.logo_dashboard {
+    width: 70%;
+    filter: brightness(0) invert(1);
+}
+.containerFavori{
+    @include setFlex(column, center, center);
+    width: 100vw;
+    height: 100%;
+
+   
+    div{
+        p{
+            text-align: center;
+        }
+    }
+
+    .btnGestionLien {
+        @include setFlex(column, center, center);
+        border: none;
+        background-color: transparent;
+        margin-top: 10px;
+    
+        &>a {
+            @include setFlex(row, center, center);
+            border: 3px solid #f25c5c;
+            border-radius: 30px;
+            height: 40px;
+            width: 240px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #f25c5c;
+            font-size: 16px;
+            gap: 10px;
+            transition-duration: 300ms;
+    
+            &>i {
+                color: #f25c5c;
+                font-size: 14px;
+                transition-duration: 300ms;
+            }
+        }
+    
+        &>a:hover {
+            background-color: #f25c5c;
+        }
+    
+        &>a:hover,
+        &>a:hover>i {
+            color: #eee;
+            transform: scale(1.1);
+        }
+    }
+}

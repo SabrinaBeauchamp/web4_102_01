@@ -22,11 +22,11 @@ class Populaire {
             console.log(e.target.response.resultat);
             if(e.target.response.resultat === true) {
                 lien.classList.add("is_populaire");
-                lien.innerHTML = "populaire";
+                lien.classList.replace("fa-regular", "fa-solid");
             }
             else {
                 lien.classList.remove("is_populaire");
-                lien.innerHTML = "non populaire";
+                lien.classList.replace("fa-solid", "fa-regular");
             }
         });
         xhr.send();

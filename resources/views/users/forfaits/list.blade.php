@@ -1,9 +1,13 @@
 
 @foreach($forfaits as $forfait)
 <div class="carteGestionMembre">
-    <img src="{{asset('williamCSS\temporaire_img\profilPlaceholder.png')}}" alt="" class="imgCarteGestion">
+    @if(file_exists('img/forfaits/'.$forfait->id.'.jpg'))
+        <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de l'entreprise" class="image-evenement">
+    @else
+        <x-champ-img src="{{asset('img/forfaits/'.$forfait->id.'.jpg')}}" alt="forfait {{$forfait->id}}"></x-champ-img>
+    @endif
     <li>
-        <span class="btn3 forfaitNom"> 
+        <span class="btn3 entrepriseNom"> 
         
             {{$forfait->nom}}
             @if (Auth::check())

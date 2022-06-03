@@ -8,7 +8,7 @@ Agrotourisme Laurentides
     <div class="panneau0 isPanneau panneau-close">
         <ul class="menu0">
             <li>
-                <a class="btn1" href="{{route('acceuil')}}">Acceuil</a>
+                <a class="btn1" href="{{route('accueil')}}">Accueil</a>
             </li><li>
                 <a class="btn1" href="{{route('categoriesRegion.index')}}">MRC</a>
             </li>
@@ -60,9 +60,9 @@ Agrotourisme Laurentides
             </div>
             <div class="container-introduction">
                 <div class="container-img-introduction detectAnim2">
-                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image1">
-                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image2">
-                    <img src="{{asset('images/Placeholder.svg')}}" alt="placeholder" class="image3">
+                    <img src="{{asset('images/logo_sans_texte.svg')}}" alt="placeholder" class="image1">
+                    <img src="{{asset('images/logo_sans_texte.svg')}}" alt="placeholder" class="image2">
+                    <img src="{{asset('images/logo_sans_texte.svg')}}" alt="placeholder" class="image3">
                 </div>
                 <p class="paragraphe">Integer ac molestie orci, non maximus orci. Etiam sit amet rhoncus lorem. Phasellus sed commodo nisl. Fusce gravida arcu non dignissim mollis. Integer iaculis ut lectus luctus blandit. Curabitur lacus velit, convallis vitae vehicula eu, luctus id metus. Duis auctor sem justo, et lobortis sem accumsan vitae.</p>
             </div>
@@ -135,9 +135,6 @@ Agrotourisme Laurentides
                                     </button> 
                                 @endif
                             </div>
-                        </div>
-                        <div class="popup">
-                            <a href="{{route('evenements.index')}}" class="btn1">Voir les autres évènements</a>
                         </div>
                     </div>
                     <div class="calendrier-item">2</div>

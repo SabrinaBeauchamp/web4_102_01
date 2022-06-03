@@ -94,16 +94,19 @@ class FavorieController extends Controller
         else if($groupe === 'entreprises') {
             $favories = $user->likesEntreprises;
             $type = 'Entreprises';
+            $lien = 'accueil';
         }
         else if($groupe === 'evenements') {
             $favories = $user->likesEvenements;
             $type = 'Évènements';
+            $lien = 'evenements.index';
         }
         else if($groupe === 'forfaits') {
             $favories = $user->likesForfaits;
             $type = 'Forfaits';
+            $lien = 'forfaits.categories.index';
         }
-        return view("users.favories.index", ['favories'=>$favories, 'type'=>$type]);
+        return view("users.favories.index", ['favories'=>$favories, 'type'=>$type, 'lien'=>$lien]);
     }
 
     /**

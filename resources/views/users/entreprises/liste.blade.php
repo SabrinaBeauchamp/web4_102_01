@@ -1,6 +1,10 @@
 @foreach($entreprises as $entreprise)
 <div class="carteGestionMembre">
+    @if(file_exists('img/entreprises/logos/'.$entreprise->id.'.svg'))
+    <img src="{{asset('img/entreprises/logos/'.$entreprise->id.'.svg')}}" alt="" class="imgCarteGestion">
+    @else
     <img src="{{asset('williamCSS\temporaire_img\profilPlaceholder.png')}}" alt="" class="imgCarteGestion">
+    @endif
     <li>
         <span class="btn3 entrepriseNom"> 
         
