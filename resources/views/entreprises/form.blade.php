@@ -29,10 +29,7 @@
         <label for="url_site">url_site</label>
         <span><input type="text" name="url_site" id="url_site" value="{{$entreprise->url_site}}"></span>
     </div>
-    <div class="divForm">
-        <label for="description">description</label>
-        <span><input type="text" name="description" id="description" value="{{$entreprise->description}}"></span>
-    </div>
+    <x-champ-textArea name="description" id="description" label="description">{{$entreprise->description}}</x-champ-textArea>
 </div>
 <div class="conteneurEntreprise2">
     <h3>Catégories</h3>

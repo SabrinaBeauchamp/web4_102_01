@@ -1,13 +1,6 @@
 @csrf
-<div>
-    <label for="nom">Nom</label>
-    <span>
-        <input type="text" name="nom" id="nom" value="{{$groupe->nom}}">
-    </span>
-</div>
-<div>
-    <label for="position">position</label>
-    <span>
-        <input type="text" name="position" id="position" value="{{$groupe->position}}">
-    </span>
+<div class="conteneurEntreprise1">
+    <h3>Formulaire groupe</h3>
+    <x-champ-text name="nom" label="Nom">{{$groupe->nom}}</x-champs-text>
+    <x-champ-text name="nom" label="Nom">{{$groupe->position}}</x-champs-text>
 </div>

@@ -2,10 +2,11 @@
 
 @section('contenu gestion')
 
-<form action="{{route('categories.store')}}" method="post">
+<form action="{{route('categories.store')}}" method="post"  class="formEntreprise">
     @include('categories.form')
-    <div>
-        <button>Ajouter la categorie</button>
+    <div class="conteneurEntreprise5">
+        <div><button class="btnCreer" type="submit">Créer</button></div>
     </div>
 </form>
 @endsection
+

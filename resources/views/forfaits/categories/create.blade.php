@@ -7,11 +7,14 @@
 
 @section('contenu gestion')
 <h2>Création d'un nouveau forfait</h2>
-    <form action="{{route('categories.store')}}" method="post">
+    <form action="{{route('categories.store')}}" method="post"  class="formEntreprise">
         @csrf
-        <x-champ-text name="nom" label="Nom">{{$categorie->nom}}</x-champs-text>
+        @include('forfaits.categories.form')
         
-        <x-champ-button type="'submit'" titre="'Créer la catégorie'"></x-champ-button>
+        
+        <div class="conteneurEntreprise5">
+            <div><button class="btnCreer" type="submit">Créer</button></div>
+        </div>
     </form>
     <div class="options">
         <x-champ-lien  href="{{route('forfaits.categories.index')}}" titre="'Retour aux categories des forfaits"></x-champ-lien>
