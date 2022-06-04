@@ -8,7 +8,7 @@
         <img src="{{asset('images/PlaceholderImage.svg')}}" alt="image de forfait" class="image-evenement">
     @endif
     <!-- changer les href des a -->
-    <a href="{{route('forfaits.show', $forfait)}}">{{$forfait->nom}}</a>
+    <a href="{{route('forfaits.show', ['forfait'=>$forfait])}}">{{$forfait->nom}}</a>
     <div class="forfaitRating">
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -22,7 +22,7 @@
     <div class="conteneurBtnCarte">
         <button class="button btn_visiter btn_carte">
             <!-- href du a est le meme que a du nom forfait, aussi mettre fleche en after-->
-            <a href="{{route('forfaits.show', $forfait)}}">Visiter le forfait</a>
+            <a href="">Visiter le forfait</a>
         </button>
         @if (Auth::check())
             @if($forfait->isLiked)
