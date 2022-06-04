@@ -12,8 +12,9 @@ class Forfait extends Model
       "prix",
       "nom",
       "description",
+      "categorie_id",
     ];
-    public function categories(){
+    public function categorie(){
         return $this->belongsTo(CategorieForfait::class, 'categorie_id');
     }
     public function favorie() {
