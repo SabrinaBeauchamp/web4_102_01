@@ -62,7 +62,8 @@ class ForfaitController extends Controller
      */
     public function show(forfait $forfait)
     {
-        return view ('forfaits.show', ['forfait'=>$forfait]);
+        $groupes = Groupe::all();
+        return view ('forfaits.show', ['forfait'=>$forfait, 'groupes'=>$groupes]);
     }
 
     /**
@@ -89,11 +90,6 @@ class ForfaitController extends Controller
     {
         $forfait->fill($request->all());
         $forfait->save();
-        $categories = [];
-        // if (isset($request->categorie_id)) {
-        //     $categories = $request->categorie_id;
-        // }
-        // $forfait->categories()->sync($categories);
         return redirect()->route("forfaits.categories.index");
     }
 

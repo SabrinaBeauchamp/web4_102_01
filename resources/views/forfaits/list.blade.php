@@ -22,7 +22,7 @@
     <div class="conteneurBtnCarte">
         <button class="button btn_visiter btn_carte">
             <!-- href du a est le meme que a du nom forfait, aussi mettre fleche en after-->
-            <a href="">Visiter le forfait</a>
+            <a href="{{route('forfaits.show',['forfait'=>$forfait])}}">Visiter le forfait</a>
         </button>
         @if (Auth::check())
             @if($forfait->isLiked)

@@ -33,6 +33,16 @@
             @endif
         </ul>
     </div>
+    <div class="panneau isPanneau panneau-close">
+        <h2>Groupes</h2>
+        <ul class="menu1">
+            @foreach($groupes as $groupe)
+                <li>
+                    <a href="{{route('groupes.show', ['groupe'=>$groupe])}}" class="btn1">{{$groupe['nom']}}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 @endsection
 
 @section('panneaux')
