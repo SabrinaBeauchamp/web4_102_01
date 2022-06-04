@@ -280,6 +280,14 @@
   top: -10px;
 }
 
+button.deconnexion {
+  background-color: transparent;
+  border: none;
+  color: #eee;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+}
+
 .titre_section {
   font-family: 'Roboto', sans-serif;
   font-size: 45px;

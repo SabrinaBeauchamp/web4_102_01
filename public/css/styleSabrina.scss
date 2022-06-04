@@ -1,7 +1,12 @@
 @import 'interfaces/_gestionPopulaires';
 @import 'interfaces/_gestionForfait';
 @import 'mixins/_flex';
-
+button.deconnexion {
+    background-color: transparent;
+    border: none;
+    color: #eee;
+    transition: .3s ease-in;
+}
 .titre_section {
     font-family: 'Roboto', sans-serif;
     font-size: 45px;

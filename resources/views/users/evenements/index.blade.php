@@ -5,8 +5,14 @@
 @endsection
 
 @section('contenu gestion')
-    @include('users.evenements.list')
+<div class="containerEvenenement">
+    <div class="container">
+        @include('users.evenements.list')
+    </div>
+</div>
     @if(Auth::check() && Auth::user()->role === 'admin')
-    <x-champ-lien href="{{route('evenements.create')}}" titre="Créer un nouveau évènement"></x-champ-lien>
+    <button class="btnGestionAjouter">
+        <a href="{{route('evenements.create')}}">Créer un nouveau évènement<i class="fa-solid fa-user-plus"></i></a>
+    </button>
     @endif
 @endsection
