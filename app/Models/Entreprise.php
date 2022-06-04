@@ -18,8 +18,7 @@ class Entreprise extends Model
         "url_site",
         "description",
         "created_at",
-        "updated_at",
-        "personne_ressource"
+        "updated_at"
     ];
     public function categories() {
         return $this->belongsToMany(Categorie::class);

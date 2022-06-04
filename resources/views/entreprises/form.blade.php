@@ -29,10 +29,7 @@
         <label for="url_site">url_site</label>
         <span><input type="text" name="url_site" id="url_site" value="{{$entreprise->url_site}}"></span>
     </div>
-    <div class="divForm">
-        <label for="personne_ressource">Personne ressource</label>
-        <span><input type="text" name="personne_ressource" id="personne_ressource" value="{{$entreprise->personne_ressource}}"></span>
-    </div>
+
     <div class="divForm">
         <label for="description">description</label>
         <span><input type="text" name="description" id="description" value="{{$entreprise->description}}"></span>

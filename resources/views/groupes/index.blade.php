@@ -1,6 +1,6 @@
 @extends('mesLayouts.layout')
 @section('titre')
-<h1>Groupes</h1>
+Groupes
 @endsection
 @section('arial')
 <li>></li>
