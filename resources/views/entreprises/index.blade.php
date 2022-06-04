@@ -24,7 +24,7 @@ Entreprises
             <li>
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <button type="submit">Deconnexion</button>
+                    <button class="deconnexion"  type="submit">Deconnexion</button>
                 </form>
             </li>
         @else
