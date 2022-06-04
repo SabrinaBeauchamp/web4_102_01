@@ -1,12 +1,13 @@
 @extends('mesLayouts.dashboard')
 
-@section('titre gestion')
-    gere les évènement
-@endsection
+
 
 @section('contenu gestion')
 <div class="containerEvenenement">
     <div class="container">
+    <h3>
+Gestion des évènements
+</h3>
         @include('users.evenements.list')
     </div>
 </div>

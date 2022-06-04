@@ -39,6 +39,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -12311,6 +12314,14 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   font-size: 20px;
 }
 
+div.conteneurLoginUser .form-check-input {
+  display: none;
+}
+
+div.conteneurLoginUser .form-check-label {
+  display: none;
+}
+
 .iconLogin {
   padding: 10px;
   min-width: 50px;
@@ -14815,6 +14826,8 @@ form.form .container,
   font-family: 'Roboto', sans-serif;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .btnCreer:hover {
@@ -14919,5 +14932,193 @@ form.form .container,
   font-size: 16px;
   padding-right: 8px;
   padding-left: 8px;
+}
+
+.containerEvenenement > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 50vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 40px;
+  gap: 20px;
+}
+
+.containerEvenenement > .container h3, .containerEvenenement > .container .h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50vw;
+  font-family: 'Teko', sans-serif;
+  font-size: 48px;
+}
+
+.containerEvenenement > .container > .evenement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eee;
+  width: 400px;
+  height: 200px;
+  margin-top: 50px;
+  -webkit-box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+          box-shadow: 0px 11px 15px 5px rgba(0, 0, 0, 0.21);
+  border-radius: 20px;
+}
+
+.containerEvenenement > .container > .evenement > .button {
+  margin-bottom: 20px;
+}
+
+.containerEvenenement > .container > .evenement > .button > a {
+  text-transform: capitalize;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: #1D1D1D;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #1d1d1d62;
+          text-decoration-color: #1d1d1d62;
+}
+
+.containerEvenenement > .container > .evenement .choix .button > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f25c5c;
+  height: 30px;
+  width: 120px;
+  border-radius: 20px;
+  color: #eee;
+  font-family: 'Roboto', sans-serif;
+}
+
+.containerEvenenement > .container > .evenement .choix .button > a:hover {
+  background-color: #f87c7c;
+  color: white;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+          box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+}
+
+.containerEvenenement .btnModifierFini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f25c5c;
+  height: 30px;
+  width: 100px;
+  border-radius: 20px;
+  padding: 16px;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.containerEvenenement .btnModifierFini:hover {
+  background-color: #f87c7c;
+  color: white;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+          box-shadow: 0 0 1px 10px rgba(255, 143, 143, 0.4), 0 0 1px 15px rgba(255, 143, 143, 0.1), 0 0 1px 20px rgba(255, 143, 143, 0.1);
+}
+
+.containerEvenenement .btnModifierFini a {
+  font-family: 'Roboto', sans-serif;
+  color: #eee;
+}
+
+.containerEvenenement .pFini {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 16px;
+}
+
+.containerEvenenement .choix1 {
+  margin-bottom: 16px;
+}
+
+.containerEvenenement .pDate {
+  font-family: 'Roboto', sans-serif;
+  color: #f25c5c;
+}
+
+.containerEvenenement .pDate::after {
+  content: '';
+  margin: 0 auto;
+  width: 0px;
+  height: 2px;
+  display: block;
+  color: #f25c5c;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.containerEvenenement .pDate:hover::after {
+  width: 100%;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
