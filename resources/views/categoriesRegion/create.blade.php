@@ -3,10 +3,10 @@
 @section('contenu gestion')
 
 
-<form action="{{route('categoriesRegion.store')}}" method="post">
+<form action="{{route('categoriesRegion.store')}}" method="post"  class="formEntreprise">
     @include('categoriesRegion.form')
-    <div>
-        <button>Ajouter le MRC</button>
+    <div class="conteneurEntreprise5">
+        <div><button class="btnCreer" type="submit">Créer</button></div>
     </div>
 </form>
 @endsection

@@ -280,6 +280,14 @@
   top: -10px;
 }
 
+.conteneurEntreprise5Forfait {
+  height: 50px;
+}
+
+.conteneurEntreprise5Forfait .divForm {
+  height: 50px;
+}
+
 button.deconnexion {
   background-color: transparent;
   border: none;

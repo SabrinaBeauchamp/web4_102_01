@@ -9,7 +9,7 @@
         <x-champ-file name="photo" label="photo" class="btnImport"></x-champs-text>
         <x-champ-file name="logo" label="logo" class="btnImport"></x-champs-text>
         <div>
-            <button class="btnCreer">Créer</button>
+            <button class="btnCreer" type="submit">Créer</button>
         </div>
     </div>
 </form>

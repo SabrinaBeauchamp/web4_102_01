@@ -202,10 +202,12 @@
     &>.conteneurEntreprise5 {
         @include setFlex(column, center, center);
         margin-bottom: 48px;
+        height: 200px;
         //   background-color: green;
         gap: 40px;
-
+        
     }
+    
 
     h3 {
         font-family: 'Teko', sans-serif;
@@ -352,7 +354,8 @@
     }
 
     span {
-        input {
+        input,
+        textarea {
             border: solid 2px #949494;
             border-radius: 20px;
             width: 250px;

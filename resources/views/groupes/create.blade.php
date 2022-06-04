@@ -2,10 +2,10 @@
 
 @section('contenu gestion')
 
-<form action="{{route('groupes.store')}}" method="post">
+<form action="{{route('groupes.store')}}" method="post"  class="formEntreprise">
     @include('groupes.form')
-    <div>
-        <button>Ajouter le groupe</button>
+    <div class="conteneurEntreprise5">
+        <div><button class="btnCreer" type="submit">Créer</button></div>
     </div>
 </form>
 @endsection

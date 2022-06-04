@@ -1,12 +1,10 @@
 @extends('mesLayouts.dashboard')
 
-@section('titre gestion')
-<h1>Modifier une catégorie</h1>
-@endsection
-
 @section('contenu gestion')
-<form action="{{route('categories.update', $categorie)}}" method="post">
+<form action="{{route('categories.update', $categorie)}}" method="post"  class="formEntreprise">
     @include('categories.form')
-    <div><button>Modifier la catégorie</button></div>
+    <div class="conteneurEntreprise5">
+        <div><button class="btnCreer" type="submit">Modifier</button></div>
+    </div>
 </form>
 @endsection

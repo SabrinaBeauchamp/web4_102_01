@@ -1,6 +1,14 @@
 @import 'interfaces/_gestionPopulaires';
 @import 'interfaces/_gestionForfait';
 @import 'mixins/_flex';
+
+.divForm {
+    textarea{}
+}
+.conteneurEntreprise5Forfait {
+    height: 50px;
+    ;
+}
 button.deconnexion {
     background-color: transparent;
     border: none;

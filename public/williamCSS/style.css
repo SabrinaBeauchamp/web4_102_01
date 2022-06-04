@@ -14736,6 +14736,7 @@ form.form .container,
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 48px;
+  height: 200px;
   gap: 40px;
 }
 
@@ -14910,7 +14911,8 @@ form.form .container,
   white-space: nowrap;
 }
 
-.divForm span input {
+.divForm span input,
+.divForm span textarea {
   border: solid 2px #949494;
   border-radius: 20px;
   width: 250px;

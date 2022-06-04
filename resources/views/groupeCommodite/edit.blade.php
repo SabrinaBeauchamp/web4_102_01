@@ -2,8 +2,10 @@
 
 @section('contenu gestion')
 
-<form action="{{route('groupesCommodite.update', $groupeCommodite)}}" method="post">
+<form action="{{route('groupesCommodite.update', $groupeCommodite)}}" method="post"  class="formEntreprise">
     @include('groupeCommodite.form')
-    <div><button>Modifier</button></div>
+    <div class="conteneurEntreprise5">
+        <div><button class="btnCreer" type="submit">Modifier</button></div>
+    </div>
 </form>
 @endsection
