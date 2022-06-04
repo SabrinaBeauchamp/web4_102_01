@@ -12314,6 +12314,14 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   font-size: 20px;
 }
 
+div.conteneurLoginUser .form-check-input {
+  display: none;
+}
+
+div.conteneurLoginUser .form-check-label {
+  display: none;
+}
+
 .iconLogin {
   padding: 10px;
   min-width: 50px;
