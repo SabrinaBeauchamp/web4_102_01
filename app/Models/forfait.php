@@ -13,7 +13,7 @@ class Forfait extends Model
       "nom",
       "description",
     ];
-    public function categorie(){
+    public function categories(){
         return $this->belongsTo(CategorieForfait::class, 'categorie_id');
     }
     public function favorie() {
