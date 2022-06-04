@@ -33,7 +33,7 @@
         <label for="personne_ressource">Personne ressource</label>
         <span><input type="text" name="personne_ressource" id="personne_ressource" value="{{$entreprise->personne_ressource}}"></span>
     </div>
-    <x-champ-textArea name="description" id="description">{{$entreprise->description}}</x-champ-textArea>
+    <x-champ-textArea name="description" id="description" label="description">{{$entreprise->description}}</x-champ-textArea>
 </div>
 <div class="conteneurEntreprise2">
     <h3>Catégories</h3>
