@@ -12628,8 +12628,14 @@ div.conteneurLoginUser > .conteneurBoiteLogin > .conteneurLiensLogin > a {
   background-color: #ff9f9f;
 }
 
-form.form {
+form.form,
+.containerEvenenement {
   width: 100vw;
+}
+
+form.form .container,
+.containerEvenenement .container {
+  width: 80%;
 }
 
 .conteneurProfil {

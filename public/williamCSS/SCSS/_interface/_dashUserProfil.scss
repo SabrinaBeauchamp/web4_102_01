@@ -18,8 +18,12 @@
 //---------------------------------------------------------------
 //Section Profil du dashboard
 //---------------------------------------------------------------
-form.form {
+form.form,
+.containerEvenenement {
     width: 100vw;
+    .container {
+        width: 80%;
+    }
 }
 .conteneurProfil {
     width: 100%;
